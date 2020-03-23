@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qizuo.provider.api.user</groupId>
+	<artifactId>qizuo-provider-api-user</artifactId>
+	<packaging>war</packaging>
+	<name>qizuo-provider-api-user</name>
+	<description>服务提供者-用户验证api</description>
+
+	<!-- 父项目 -->
+	<parent>
+		<groupId>com.qizuo.provider.api</groupId>
+		<artifactId>qizuo-provider-api</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+    </dependencies>
+</project>

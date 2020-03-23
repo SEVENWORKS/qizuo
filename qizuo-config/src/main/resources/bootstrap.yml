@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    #config配置
+    config:
+      server:
+        git:
+          uri: https://github.com/paascloud/paascloud-config-repo.git #仓库地址
+          username: a554657207@126.com #仓库用户名
+          password: 543858438 #仓库密码
+          search-paths: /* #git仓库下相对地址
+          default-label: ${spring.profiles.active} #仓库默认分支
+          basedir: /data/config/paascloud-config-repo #本地仓库配置
+    #启动时如果多张网卡，可能造成ip地址不准确
+    inetutils:
+      ignoredInterfaces: #忽略某些网卡配置
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks: #指定启动ip
+        - 192.168
+
+#config配置加密
+encrypt:
+  key-store:
+    location: classpath:/server.jks
+    password: paascloud-storepass
+    alias: paascloud-key-store
+    secret: paascloud-keypass
+
+#注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@paascloud-eureka:8761/eureka/ #注册中心地址
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息

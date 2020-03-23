@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.qizuo.common.config</groupId>
+    <artifactId>qizuo-common-config</artifactId>
+    <packaging>war</packaging>
+    <name>qizuo-common-config</name>
+    <description>配置</description>
+
+    <!-- 父项目 -->
+    <parent>
+        <groupId>com.qizuo.common</groupId>
+        <artifactId>qizuo-common</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <!-- 依赖引入 -->
+    <dependencies>
+        <!-- 配置文件读取 spring默认使用yml中的配置，但有时候要用传统的xml或properties配置，就需要使用spring-boot-configuration-processor了 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

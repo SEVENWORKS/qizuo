@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    #config配置
+    config:
+      fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
+      discovery:
+        service-id: qizuo-config #指定配置中心的service-id，便于扩展为高可用配置集群
+        enabled: true #开启配置信息发现
+      label: ${spring.profiles.active} #远程仓库分支
+      profile: ${spring.profiles.active} #哪个环境的配置文件
+      username: qizuo #账号密码
+      password: qizuo #账号密码
+    #启动时如果多张网卡，可能造成ip地址不准确
+    inetutils:
+      ignoredInterfaces: #忽略某些网卡配置
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks: #指定启动ip
+        - 192.168
+
+#注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@paascloud-eureka:8761/eureka/ #注册中心地址
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息

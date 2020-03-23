@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.qizuo.common</groupId>
+    <artifactId>qizuo-common</artifactId>
+    <!-- 只有这地方为pom的时候，总的父项目qizuo引用的时候，才能将其下面所有common包，通过其一个依赖，全部引入。 -->
+    <packaging>pom</packaging>
+    <name>qizuo-common</name>
+    <description>common</description>
+
+    <!-- 父项目 -->
+    <parent>
+        <groupId>com.qizuo</groupId>
+        <artifactId>qizuo</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <!-- 子项目 -->
+    <modules>
+        <!-- 基本 -->
+        <module>qizuo-common-base</module>
+        <!-- 常用工具 -->
+        <module>qizuo-common-util</module>
+        <!-- 常用配置 -->
+        <module>qizuo-common-config</module>
+    </modules>
+
+    <!-- 常用配置项(版本) -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 依赖引入 -->
+    <dependencies>
+        <!-- *****************common项目开始***************** -->
+        <dependency>
+            <groupId>com.qizuo.common.base</groupId>
+            <artifactId>qizuo-common-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qizuo.common.config</groupId>
+            <artifactId>qizuo-common-config</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qizuo.common.util</groupId>
+            <artifactId>qizuo-common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- *****************common结束***************** -->
+    </dependencies>
+</project>

@@ -1,0 +1,25 @@
+#基本配置
+server:
+  port: 8080 #端口
+spring:
+  profiles:
+    active: prd #环境配置文件(dev/prd/test)
+  application:
+    name: qizuo-config #当前服务名
+  boot:
+    #admin连接信息
+    admin:
+      username: qizuo
+      password: qizuo
+
+#安全
+security:
+  #连接config的用户名密码
+  user:
+    name: qizuo #鉴权用户名
+    password: qizuo #鉴权密码
+
+#swagger文档配置
+swagger:
+  title: qizuo-config #swagger title
+  description: qizuo-config #swagger 描述

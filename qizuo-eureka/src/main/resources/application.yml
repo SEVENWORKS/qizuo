@@ -1,0 +1,26 @@
+#基本配置
+server:
+  port: 8761 #端口
+spring:
+  profiles:
+    active: prd #环境配置文件(dev/prd/test)
+  application:
+    name: qizuo-eureka #当前服务名
+  boot:
+      #admin连接信息
+      admin:
+        username: qizuo
+        password: qizuo
+
+#安全
+security:
+  basic:
+    enabled: true #是否开启基本鉴权
+  user:
+    name: qizuo #鉴权用户名
+    password: qizuo #鉴权密码
+
+#swagger文档配置
+swagger:
+  title: qizuo-eureka #swagger title
+  description: qizuo-eureka #swagger 描述
