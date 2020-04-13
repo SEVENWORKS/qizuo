@@ -7,7 +7,6 @@ package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.model.auth.TokenDto;
-import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.cache.RedisKeyUtil;
@@ -88,7 +87,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 		//下面是token验证
 		String token = StringUtils.substringAfter(request.getHeader(HttpHeaders.AUTHORIZATION), "Bearer ");
 		log.info("<== preHandle - 权限拦截器.  token={}", token);
-		UserDto loginUser = (TokenDto) redisTemplate.opsForValue().get(RedisKeyUtil.getAccessTokenKey(token));
+		TokenDto loginUser = (TokenDto) redisTemplate.opsForValue().get(RedisKeyUtil.getAccessTokenKey(token));
 		if (loginUser == null) {
 			log.error("获取用户信息失败, 不允许操作");
 			return false;

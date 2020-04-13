@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Tree interface.
  */
-public interface ITree<T extends TreeDtoBig<T, ID>, ID extends Serializable> {
+public interface ITree<T extends TreeDto, ID extends Serializable> {
 	/**
 	 * 获得指定节点下所有归档
 	 *

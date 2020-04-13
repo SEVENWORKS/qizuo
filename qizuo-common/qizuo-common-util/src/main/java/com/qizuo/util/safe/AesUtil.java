@@ -11,6 +11,7 @@ import com.qizuo.util.common.ObjectIsEmptyUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -95,5 +96,28 @@ public class AesUtil {
 			log.error("解密密码失败", ex);
 			throw new QizuoException("解密失败");
 		}
+	}
+
+	/**
+	 * Encrypt string.
+	 *
+	 * @param password 密码
+	 *
+	 * @return the string
+	 */
+	public static String encrypt(String password) {
+		return new BCryptPasswordEncoder().encode(password);
+	}
+
+	/**
+	 * 密码是否匹配.
+	 *
+	 * @param rawPassword     明文
+	 * @param encodedPassword 密文
+	 *
+	 * @return the boolean
+	 */
+	public static boolean matches(CharSequence rawPassword, String encodedPassword) {
+		return new BCryptPasswordEncoder().matches(rawPassword, encodedPassword);
 	}
 }

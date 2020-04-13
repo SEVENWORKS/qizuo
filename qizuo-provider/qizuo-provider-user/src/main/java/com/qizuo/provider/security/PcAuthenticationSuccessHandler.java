@@ -2,7 +2,6 @@ package com.qizuo.provider.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qizuo.core.utils.RequestUtil;
-import com.qizuo.provider.service.UacUserService;
 import com.qizuo.security.core.SecurityUser;
 import com.qizuo.base.model.wrapper.WrapMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -26,8 +25,6 @@ import java.io.IOException;
 
 /**
  * APP环境下认证成功处理器.
- *
- * @author paascloud.net@gmail.com
  */
 @Component("pcAuthenticationSuccessHandler")
 @Slf4j

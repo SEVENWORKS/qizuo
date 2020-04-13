@@ -7,8 +7,8 @@ package com.qizuo.base.aspect;
 
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.model.auth.Operation$LogDto;
 import com.qizuo.base.model.auth.UserDto;
+import com.qizuo.base.model.base.LogDto;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
@@ -111,7 +111,7 @@ public class LogAspect {
 			final String ipAddress = RequestUtil.getRemoteAddr(request);
 
 			//日志存储对象
-			Operation$LogDto operationLogDto = new Operation$LogDto();
+			LogDto operationLogDto = new LogDto();
 			operationLogDto.setClassName(joinPoint.getTarget().getClass().getName());
 			operationLogDto.setMethodName(joinPoint.getSignature().getName());
 			operationLogDto.setExcuteTime(endTime.getTime() - startTime.getTime());
@@ -125,9 +125,9 @@ public class LogAspect {
 			operationLogDto.setGroupName(loginUser.getGroupName());
 			operationLogDto.setCreatedTime(new Date());
 			operationLogDto.setCreator(loginUser.getUserName());
-			operationLogDto.setCreatorId(loginUser.getUserId());
+			operationLogDto.setCreatorId(loginUser.getBaseId());
 			operationLogDto.setLastOperator(loginUser.getUserName());
-			operationLogDto.setLastOperatorId(loginUser.getUserId());
+			operationLogDto.setLastOperatorId(loginUser.getBaseId());
 			operationLogDto.setLogType(relog.logType().getType());
 			operationLogDto.setLogName(relog.logType().getName());
 
@@ -163,7 +163,7 @@ public class LogAspect {
 	}
 
 	//对请求参数和返回结果进行处理(是否保存)
-	private void getControllerMethodDescription(LogAnnotation relog, Operation$LogDto operationLog, Object result, JoinPoint joinPoint) {
+	private void getControllerMethodDescription(LogAnnotation relog, LogDto operationLog, Object result, JoinPoint joinPoint) {
 		//日志是否保存请求参数
 		if (relog.isSaveRequestData()) {
 			setRequestData(operationLog, joinPoint);
@@ -175,7 +175,7 @@ public class LogAspect {
 	}
 
 	//保存返回参数
-	private void setResponseData(Operation$LogDto requestLog, Object result) {
+	private void setResponseData(LogDto requestLog, Object result) {
 		try {
 			requestLog.setResponseData(String.valueOf(result));
 		} catch (Exception e) {
@@ -184,7 +184,7 @@ public class LogAspect {
 	}
 
 	//保存请求参数
-	private void setRequestData(Operation$LogDto uacLog, JoinPoint joinPoint) {
+	private void setRequestData(LogDto uacLog, JoinPoint joinPoint) {
 		try {
 			//请求参数转换
 			Object[] args = joinPoint.getArgs();

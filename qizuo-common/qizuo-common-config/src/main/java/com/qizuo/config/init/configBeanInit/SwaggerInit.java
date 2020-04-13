@@ -5,8 +5,8 @@
 
 package com.qizuo.config.init.configBeanInit;
 
-import com.qizuo.config.properties.QizuoConfigProperties;
-import com.qizuo.config.properties.otherProperties.SwaggerProperties;
+import com.qizuo.config.properties.QizuoConfigPropertiesGY;
+import com.qizuo.config.properties.otherProperties.SwaggerPropertiesGY;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -34,7 +34,7 @@ import java.util.List;
 @EnableSwagger2
 public class SwaggerInit {
 	@Resource
-	private QizuoConfigProperties qizuoConfigProperties;
+	private QizuoConfigPropertiesGY qizuoConfigProperties;
 
 	/**
 	 * Reservation api docket.
@@ -65,7 +65,7 @@ public class SwaggerInit {
 	}
 
 	private ApiInfo apiInfo() {
-		SwaggerProperties swagger = qizuoConfigProperties.getSwagger();
+		SwaggerPropertiesGY swagger = qizuoConfigProperties.getSwagger();
 		return new ApiInfoBuilder()
 				.title(swagger.getTitle())
 				.description(swagger.getDescription())

@@ -1,7 +1,5 @@
 package com.qizuo.provider.security;
 
-import com.qizuo.provider.model.domain.UacUser;
-import com.qizuo.provider.service.UacUserService;
 import com.qizuo.security.core.SecurityUser;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,8 +12,6 @@ import java.util.Collection;
 
 /**
  * The class Uac user details service.
- *
- * @author paascloud.net @gmail.com
  */
 @Component
 public class UacUserDetailsServiceImpl implements UserDetailsService {

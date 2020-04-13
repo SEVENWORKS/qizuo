@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2020.
+ * author：qizuo
+ */
+package com.qizuo.provider.model.dto$vo.role;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.util.Set;
+
+/**
+ * The class Grant auth role.
+ */
+@Data
+@ApiModel
+public class RoleBindMenuDto implements Serializable {
+
+	private static final long serialVersionUID = -8589698204017834593L;
+	/**
+	 * 菜单权限
+	 */
+	@ApiModelProperty(value = "菜单权限")
+	private Set<Long> menuIdList;
+	/**
+	 * 角色Id
+	 */
+	@ApiModelProperty(value = "角色Id")
+	private Long roleId;
+}

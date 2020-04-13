@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * abstract Tree service.
  */
-public abstract class AbstractTreeService<T extends TreeDtoBig<T, ID>, ID extends Serializable> implements ITree<T, ID> {
+public abstract class AbstractTreeService<T extends TreeDto, ID extends Serializable> implements ITree<T, ID> {
 
 	/**
 	 * Gets child tree objects.

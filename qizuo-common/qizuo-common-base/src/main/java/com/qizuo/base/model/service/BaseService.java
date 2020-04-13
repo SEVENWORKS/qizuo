@@ -2,263 +2,79 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-
 package com.qizuo.base.model.service;
 
-import com.qizuo.base.model.mybatis.MyMapper;
-import com.qizuo.base.exception.BusinessException;
-import org.apache.ibatis.session.RowBounds;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.qizuo.base.model.base.BasePoJo;
+import com.qizuo.base.model.dao.BaseDao;
+import com.qizuo.base.model.page.PageDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.common.Mapper;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
- * 通用service.
+ * @Author: fangl
+ * @Description: 基本service层
+ * @Date: 15:17 2018/10/30
  */
-public abstract class BaseService<T> implements IService<T> {
+@Transactional(rollbackFor = Exception.class)
+public class BaseService<D extends BaseDao<P>, P extends BasePoJo> {
 
-	/**
-	 * The Logger.
-	 */
-	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    protected D dao;
 
-	/**
-	 * mybatis Mapper.
-	 */
-	// @Autowired与@Resource都可以用来装配bean.
-	@Autowired
-	protected MyMapper<T> mapper;
+    /**
+     * 增加(所有增加i开头)
+     */
+    public int insert(P p) {
+        //添加插入基本信息
+        p.preIDo();
+        return dao.insert(p);
+    }
 
-	/**
-	 * 获取 mapper对象.
-	 */
-	public Mapper<T> getMapper() {
-		return mapper;
-	}
+    /**
+     * 更新(所有更新u开头)
+     */
+    public int update(P p) {
+        //添加更新基本信息
+        p.preUDo();
+        return dao.update(p);
+    }
 
-	/**
-	 * Select list.
-	 *
-	 * @param record the record
-	 *
-	 * @return the list
-	 */
-	@Override
-	public List<T> select(T record) {
-		return mapper.select(record);
-	}
+    /**
+     * 删除(所有删除d开头)
+     */
+    public int delete(P p) {
+        return dao.delete(p);
+    }
 
-	/**
-	 * Select by key t.
-	 *
-	 * @param key the key
-	 *
-	 * @return the t
-	 */
-	@Override
-	public T selectByKey(Object key) {
-		return mapper.selectByPrimaryKey(key);
-	}
+    /**
+     * 筛选单个(所有筛选q开头)
+     */
+    public P query(P p) {
+        return dao.query(p);
+    }
 
-	/**
-	 * Select all list.
-	 *
-	 * @return the list
-	 */
-	@Override
-	public List<T> selectAll() {
-		return mapper.selectAll();
-	}
+    /**
+     * 筛选多个
+     */
+    public List<P> qList(P p) {
+        return dao.qList(p);
+    }
 
-	/**
-	 * Select one t.
-	 *
-	 * @param record the record
-	 *
-	 * @return the t
-	 */
-	@Override
-	public T selectOne(T record) {
-		return mapper.selectOne(record);
-	}
+    /**
+     * 查询分页(本框架分页以pageQZ名称进行拦截)
+     */
+    public PageDto<P> qPageQZ(PageDto<P> page) {
+        page.setEntitys(dao.qPageQZ(page));
+        return page;
+    }
 
-	/**
-	 * Select count int.
-	 *
-	 * @param record the record
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int selectCount(T record) {
-		return mapper.selectCount(record);
-	}
-
-	/**
-	 * Select by example list.
-	 *
-	 * @param example the example
-	 *
-	 * @return the list
-	 */
-	@Override
-	public List<T> selectByExample(Object example) {
-		return mapper.selectByExample(example);
-	}
-
-	/**
-	 * Select count by example int.
-	 *
-	 * @param example the example
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int selectCountByExample(Object example) {
-		return mapper.selectCountByExample(example);
-	}
-
-	/**
-	 * Select by row bounds list.
-	 *
-	 * @param record    the record
-	 * @param rowBounds the row bounds
-	 *
-	 * @return the list
-	 */
-	@Override
-	public List<T> selectByRowBounds(T record, RowBounds rowBounds) {
-		return mapper.selectByRowBounds(record, rowBounds);
-	}
-
-	/**
-	 * Select by example and row bounds list.
-	 *
-	 * @param example   the example
-	 * @param rowBounds the row bounds
-	 *
-	 * @return the list
-	 */
-	@Override
-	public List<T> selectByExampleAndRowBounds(Object example, RowBounds rowBounds) {
-		return mapper.selectByExampleAndRowBounds(example, rowBounds);
-	}
-
-	/**
-	 * Save int.
-	 *
-	 * @param record the record
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int save(T record) {
-		return mapper.insertSelective(record);
-	}
-
-	/**
-	 * Batch save int.
-	 *
-	 * @param list the list
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int batchSave(List<T> list) {
-		int result = 0;
-		for (T record : list) {
-			int count = mapper.insertSelective(record);
-			result += count;
-		}
-		return result;
-	}
-
-	/**
-	 * Update int.
-	 *
-	 * @param entity the entity
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int update(T entity) {
-		return mapper.updateByPrimaryKeySelective(entity);
-	}
-
-	/**
-	 * Update by example int.
-	 *
-	 * @param record  the record
-	 * @param example the example
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int updateByExample(T record, Object example) {
-		return mapper.updateByExampleSelective(record, example);
-	}
-
-	/**
-	 * Delete int.
-	 *
-	 * @param record the record
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int delete(T record) {
-		return mapper.delete(record);
-	}
-
-	/**
-	 * Delete by key int.
-	 *
-	 * @param key the key
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int deleteByKey(Object key) {
-		return mapper.deleteByPrimaryKey(key);
-	}
-
-	/**
-	 * Batch delete int.
-	 *
-	 * @param list the list
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int batchDelete(List<T> list) {
-		int result = 0;
-		for (T record : list) {
-			int count = mapper.delete(record);
-			if (count < 1) {
-				logger.error("删除数据失败");
-				throw new BusinessException("删除数据失败!");
-			}
-			result += count;
-		}
-		return result;
-	}
-
-	/**
-	 * Delete by example int.
-	 *
-	 * @param example the example
-	 *
-	 * @return the int
-	 */
-	@Override
-	public int deleteByExample(Object example) {
-		return mapper.deleteByPrimaryKey(example);
-	}
-
-	protected String generateId() {
-		return "";
-	}
+    /** ******************************以下常用********************************************** */
+    /**
+     * 更新状态
+     */
+    public boolean uStatus(P p) {
+        return dao.uStatus(p);
+    }
 }

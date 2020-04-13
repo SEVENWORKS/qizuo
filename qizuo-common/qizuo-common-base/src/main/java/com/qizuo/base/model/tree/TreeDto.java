@@ -7,13 +7,14 @@ package com.qizuo.base.model.tree;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * The class Tree node.
  */
 @Data
-public class TreeDto {
+public class TreeDto<T extends TreeDto, ID extends Serializable> {
 	/**
 	 * 节点编码
 	 */
@@ -22,6 +23,10 @@ public class TreeDto {
 	 * 节点名称
 	 */
 	private String nodeName;
+	/**
+	 * 节点事件
+	 */
+	private String nodeEvent;
 	/**
 	 * ID
 	 */
@@ -33,6 +38,10 @@ public class TreeDto {
 	/**
 	 * 孩子节点信息
 	 */
-	private List<TreeDto> children;
+	private List<T> children;
+	/**
+	 * 是否含有子节点
+	 */
+	private boolean hasChild = false;
 
 }

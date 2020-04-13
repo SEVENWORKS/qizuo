@@ -5,15 +5,11 @@
 
 package com.qizuo;
 
-import com.qizuo.provider.service.impl.PcSmsCodeSender;
-import com.qizuo.security.core.validate.code.sms.SmsCodeSender;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -37,17 +33,5 @@ public class QiZuoProviderUserApplication {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(QiZuoProviderUserApplication.class, args);
-	}
-
-	@Bean
-	public ReloadableResourceBundleMessageSource messageSource() {
-		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasename("classpath:org/springframework/security/messages_zh_CN");
-		return messageSource;
-	}
-
-	@Bean
-	public SmsCodeSender smsCodeSender() {
-		return new PcSmsCodeSender();
 	}
 }

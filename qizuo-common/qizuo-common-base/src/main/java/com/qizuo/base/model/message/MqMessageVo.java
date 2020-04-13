@@ -4,7 +4,7 @@
  */
 package com.qizuo.base.model.message;
 
-import com.qizuo.base.model.base.BaseVo;
+import com.qizuo.base.model.base.BasePoJo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class MqMessageVo extends BaseVo {
+public class MqMessageVo extends BasePoJo {
 
 	private static final long serialVersionUID = 5440371083922622116L;
 	/**

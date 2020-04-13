@@ -5,7 +5,7 @@
 package com.qizuo.base.model.message;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.qizuo.base.model.page.PageQuery;
+import com.qizuo.base.model.page.PageDto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,7 +21,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @ApiModel
-public class MessageQueryDto extends PageQuery {
+public class MessageQueryDto extends PageDto {
 
 	private static final long serialVersionUID = 3967075132487249652L;
 	/**

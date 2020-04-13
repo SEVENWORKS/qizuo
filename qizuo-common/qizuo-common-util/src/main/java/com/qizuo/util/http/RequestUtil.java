@@ -5,8 +5,8 @@
 
 package com.qizuo.util.http;
 
-import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.base.exception.BusinessException;
+import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
@@ -22,7 +22,9 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -141,5 +143,26 @@ public class RequestUtil {
 			throw new BadCredentialsException("Invalid basic authentication token");
 		}
 		return new String[]{token.substring(0, delim), token.substring(delim + 1)};
+	}
+
+	/**
+	 * @author: fangl
+	 * @description: http返回json串，不借用springmvc的视图返回器转换了
+	 * @date: 14:42 2019/1/11
+	 */
+	public static void httpBackJson(HttpServletResponse response, String jsonString) {
+		try {
+			//返回体设置
+			response.reset();
+			response.setContentType("application/json");
+			response.setCharacterEncoding("utf-8");
+
+			//流数据返回
+			PrintWriter printWriter = response.getWriter();
+			printWriter.print(jsonString);
+			printWriter.flush();
+			printWriter.close();
+		} catch (IOException e) {
+		}
 	}
 }

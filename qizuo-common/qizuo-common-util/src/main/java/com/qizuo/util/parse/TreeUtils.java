@@ -6,7 +6,6 @@ package com.qizuo.util.parse;
 
 
 import com.qizuo.base.model.tree.TreeDto;
-import com.qizuo.base.model.tree.TreeDtoBig;
 import com.qizuo.base.model.tree.AbstractTreeService;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
 
@@ -18,7 +17,7 @@ import java.util.Objects;
 /**
  * 树工具，基于base里面tree.
  */
-public class TreeUtils<T extends TreeDtoBig<T, ID>, ID extends Serializable> extends AbstractTreeService<T, ID> {
+public class TreeUtils<T extends TreeDto<T, ID>, ID extends Serializable> extends AbstractTreeService<T, ID> {
     /**
      * Gets child tree nodes.
      *
@@ -36,7 +35,7 @@ public class TreeUtils<T extends TreeDtoBig<T, ID>, ID extends Serializable> ext
             }
 
             if (Objects.equals(treeNode.getPid(), parentId)) {
-                recursionFn(list, treeNode);
+                recursionFn2(list, treeNode);
                 returnList.add(treeNode);
             }
         }
@@ -46,21 +45,21 @@ public class TreeUtils<T extends TreeDtoBig<T, ID>, ID extends Serializable> ext
     /**
      * 递归列表
      */
-    private static void recursionFn(List<TreeDto> list, TreeDto node) {
-        List<TreeDto> childList = getChildList(list, node);
+    private static void recursionFn2(List<TreeDto> list, TreeDto node) {
+        List<TreeDto> childList = getChildList2(list, node);
         if (ObjectIsEmptyUtils.isEmpty(childList)) {
             return;
         }
         node.setChildren(childList);
         for (TreeDto tChild : childList) {
-            recursionFn(list, tChild);
+            recursionFn2(list, tChild);
         }
     }
 
     /**
      * 得到子节点列表
      */
-    private static List<TreeDto> getChildList(List<TreeDto> list, TreeDto t) {
+    private static List<TreeDto> getChildList2(List<TreeDto> list, TreeDto t) {
         List<TreeDto> tList = new ArrayList<>();
 
         for (TreeDto treeNode : list) {

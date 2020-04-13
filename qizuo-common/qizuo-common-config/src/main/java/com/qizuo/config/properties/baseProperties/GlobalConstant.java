@@ -8,18 +8,27 @@ package com.qizuo.config.properties.baseProperties;
  * 框架基本全局配置参数
  */
 public class GlobalConstant {
-	/** base config 开始 */
-	/** base config 结束 */
-	/** config config 开始 */
-	/** config config 结束 */
-	/** utils config 开始 */
-	/** utils config 结束 */
+	/**
+	 * 全局YES
+	 */
+	public static final String YES = "1";
+	/**
+	 * 全局NO
+	 */
+	public static final String NO = "0";
+	/**
+	 * 有效
+	 */
+	public static final String STATUS_YES = "0";
+	/**
+	 * 无效
+	 */
+	public static final String STATUS_NO = "1";
 
 	/**
 	 * 常用角色配置
 	 */
 	public static final class Role {
-
 		private Role() {
 		}
 
@@ -27,6 +36,30 @@ public class GlobalConstant {
 		 * 超级管理员的用户
 		 */
 		public static final String SUPER = "qizuo";
+	}
+
+	/**
+	 * 数据权限.
+	 */
+	public static final class DataRole {
+		private DataRole() {
+		}
+		/**
+		 * 增
+		 */
+		public static final String DATAROLE_INSERT = "0";
+		/**
+		 * 删
+		 */
+		public static final String DATAROLE_DELETE = "1";
+		/**
+		 * 查
+		 */
+		public static final String DATAROLE_QUERY = "2";
+		/**
+		 * 改
+		 */
+		public static final String DATAROLE_UPDATE = "3";
 	}
 
 	/**

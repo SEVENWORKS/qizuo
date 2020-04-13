@@ -5,7 +5,7 @@
 
 package com.qizuo.config.init.configBeanInit;
 
-import com.qizuo.config.properties.QizuoConfigProperties;
+import com.qizuo.config.properties.QizuoConfigPropertiesGY;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -31,7 +31,7 @@ import java.util.concurrent.Executor;
 public class TaskInit implements AsyncConfigurer {
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	@Resource
-	private QizuoConfigProperties qizuoConfigProperties;
+	private QizuoConfigPropertiesGY qizuoConfigProperties;
 
 	//@Bean标注在方法上(返回某个实例的方法)，等价于spring的xml配置文件中的<bean>，作用为：注册bean对象
 	@Override
