@@ -1,4 +1,4 @@
-package com.qizuo.base.interceptor.mybatisPage;
+package com.qizuo.base.plugin.mybatisPage;
 
 import com.qizuo.base.model.page.PageDto;
 import org.apache.ibatis.cache.CacheKey;

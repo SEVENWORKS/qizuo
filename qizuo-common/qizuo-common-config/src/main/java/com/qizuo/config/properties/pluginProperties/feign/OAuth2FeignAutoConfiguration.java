@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.config.properties.otherProperties.feign;
+package com.qizuo.config.properties.pluginProperties.feign;
 
 import feign.Logger;
 import feign.RequestInterceptor;

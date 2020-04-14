@@ -1,4 +1,4 @@
-package com.qizuo.base.interceptor.mybatisPage;
+package com.qizuo.base.plugin.mybatisPage;
 
 import org.apache.ibatis.cursor.Cursor;
 import org.apache.ibatis.executor.parameter.ParameterHandler;

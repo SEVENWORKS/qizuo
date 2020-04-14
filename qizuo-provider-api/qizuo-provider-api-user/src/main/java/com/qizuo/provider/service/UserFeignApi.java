@@ -13,7 +13,7 @@ package com.qizuo.provider.service;
 
 
 import com.qizuo.base.model.result.BackResult;
-import com.qizuo.config.properties.otherProperties.feign.OAuth2FeignAutoConfiguration;
+import com.qizuo.config.properties.pluginProperties.feign.OAuth2FeignAutoConfiguration;
 import com.qizuo.provider.service.hystrix.UserApiHystrix;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
