@@ -25,6 +25,8 @@
         <module>qizuo-common-util</module>
         <!-- 常用配置 -->
         <module>qizuo-common-config</module>
+        <!-- 安全配置 -->
+        <module>qizuo-common-security-core</module>
     </modules>
 
     <!-- 常用配置项(版本) -->
@@ -48,6 +50,11 @@
         <dependency>
             <groupId>com.qizuo.common.util</groupId>
             <artifactId>qizuo-common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qizuo.common.security.core</groupId>
+            <artifactId>qizuo-common-security-core</artifactId>
             <version>1.0</version>
         </dependency>
         <!-- *****************common结束***************** -->

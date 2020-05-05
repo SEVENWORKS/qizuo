@@ -19,6 +19,7 @@
     <!-- 子项目 -->
     <modules>
         <module>qizuo-provider-user</module>
+        <module>qizuo-provider-user-admin</module>
     </modules>
 
     <properties>
