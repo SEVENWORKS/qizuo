@@ -7,7 +7,7 @@ package com.qizuo.config.properties.otherProperties;
 import lombok.Data;
 
 /**
- * 定时properties.
+ * 异步线程池任务配置.
  */
 @Data
 public class TaskPropertiesGY {

@@ -25,6 +25,7 @@ import java.util.List;
 @Configuration
 //@EnableWebMvc是使用Java 注解快捷配置Spring Webmvc的一个注解。在使用该注解后配置一个继承于WebMvcConfigurerAdapter的配置类即可配置好Spring Webmvc
 @EnableWebMvc
+//@Import注解把用到的bean导入到了当前容器中。
 @Import(SwaggerPropertiesGY.class)
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 

@@ -10,6 +10,7 @@ import com.qizuo.base.annotation.LogAnnotation;
 import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.base.model.base.LogDto;
 import com.qizuo.base.model.result.BackResult;
+import com.qizuo.base.utils.UserUtil;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
 import com.qizuo.util.http.RequestUtil;
@@ -103,7 +104,7 @@ public class LogAspect {
 			}
 
 			//当前登录对象
-			UserDto loginUser = RequestUtil.getLoginUser();
+			UserDto loginUser = UserUtil.qUser();
 			//获取客户端操作系统
 			final String os = userAgent.getOperatingSystem().getName();
 			//获取客户端浏览器

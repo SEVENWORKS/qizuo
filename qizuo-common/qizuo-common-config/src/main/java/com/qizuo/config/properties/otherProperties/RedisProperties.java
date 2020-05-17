@@ -7,7 +7,7 @@ package com.qizuo.config.properties.otherProperties;
 import lombok.Data;
 
 /**
- * redis properties.
+ * redis key 常用的存储.
  */
 @Data
 public class RedisProperties {

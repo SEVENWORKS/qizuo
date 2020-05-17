@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qizuo.common.util</groupId>
     <artifactId>qizuo-common-util</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>qizuo-common-util</name>
     <description>工具</description>
 
@@ -41,6 +41,20 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
+        </dependency>
+        <!-- jackson相关api -->
+        <!-- https://github.com/FasterXML/jackson-modules-java8 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-parameter-names</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
 
         <!-- apache 常用工具类 -->
@@ -104,6 +118,12 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.8</version>
         </dependency>
+        <!-- 获取浏览器信息 -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.20</version>
+        </dependency>
         <!-- **********工具结束********** -->
 
         <!-- logback -->
@@ -111,6 +131,13 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+        <!-- *****************common项目开始***************** -->
+        <dependency>
+            <groupId>com.qizuo.common.config</groupId>
+            <artifactId>qizuo-common-config</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- *****************common结束***************** -->
     </dependencies>
 
 

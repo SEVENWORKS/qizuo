@@ -19,13 +19,13 @@ public class SwaggerPropertiesGY {
 
 	private String version = "1.0";
 
-	private String license = "Apache License 2.0";
+	private String license = "tokenGet";
 
-	private String licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0";
+	private String licenseUrl = "http://www.baidu.com";
 
-	private String contactName = "无痕";
+	private String contactName = "qizuo";
 
-	private String contactUrl = "http://qizuo.net";
+	private String contactUrl = "http://www.baidu.com";
 
 	private String contactEmail = "a554657207@126.com";
 }

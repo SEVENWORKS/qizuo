@@ -79,6 +79,13 @@
             <artifactId>spring-cloud-netflix-turbine</artifactId>
         </dependency>
         <!-- *******************熔断监控结束******************* -->
+        <!-- *****************common项目开始***************** -->
+        <dependency>
+            <groupId>com.qizuo.common.base</groupId>
+            <artifactId>qizuo-common-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- *****************common结束***************** -->
     </dependencies>
 
     <build>

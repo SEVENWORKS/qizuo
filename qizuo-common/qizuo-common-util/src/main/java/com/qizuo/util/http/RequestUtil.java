@@ -5,12 +5,7 @@
 
 package com.qizuo.util.http;
 
-import com.qizuo.base.exception.BusinessException;
-import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
-import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
-import com.qizuo.util.Thread.ThreadLocalMap;
-import com.qizuo.util.common.ObjectIsEmptyUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -96,20 +91,6 @@ public class RequestUtil {
 	}
 
 	/**
-	 * Gets login user.
-	 *
-	 * @return the login user
-	 */
-	public static UserDto getLoginUser() {
-		UserDto loginAuthDto = (UserDto) ThreadLocalMap.get(GlobalConstant.Role.SUPER);
-		if (ObjectIsEmptyUtils.isEmpty(loginAuthDto)) {
-			throw new BusinessException(ResultCodeEnum.UAC10011039);
-		}
-		return loginAuthDto;
-
-	}
-
-	/**
 	 * Gets auth header.
 	 *
 	 * @param request the request
@@ -120,7 +101,7 @@ public class RequestUtil {
 
 		String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (org.apache.commons.lang.StringUtils.isEmpty(authHeader)) {
-			throw new BusinessException(ResultCodeEnum.UAC10011040);
+			throw new RuntimeException();
 		}
 		return authHeader;
 	}

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.qizuo.common.security.core</groupId>
 	<artifactId>qizuo-common-security-core</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>qizuo-common-security-core</name>
 	<description>安全核心</description>
 
@@ -23,15 +23,15 @@
 			<artifactId>spring-cloud-starter-oauth2</artifactId>
 		</dependency>
 		<!-- spring jdbc -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+		<!--</dependency>-->
 		<!-- mysql连接 -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>mysql</groupId>-->
+			<!--<artifactId>mysql-connector-java</artifactId>-->
+		<!--</dependency>-->
 		<!-- 随机验证码 -->
 		<dependency>
 			<groupId>com.github.penggle</groupId>
@@ -94,5 +94,10 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
+		<!-- apache 常用工具类 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
 	</dependencies>
 </project>

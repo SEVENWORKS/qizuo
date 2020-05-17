@@ -20,7 +20,7 @@
         <module>qizuo-config</module>
         <module>qizuo-zuul</module>
         <module>qizuo-admin</module>
-        <module>qizuo-upload</module>
+        <module>qizuo-file</module>
         <module>qizuo-view</module>
         <module>qizuo-generator</module>
         <module>qizuo-provider</module>
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <springfox.version>2.6.1</springfox.version>
+        <springfox.version>2.8.0</springfox.version>
         <commons-codec.version>1.10</commons-codec.version>
         <jjwt.version>0.7.0</jjwt.version>
         <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
@@ -52,7 +52,7 @@
         <elastic-job.version>2.1.5</elastic-job.version>
         <curator.version>2.10.0</curator.version>
         <mysql.version>5.1.39</mysql.version>
-        <guava.version>17.0</guava.version>
+        <guava.version>19.0</guava.version>
         <boot.admin.version>1.5.7</boot.admin.version>
         <httpclientutil.version>1.0</httpclientutil.version>
         <feign.form.spring.version>3.0.3</feign.form.spring.version>
@@ -74,10 +74,10 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
-        <!-- 消息队列kafka client&springcloudbus父 -->
+        <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-kafka</artifactId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
         <!-- redis client父 -->
         <dependency>
@@ -112,12 +112,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!-- common项目 -->
-        <dependency>
-            <groupId>com.qizuo.common</groupId>
-            <artifactId>qizuo-common</artifactId>
-            <version>1.0</version>
-        </dependency>
         <!-- swagger接口api -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -126,6 +120,12 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <!-- idea中实现热部署1 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

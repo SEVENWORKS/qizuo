@@ -6,7 +6,6 @@ package com.qizuo.config.properties.pluginProperties.feign;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.hystrix.exception.HystrixBadRequestException;
-import com.qizuo.base.exception.BusinessException;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import feign.Response;
 import feign.codec.ErrorDecoder;

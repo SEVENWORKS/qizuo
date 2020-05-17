@@ -11,3 +11,10 @@ spring:
 swagger:
   title: qizuo-admin #swagger title
   description: qizuo-admin #swagger 描述
+
+#springboot配置
+spring.boot:
+    #admin连接信息
+    admin:
+      username: qizuo
+      password: qizuo

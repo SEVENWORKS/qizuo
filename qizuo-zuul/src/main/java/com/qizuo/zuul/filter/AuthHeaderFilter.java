@@ -12,7 +12,6 @@ import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
 import com.qizuo.util.http.RequestUtil;
 import com.qizuo.base.exception.BusinessException;
-import com.qizuo.util.common.PublicUtil;
 import com.qizuo.zuul.CoreHeaderInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

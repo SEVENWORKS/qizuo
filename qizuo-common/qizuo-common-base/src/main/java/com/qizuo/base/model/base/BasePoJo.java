@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.common.IDUtil;
-import com.qizuo.util.common.UserUtil;
+import com.qizuo.base.utils.UserUtil;
 import com.qizuo.util.http.HttpUtil;
 import com.qizuo.util.spring.SpringUtils;
 import lombok.Data;

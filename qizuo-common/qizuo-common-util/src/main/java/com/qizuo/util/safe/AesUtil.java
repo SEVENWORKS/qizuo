@@ -5,7 +5,6 @@
 
 package com.qizuo.util.safe;
 
-import com.qizuo.base.exception.QizuoException;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
 import lombok.AccessLevel;
@@ -57,7 +56,7 @@ public class AesUtil {
 			return new BASE64Encoder().encode(bytes);
 		} catch (Exception ex) {
 			log.error("加密密码失败", ex);
-			throw new QizuoException("加密失败");
+			throw new RuntimeException();
 		}
 	}
 
@@ -94,7 +93,7 @@ public class AesUtil {
 			return new String(bytes, GlobalConstant.Encode.CHAR_SET);
 		} catch (Exception ex) {
 			log.error("解密密码失败", ex);
-			throw new QizuoException("解密失败");
+			throw new RuntimeException();
 		}
 	}
 

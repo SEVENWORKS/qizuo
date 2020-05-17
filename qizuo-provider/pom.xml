@@ -83,18 +83,19 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- idea中实现热部署1 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
         <!-- spring aop 增强使用 -->
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->
         <!--<artifactId>spring-boot-starter-aop</artifactId>-->
         <!--</dependency>-->
         <!-- *********工具结束********* -->
+        <!-- *****************common项目开始***************** -->
+        <dependency>
+            <groupId>com.qizuo.common.base</groupId>
+            <artifactId>qizuo-common-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- *****************common结束***************** -->
     </dependencies>
 
     <!-- maven多环境切换 -->

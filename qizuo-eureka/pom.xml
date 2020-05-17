@@ -29,6 +29,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
+        <!-- *****************common项目开始***************** -->
+        <dependency>
+            <groupId>com.qizuo.common.base</groupId>
+            <artifactId>qizuo-common-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- *****************common结束***************** -->
     </dependencies>
 
     <build>
