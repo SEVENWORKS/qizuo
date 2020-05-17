@@ -100,6 +100,12 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.2</version>
         </dependency>
+        <!-- commons-lang3utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>
             <groupId>com.qizuo.common.config</groupId>

@@ -49,7 +49,7 @@ public class OAuth2FeignAutoConfigurationY {
 		details.setAccessTokenUri(oauth2ClientProperties.getAccessTokenUrl());
 		details.setClientId(oauth2ClientProperties.getClientId());
 		details.setClientSecret(oauth2ClientProperties.getClientSecret());
-		details.setAuthenticationScheme(AuthenticationScheme.valueOf(oauth2ClientProperties.getClientAuthenticationScheme()));
+//		details.setAuthenticationScheme(AuthenticationScheme.valueOf(oauth2ClientProperties.getClientAuthenticationScheme()));
 		return details;
 	}
 

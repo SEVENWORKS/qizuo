@@ -30,7 +30,7 @@ spring:
   #devtools
   devtools:
       restart:
-        enabled: true  #设置开启热部署
+        enabled: false  #设置开启热部署
         additional-paths: qizuo-eureka/src/main/java #重启目录
         exclude: WEB-INF/**
 
@@ -47,7 +47,7 @@ server:
 #安全
 security:
   basic:
-    enabled: true #是否开启基本鉴权
+    enabled: false #是否开启基本鉴权
   user:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
