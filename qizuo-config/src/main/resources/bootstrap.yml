@@ -30,11 +30,10 @@ spring.cloud:
 #eureka注册中心配置
 eureka:
   instance:
-    #hostname: 127.0.0.1 #实列域名，方便后面服务通过其注册到注册中心
-    instance-id: ${spring.application.name}:${server.port} #注册服务信息
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
   client:
     serviceUrl:
-      defaultZone: http://${server.eureka_url}:${server.eureka_port}/eureka #注册中心地址
+      defaultZone: http://${security.user.name}:${security.user.password}@${server.eureka_url}:${server.eureka_port}/eureka #注册中心地址 前面是springserity的账号密码
 
 #config配置加密
 encrypt:

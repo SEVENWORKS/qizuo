@@ -8,6 +8,7 @@ spring.boot:
 
 #springcloud配置
 spring.cloud:
+  #关掉config
   config:
     enabled: false
     #启动时如果多张网卡，可能造成ip地址不准确
