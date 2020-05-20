@@ -7,7 +7,7 @@ package com.qizuo.zuul.fallback;
 
 import com.netflix.hystrix.exception.HystrixTimeoutException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,10 +21,10 @@ import java.io.InputStream;
  *出现异常的时候，zuul进行fallback
  */
 //普通pojo放到spring容器中
-@Component
+//@Component
 //不用每次单独定义一个Log，利用这个注解加上lombok插件，可以直接在下面类中使用log进行日志打印
 @Slf4j
-public class UacFallbackProvider implements FallbackProvider {
+public class UacFallbackProvider implements ZuulFallbackProvider {
 
 	//微服务配了路由的话，就用配置的名称
 	//return "customers";
@@ -40,7 +40,6 @@ public class UacFallbackProvider implements FallbackProvider {
 	 * @param cause
 	 * @return
 	 */
-	@Override
 	public ClientHttpResponse fallbackResponse(final Throwable cause) {
 		if (cause instanceof HystrixTimeoutException) {
 			return response(HttpStatus.GATEWAY_TIMEOUT);

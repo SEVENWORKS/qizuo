@@ -11,6 +11,15 @@ spring.cloud:
     #config配置
     config:
       server:
+        #本地文件配置
+        #映射说明如下
+        #/{application}/{profile}[/{label}]
+        #/{application}-{profile}.yml
+        #/{label}/{application}-{profile}.yml
+        #/{application}-{profile}.properties
+        #/{label}/{application}-{profile}.properties
+        native.search-locations: C:/IdeaProjets/demo_configs/
+        #线上配置
         git:
           uri: https://github.com/SEVENWORKS/qizuo.git #仓库地址
           username: a554657207@126.com #仓库用户名
@@ -18,14 +27,6 @@ spring.cloud:
           search-paths: /qizuo/qizuo-config/src/main/resources/config/ #git仓库下相对地址
           default-label: ${spring.profiles.active} #仓库默认分支
           #basedir: /data/config #本地仓库配置
-    #启动时如果多张网卡，可能造成ip地址不准确
-    #inetutils:
-      #ignoredInterfaces: #忽略某些网卡配置
-        #- docker0
-        #- veth.*
-        #- VM.*
-      #preferredNetworks: #指定启动ip
-        #- 192.168
 
 #eureka注册中心配置
 eureka:
@@ -33,7 +34,7 @@ eureka:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
   client:
     serviceUrl:
-      defaultZone: http://${security.user.name}:${security.user.password}@${server.eureka_url}:${server.eureka_port}/eureka #注册中心地址 前面是springserity的账号密码
+      defaultZone: http://qizuo:qizuo@localhost:9100/eureka #注册中心地址 前面是springserity的账号密码
 
 #config配置加密
 encrypt:

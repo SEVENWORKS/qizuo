@@ -1,18 +1,61 @@
-#基本配置
-server:
-  port: 7979 #端口
+#稍后加载的项目配置文件
+
+#spring配置
 spring:
+  #环境配置文件(dev/prd/test native代表本地)
   profiles:
-    active: prd #环境配置文件(dev/prd/test)
+    active: prd
+  #当前服务名
   application:
-    name: qizuo-zuul #当前服务名
-  boot:
-      #admin连接信息
-      admin:
-        username: qizuo
-        password: qizuo
+    name: qizuo-zuul
+  #redis
+  redis:
+      database: 0 # Redis数据库索引（默认为0）
+      host: 127.0.0.1 # Redis服务器地址
+      password: null # Redis服务器连接密码（默认为空）
+      port: 6379 # Redis服务器连接端口
+      timeout: 5000 #超时时间
+      pool:
+        max-active: 8 # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-idle: 500 # 连接池中的最大空闲连接 默认 8
+        max-wait: 1 # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        min-idle: 0 # 连接池中的最小空闲连接 默认 0
+  #rabbitmq
+  rabbitmq:
+      host: 127.0.0.1 # 主机地址
+      port: 5672 # 端口号
+      username: guest # 用户名
+      password: guest # 密码
+      connection-timeout: 60 # 连接超时时间
+  #devtools
+  devtools:
+      restart:
+        enabled: false  #设置开启热部署
+        additional-paths: qizuo-zuul/src/main/java #重启目录
+        exclude: WEB-INF/**
+
+#springboot配置
+spring.boot:
+
+#springboot配置
+spring.cloud:
+
+#端口
+server:
+  port: 9400
+
+#安全
+security:
+  basic:
+    enabled: false #是否开启基本鉴权
+  user:
+    name: qizuo #鉴权用户名
+    password: qizuo #鉴权密码
 
 #swagger文档配置
 swagger:
   title: qizuo-zuul #swagger title
   description: qizuo-zuul #swagger 描述
+
+#是否打开SqlLogInterceptor
+SqlLogInterceptor_enableSqlLogInterceptor: true

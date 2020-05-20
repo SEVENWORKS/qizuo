@@ -11,14 +11,6 @@ spring.cloud:
   #关掉config
   config:
     enabled: false
-    #启动时如果多张网卡，可能造成ip地址不准确
-    #inetutils:
-      #ignoredInterfaces: #忽略某些网卡配置
-        #- docker0
-        #- veth.*
-        #- VM.*
-      #preferredNetworks: #指定启动ip
-        #- 192.168
 
 #eureka注册中心配置
 eureka:

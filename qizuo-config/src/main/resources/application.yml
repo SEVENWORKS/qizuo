@@ -2,7 +2,7 @@
 
 #spring配置
 spring:
-  #环境配置文件(dev/prd/test)
+  #环境配置文件(dev/prd/test native代表本地)
   profiles:
     active: prd
   #当前服务名
@@ -43,8 +43,6 @@ spring.cloud:
 #端口
 server:
   port: 9200
-  eureka_port: 9100
-  eureka_url: 127.0.0.1
 
 #安全
 security:
