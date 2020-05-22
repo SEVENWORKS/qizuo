@@ -10,7 +10,7 @@ spring.boot:
 spring.cloud:
     #config配置
     config:
-      fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
+      #fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
       #uri: http://localhost:9200/ #url方式发现config服务
       discovery: #服务id方式发现
         service-id: qizuo-config

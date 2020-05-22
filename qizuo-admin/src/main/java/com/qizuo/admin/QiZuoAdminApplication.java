@@ -18,7 +18,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 //eureka client启动
 @EnableDiscoveryClient
 //admin server启动
-@EnableAdminServer
+//@EnableAdminServer
 //turbine启动(断路器多点监控)
 @EnableTurbine
 //断路器可视化工具启动

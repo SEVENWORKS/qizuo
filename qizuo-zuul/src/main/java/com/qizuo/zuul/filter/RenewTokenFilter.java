@@ -27,9 +27,9 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class RenewTokenFilter extends ZuulFilter {
     //@Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，而@Resource默认按 byName自动注入罢了
-    @Resource
+//    @Resource
     //token管理
-    private JwtTokenStore jwtTokenStore;
+//    private JwtTokenStore jwtTokenStore;
     //token过期时间
     private static final int EXPIRES_IN = 60 * 20;
 
@@ -91,7 +91,7 @@ public class RenewTokenFilter extends ZuulFilter {
         if (StringUtils.isEmpty(token)) {
             return;
         }
-        OAuth2AccessToken oAuth2AccessToken = jwtTokenStore.readAccessToken(token);
+        OAuth2AccessToken oAuth2AccessToken = null;//jwtTokenStore.readAccessToken(token);
 
         int expiresIn = oAuth2AccessToken.getExpiresIn();
         //判断时间是否过期
