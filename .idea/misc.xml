@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-admin" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-common" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-config" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-eureka" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-file" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-generator/qizuo-generator-base" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-provider-api" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-provider/qizuo-provider-user" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-provider/qizuo-provider-user-admin" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-view" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-zipkin" />
+    <file type="web" url="file://$PROJECT_DIR$/qizuo-zuul" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../mall-master/mall-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-common/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-mbg/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-portal/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-search/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/mall-security/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall-master/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>

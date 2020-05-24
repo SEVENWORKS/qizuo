@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../mall-master" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-mbg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-portal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../mall-master/mall-security" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-common/qizuo-common-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-common/qizuo-common-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-common/qizuo-common-security-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-common/qizuo-common-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-generator/qizuo-generator-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider-api/qizuo-provider-api-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider-api/qizuo-provider-api-user-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider/qizuo-provider-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-provider/qizuo-provider-user-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-view" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qizuo-zuul" charset="UTF-8" />
+  </component>
+</project>
