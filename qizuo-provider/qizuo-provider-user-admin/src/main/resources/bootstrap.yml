@@ -1,20 +1,29 @@
-spring:
-  profiles:
-    active: dev
-  cloud:
-    config:
-      fail-fast: true
-      discovery:
-        service-id: paascloud-discovery
-        enabled: true
-      label: ${spring.profiles.active}
-      profile: ${spring.profiles.active}
-      username: admin
-      password: admin
+#最新加载入口配置文件
 
+#spring配置
+spring:
+
+#springboot配置
+spring.boot:
+
+#springcloud配置
+spring.cloud:
+    #config配置
+    config:
+      #fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
+      #uri: http://localhost:9200/ #url方式发现config服务
+      discovery: #服务id方式发现
+        service-id: qizuo-config
+        enabled: true #开启配置信息发现
+      label: common #远程仓库分支,对应config文件名称
+      profile: ${spring.profiles.active} #哪个环境的配置文件，对应config文件的后缀
+      username: qizuo #账号密码
+      password: qizuo #账号密码
+
+#eureka注册中心配置
 eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
   client:
     serviceUrl:
-      defaultZone: http://root:root@paascloud-eureka:8761/eureka/
-  instance:
-    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+      defaultZone: http://qizuo:qizuo@localhost:9100/eureka #注册中心地址 前面是springserity的账号密码

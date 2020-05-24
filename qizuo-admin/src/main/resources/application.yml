@@ -40,6 +40,12 @@ spring.boot:
   admin:
     username: qizuo
     password: qizuo
+    #turbine监控
+    #routes.endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+    #turbine.clusters: default
+    #turbine服务id,turbine服务可以作为单独的服务
+    #Turbine服务器的ServiceId或URL(不包含/turbine.stream)。 必须可以从管理服务器访问。
+    #turbine.location: hystrix-dashboard-turbine
 
 #springboot配置
 spring.cloud:

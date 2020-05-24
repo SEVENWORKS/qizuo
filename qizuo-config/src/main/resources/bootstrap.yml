@@ -25,7 +25,7 @@ spring.cloud:
         uri: https://github.com/SEVENWORKS/qizuo.git #仓库地址
         username: a554657207@126.com #仓库用户名，公有仓库不必配置，所以一定要准确
         password: 9a,1a,5a,1a,4a, #仓库密码，公有仓库不必配置，所以一定要准确
-        search-paths: '/{application}' #git仓库下相对地址(或者说是缓存到本地的文件夹路径)
+        search-paths: /qizuo-config/src/main/resources/config #git仓库下相对地址(或者说是缓存到本地的文件夹路径,即相对于baseDir目录的配置，第一个斜杠就代表baseDir)
         default-label: master #仓库默认分支
         basedir: E:/workspace/springConfig #远程仓库缓存到本地配置(即最终读取配置是从这个文件夹中读取，也就是上述Uri中仓库整个会被缓存到本地，目录结构和git上一样)
 
