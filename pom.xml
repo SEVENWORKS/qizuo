@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.5.11.RELEASE</version>
     </parent>
 
     <!-- 子模块 -->
@@ -48,7 +48,7 @@
         <mybatis-starter-version>1.2.0</mybatis-starter-version>
         <druid.version>1.0.29</druid.version>
         <mapper.version>3.4.0</mapper.version>
-        <springframework.version>4.3.8.RELEASE</springframework.version>
+        <springframework.version>4.3.15.RELEASE</springframework.version>
         <elastic-job.version>2.1.5</elastic-job.version>
         <curator.version>2.10.0</curator.version>
         <mysql.version>5.1.39</mysql.version>
@@ -73,7 +73,6 @@
            <groupId>org.springframework.cloud</groupId>
            <artifactId>spring-cloud-starter-config</artifactId>
        </dependency>
-
        <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -84,7 +83,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
         <!-- 权限认证父 类似于spring-boot-starter-security -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -105,7 +103,6 @@
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
         </dependency>
-
         <!-- 简化项目 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -139,11 +136,11 @@
                 <version>${springframework.version}</version>
             </dependency>
             <!-- spring集成web环境 -->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-web</artifactId>-->
-                <!--<version>${springframework.version}</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
             <!-- spring集成mybatis -->
             <dependency>
                 <groupId>com.googlecode.json-simple</groupId>
@@ -162,20 +159,19 @@
                 <version>${spring.version}</version>
             </dependency>
             <!-- ***************spring原始集成jar包结束*************** -->
-
             <!-- ***************简化/优化项目开始*************** -->
             <!-- 以下两个配置可以解决不同版本springcloud jar包冲突 -->
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Brussels-SR6</version>
+                <version>Brussels-SR8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.RELEASE</version>
+                <version>Edgware.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -197,7 +193,6 @@
                 <version>1.16.14</version>
             </dependency>
             <!-- ***************简化/优化项目结束*************** -->
-
             <!-- ***************dao层相关jar包开始*************** -->
             <!-- 集成mybatis -->
             <dependency>
@@ -252,7 +247,6 @@
                 <version>3.5.3</version>
             </dependency>
             <!-- ***************dao层相关jar包结束*************** -->
-
             <!-- ***************工具开始*************** -->
             <!-- google 常用java utils -->
             <dependency>
@@ -326,7 +320,6 @@
                 <version>${feign.form.spring.version}</version>
             </dependency>
             <!-- ***************工具结束*************** -->
-
             <!-- ***************json开始*************** -->
             <!-- jackson相关api -->
             <dependency>
@@ -367,7 +360,6 @@
                 <version>${modelmapper.version}</version>
             </dependency>
             <!-- ***************json结束*************** -->
-
             <!-- ***************spring-boot-admin开始*************** -->
             <dependency>
                 <groupId>de.codecentric</groupId>
@@ -395,9 +387,9 @@
                 <version>${boot.admin.version}</version>
             </dependency>
             <!--<dependency>-->
-            <!--<groupId>de.codecentric</groupId>-->
-            <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
-            <!--<version>${boot.admin.version}</version>-->
+                <!--<groupId>de.codecentric</groupId>-->
+                <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
+                <!--<version>1.5.7</version>-->
             <!--</dependency>-->
             <dependency>
                 <groupId>de.codecentric</groupId>
@@ -405,7 +397,6 @@
                 <version>${boot.admin.version}</version>
             </dependency>
             <!-- ***************spring-boot-admin结束*************** -->
-
             <!-- ***************分布式定时开始*************** -->
             <dependency>
                 <groupId>com.dangdang</groupId>
@@ -434,7 +425,6 @@
                 <version>${curator.version}</version>
             </dependency>
             <!-- ***************分布式定时结束*************** -->
-
             <!-- ***************分布式日志开始*************** -->
             <dependency>
                 <groupId>net.logstash.logback</groupId>

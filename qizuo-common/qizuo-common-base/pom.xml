@@ -37,7 +37,6 @@
             <artifactId>jjwt</artifactId>
         </dependency>
         <!-- **********安全结束********** -->
-
         <!-- **********工具开始********** -->
         <!-- google 常用java utils -->
         <dependency>
@@ -75,15 +74,19 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- commons-lang3utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
         <!-- **********工具结束********** -->
-
         <!-- 熔断 -->
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
             <version>1.5.10</version>
         </dependency>
-
         <!-- mybatis mapper -->
         <dependency>
             <groupId>tk.mybatis</groupId>
@@ -99,12 +102,6 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.2</version>
-        </dependency>
-        <!-- commons-lang3utils -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.5</version>
         </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>

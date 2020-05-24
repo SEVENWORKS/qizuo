@@ -2,7 +2,7 @@
 
 #spring配置
 spring:
-  #环境配置文件(dev/prd/test native代表本地)
+  #环境配置文件(dev/prd/test native代表本地,本地必须要这个)
   profiles:
     active: prd
   #当前服务名

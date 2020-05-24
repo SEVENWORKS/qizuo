@@ -11,22 +11,23 @@ spring.cloud:
     #config配置
     config:
       server:
-        #本地文件配置
         #映射说明如下
         #/{application}/{profile}[/{label}]
         #/{application}-{profile}.yml
         #/{label}/{application}-{profile}.yml
         #/{application}-{profile}.properties
         #/{label}/{application}-{profile}.properties
-        native.search-locations: C:/IdeaProjets/demo_configs/
-        #线上配置
-        git:
-          uri: https://github.com/SEVENWORKS/qizuo.git #仓库地址
-          username: a554657207@126.com #仓库用户名
-          password: 9a,1a,5a,1a,4a, #仓库密码
-          search-paths: /qizuo/qizuo-config/src/main/resources/config/ #git仓库下相对地址
-          default-label: ${spring.profiles.active} #仓库默认分支
-          #basedir: /data/config #本地仓库配置
+        #本地文件配置
+#       native:
+#        search-locations: E:/workspace/ide/qizuo/qizuo-config/src/main/resources/config #这个地方的斜杠只能是上斜杠，不能下斜杠，下斜杠解析不出来
+       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到
+       git:
+        uri: https://github.com/SEVENWORKS/qizuo.git #仓库地址
+        username: a554657207@126.com #仓库用户名，公有仓库不必配置，所以一定要准确
+        password: 9a,1a,5a,1a,4a, #仓库密码，公有仓库不必配置，所以一定要准确
+        search-paths: '/{application}' #git仓库下相对地址(或者说是缓存到本地的文件夹路径)
+        default-label: master #仓库默认分支
+        basedir: E:/workspace/springConfig #远程仓库缓存到本地配置(即最终读取配置是从这个文件夹中读取，也就是上述Uri中仓库整个会被缓存到本地，目录结构和git上一样)
 
 #eureka注册中心配置
 eureka:

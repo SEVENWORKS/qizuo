@@ -25,10 +25,10 @@
     <!-- 依赖引入 -->
     <dependencies>
         <!-- admin server -->
-        <!--<dependency>-->
-            <!--<groupId>de.codecentric</groupId>-->
-            <!--<artifactId>spring-boot-admin-starter-server</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui</artifactId>
@@ -52,7 +52,6 @@
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast</artifactId>
         </dependency>
-
         <!-- *******************熔断监控开始******************* -->
         <!-- 熔断 -->
         <dependency>
