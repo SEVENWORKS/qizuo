@@ -39,9 +39,9 @@ spring:
       # 数据库访问配置, 使用druid数据源
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/YOUR_DB_NAME?useUnicode=true&characterEncoding=utf-8
+      url: jdbc:mysql://localhost:3306/qizuo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
       username: root
-      password: root
+      password: accp
       # 连接池配置
       initial-size: 5
       min-idle: 529
@@ -102,7 +102,7 @@ spring.cloud:
 
 #端口
 server:
-  port: 9300
+  port: 9500
 
 #安全
 security:

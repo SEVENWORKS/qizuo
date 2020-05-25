@@ -1,24 +1,16 @@
 /*
- * Copyright (c) 2018. paascloud.net All Rights Reserved.
- * 项目名称：paascloud快速搭建企业级分布式微服务平台
- * 类名称：PaginationPlugin.java
- * 创建人：刘兆明
- * 联系方式：paascloud.net@gmail.com
- * 开源地址: https://github.com/paascloud
- * 博客地址: http://blog.paascloud.net
- * 项目官网: http://paascloud.net
+ * Copyright (c) 2020.
+ * author：qizuo
  */
 
-package com.qizuo.security.core.config;
+package com.qizuo.provider.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * The class Security config.
- *
- * @author paascloud.net @gmail.com
+ * security客户端普通配置.
  */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {

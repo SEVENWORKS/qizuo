@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.security.core.resourceServer;
+package com.qizuo.provider.security.resourceServer;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

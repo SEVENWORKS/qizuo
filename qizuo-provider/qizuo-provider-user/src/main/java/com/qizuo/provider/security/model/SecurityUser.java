@@ -3,18 +3,20 @@
  * author：qizuo
  */
 
-package com.qizuo.security.core.model;
+package com.qizuo.provider.security.model;
 
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
 /**
- * 用户安全信息体.
+ * 用户安全信息体 配合不同的service.
  */
+@Configuration
 @Data
 public class SecurityUser implements UserDetails {
 	private static final long serialVersionUID = 4872628781561412463L;
@@ -39,6 +41,10 @@ public class SecurityUser implements UserDetails {
 	private Long groupId;
 
 	private String groupName;
+
+	public SecurityUser(){
+
+	}
 
 	public SecurityUser(Long userId, String loginName, String loginPwd, String nickName, Long groupId, String groupName) {
 		this.setUserId(userId);
