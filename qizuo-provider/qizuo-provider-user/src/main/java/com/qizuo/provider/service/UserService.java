@@ -1,13 +1,26 @@
-/*
- * Copyright (c) 2020.
- * author：qizuo
- */
-
 package com.qizuo.provider.service;
 
+import com.qizuo.base.model.service.BaseService;
+import com.qizuo.provider.model.dao.UserDao;
+import com.qizuo.provider.model.po.UserPoJo;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
- * user service.
+ * @Author: fangl
+ * @Description: 用户
+ * @Date: 12:13 2019/1/1
  */
-public interface UserService {
+@Service
+@Transactional(rollbackFor = Exception.class)
+public class UserService extends BaseService<UserDao, UserPoJo> {
+    /**
+     * @author: fangl
+     * @description: 查询单个用户所有信息
+     * @date: 10:29 2019/1/14
+     */
+    public UserPoJo qUserAllMsg(UserPoJo userPoJo) {
+        return dao.qUserAllMsg(userPoJo);
+    }
 
 }

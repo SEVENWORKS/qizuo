@@ -14,11 +14,10 @@ import java.util.List;
  * @Description: 基本dao层
  * @Date: 15:17 2018/10/30
  */
-public interface BaseDao<P extends BasePoJo> extends MyMapper<P> {
+public interface BaseDao<P extends BasePoJo>{
     /**
      * 增加
      */
-    @Override
     int insert(P p);
 
     /**
@@ -29,7 +28,6 @@ public interface BaseDao<P extends BasePoJo> extends MyMapper<P> {
     /**
      * 删除
      */
-    @Override
     int delete(P p);
 
     /**

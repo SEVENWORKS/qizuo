@@ -58,4 +58,6 @@ swagger:
   description: qizuo-zuul #swagger 描述
 
 #是否打开SqlLogInterceptor
-SqlLogInterceptor_enableSqlLogInterceptor: true
+qizuo.interceptor.sqllog: true
+#是否打开token
+qizuo.interceptor.token: true

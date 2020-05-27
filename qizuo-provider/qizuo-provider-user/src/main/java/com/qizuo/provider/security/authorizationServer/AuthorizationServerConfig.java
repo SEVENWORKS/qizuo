@@ -8,7 +8,9 @@ import com.qizuo.provider.security.service.SecurityClientDetailsSevice;
 import com.qizuo.provider.security.model.SecurityUser;
 import com.qizuo.provider.security.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -16,6 +18,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 
 /**
@@ -46,6 +49,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private SecurityClientDetailsSevice securityClientDetailsSevice;
 
+	/**
+	 * tokenStore
+	 */
+	@Bean(name = "tokenStore")
+	public TokenStore tokenStore(JedisConnectionFactory jedisConnectionFactory) {
+		RedisTokenStore redis = new RedisTokenStore(jedisConnectionFactory);
+		return redis;
+	}
 
 	/**
 	 * Configure.

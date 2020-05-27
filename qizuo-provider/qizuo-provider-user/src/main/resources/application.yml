@@ -118,4 +118,8 @@ swagger:
   description: qizuo-provider-user #swagger 描述
 
 #是否打开SqlLogInterceptor
-SqlLogInterceptor_enableSqlLogInterceptor: true
+qizuo.interceptor.sqllog: true
+#是否打开token
+qizuo.interceptor.token: true
+#当前项目访问前缀
+url_module: user

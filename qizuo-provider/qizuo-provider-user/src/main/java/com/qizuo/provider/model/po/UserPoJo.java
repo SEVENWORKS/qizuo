@@ -1,12 +1,7 @@
-/*
- * Copyright (c) 2020.
- * author：qizuo
- */
 package com.qizuo.provider.model.po;
 
+
 import com.qizuo.base.model.base.BasePoJo;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -15,8 +10,6 @@ import java.util.List;
  * @Description: 用户
  * @Date: 14:20 2018/10/29
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
 public class UserPoJo extends BasePoJo {
     /**
      * 登录名
@@ -71,14 +64,7 @@ public class UserPoJo extends BasePoJo {
      * KEY(第三方)
      */
     private String outMutualKey;
-    /**
-     * 组织Id
-     */
-    private String groupId;
-    /**
-     * 组织名称
-     */
-    private String groupName;
+
     /** 其它 */
     /**
      * 权限集合
@@ -88,4 +74,132 @@ public class UserPoJo extends BasePoJo {
      * 菜单集合
      */
     private List<MenuPoJo> menuPoJos;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getRoleIds() {
+        return roleIds;
+    }
+
+    public void setRoleIds(String roleIds) {
+        this.roleIds = roleIds;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSexCd() {
+        return sexCd;
+    }
+
+    public void setSexCd(String sexCd) {
+        this.sexCd = sexCd;
+    }
+
+    public String getSexNm() {
+        return sexNm;
+    }
+
+    public void setSexNm(String sexNm) {
+        this.sexNm = sexNm;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getLoginDate() {
+        return loginDate;
+    }
+
+    public void setLoginDate(String loginDate) {
+        this.loginDate = loginDate;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public List<RolePoJo> getRolePoJos() {
+        return rolePoJos;
+    }
+
+    public void setRolePoJos(List<RolePoJo> rolePoJos) {
+        this.rolePoJos = rolePoJos;
+    }
+
+    public List<MenuPoJo> getMenuPoJos() {
+        return menuPoJos;
+    }
+
+    public void setMenuPoJos(List<MenuPoJo> menuPoJos) {
+        this.menuPoJos = menuPoJos;
+    }
+
+    public String getOutMutualKey() {
+        return outMutualKey;
+    }
+
+    public void setOutMutualKey(String outMutualKey) {
+        this.outMutualKey = outMutualKey;
+    }
 }

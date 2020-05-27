@@ -37,27 +37,12 @@
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui-login</artifactId>
         </dependency>
-        <!-- 邮箱报警 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
         <!-- jolokia jmx监控 -->
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
-        <!-- hazelcast缓存 -->
-        <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast</artifactId>
-        </dependency>
-        <!-- *******************熔断监控开始******************* -->
-        <!-- 熔断 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
+        <!-- *******************熔断监控******************* -->
         <!-- 熔断可视化工具 监控调用失败情况 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -77,7 +62,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-netflix-turbine</artifactId>
         </dependency>
-        <!-- *******************熔断监控结束******************* -->
         <!-- *****************common项目开始***************** -->
         <dependency>
             <groupId>com.qizuo.common.base</groupId>

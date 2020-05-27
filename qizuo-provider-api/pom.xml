@@ -23,22 +23,6 @@
   </modules>
 
   <dependencies>
-    <!-- mybatis分页 -->
-    <dependency>
-      <groupId>com.github.pagehelper</groupId>
-      <artifactId>pagehelper</artifactId>
-      <version>5.0.3</version>
-    </dependency>
-    <!-- web的场景，自动帮我们引入了web模块开发需要的相关jar包(tomcat/springmvc等) -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <!-- 熔断/限流/降级 -->
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-hystrix</artifactId>
-    </dependency>
     <!-- *****************common项目开始***************** -->
     <dependency>
       <groupId>com.qizuo.common.base</groupId>
