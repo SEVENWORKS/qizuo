@@ -72,27 +72,6 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.2</version>
         </dependency>
-        <!-- 集成mybatis -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <!-- mybatis mapper -->
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring-boot-starter</artifactId>
-        </dependency>
-        <!-- page 分页(tk.mybatis也可以) -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-        </dependency>
-        <!-- mybatis分页 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>5.0.3</version>
-        </dependency>
         <!-- 集成freemarker -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

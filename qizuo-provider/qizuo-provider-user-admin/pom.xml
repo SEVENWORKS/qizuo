@@ -21,18 +21,6 @@
   </properties>
 
   <dependencies>
-    <!-- mysql连接 -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <!-- 集成druid -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid-spring-boot-starter</artifactId>
-      <version>1.1.0</version>
-    </dependency>
     <!-- rpc调用 -->
     <dependency>
       <groupId>com.qizuo.provider.api.user.admin</groupId>

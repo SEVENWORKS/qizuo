@@ -3,6 +3,8 @@ package com.qizuo.provider.service;
 import com.qizuo.base.model.service.BaseService;
 import com.qizuo.provider.model.dao.MenuDao;
 import com.qizuo.provider.model.po.MenuPoJo;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +17,8 @@ import java.util.List;
  */
 @Service
 @Transactional(rollbackFor = Exception.class)
+//表明此类上所有方法上的事务都是CGLib方式代理的 原因：springboot的事务默认是使用jdk的动态代理，即基于接口，也就是引用service上不能直接依赖实现类，如果非要这样使用，就要加上这一句
+//@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MenuService extends BaseService<MenuDao, MenuPoJo> {
 
     /**

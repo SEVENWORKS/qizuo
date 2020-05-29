@@ -41,7 +41,9 @@ public class DictService extends BaseService<DictDao, DictPoJo> {
         }
         if (null != dictPoJo.getDictItemPoJos()) {
             //主键生成
-            IDUtil.nextId(dictPoJo.getDictItemPoJos());
+            dictPoJo.getDictItemPoJos().forEach(e->{
+                e.setBaseId(IDUtil.nextId());
+            });
             //批量插入从表
             dictItemService.insert(dictPoJo);
         }
