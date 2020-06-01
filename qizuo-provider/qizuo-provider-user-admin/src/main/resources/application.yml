@@ -46,7 +46,7 @@ spring.cloud:
 
 #端口
 server:
-  port: 9300
+  port: 9901
 
 #安全
 security:

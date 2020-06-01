@@ -115,11 +115,6 @@
             <artifactId>qizuo-common-util</artifactId>
             <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.qizuo.common.security.core</groupId>
-            <artifactId>qizuo-common-security-core</artifactId>
-            <version>1.0</version>
-        </dependency>
         <!-- *****************common结束***************** -->
     </dependencies>
 </project>

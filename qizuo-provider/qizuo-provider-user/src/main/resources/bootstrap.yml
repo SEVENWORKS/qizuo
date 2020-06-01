@@ -15,8 +15,9 @@ spring.cloud:
       discovery: #服务id方式发现
         service-id: qizuo-config
         enabled: true #开启配置信息发现
-      label: common #远程仓库分支,对应config文件名称
-      profile: ${spring.profiles.active} #哪个环境的配置文件，对应config文件的后缀
+      name: common  #文件前缀名称
+      profile: dev #哪个环境的配置文件，对应config文件的后缀
+      label: master #远程仓库分支,对应config文件名称
       username: qizuo #账号密码
       password: qizuo #账号密码
 

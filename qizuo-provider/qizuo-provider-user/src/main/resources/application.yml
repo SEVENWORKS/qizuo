@@ -105,12 +105,12 @@ spring.cloud:
 
 #端口
 server:
-  port: 9500
+  port: 9900
 
 #安全
 security:
   basic:
-    enabled: true #是否开启基本鉴权
+    enabled: false #是否开启基本鉴权
   user:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码

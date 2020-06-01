@@ -3,11 +3,11 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.config.enums;
+package com.qizuo.provider.config;
 
 
 /**
  * 基本配置枚举
  */
-public enum BaseEnum {
+public enum BaseConstant {
 }

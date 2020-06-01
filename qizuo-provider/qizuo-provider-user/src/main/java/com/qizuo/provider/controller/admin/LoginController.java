@@ -15,6 +15,7 @@ import com.qizuo.base.model.service.BaseController;
 import com.qizuo.base.utils.BackResultUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

@@ -22,7 +22,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 
 /**
- * 授权服务器的配置核心
+ * 授权服务器的配置核心，统筹整个服务配置，包括token存储，认证管理
  */
 @Configuration
 @EnableAuthorizationServer

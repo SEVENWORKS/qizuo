@@ -12,6 +12,7 @@ import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
@@ -30,6 +31,9 @@ import java.lang.reflect.Method;
  */
 @Slf4j
 public class TokenInterceptor implements HandlerInterceptor {
+	@Value("${token_rules}")
+	private String tokenRules;
+
 	//redis操作对象
 	@Resource
 	private RedisTemplate<String, Object> redisTemplate;

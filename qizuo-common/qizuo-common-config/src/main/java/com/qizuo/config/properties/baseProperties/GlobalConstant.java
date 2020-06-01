@@ -152,4 +152,12 @@ public class GlobalConstant {
 		public final static String ENCODE = "GBK";
 		public static final String CHAR_SET = "UTF-8";
 	}
+
+	/**
+	 * 常用redis keys
+	 */
+	public static final class RedisCode {
+		private RedisCode() {
+		}
+	}
 }

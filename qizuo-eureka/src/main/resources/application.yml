@@ -61,3 +61,5 @@ swagger:
 qizuo.interceptor.sqllog: true
 #是否打开token
 qizuo.interceptor.token: true
+#token_rules
+token_rules: false
