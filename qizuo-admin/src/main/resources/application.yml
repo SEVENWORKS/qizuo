@@ -33,6 +33,10 @@ spring:
         enabled: false  #设置开启热部署
         additional-paths: qizuo-admin/src/main/java #重启目录
         exclude: WEB-INF/**
+  #是否开启favicon图标访问
+  mvc:
+    favicon:
+      enabled: false
 
 #springboot配置
 spring.boot:

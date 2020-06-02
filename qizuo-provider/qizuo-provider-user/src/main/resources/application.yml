@@ -1,3 +1,4 @@
+#请不要使用tab键，使用空格键
 #稍后加载的项目配置文件
 
 #spring配置
@@ -92,6 +93,10 @@ spring:
     filter:
       stat:
         log-slow-sql: true
+  #是否开启favicon图标访问
+  mvc:
+    favicon:
+      enabled: false
 
 #springboot配置
 spring.boot:

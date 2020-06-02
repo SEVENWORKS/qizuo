@@ -89,7 +89,7 @@ public class GlobalConstant {
 		private Url$Path() {
 		}
 		//不走token权限验证的url
-		public static final String TokenInterceptor_AUTH_PATH = "/swagger-ui.html";
+		public static final String TokenInterceptor_AUTH_PATH = "/error"; //swagger-ui.html
 		//配置前缀
 		public static final String ROOT_PREFIX = "qizuo";
 	}

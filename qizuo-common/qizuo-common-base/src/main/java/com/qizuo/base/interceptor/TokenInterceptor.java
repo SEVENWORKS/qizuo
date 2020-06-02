@@ -75,7 +75,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 		//获取请求uri
 		String uri = request.getRequestURI();
 		log.info("<== preHandle - 权限拦截器.  url={}", uri);
-		//当路径包含以上是不会走权限验证的
+		//当路径包含以上是不会走权限验证的,这地方error的直接放行给error处理
 		if (uri.contains(GlobalConstant.Url$Path.TokenInterceptor_AUTH_PATH)) {
 			log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
 			return true;
