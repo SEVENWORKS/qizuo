@@ -24,7 +24,6 @@
         <module name="qizuo-common-base" />
         <module name="qizuo-common-config" />
         <module name="qizuo-common-core" />
-        <module name="qizuo-common-security-core" />
         <module name="qizuo-common-util" />
         <module name="qizuo-config" />
         <module name="qizuo-eureka" />

@@ -5,29 +5,68 @@
 
 package com.qizuo.provider.security.resourceServer;
 
+import com.qizuo.provider.security.resourceServer.doResult.AuthenticationFailureHandler;
+import com.qizuo.provider.security.resourceServer.doResult.AuthenticationSuccessHandler;
+import com.qizuo.provider.security.resourceServer.exception.AuthenAccessDeniedHandler;
+import com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationSecurityConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
-import javax.servlet.http.HttpServletResponse;
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 
-/**
- * 资源服务器配置核心
- */
+/** 认证的资源服务器配置 */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http
-				.headers().frameOptions().disable()
-				.and()
-				.csrf().disable()
-				.exceptionHandling()
-				.authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
-				.and()
-				.authorizeRequests().antMatchers("/pay/alipayCallback", "/druid/**", "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/api/applications").permitAll()
-				.anyRequest().authenticated();
-	}
+
+  @Autowired private AuthenAccessDeniedHandler authenAccessDeniedHandler;
+
+  @Autowired protected AuthenticationSuccessHandler authenticationSuccessHandler;
+
+  @Autowired protected AuthenticationFailureHandler authenticationFailureHandler;
+
+  @Autowired private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
+
+  @Resource private DataSource dataSource;
+
+  /**
+   * 记住我功能的token存取器配置
+   *
+   * @return the persistent token repository
+   */
+  @Bean
+  public PersistentTokenRepository persistentTokenRepository() {
+    JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+    tokenRepository.setDataSource(dataSource);
+    //		tokenRepository.setCreateTableOnStartup(true); // 第一次启动创建
+    return tokenRepository;
+  }
+
+  /**
+   * Configure.
+   *
+   * @param http the http
+   * @throws Exception the exception
+   */
+  @Override
+  public void configure(HttpSecurity http) throws Exception {
+    http.apply(openIdAuthenticationSecurityConfig)
+        .and()
+        .headers()
+        .frameOptions()
+        .disable()
+        .and()
+        .exceptionHandling()
+        .accessDeniedHandler(authenAccessDeniedHandler)
+        .and()
+        .csrf()
+        .disable();
+  }
 }
