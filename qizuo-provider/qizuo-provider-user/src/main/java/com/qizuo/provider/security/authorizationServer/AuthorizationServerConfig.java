@@ -11,7 +11,6 @@ import com.qizuo.provider.security.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -22,7 +21,6 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 import java.util.ArrayList;
@@ -37,29 +35,22 @@ import java.util.List;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-  /** token存储 总共有四种普通/数据库/redis/jwt/ */
-  @Autowired private TokenStore tokenStore;
   /** 认证管理器 */
   @Autowired private AuthenticationManager authenticationManager;
   /** UserDetailsService */
   @Autowired private SecurityUserDetailsSevice securityUserDetailsSevice;
   /** UserDetailsService */
   @Autowired private SecurityClientDetailsSevice securityClientDetailsSevice;
-  /** authenWebResponseExceptionTranslator */
+  /** authenWebResponseExceptionTranslator 认证异常 */
   @Autowired private AuthenWebResponseExceptionTranslator authenWebResponseExceptionTranslator;
-  /** JwtAccessTokenConverter */
+  /** token存储 总共有四种普通/数据库/redis/jwt/ */
+  @Autowired private TokenStore tokenStore;
+  /** JwtAccessTokenConverter token转换器 */
   @Autowired(required = false)
   private JwtAccessTokenConverter jwtAccessTokenConverter;
-  /** TokenEnhancer */
+  /** TokenEnhancer 附加信息放入token中 */
   @Autowired(required = false)
   private TokenEnhancer jwtTokenEnhancer;
-
-  /** tokenStore */
-  @Bean(name = "tokenStore")
-  public TokenStore tokenStore(JedisConnectionFactory jedisConnectionFactory) {
-    RedisTokenStore redis = new RedisTokenStore(jedisConnectionFactory);
-    return redis;
-  }
 
   /**
    * Configure.
@@ -68,7 +59,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
    */
   @Override
   public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    // 所有路径拦截
     security.tokenKeyAccess("permitAll()");
+    // 请求/oauth/token的，如果配置支持allowFormAuthenticationForClients的，且url中有client_id和client_secret的会走ClientCredentialsTokenEndpointFilter
     security.allowFormAuthenticationForClients();
   }
 
@@ -89,12 +82,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
    */
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    // 配置token存储/认证器/userdetailsservice/认证异常处理
     endpoints
         .tokenStore(tokenStore)
         .authenticationManager(authenticationManager)
         .userDetailsService(securityUserDetailsSevice)
         .exceptionTranslator(authenWebResponseExceptionTranslator);
-    ;
+
+    // jwttoken配置
     if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
       TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
       List<TokenEnhancer> enhancers = new ArrayList<>();

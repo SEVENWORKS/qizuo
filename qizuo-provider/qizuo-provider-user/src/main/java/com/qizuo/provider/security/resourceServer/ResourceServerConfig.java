@@ -5,8 +5,6 @@
 
 package com.qizuo.provider.security.resourceServer;
 
-import com.qizuo.provider.security.resourceServer.doResult.AuthenticationFailureHandler;
-import com.qizuo.provider.security.resourceServer.doResult.AuthenticationSuccessHandler;
 import com.qizuo.provider.security.resourceServer.exception.AuthenAccessDeniedHandler;
 import com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationSecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +26,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
   @Autowired private AuthenAccessDeniedHandler authenAccessDeniedHandler;
 
-  @Autowired protected AuthenticationSuccessHandler authenticationSuccessHandler;
-
-  @Autowired protected AuthenticationFailureHandler authenticationFailureHandler;
-
   @Autowired private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
 
   @Resource private DataSource dataSource;
@@ -50,7 +44,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
   }
 
   /**
-   * Configure.
+   * Configure.添加了一些认证配置和异常处理
    *
    * @param http the http
    * @throws Exception the exception

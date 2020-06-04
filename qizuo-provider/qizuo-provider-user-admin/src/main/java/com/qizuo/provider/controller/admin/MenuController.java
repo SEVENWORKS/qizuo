@@ -22,48 +22,50 @@ import org.springframework.web.bind.annotation.RestController;
  * @description: 菜单控制器
  * @date: 14:09 2018/10/29
  */
-@RequestMapping(value = "${url_module}/menu/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+@RequestMapping(
+  value = "${qizuo.url_module}/menu/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "UserAdmin-MenuController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MenuController {
-    @Autowired
-    private MenuService menuService;
-    /**
-     * @author: fangl
-     * @description: 菜单新增或者修改
-     * @date: 15:04 2019/1/9
-     */
-    @RequestMapping("iuDo")
-    @ApiOperation(httpMethod = "POST", value = "菜单新增或者修改")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult iuDo(MenuPoJo menuPoJo) {
-        if (StringUtils.isBlank(menuPoJo.getBaseId())) {
-            //插入
-            menuService.insert(menuPoJo);
-        } else {
-            //更新
-            menuService.update(menuPoJo);
-        }
-        return BackResultUtils.ok();
+  @Autowired private MenuService menuService;
+  /**
+   * @author: fangl
+   * @description: 菜单新增或者修改
+   * @date: 15:04 2019/1/9
+   */
+  @RequestMapping("iuDo")
+  @ApiOperation(httpMethod = "POST", value = "菜单新增或者修改")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult iuDo(MenuPoJo menuPoJo) {
+    if (StringUtils.isBlank(menuPoJo.getBaseId())) {
+      // 插入
+      menuService.insert(menuPoJo);
+    } else {
+      // 更新
+      menuService.update(menuPoJo);
     }
+    return BackResultUtils.ok();
+  }
 
-    /**
-     * @author: fangl
-     * @description: 菜单删除
-     * @date: 15:04 2019/1/9
-     */
-    @RequestMapping("delete")
-    @ApiOperation(httpMethod = "POST", value = "菜单删除")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult delete(MenuPoJo menuPoJo) {
-        menuService.delete(menuPoJo);
-        return BackResultUtils.ok();
-    }
-
+  /**
+   * @author: fangl
+   * @description: 菜单删除
+   * @date: 15:04 2019/1/9
+   */
+  @RequestMapping("delete")
+  @ApiOperation(httpMethod = "POST", value = "菜单删除")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult delete(MenuPoJo menuPoJo) {
+    menuService.delete(menuPoJo);
+    return BackResultUtils.ok();
+  }
 }

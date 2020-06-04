@@ -22,47 +22,50 @@ import org.springframework.web.bind.annotation.RestController;
  * @description: 角色控制器
  * @date: 14:09 2018/10/29
  */
-@RequestMapping(value = "${url_module}/role/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+@RequestMapping(
+  value = "${qizuo.url_module}/role/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "UserAdmin-RoleController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class RoleController {
-    @Autowired
-    private RoleService roleService;
-    /**
-     * @author: fangl
-     * @description: 角色新增或者修改
-     * @date: 15:04 2019/1/9
-     */
-    @RequestMapping("iuDo")
-    @ApiOperation(httpMethod = "POST", value = "角色新增或者修改")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult iuDo(RolePoJo rolePoJo) {
-        if (StringUtils.isBlank(rolePoJo.getBaseId())) {
-            //插入
-            roleService.insert(rolePoJo);
-        } else {
-            //更新
-            roleService.update(rolePoJo);
-        }
-        return BackResultUtils.ok();
+  @Autowired private RoleService roleService;
+  /**
+   * @author: fangl
+   * @description: 角色新增或者修改
+   * @date: 15:04 2019/1/9
+   */
+  @RequestMapping("iuDo")
+  @ApiOperation(httpMethod = "POST", value = "角色新增或者修改")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult iuDo(RolePoJo rolePoJo) {
+    if (StringUtils.isBlank(rolePoJo.getBaseId())) {
+      // 插入
+      roleService.insert(rolePoJo);
+    } else {
+      // 更新
+      roleService.update(rolePoJo);
     }
+    return BackResultUtils.ok();
+  }
 
-    /**
-     * @author: fangl
-     * @description: 角色删除
-     * @date: 15:04 2019/1/9
-     */
-    @RequestMapping("delete")
-    @ApiOperation(httpMethod = "POST", value = "角色删除")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult delete(RolePoJo rolePoJo) {
-        roleService.delete(rolePoJo);
-        return BackResultUtils.ok();
-    }
+  /**
+   * @author: fangl
+   * @description: 角色删除
+   * @date: 15:04 2019/1/9
+   */
+  @RequestMapping("delete")
+  @ApiOperation(httpMethod = "POST", value = "角色删除")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult delete(RolePoJo rolePoJo) {
+    roleService.delete(rolePoJo);
+    return BackResultUtils.ok();
+  }
 }

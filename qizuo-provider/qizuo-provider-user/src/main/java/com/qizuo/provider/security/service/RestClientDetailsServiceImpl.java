@@ -18,9 +18,7 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Component("restClientDetailsService")
 public class RestClientDetailsServiceImpl implements ClientDetailsService {
-
   private ClientDetailsService clientDetailsService;
-
   private OAuth2ClientProperties[] clients = {};
 
   /**

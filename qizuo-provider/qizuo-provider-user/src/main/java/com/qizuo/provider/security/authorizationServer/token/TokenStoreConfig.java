@@ -33,7 +33,7 @@ public class TokenStoreConfig {
     @Autowired private RedisConnectionFactory redisConnectionFactory;
 
     /**
-     * Redis token store token store.
+     * Redis token store token store. 构建一个redis store
      *
      * @return token store
      */
@@ -58,7 +58,7 @@ public class TokenStoreConfig {
   public static class JwtConfig {
 
     /**
-     * Jwt token store token store.
+     * Jwt token store token store.token存储 构建一个jwtstore
      *
      * @return the token store
      */
@@ -68,7 +68,7 @@ public class TokenStoreConfig {
     }
 
     /**
-     * Jwt access token converter jwt access token converter.
+     * Jwt access token converter jwt access token converter. 转换token
      *
      * @return the jwt access token converter
      */
@@ -80,12 +80,12 @@ public class TokenStoreConfig {
     }
 
     /**
-     * Jwt token enhancer token enhancer.
+     * Jwt token enhancer token enhancer.附加信息放入token中
      *
      * @return the token enhancer
      */
     @Bean
-    @ConditionalOnBean(TokenEnhancer.class)
+    @ConditionalOnBean(TokenEnhancer.class) // 判断如果存在这个类就进行初始化
     public TokenEnhancer jwtTokenEnhancer() {
       return new TokenJwtEnhancer();
     }

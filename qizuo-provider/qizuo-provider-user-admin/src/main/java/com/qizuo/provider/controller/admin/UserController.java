@@ -5,7 +5,6 @@
 
 package com.qizuo.provider.controller.admin;
 
-
 import com.qizuo.base.annotation.LogAnnotation;
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.annotation.NotDisplaySql;
@@ -25,52 +24,53 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * 用户信息查询.
- */
-@RequestMapping(value = "${url_module}/user/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+/** 用户信息查询. */
+@RequestMapping(
+  value = "${qizuo.url_module}/user/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "UserAdmin-UserController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserController extends BaseController {
-    @Autowired
-    private UserService userService;
+  @Autowired private UserService userService;
 
-    /**
-     * @author: fangl
-     * @description: 增加或者修改用户
-     * @date: 15:02 2019/1/9
-     */
-    @RequestMapping("iuDo")
-    @ApiOperation(httpMethod = "POST", value = "增加或者修改用户")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult iuDo(UserPoJo userPoJo) {
-        if (StringUtils.isBlank(userPoJo.getBaseId())) {
-            //插入
-            userService.insert(userPoJo);
-        } else {
-            //更新
-            userService.update(userPoJo);
-        }
-        return BackResultUtils.ok();
+  /**
+   * @author: fangl
+   * @description: 增加或者修改用户
+   * @date: 15:02 2019/1/9
+   */
+  @RequestMapping("iuDo")
+  @ApiOperation(httpMethod = "POST", value = "增加或者修改用户")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult iuDo(UserPoJo userPoJo) {
+    if (StringUtils.isBlank(userPoJo.getBaseId())) {
+      // 插入
+      userService.insert(userPoJo);
+    } else {
+      // 更新
+      userService.update(userPoJo);
     }
+    return BackResultUtils.ok();
+  }
 
-    /**
-     * @author: fangl
-     * @description: 删除用户
-     * @date: 15:02 2019/1/9
-     */
-    @RequestMapping("delete")
-    @ApiOperation(httpMethod = "POST", value = "删除用户")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult delete(UserPoJo userPoJo) {
-        userPoJo.setBaseStatus(GlobalConstant.STATUS_NO);
-        userService.uStatus(userPoJo);
-        return BackResultUtils.ok();
-    }
+  /**
+   * @author: fangl
+   * @description: 删除用户
+   * @date: 15:02 2019/1/9
+   */
+  @RequestMapping("delete")
+  @ApiOperation(httpMethod = "POST", value = "删除用户")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult delete(UserPoJo userPoJo) {
+    userPoJo.setBaseStatus(GlobalConstant.STATUS_NO);
+    userService.uStatus(userPoJo);
+    return BackResultUtils.ok();
+  }
 }

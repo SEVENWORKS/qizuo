@@ -17,7 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.exceptions.UnapprovedClientAuthenticationException;
 import org.springframework.security.oauth2.provider.*;
-import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +35,7 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
   @Resource private ObjectMapper objectMapper;
   @Resource private ClientDetailsService clientDetailsService;
   @Resource private UserService userService;
-  @Resource private AuthorizationServerTokenServices authorizationServerTokenServices;
+  //  @Resource private AuthorizationServerTokenServices authorizationServerTokenServices;
 
   private static final String BEARER_TOKEN_TYPE = "Basic ";
 
@@ -68,8 +68,7 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
     OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
     OAuth2Authentication oAuth2Authentication =
         new OAuth2Authentication(oAuth2Request, authentication);
-    OAuth2AccessToken token =
-        authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
+    OAuth2AccessToken token = new DefaultTokenServices().createAccessToken(oAuth2Authentication);
     SecurityUser principal = (SecurityUser) authentication.getPrincipal();
 
     // 数据库记录用户登录

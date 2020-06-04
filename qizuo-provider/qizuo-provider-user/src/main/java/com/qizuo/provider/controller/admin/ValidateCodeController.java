@@ -5,7 +5,6 @@
 
 package com.qizuo.provider.controller.admin;
 
-
 import com.qizuo.base.annotation.LogAnnotation;
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.annotation.NotDisplaySql;
@@ -20,25 +19,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * 验证码.
- */
-@RequestMapping(value = "${url_module}/validateCode/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+/** 验证码. */
+@RequestMapping(
+  value = "${qizuo.url_module}/validateCode/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "User-ValidateCodeController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class ValidateCodeController extends BaseController {
-    /**
-     * @author: fangl
-     * @description: 图片验证码验证
-     * @date: 16:25 2019/1/8
-     */
-    @RequestMapping("imgCheck")
-    @ApiOperation(httpMethod = "POST", value = "图片验证码验证")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult imgCheck(String imgCode) {
-        return BackResultUtils.ok();
-    }
+  /**
+   * @author: fangl
+   * @description: 图片验证码验证
+   * @date: 16:25 2019/1/8
+   */
+  @RequestMapping("imgCheck")
+  @ApiOperation(httpMethod = "POST", value = "图片验证码验证")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult imgCheck(String imgCode) {
+    return BackResultUtils.ok();
+  }
 }

@@ -5,7 +5,6 @@
 
 package com.qizuo.provider.controller.admin;
 
-
 import com.qizuo.base.annotation.LogAnnotation;
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.annotation.NotDisplaySql;
@@ -24,59 +23,60 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * 用户信息查询.
- */
-@RequestMapping(value = "${url_module}/user/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+/** 用户信息查询. */
+@RequestMapping(
+  value = "${qizuo.url_module}/user/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "User-UserController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserController extends BaseController {
-    @Autowired
-    private UserService userService;
+  @Autowired private UserService userService;
 
-    /**
-     * @author: fangl
-     * @description: 用户分页列表
-     * @date: 15:02 2019/1/9
-     */
-    @RequestMapping("page")
-    @ApiOperation(httpMethod = "POST", value = "用户分页列表")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult page(PageDto<UserPoJo> poJos, UserPoJo userPoJo) {
-        poJos.setEntity(userPoJo);
-        return BackResultUtils.ok(userService.qPageQZ(poJos));
-    }
+  /**
+   * @author: fangl
+   * @description: 用户分页列表
+   * @date: 15:02 2019/1/9
+   */
+  @RequestMapping("page")
+  @ApiOperation(httpMethod = "POST", value = "用户分页列表")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult page(PageDto<UserPoJo> poJos, UserPoJo userPoJo) {
+    poJos.setEntity(userPoJo);
+    return BackResultUtils.ok(userService.qPageQZ(poJos));
+  }
 
-    /**
-     * @author: fangl
-     * @description: 用户分页列表
-     * @date: 15:02 2019/1/9
-     */
-    @RequestMapping("list")
-    @ApiOperation(httpMethod = "POST", value = "用户分页列表")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult list(UserPoJo userPoJo) {
-        return BackResultUtils.ok(userService.qList(userPoJo));
-    }
+  /**
+   * @author: fangl
+   * @description: 用户分页列表
+   * @date: 15:02 2019/1/9
+   */
+  @RequestMapping("list")
+  @ApiOperation(httpMethod = "POST", value = "用户分页列表")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult list(UserPoJo userPoJo) {
+    return BackResultUtils.ok(userService.qList(userPoJo));
+  }
 
-    /**
-     * @author: fangl
-     * @description: 查找单个
-     * @date: 9:07 2019/2/13
-     */
-    @RequestMapping("query")
-    @ApiOperation(httpMethod = "POST", value = "查找单个")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult query(UserPoJo userPoJo) {
-        return BackResultUtils.ok(userService.qList(userPoJo));
-    }
+  /**
+   * @author: fangl
+   * @description: 查找单个
+   * @date: 9:07 2019/2/13
+   */
+  @RequestMapping("query")
+  @ApiOperation(httpMethod = "POST", value = "查找单个")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult query(UserPoJo userPoJo) {
+    return BackResultUtils.ok(userService.qList(userPoJo));
+  }
 }

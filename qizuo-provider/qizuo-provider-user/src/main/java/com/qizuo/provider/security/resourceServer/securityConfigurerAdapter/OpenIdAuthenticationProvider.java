@@ -5,17 +5,12 @@
 
 package com.qizuo.provider.security.resourceServer.securityConfigurerAdapter;
 
-import org.apache.commons.collections.CollectionUtils;
+import com.qizuo.provider.security.service.SecurityUserDetailsSevice;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.social.connect.UsersConnectionRepository;
-import org.springframework.social.security.SocialUserDetailsService;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * 自定义身份认证 认证是由 AuthenticationManager 来管理的，但是真正进行认证的是 AuthenticationManager 中定义的
@@ -23,12 +18,10 @@ import java.util.Set;
  */
 public class OpenIdAuthenticationProvider implements AuthenticationProvider {
 
-  private SocialUserDetailsService userDetailsService;
-
-  private UsersConnectionRepository usersConnectionRepository;
+  private SecurityUserDetailsSevice userDetailsService;
 
   /**
-   * Authenticate authentication.
+   * Authenticate authentication. 进行认证
    *
    * @param authentication the authentication
    * @return the authentication
@@ -36,30 +29,19 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
    */
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-
+    // 转换之前在filter中塞入的值
     OpenIdAuthenticationToken authenticationToken = (OpenIdAuthenticationToken) authentication;
 
-    Set<String> providerUserIds = new HashSet<>();
-    providerUserIds.add((String) authenticationToken.getPrincipal());
-    Set<String> userIds =
-        usersConnectionRepository.findUserIdsConnectedTo(
-            authenticationToken.getProviderId(), providerUserIds);
-
-    if (CollectionUtils.isEmpty(userIds) || userIds.size() != 1) {
-      throw new InternalAuthenticationServiceException("无法获取用户信息");
-    }
-
-    String userId = userIds.iterator().next();
-
-    UserDetails user = userDetailsService.loadUserByUserId(userId);
-
+    // 获取用户信息
+    UserDetails user =
+        userDetailsService.loadUserByUsername((String) authenticationToken.getPrincipal());
     if (user == null) {
       throw new InternalAuthenticationServiceException("无法获取用户信息");
     }
 
+    // 重新构建token
     OpenIdAuthenticationToken authenticationResult =
         new OpenIdAuthenticationToken(user, user.getAuthorities());
-
     authenticationResult.setDetails(authenticationToken.getDetails());
 
     return authenticationResult;
@@ -81,7 +63,7 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
    *
    * @return the user details service
    */
-  public SocialUserDetailsService getUserDetailsService() {
+  public SecurityUserDetailsSevice getUserDetailsService() {
     return userDetailsService;
   }
 
@@ -90,25 +72,7 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
    *
    * @param userDetailsService the user details service
    */
-  public void setUserDetailsService(SocialUserDetailsService userDetailsService) {
+  public void setUserDetailsService(SecurityUserDetailsSevice userDetailsService) {
     this.userDetailsService = userDetailsService;
-  }
-
-  /**
-   * Gets users connection repository.
-   *
-   * @return the users connection repository
-   */
-  public UsersConnectionRepository getUsersConnectionRepository() {
-    return usersConnectionRepository;
-  }
-
-  /**
-   * Sets users connection repository.
-   *
-   * @param usersConnectionRepository the users connection repository
-   */
-  public void setUsersConnectionRepository(UsersConnectionRepository usersConnectionRepository) {
-    this.usersConnectionRepository = usersConnectionRepository;
   }
 }

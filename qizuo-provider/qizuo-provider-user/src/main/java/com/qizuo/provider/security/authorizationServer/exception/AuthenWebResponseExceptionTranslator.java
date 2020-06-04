@@ -85,14 +85,17 @@ public class AuthenWebResponseExceptionTranslator implements WebResponseExceptio
         new OAuth2Exception(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e));
   }
 
+  // 对返回的exception处理
   private ResponseEntity<OAuth2Exception> handleOAuth2Exception(OAuth2Exception e)
       throws IOException {
-
     int status = e.getHttpErrorCode();
+    // 返回header设置
     HttpHeaders headers = new HttpHeaders();
-    headers.set("Cache-Control", "no-store");
-    headers.set("Pragma", "no-cache");
+    // 设置去掉缓存设置
+    //    headers.set("Cache-Control", "no-store");
+    //    headers.set("Pragma", "no-cache");
     if (status == HttpStatus.UNAUTHORIZED.value() || (e instanceof InsufficientScopeException)) {
+      // 有这个header，浏览器就会弹出一个简单的登录页面
       headers.set(
           "WWW-Authenticate",
           String.format("%s %s", OAuth2AccessToken.BEARER_TYPE, e.getSummary()));

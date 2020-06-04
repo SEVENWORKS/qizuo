@@ -29,6 +29,7 @@ public class TokenJwtEnhancer implements TokenEnhancer {
   public OAuth2AccessToken enhance(
       OAuth2AccessToken accessToken, OAuth2Authentication oAuth2Authentication) {
     Map<String, Object> info = new HashMap<>(8);
+
     // 额外信息添加
     info.put("timestamp", System.currentTimeMillis());
     Authentication authentication = oAuth2Authentication.getUserAuthentication();

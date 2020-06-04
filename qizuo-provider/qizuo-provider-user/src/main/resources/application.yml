@@ -130,4 +130,6 @@ qizuo.interceptor.sqllog: true
 #是否打开token
 qizuo.interceptor.token: true
 #当前项目访问前缀
-url_module: user
+qizuo.url_module: user
+#配置store模式
+qizuo.security.oauth2.token: redis

@@ -21,40 +21,43 @@ import org.springframework.web.bind.annotation.RestController;
  * @description: 角色控制器
  * @date: 14:09 2018/10/29
  */
-@RequestMapping(value = "${url_module}/role/", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
+@RequestMapping(
+  value = "${qizuo.url_module}/role/",
+  method = RequestMethod.POST,
+  produces = {"application/json;charset=UTF-8"}
+)
 @RestController
 @Api(value = "User-RoleController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class RoleController {
-    @Autowired
-    private RoleService roleService;
+  @Autowired private RoleService roleService;
 
-    /**
-     * @author: fangl
-     * @description: 角色列表
-     * @date: 17:10 2019/1/8
-     */
-    @RequestMapping("list")
-    @ApiOperation(httpMethod = "POST", value = "角色列表")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult list(RolePoJo rolePoJo) {
-        return BackResultUtils.ok(roleService.qList(rolePoJo));
-    }
+  /**
+   * @author: fangl
+   * @description: 角色列表
+   * @date: 17:10 2019/1/8
+   */
+  @RequestMapping("list")
+  @ApiOperation(httpMethod = "POST", value = "角色列表")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult list(RolePoJo rolePoJo) {
+    return BackResultUtils.ok(roleService.qList(rolePoJo));
+  }
 
-    /**
-     * @author: fangl
-     * @description: 查找单个
-     * @date: 9:07 2019/2/13
-     */
-    @RequestMapping("query")
-    @ApiOperation(httpMethod = "POST", value = "查找单个")
-    @LogAnnotation
-    @ValidateRequestAnnotation
-    @NotDisplaySql
-    @NoNeedAccessAuthentication
-    public BackResult query(RolePoJo rolePoJo) {
-        return BackResultUtils.ok(roleService.query(rolePoJo));
-    }
+  /**
+   * @author: fangl
+   * @description: 查找单个
+   * @date: 9:07 2019/2/13
+   */
+  @RequestMapping("query")
+  @ApiOperation(httpMethod = "POST", value = "查找单个")
+  @LogAnnotation
+  @ValidateRequestAnnotation
+  @NotDisplaySql
+  @NoNeedAccessAuthentication
+  public BackResult query(RolePoJo rolePoJo) {
+    return BackResultUtils.ok(roleService.query(rolePoJo));
+  }
 }

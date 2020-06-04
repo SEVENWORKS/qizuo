@@ -7,14 +7,13 @@ package com.qizuo.provider.security.resourceServer.securityConfigurerAdapter;
 
 import com.qizuo.provider.security.resourceServer.doResult.AuthenticationFailureHandler;
 import com.qizuo.provider.security.resourceServer.doResult.AuthenticationSuccessHandler;
+import com.qizuo.provider.security.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.social.connect.UsersConnectionRepository;
-import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.stereotype.Component;
 
 /**
@@ -38,22 +37,17 @@ public class OpenIdAuthenticationSecurityConfig
   private final AuthenticationSuccessHandler authenticationSuccessHandler;
   // 异常处理
   private final AuthenticationFailureHandler authenticationFailureHandler;
-
-  private final SocialUserDetailsService userDetailsService;
-
-  private final UsersConnectionRepository usersConnectionRepository;
+  private final SecurityUserDetailsSevice userDetailsService;
 
   // 统一给上依赖
   @Autowired
   public OpenIdAuthenticationSecurityConfig(
       AuthenticationSuccessHandler authenticationSuccessHandler,
       AuthenticationFailureHandler authenticationFailureHandler,
-      SocialUserDetailsService userDetailsService,
-      UsersConnectionRepository usersConnectionRepository) {
+      SecurityUserDetailsSevice userDetailsService) {
     this.authenticationSuccessHandler = authenticationSuccessHandler;
     this.authenticationFailureHandler = authenticationFailureHandler;
     this.userDetailsService = userDetailsService;
-    this.usersConnectionRepository = usersConnectionRepository;
   }
 
   /**
@@ -72,7 +66,6 @@ public class OpenIdAuthenticationSecurityConfig
     // 自定义provider，主要是userservice认证
     OpenIdAuthenticationProvider openIdAuthenticationProvider = new OpenIdAuthenticationProvider();
     openIdAuthenticationProvider.setUserDetailsService(userDetailsService);
-    openIdAuthenticationProvider.setUsersConnectionRepository(usersConnectionRepository);
     // 塞入configure配置中
     http.authenticationProvider(openIdAuthenticationProvider)
         .addFilterAfter(openIdAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
