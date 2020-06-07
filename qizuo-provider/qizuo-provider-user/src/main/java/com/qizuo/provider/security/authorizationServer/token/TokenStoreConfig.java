@@ -21,7 +21,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @Configuration
 public class TokenStoreConfig {
 
-  /** 使用redis存储token的配置，只有在paascloud.security.oauth2.tokenStore配置为redis时生效 */
+  /** 使用redis存储token的配置，只有在paascloud.security.oauth2.tokenStore配置为redis时生效 这种存储需要redis配合 */
   @Configuration
   @ConditionalOnProperty(
     prefix = "qizuo.security.oauth2",
@@ -43,11 +43,7 @@ public class TokenStoreConfig {
     }
   }
 
-  /**
-   * 使用jwt时的配置，默认生效
-   *
-   * @author paascloud.net @gmail.com
-   */
+  /** 使用jwt时的配置，默认生效 这种存储不需要实际上的空间存储，它的解析和信息都放在令牌中 */
   @Configuration
   @ConditionalOnProperty(
     prefix = "qizuo.security.oauth2",

@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-/** 认证的资源服务器配置 */
+/** 认证的资源服务器配置,如果存在springsecurity的资源服务器的包，就必须要配置这个，否则报错 */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
@@ -51,16 +51,28 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
    */
   @Override
   public void configure(HttpSecurity http) throws Exception {
-    http.apply(openIdAuthenticationSecurityConfig)
+    http.apply(openIdAuthenticationSecurityConfig) // 添加自定义配置，这个可以apply多个
         .and()
         .headers()
         .frameOptions()
-        .disable()
+        .disable() // 请求头设置，这个地方是配置iframe权限，springSecurty使用X-Frame-Options防止网页被Frame，这是去掉
         .and()
         .exceptionHandling()
-        .accessDeniedHandler(authenAccessDeniedHandler)
+        .accessDeniedHandler(authenAccessDeniedHandler) // 异常处理的handler
+        .and()
+        .authorizeRequests() // 启用基于 HttpServletRequest 的访问限制，开始配置哪些URL需要被保护、哪些不需要被保护，为后面设置启用
+        .antMatchers(
+            "/pay/alipayCallback",
+            "/druid/**",
+            "/swagger-ui.html",
+            "/swagger-resources/**",
+            "/v2/api-docs",
+            "/api/applications") // 未登陆用户允许的请求 /**/*.css
+        .permitAll() // 未登陆用户允许的请求
+        .anyRequest()
+        .authenticated() // 其他请求全部需要登陆
         .and()
         .csrf()
-        .disable();
+        .disable(); // 关闭csrf跨域请求设置
   }
 }
