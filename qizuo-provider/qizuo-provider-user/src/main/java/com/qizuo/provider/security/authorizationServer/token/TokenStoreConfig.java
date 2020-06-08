@@ -5,6 +5,7 @@
 
 package com.qizuo.provider.security.authorizationServer.token;
 
+import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -71,7 +72,7 @@ public class TokenStoreConfig {
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
       JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-      converter.setSigningKey("qizuo");
+      converter.setSigningKey(GlobalConstant.Global);
       return converter;
     }
 

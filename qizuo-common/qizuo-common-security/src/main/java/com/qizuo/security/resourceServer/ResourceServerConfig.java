@@ -3,11 +3,11 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.resourceServer;
+package com.qizuo.security.resourceServer;
 
-import com.qizuo.provider.security.resourceServer.exception.AuthenAccessDeniedHandler;
-import com.qizuo.provider.security.resourceServer.exception.AuthenticationEntryPointHandler;
-import com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationSecurityConfig;
+import com.qizuo.security.resourceServer.exception.AuthenAccessDeniedHandler;
+import com.qizuo.security.resourceServer.exception.AuthenticationEntryPointHandler;
+import com.qizuo.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationSecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

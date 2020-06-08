@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.resourceServer.exception;
+package com.qizuo.security.resourceServer.exception;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

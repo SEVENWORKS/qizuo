@@ -25,6 +25,8 @@
         <module>qizuo-common-util</module>
         <!-- 常用配置 -->
         <module>qizuo-common-config</module>
+        <!-- 安全 -->
+        <module>qizuo-common-security</module>
     </modules>
 
     <!-- 常用配置项(版本) -->

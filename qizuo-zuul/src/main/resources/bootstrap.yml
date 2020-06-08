@@ -10,13 +10,14 @@ spring.boot:
 spring.cloud:
     #config配置
     config:
-      #fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常,这个功能会在security开启的时候影响失败
+      #fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
       #uri: http://localhost:9200/ #url方式发现config服务
       discovery: #服务id方式发现
         service-id: qizuo-config
         enabled: true #开启配置信息发现
-      label: master #远程仓库分支
-      profile: ${spring.profiles.active} #哪个环境的配置文件
+      name: common  #文件前缀名称
+      profile: ${spring.profiles.active} #哪个环境的配置文件，对应config文件的后缀
+      label: master #远程仓库分支,对应config文件名称
       username: qizuo #账号密码
       password: qizuo #账号密码
 
