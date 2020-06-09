@@ -2,12 +2,12 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.security.resourceServer.doResult;
+package com.qizuo.provider.security.authorizationServer.doResult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qizuo.base.utils.BackResultUtils;
-import com.qizuo.provider.security.model.SecurityUser;
 import com.qizuo.provider.service.UserService;
+import com.qizuo.security.model.SecurityUser;
 import com.qizuo.util.http.RequestUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.MapUtils;

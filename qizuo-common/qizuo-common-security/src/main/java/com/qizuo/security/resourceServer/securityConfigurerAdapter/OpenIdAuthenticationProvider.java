@@ -5,7 +5,7 @@
 
 package com.qizuo.security.resourceServer.securityConfigurerAdapter;
 
-import com.qizuo.provider.security.service.SecurityUserDetailsSevice;
+import com.qizuo.security.service.SecurityUserDetailsSevice;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
@@ -30,15 +30,7 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
     // 转换之前在filter中塞入的值
-    com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationToken
-        authenticationToken =
-            (com.qizuo
-                    .provider
-                    .security
-                    .resourceServer
-                    .securityConfigurerAdapter
-                    .OpenIdAuthenticationToken)
-                authentication;
+    OpenIdAuthenticationToken authenticationToken = (OpenIdAuthenticationToken) authentication;
 
     // 获取用户信息
     UserDetails user =
@@ -48,14 +40,8 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
     }
 
     // 重新构建token
-    com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationToken
-        authenticationResult =
-            new com.qizuo
-                .provider
-                .security
-                .resourceServer
-                .securityConfigurerAdapter
-                .OpenIdAuthenticationToken(user, user.getAuthorities());
+    OpenIdAuthenticationToken authenticationResult =
+        new OpenIdAuthenticationToken(user, user.getAuthorities());
     authenticationResult.setDetails(authenticationToken.getDetails());
 
     return authenticationResult;
@@ -69,8 +55,7 @@ public class OpenIdAuthenticationProvider implements AuthenticationProvider {
    */
   @Override
   public boolean supports(Class<?> authentication) {
-    return com.qizuo.provider.security.resourceServer.securityConfigurerAdapter
-        .OpenIdAuthenticationToken.class.isAssignableFrom(authentication);
+    return OpenIdAuthenticationToken.class.isAssignableFrom(authentication);
   }
 
   /**

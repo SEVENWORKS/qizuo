@@ -61,8 +61,8 @@
         </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>
-            <groupId>com.qizuo.common.base</groupId>
-            <artifactId>qizuo-common-base</artifactId>
+            <groupId>com.qizuo.common.security</groupId>
+            <artifactId>qizuo-common-security</artifactId>
             <version>1.0</version>
         </dependency>
         <!-- *****************common结束***************** -->

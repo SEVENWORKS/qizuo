@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.provider.security.service;
+package com.qizuo.security.service;
 
 import lombok.Data;
 

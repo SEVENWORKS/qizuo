@@ -94,6 +94,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-security:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.0.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-jwt:1.0.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:1.5.11.RELEASE" level="project" />
@@ -105,13 +106,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-freemarker:1.5.11.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.28" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:4.3.15.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-config:1.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-core:1.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-security:1.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.2.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-web:1.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-mail:1.5.11.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.5.6" level="project" />
@@ -178,6 +172,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.jersey:jersey-client:1.19.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.jersey.contribs:jersey-apache-client4:1.19.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.inject:guice:3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: com.netflix.eureka:eureka-core:1.7.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.4.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: javax.xml.stream:stax-api:1.0-2" level="project" />
@@ -246,6 +241,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-security:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:1.5.11.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: de.codecentric:spring-boot-admin-starter-client:1.5.7" level="project" />
     <orderEntry type="library" name="Maven: de.codecentric:spring-boot-admin-client:1.5.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.5.11.RELEASE" level="project" />

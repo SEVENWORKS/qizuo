@@ -29,11 +29,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
-        <!-- jwt token携带 -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
-        </dependency>
         <!-- Swagger Butler是一个基于Swagger与Zuul构建的API文档汇集工具,即将单个Swagger汇总的感觉 -->
         <dependency>
             <groupId>com.didispace</groupId>

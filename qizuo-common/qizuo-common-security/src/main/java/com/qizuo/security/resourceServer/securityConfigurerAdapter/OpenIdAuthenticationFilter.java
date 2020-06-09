@@ -62,14 +62,7 @@ public class OpenIdAuthenticationFilter extends AbstractAuthenticationProcessing
     providerId = providerId.trim();
 
     // 构建新的token
-    com.qizuo.provider.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationToken
-        authRequest =
-            new com.qizuo
-                .provider
-                .security
-                .resourceServer
-                .securityConfigurerAdapter
-                .OpenIdAuthenticationToken(openid, providerId);
+    OpenIdAuthenticationToken authRequest = new OpenIdAuthenticationToken(openid, providerId);
 
     // 塞入值
     authRequest.setDetails(authenticationDetailsSource.buildDetails(request));

@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.baseConfig;
+package com.qizuo.security.baseConfig;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;

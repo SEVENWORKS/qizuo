@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.provider.security.service;
+package com.qizuo.security.service;
 
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import lombok.extern.slf4j.Slf4j;

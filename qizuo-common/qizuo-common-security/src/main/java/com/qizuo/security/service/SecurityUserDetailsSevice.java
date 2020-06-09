@@ -3,9 +3,9 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.service;
+package com.qizuo.security.service;
 
-import com.qizuo.provider.security.model.SecurityUser;
+import com.qizuo.security.model.SecurityUser;
 import lombok.Data;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.provider.security.resourceServer.doResult;
+package com.qizuo.provider.security.authorizationServer.doResult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qizuo.base.utils.BackResultUtils;

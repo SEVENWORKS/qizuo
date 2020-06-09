@@ -18,6 +18,33 @@
 
     <!-- 依赖引入 -->
     <dependencies>
+        <!-- jwt token携带 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+        <!-- Spring Social 是 Spring 框架的扩展，用来方便开发Web社交应用程序，可通过该项目来创建与各种社交网站的交互 -->
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-web</artifactId>
+        </dependency>
+        <!-- 记住我功能需要用到这个 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>
             <groupId>com.qizuo.common.base</groupId>
