@@ -6,7 +6,7 @@ package com.qizuo.provider.security.authorizationServer;
 
 import com.qizuo.provider.security.authorizationServer.doResult.AuthenLogoutSuccessHandler;
 import com.qizuo.provider.security.authorizationServer.exception.AuthenWebResponseExceptionTranslator;
-import com.qizuo.security.service.RestClientDetailsService;
+import com.qizuo.provider.security.authorizationServer.service.RestClientDetailsService;
 import com.qizuo.security.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +40,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   /** UserDetailsService */
   @Autowired private SecurityUserDetailsSevice securityUserDetailsSevice;
   /** UserDetailsService */
-  @Autowired RestClientDetailsService restClientDetailsService;
+  @Autowired private RestClientDetailsService restClientDetailsService;
   /** authenWebResponseExceptionTranslator 认证异常 */
   @Autowired private AuthenWebResponseExceptionTranslator authenWebResponseExceptionTranslator;
   /** token存储 总共有四种普通/数据库/redis/jwt/ */

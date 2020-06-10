@@ -38,7 +38,7 @@ public class TokenStoreConfig {
      *
      * @return token store
      */
-    @Bean
+    @Bean("TokenStore")
     public TokenStore redisTokenStore() {
       return new RedisTokenStore(redisConnectionFactory);
     }
@@ -59,7 +59,7 @@ public class TokenStoreConfig {
      *
      * @return the token store
      */
-    @Bean
+    @Bean("TokenStore")
     public TokenStore jwtTokenStore() {
       return new JwtTokenStore(jwtAccessTokenConverter());
     }
