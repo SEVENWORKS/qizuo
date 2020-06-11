@@ -7,10 +7,11 @@ package com.qizuo.provider.security.authorizationServer;
 import com.qizuo.provider.security.authorizationServer.doResult.AuthenLogoutSuccessHandler;
 import com.qizuo.provider.security.authorizationServer.exception.AuthenWebResponseExceptionTranslator;
 import com.qizuo.provider.security.authorizationServer.service.RestClientDetailsService;
-import com.qizuo.security.service.SecurityUserDetailsSevice;
+import com.qizuo.provider.security.authorizationServer.service.SecurityServerUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -38,7 +39,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   /** 认证管理器 */
   @Autowired private AuthenticationManager authenticationManager;
   /** UserDetailsService */
-  @Autowired private SecurityUserDetailsSevice securityUserDetailsSevice;
+  @Autowired private SecurityServerUserDetailsSevice securityServerUserDetailsSevice;
   /** UserDetailsService */
   @Autowired private RestClientDetailsService restClientDetailsService;
   /** authenWebResponseExceptionTranslator 认证异常 */
@@ -82,12 +83,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
    */
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-    // 配置token存储/认证器/userdetailsservice/认证异常处理
+    // 配置token存储/认证器/userdetailsservice/认证异常处理/获取token的请求方式
     endpoints
         .tokenStore(tokenStore)
         .authenticationManager(authenticationManager)
-        .userDetailsService(securityUserDetailsSevice)
-        .exceptionTranslator(authenWebResponseExceptionTranslator);
+        .userDetailsService(securityServerUserDetailsSevice)
+        .exceptionTranslator(authenWebResponseExceptionTranslator)
+        .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
 
     // jwttoken配置
     if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {

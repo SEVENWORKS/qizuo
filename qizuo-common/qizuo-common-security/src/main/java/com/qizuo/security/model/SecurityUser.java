@@ -10,16 +10,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.provider.ClientDetails;
 
 import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
 
 /** 用户安全信息体 配合不同的service. */
 @Configuration
 @Data
-public class SecurityUser implements UserDetails, ClientDetails {
+public class SecurityUser implements UserDetails {
   private static final long serialVersionUID = 4872628781561412463L;
 
   private static final String ENABLE = "ENABLE";
@@ -75,66 +72,6 @@ public class SecurityUser implements UserDetails, ClientDetails {
     this.setGroupName(groupName);
     this.setStatus(status);
     this.authorities = grantedAuthorities;
-  }
-
-  @Override
-  public String getClientId() {
-    return null;
-  }
-
-  @Override
-  public Set<String> getResourceIds() {
-    return null;
-  }
-
-  @Override
-  public boolean isSecretRequired() {
-    return false;
-  }
-
-  @Override
-  public String getClientSecret() {
-    return null;
-  }
-
-  @Override
-  public boolean isScoped() {
-    return false;
-  }
-
-  @Override
-  public Set<String> getScope() {
-    return null;
-  }
-
-  @Override
-  public Set<String> getAuthorizedGrantTypes() {
-    return null;
-  }
-
-  @Override
-  public Set<String> getRegisteredRedirectUri() {
-    return null;
-  }
-
-  @Override
-  public Integer getAccessTokenValiditySeconds() {
-    return null;
-  }
-
-  @Override
-  public Integer getRefreshTokenValiditySeconds() {
-    return null;
-  }
-
-  @Override
-  public boolean isAutoApprove(String s) {
-    return false;
-  }
-
-  @Override
-  public Map<String, Object> getAdditionalInformation() {
-    return null;
   }
 
   @Override
