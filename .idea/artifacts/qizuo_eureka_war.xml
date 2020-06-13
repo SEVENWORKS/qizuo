@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qizuo-eureka:war">
+    <output-path>$PROJECT_DIR$/qizuo-eureka/target</output-path>
+    <root id="archive" name="qizuo-eureka.war">
+      <element id="artifact" artifact-name="qizuo-eureka:war exploded" />
+    </root>
+  </artifact>
+</component>

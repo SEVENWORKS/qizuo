@@ -110,6 +110,7 @@ spring.cloud:
 #端口
 server:
   port: 9901
+  context-path: /user/admin
 
 #安全
 security:
@@ -128,5 +129,5 @@ swagger:
 qizuo.interceptor.sqllog: true
 #是否打开token
 qizuo.interceptor.token: true
-#当前项目访问前缀
-qizuo.url_module: user/admin
+#是否开启debug模式
+debug: false

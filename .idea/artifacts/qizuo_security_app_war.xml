@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qizuo-security-app:war">
+    <output-path>$PROJECT_DIR$/qizuo-common/qizuo-security-app/target</output-path>
+    <root id="archive" name="qizuo-security-app-1.0.war">
+      <element id="artifact" artifact-name="qizuo-security-app:war exploded" />
+    </root>
+  </artifact>
+</component>

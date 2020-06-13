@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 /** 用户登录. */
 // produces有两个好处：一个是浏览器查看方便（json自动格式化，带搜索），另一个可以防止中文乱码。
 @RequestMapping(
-  value = "${qizuo.url_module}/login/",
+  value = "/login/",
   method = RequestMethod.POST,
   produces = {"application/json;charset=UTF-8"}
 )

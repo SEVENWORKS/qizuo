@@ -24,6 +24,7 @@
         <module name="qizuo-common-base" />
         <module name="qizuo-common-config" />
         <module name="qizuo-common-core" />
+        <module name="qizuo-common-security" />
         <module name="qizuo-common-util" />
         <module name="qizuo-config" />
         <module name="qizuo-eureka" />
@@ -97,6 +98,7 @@
       <module name="qizuo-common-base-core" target="1.8" />
       <module name="qizuo-common-config" target="1.8" />
       <module name="qizuo-common-core" target="1.8" />
+      <module name="qizuo-common-security" target="1.8" />
       <module name="qizuo-common-security-core" target="1.8" />
       <module name="qizuo-common-util" target="1.8" />
       <module name="qizuo-common-zk" target="1.8" />

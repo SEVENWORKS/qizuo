@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /** 用户信息查询. */
 @RequestMapping(
-  value = "${qizuo.url_module}/user/",
+  value = "/user/",
   method = RequestMethod.POST,
   produces = {"application/json;charset=UTF-8"}
 )

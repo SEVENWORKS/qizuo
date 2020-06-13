@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common-base/qizuo-common-base.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common-base/qizuo-common-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common-config/qizuo-common-config.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common-config/qizuo-common-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common-security/qizuo-common-security.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common-security/qizuo-common-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common-util/qizuo-common-util.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common-util/qizuo-common-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-config/qizuo-config.iml" filepath="$PROJECT_DIR$/qizuo-config/qizuo-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-eureka/qizuo-eureka.iml" filepath="$PROJECT_DIR$/qizuo-eureka/qizuo-eureka.iml" />

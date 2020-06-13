@@ -59,6 +59,12 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.6</version>
         </dependency>
+        <!-- idea中实现热部署1 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>
             <groupId>com.qizuo.common.security</groupId>
@@ -70,21 +76,21 @@
 
     <!-- maven多环境切换 -->
     <!--<profiles>-->
-        <!--<profile>-->
-            <!--<id>dev</id>-->
-            <!--<properties>-->
-                <!--<profileActive>dev</profileActive>-->
-            <!--</properties>-->
-            <!--<activation>-->
-                <!--<activeByDefault>true</activeByDefault>-->
-            <!--</activation>-->
-        <!--</profile>-->
-        <!--<profile>-->
-            <!--<id>pro</id>-->
-            <!--<properties>-->
-                <!--<profileActive>pro</profileActive>-->
-            <!--</properties>-->
-        <!--</profile>-->
+    <!--<profile>-->
+    <!--<id>dev</id>-->
+    <!--<properties>-->
+    <!--<profileActive>dev</profileActive>-->
+    <!--</properties>-->
+    <!--<activation>-->
+    <!--<activeByDefault>true</activeByDefault>-->
+    <!--</activation>-->
+    <!--</profile>-->
+    <!--<profile>-->
+    <!--<id>pro</id>-->
+    <!--<properties>-->
+    <!--<profileActive>pro</profileActive>-->
+    <!--</properties>-->
+    <!--</profile>-->
     <!--</profiles>-->
 
     <build>

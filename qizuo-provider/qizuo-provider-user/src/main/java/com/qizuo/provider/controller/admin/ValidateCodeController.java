@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /** 验证码. */
 @RequestMapping(
-  value = "${qizuo.url_module}/validateCode/",
+  value = "/validateCode/",
   method = RequestMethod.POST,
   produces = {"application/json;charset=UTF-8"}
 )

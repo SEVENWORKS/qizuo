@@ -23,6 +23,8 @@ public class GlobalConstant {
 
     /** 超级管理员的用户 */
     public static final String SUPER = GlobalConstant.Global;
+    /** 普通用户 */
+    public static final String COMMON_USER = "common_user";
   }
 
   /** 数据权限. */
@@ -61,12 +63,17 @@ public class GlobalConstant {
     public static final String TokenInterceptor_AUTH_PATH = "/error"; // swagger-ui.html
     // 配置前缀
     public static final String ROOT_PREFIX = GlobalConstant.Global;
+    // token相关路径
+    public static final String TokenInterceptor_SECURITY_PATH = "/oauth/token";
+    public static final String TokenInterceptor_SECURITY_PATH2 = "/oauth/authorize";
   }
 
   /** http常用配置文件. */
   public static final class HttpConfig {
     private HttpConfig() {}
-
+    // zuul标识头
+    public static final String HEADER_ZUUL = "x-qizuo";
+    // requestutil中配置
     public static final String UNKNOWN = "unknown";
     public static final String X_FORWARDED_FOR = "X-Forwarded-For";
     public static final String X_REAL_IP = "X-Real-IP";
@@ -79,6 +86,8 @@ public class GlobalConstant {
     public static final int MAX_IP_LENGTH = 15;
     // 最大请求头数量
     public static final int LogAspect_MAX_SIZE = 2000;
+    // auth请求头截取
+    public static final String AUTH_HEADER_SPLIT = "bearer ";
   }
 
   /** 媒体文件常用配置 */

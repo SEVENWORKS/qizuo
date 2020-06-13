@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /** token. */
 @RequestMapping(
-  value = "${qizuo.url_module}/token/",
+  value = "/token/",
   method = RequestMethod.POST,
   produces = {"application/json;charset=UTF-8"}
 )

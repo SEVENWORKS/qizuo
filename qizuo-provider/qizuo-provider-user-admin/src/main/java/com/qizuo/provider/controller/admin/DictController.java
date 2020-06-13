@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 14:09 2018/10/29
  */
 @RequestMapping(
-  value = "${qizuo.url_module}/dict/",
+  value = "/dict/",
   method = RequestMethod.POST,
   produces = {"application/json;charset=UTF-8"}
 )
