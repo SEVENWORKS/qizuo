@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommonColumns">
+    <!-- 公共查询字段 -->
+    <sql id="commonColumns">
+        a.BASE_ID as "baseId",
+        a.BASE_CREATE_USER_ID as "baseCreateUserId",
+        a.BASE_CREATE_TM as "baseCreateTime",
+        a.BASE_UPDATE_USER_ID as "baseUpdateUserId",
+        a.BASE_UPDATE_TM as "baseUpdateTime",
+        a.BASE_STATUS as "baseStatus",
+        a.BASE_REMARKS as "baseRemarks",
+        a.BASE_CREATE_IP as "baseCreateIp",
+        a.BASE_UPDATE_IP as "baseUpdateIp"
+    </sql>
+</mapper>

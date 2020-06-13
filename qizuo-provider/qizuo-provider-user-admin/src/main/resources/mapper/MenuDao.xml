@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.qizuo.cm.modules.system.dao.MenuDao">
+<mapper namespace="com.qizuo.provider.model.dao.MenuDao">
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
@@ -55,9 +55,9 @@
         delete from sys_menu where BASE_ID=#{baseId}
     </delete>
     <!-- 查找单个 -->
-    <select id="query" resultType="org.qizuo.cm.modules.system.pojo.MenuPoJo">
+    <select id="query" resultType="com.qizuo.provider.model.po.MenuPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_menu a
         <where>
             a.BASE_ID=#{baseId}
@@ -66,9 +66,9 @@
         limit 1
     </select>
     <!-- 查找列表 -->
-    <select id="qList" resultType="org.qizuo.cm.modules.system.pojo.MenuPoJo">
+    <select id="qList" resultType="com.qizuo.provider.model.po.MenuPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_menu a
         <where>
             and a.BASE_STATUS=0
@@ -78,9 +78,9 @@
         </if>
     </select>
     <!-- 查找分页 -->
-    <select id="qPageQZ" resultType="org.qizuo.cm.modules.system.pojo.MenuPoJo">
+    <select id="qPageQZ" resultType="com.qizuo.provider.model.po.MenuPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_menu a
         <where>
             and a.BASE_STATUS=0
@@ -100,16 +100,16 @@
         update sys_menu set BASE_STATUS=#{baseStatus} where BASE_ID=#{baseId}
     </update>
     <!-- 递归查询菜单列表 -->
-    <resultMap id="qEachListMap" type="org.qizuo.cm.modules.system.pojo.MenuPoJo">
+    <resultMap id="qEachListMap" type="com.qizuo.provider.model.po.MenuPoJo">
         <collection property="menuPoJos" column="baseId" select="qEachList"></collection>
     </resultMap>
     <select id="qEachList" resultMap="qEachListMap">
         select
-          <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_menu a
         <where>
-                and a.BASE_STATUS=0
-                and a.parent_id=#{baseId}
+            and a.BASE_STATUS=0
+            and a.parent_id=#{baseId}
         </where>
     </select>
 </mapper>

@@ -4,78 +4,16 @@ Navicat MySQL Data Transfer
 Source Server         : fanglu
 Source Server Version : 50162
 Source Host           : 127.0.0.1:3306
-Source Database       : qizuo
+Source Database       : qizuo_user
 
 Target Server Type    : MYSQL
 Target Server Version : 50162
 File Encoding         : 65001
 
-Date: 2019-06-23 15:40:17
+Date: 2020-06-13 21:10:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for sys_dict
--- ----------------------------
-DROP TABLE IF EXISTS `sys_dict`;
-CREATE TABLE `sys_dict` (
-  `BASE_ID` varchar(255) NOT NULL COMMENT '编号',
-  `VALUE` varchar(100) DEFAULT NULL COMMENT '值',
-  `LABEL` varchar(100) DEFAULT NULL COMMENT '说明',
-  `BASE_CREATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '创建人',
-  `BASE_CREATE_TM` datetime NOT NULL COMMENT '创建时间',
-  `BASE_UPDATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '修改人',
-  `BASE_UPDATE_TM` datetime DEFAULT NULL COMMENT '修改时间',
-  `BASE_STATUS` varchar(255) NOT NULL COMMENT '状态',
-  `BASE_REMARKS` varchar(255) DEFAULT NULL COMMENT '备注',
-  `BASE_CREATE_IP` varchar(255) DEFAULT NULL COMMENT '创建ip',
-  `BASE_UPDATE_IP` varchar(255) DEFAULT NULL COMMENT '更新ip',
-  PRIMARY KEY (`BASE_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='字典表';
-
--- ----------------------------
--- Table structure for sys_dict_item
--- ----------------------------
-DROP TABLE IF EXISTS `sys_dict_item`;
-CREATE TABLE `sys_dict_item` (
-  `BASE_ID` varchar(255) NOT NULL COMMENT '标识',
-  `VALUE` varchar(100) DEFAULT NULL COMMENT '值',
-  `LABEL` varchar(300) DEFAULT NULL COMMENT '说明',
-  `DICT_ID` bigint(20) DEFAULT NULL COMMENT '字典id',
-  `DICT_VALUE` varchar(100) DEFAULT NULL COMMENT '字典代码',
-  `BASE_CREATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '创建人',
-  `BASE_CREATE_TM` datetime NOT NULL COMMENT '创建时间',
-  `BASE_UPDATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '修改人',
-  `BASE_UPDATE_TM` datetime DEFAULT NULL COMMENT '修改时间',
-  `BASE_STATUS` varchar(255) NOT NULL COMMENT '状态',
-  `BASE_REMARKS` varchar(255) DEFAULT NULL COMMENT '备注',
-  `BASE_CREATE_IP` varchar(255) DEFAULT NULL COMMENT '创建ip',
-  `BASE_UPDATE_IP` varchar(255) DEFAULT NULL COMMENT '更新ip',
-  PRIMARY KEY (`BASE_ID`),
-  KEY `FK_Reference_56` (`DICT_ID`),
-  KEY `IDX_DICTVALUE` (`DICT_VALUE`) USING BTREE,
-  KEY `IDX_DICTITEM_VALUE` (`VALUE`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='字典表明细表';
-
--- ----------------------------
--- Table structure for sys_log
--- ----------------------------
-DROP TABLE IF EXISTS `sys_log`;
-CREATE TABLE `sys_log` (
-  `BASE_ID` varchar(255) NOT NULL COMMENT '主键',
-  `CONTENT` longtext COMMENT '日志内容',
-  `TYPE_CD` varchar(20) DEFAULT NULL COMMENT '日志类型',
-  `BASE_CREATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '创建人',
-  `BASE_CREATE_TM` datetime NOT NULL COMMENT '创建时间',
-  `BASE_UPDATE_USER_ID` varchar(255) DEFAULT NULL COMMENT '更新人',
-  `BASE_UPDATE_TM` datetime DEFAULT NULL COMMENT '更新时间',
-  `BASE_STATUS` varchar(255) NOT NULL COMMENT '状态',
-  `BASE_REMARKS` varchar(255) DEFAULT NULL COMMENT '备注',
-  `BASE_CREATE_IP` varchar(255) DEFAULT NULL COMMENT '创建ip',
-  `BASE_UPDATE_IP` varchar(255) DEFAULT NULL COMMENT '更新ip',
-  PRIMARY KEY (`BASE_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='访问日志';
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -121,7 +59,7 @@ CREATE TABLE `sys_msg` (
   `BASE_CREATE_IP` varchar(255) DEFAULT NULL COMMENT '创建ip',
   `BASE_UPDATE_IP` varchar(255) DEFAULT NULL COMMENT '更新ip',
   PRIMARY KEY (`BASE_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='字典表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息表';
 
 -- ----------------------------
 -- Table structure for sys_role

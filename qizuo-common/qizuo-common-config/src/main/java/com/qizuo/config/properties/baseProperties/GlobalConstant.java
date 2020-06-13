@@ -101,7 +101,7 @@ public class GlobalConstant {
     int THOUSAND_INT = 1000;
   }
 
-  /** 常用数字配置 */
+  /** 常用sql配置 */
   public static final class SqlConfig {
     private SqlConfig() {}
     // 不需要拦截器打印sql的标志

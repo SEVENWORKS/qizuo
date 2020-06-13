@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.qizuo.cm.modules.system.dao.RoleDao">
+<mapper namespace="com.qizuo.provider.model.dao.RoleDao">
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
@@ -60,9 +60,9 @@
         delete from sys_role where BASE_ID=#{baseId}
     </delete>
     <!-- 查找单个 -->
-    <select id="query" resultType="org.qizuo.cm.modules.system.pojo.RolePoJo">
+    <select id="query" resultType="com.qizuo.provider.model.po.RolePoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_role a
         <where>
             a.BASE_ID=#{baseId}
@@ -71,9 +71,9 @@
         limit 1
     </select>
     <!-- 查找列表 -->
-    <select id="qList" resultType="org.qizuo.cm.modules.system.pojo.RolePoJo">
+    <select id="qList" resultType="com.qizuo.provider.model.po.RolePoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_role a
         <where>
             and a.BASE_STATUS=0
@@ -83,9 +83,9 @@
         </if>
     </select>
     <!-- 查找分页 -->
-    <select id="qPageQZ" resultType="org.qizuo.cm.modules.system.pojo.RolePoJo">
+    <select id="qPageQZ" resultType="com.qizuo.provider.model.po.RolePoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_role a
         <where>
             and a.BASE_STATUS=0

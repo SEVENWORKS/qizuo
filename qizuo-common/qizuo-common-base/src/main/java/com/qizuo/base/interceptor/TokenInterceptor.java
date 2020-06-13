@@ -6,7 +6,7 @@
 package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.model.auth.TokenDto;
+import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
@@ -116,7 +116,7 @@ public class TokenInterceptor implements HandlerInterceptor {
     }
 
     // 下面是user验证，顺便把user信息放入到localmap中
-    TokenDto loginUser = (TokenDto) redisTemplate.opsForValue().get(token);
+    UserDto loginUser = (UserDto) redisTemplate.opsForValue().get(token);
     if (loginUser == null) {
       log.error("获取用户信息失败");
       return false;

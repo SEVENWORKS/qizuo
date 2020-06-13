@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.qizuo.cm.modules.system.dao.UserDao">
+<mapper namespace="com.qizuo.provider.model.dao.UserDao">
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
@@ -18,83 +18,10 @@
         a.LOGIN_DATE as "loginDate",
         a.OUTMUTUAL_KEY as "outMutualKey"
     </sql>
-    <!-- 插入 -->
-    <insert id="insert">
-        insert into sys_user
-            (
-                BASE_ID,
-                BASE_CREATE_USER_ID,
-                BASE_CREATE_TM,
-                BASE_STATUS,
-                BASE_REMARKS,
-                BASE_CREATE_IP,
-                USERNAME,
-                PASSWORD,
-                SALT,
-                ROLE_IDS,
-                NAME,
-                SEX_CD,
-                IDCARD,
-                PHONE,
-                EMAIL,
-                PHOTO,
-                ADDRESS,
-                LOGIN_DATE,
-                OUTMUTUAL_KEY
-            )
-        values
-            (
-                #{baseId},
-                #{baseCreateUserId},
-                now(),
-                #{baseStatus},
-                #{baseRemarks},
-                #{baseCreateIp},
-                #{userName},
-                #{passWord},
-                #{salt},
-                #{roleIds},
-                #{name},
-                #{sexCd},
-                #{idCard},
-                #{phone},
-                #{email},
-                #{photo},
-                #{address},
-                #{loginDate},
-                #{outMutualKey}
-            )
-    </insert>
-    <!-- 修改 -->
-    <update id="update">
-        update sys_user set
-            BASE_UPDATE_USER_ID=#{baseUpdateUserId},
-            BASE_UPDATE_TM=now(),
-            BASE_REMARKS=#{baseRemarks},
-            BASE_UPDATE_IP=#{baseUpdateIp},
-            USERNAME=#{userName},
-            PASSWORD=#{passWord},
-            SALT=#{salt},
-            ROLE_IDS=#{roleIds},
-            NAME=#{name},
-            SEX_CD=#{sexCd},
-            IDCARD=#{idCard},
-            PHONE=#{phone},
-            EMAIL=#{email},
-            PHOTO=#{photo},
-            ADDRESS=#{address},
-            LOGIN_DATE=#{loginDate},
-            OUTMUTUAL_KEY=#{outMutualKey}
-        where BASE_ID=#{baseId}
-    </update>
-    <!-- 删除 -->
-    <delete id="delete">
-        delete from sys_user where BASE_ID=#{baseId}
-    </delete>
     <!-- 查找单个 -->
-    <select id="query" resultType="org.qizuo.cm.modules.system.pojo.UserPoJo">
+    <select id="query" resultType="com.qizuo.provider.model.po.UserPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_user a
         <where>
             a.BASE_ID=#{baseId}
@@ -103,9 +30,9 @@
         limit 1
     </select>
     <!-- 查找列表 -->
-    <select id="qList" resultType="org.qizuo.cm.modules.system.pojo.UserPoJo">
+    <select id="qList" resultType="com.qizuo.provider.model.po.UserPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_user a
         <where>
             and a.BASE_STATUS=0
@@ -115,9 +42,9 @@
         </if>
     </select>
     <!-- 查找分页 -->
-    <select id="qPageQZ" resultType="org.qizuo.cm.modules.system.pojo.UserPoJo">
+    <select id="qPageQZ" resultType="com.qizuo.provider.model.po.UserPoJo">
         select
-            <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_user a
         <where>
             and a.BASE_STATUS=0
@@ -129,39 +56,34 @@
             order by ${entity.orderBy}
         </if>
     </select>
-    <!-- ********************************************************************************************************************** -->
-    <!-- 更新状态 -->
-    <update id="uStatus">
-        update sys_user set BASE_STATUS=#{baseStatus} where BASE_ID=#{baseId}
-    </update>
     <!-- 根据用户名称获取密码 -->
-    <select id="qPasswordByName" resultType="org.qizuo.cm.modules.system.pojo.UserPoJo">
+    <select id="qPasswordByName" resultType="com.qizuo.provider.model.po.UserPoJo">
         select
-          <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_user a
         where a.username=#{value} and a.BASE_STATUS=0
     </select>
     <!-- 获取单个用户所有信息 -->
-    <resultMap id="userAllMsgMap" type="org.qizuo.cm.modules.system.pojo.UserPoJo">
+    <resultMap id="userAllMsgMap" type="com.qizuo.provider.model.po.UserPoJo">
         <collection property="rolePoJos" column="roleIds" select="qRolesByString"></collection>
         <collection property="menuPoJos" column="roleIds" select="qMenusByString"></collection>
     </resultMap>
     <select id="qUserAllMsg" resultMap="userAllMsgMap">
         select
-          <include refid="exclusiveColumns"/>
+        <include refid="exclusiveColumns"/>
         from sys_user a where a.username=#{userName}
     </select>
     <!-- 根据用户去权限拼接查询角色信息 -->
-    <select id="qRolesByString" resultType="org.qizuo.cm.modules.system.pojo.RolePoJo">
+    <select id="qRolesByString" resultType="com.qizuo.provider.model.po.RolePoJo">
         select
-        <include refid="org.qizuo.cm.modules.system.dao.RoleDao.exclusiveColumns"/>
+        <include refid="com.qizuo.provider.model.dao.RoleDao.exclusiveColumns"/>
         from sys_role a
         where a.BASE_STATUS=0 and a.base_id in (#{value})
     </select>
     <!-- 根据用户权限拼接查询菜单信息 -->
-    <select id="qMenusByString" resultType="org.qizuo.cm.modules.system.pojo.MenuPoJo">
+    <select id="qMenusByString" resultType="com.qizuo.provider.model.po.MenuPoJo">
         select
-        <include refid="org.qizuo.cm.modules.system.dao.MenuDao.exclusiveColumns"/>
+        <include refid="com.qizuo.provider.model.dao.MenuDao.exclusiveColumns"/>
         from sys_menu a
         where a.BASE_STATUS=0 and a.base_id in
         (select group_concat(b.MENU_IDS) from sys_role b where b.BASE_STATUS=0 and b.base_id in (#{value}))

@@ -5,8 +5,8 @@
 
 package com.qizuo.security.model;
 
+import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,12 +19,10 @@ import java.util.Collection;
 public class SecurityUser implements UserDetails {
   private static final long serialVersionUID = 4872628781561412463L;
 
-  private static final String ENABLE = "ENABLE";
-
   /** 已授予的权限 */
   private Collection<GrantedAuthority> authorities;
 
-  private Long userId;
+  private String userId;
 
   private String nickName;
 
@@ -34,33 +32,36 @@ public class SecurityUser implements UserDetails {
 
   private String status;
 
-  private Long groupId;
+  private String groupId;
 
   private String groupName;
 
   public SecurityUser() {}
 
   public SecurityUser(
-      Long userId,
+      String userId,
       String loginName,
       String loginPwd,
       String nickName,
-      Long groupId,
-      String groupName) {
+      String groupId,
+      String groupName,
+      String status) {
     this.setUserId(userId);
     this.setLoginName(loginName);
     this.setLoginPwd(loginPwd);
     this.setNickName(nickName);
     this.setGroupId(groupId);
     this.setGroupName(groupName);
+    this.setStatus(status);
   }
 
+  // 多了一个权限构造
   public SecurityUser(
-      Long userId,
+      String userId,
       String loginName,
       String loginPwd,
       String nickName,
-      Long groupId,
+      String groupId,
       String groupName,
       String status,
       Collection<GrantedAuthority> grantedAuthorities) {
@@ -101,6 +102,6 @@ public class SecurityUser implements UserDetails {
 
   @Override
   public boolean isEnabled() {
-    return StringUtils.equals(this.status, ENABLE);
+    return this.status == GlobalConstant.STATUS_YES;
   }
 }
