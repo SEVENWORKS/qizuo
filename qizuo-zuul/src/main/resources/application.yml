@@ -71,5 +71,11 @@ zuul:
       path: /user/**
       serviceId: qizuo-provider-user
     qizuo-provider-user-admin: #用户信息修改服务
-          path: /user/admin/**
-          serviceId: qizuo-provider-user-admin
+      path: /user/admin/**
+      serviceId: qizuo-provider-user-admin
+    qizuo-provider-file: #用户信息修改服务
+      path: /file/**
+      serviceId: qizuo-provider-file
+    qizuo-provider-user-admin: #用户信息修改服务
+      path: /view/**
+      serviceId: qizuo-provider-view
