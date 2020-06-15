@@ -3,6 +3,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;//打包分析插件
 const webpack = require("webpack");//webpack引入
 const StylelintPlugin = require("stylelint-webpack-plugin");//webpack中stylelint
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const path = require("path");//node path
 const resolve = dir => path.join(__dirname, dir);//定义一个拼接方法，方便后面使用，就是和当前目录进行拼接
@@ -29,20 +30,9 @@ glob.sync('./src/pages/**/main.js').forEach(entry => {
 module.exports = {
   publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "./", // 默认'/'，部署应用包时的基本 URL 就是dist目录之后的路径
   outputDir: process.env.outputDir || 'dist', // 'dist', 生产环境构建文件的目录
-  assetsDir: "", // 相对于outputDir的静态资源(js、css、img、fonts)目录
+  // assetsDir: "", // 相对于outputDir的静态资源(js、css、img、fonts)目录
   //多入口配置
-  pages:{ admin:
-          { entry: 'src/pages/admin/main.js',
-              template: 'src/pages/admin/index.html',
-              filename: 'admin.html',
-              title: '后台管理',
-              chunk: [ 'chunk-vendors', 'chunk-common', 'admin' ] },
-      common:
-          { entry: 'src/pages/common/main.js',
-              template: 'src/pages/common/index.html',
-              filename: 'common.html',
-              title: '常用页面',
-              chunk: [ 'chunk-vendors', 'chunk-common', 'common' ] } },
+  pages,
   configureWebpack: config => {
     //防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖
     config.externals = {
@@ -52,6 +42,29 @@ module.exports = {
       vuex: "Vuex",
       axios: "axios"
     };
+
+    //修改plugins参数
+    //在Vue项目中，引入到工程中的所有js、css文件，编译时都会被打包进vendor.js，浏览器在加载该文件之后才能开始显示首屏。若是引入的库众多，那么vendor.js文件体积将会相当的大，影响首开的体验。
+    //解决方法是，将引用的外部js、css文件剥离开来，不编译到vendor.js中，而是用资源的形式引用，这样浏览器可以使用多个线程异步将vendor.js、外部的js等加载下来，达到加速首开的目的。
+    //外部的库文件，可以使用CDN资源，或者别的服务器资源等。
+    //cdn加速文件下载
+    const cdn = {
+        // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
+        css: ["//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css"],
+        js: [
+            "//unpkg.com/vue@2.6.10/dist/vue.min.js", // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
+            "//unpkg.com/vue-commonRouter@3.0.6/dist/vue-commonRouter.min.js",
+            "//unpkg.com/vuex@3.1.1/dist/vuex.min.js",
+            "//unpkg.com/axios@0.19.0/dist/axios.min.js",
+            "//unpkg.com/element-ui@2.10.1/lib/router.js"
+        ]
+    };
+    config.plugins.forEach(item=>{
+      if(item instanceof HtmlWebpackPlugin){
+          item.options.cdn=cdn;
+          item.options.chunksSortMode='manual';
+      }
+    })
 
     const plugins = [];
     if (IS_DEV) {
@@ -67,7 +80,6 @@ module.exports = {
         disableHostCheck: true
       };
     }
-
     //合并plugins
     config.plugins = [...config.plugins, ...plugins];
   },//如果这个值是一个函数，则会接收被解析的配置作为参数。该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本
@@ -86,37 +98,11 @@ module.exports = {
       .set("@middlewares", resolve("src/middlewares"))
       .set("@mixins", resolve("src/mixins"))
       .set("@plugins", resolve("src/plugins"))
-      .set("@router", resolve("src/router"))
-      .set("@store", resolve("src/store"))
+      .set("@commonRouter", resolve("src/commonRouter"))
+      .set("@commonStore", resolve("src/commonStore"))
       .set("@utils", resolve("src/utils"))
       .set("@views", resolve("src/views"))
       .set("@layouts", resolve("src/layouts"));
-
-
-    //在Vue项目中，引入到工程中的所有js、css文件，编译时都会被打包进vendor.js，浏览器在加载该文件之后才能开始显示首屏。若是引入的库众多，那么vendor.js文件体积将会相当的大，影响首开的体验。
-    //解决方法是，将引用的外部js、css文件剥离开来，不编译到vendor.js中，而是用资源的形式引用，这样浏览器可以使用多个线程异步将vendor.js、外部的js等加载下来，达到加速首开的目的。
-    //外部的库文件，可以使用CDN资源，或者别的服务器资源等。
-    //cdn加速文件下载
-    const cdn = {
-      // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
-      css: ["//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css"],
-      js: [
-        "//unpkg.com/vue@2.6.10/dist/vue.min.js", // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
-        "//unpkg.com/vue-router@3.0.6/dist/vue-router.min.js",
-        "//unpkg.com/vuex@3.1.1/dist/vuex.min.js",
-        "//unpkg.com/axios@0.19.0/dist/axios.min.js",
-        "//unpkg.com/element-ui@2.10.1/lib/index.js"
-      ]
-    };
-    // 如果使用多页面打包，使用vue inspect --plugins查看html是否在结果数组中
-    config.plugin("html").tap(args => {
-      console.log(args)
-      // html中添加cdn
-      args[0].cdn = cdn;
-      // 修复 Lazy loading routes Error
-      args[0].chunksSortMode = "none";
-      return args;
-    });
 
     //优化处理压缩图片和打包分析
     if (IS_PROD) {
