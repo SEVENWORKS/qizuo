@@ -4,6 +4,4 @@
  */
 package com.qizuo.util.file;
 
-public class FileUtil {
-
-}
+public class FileUtil {}
