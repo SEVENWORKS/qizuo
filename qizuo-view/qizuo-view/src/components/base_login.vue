@@ -1,24 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>登录</title>
-		<!-- header static tag in -->
-		<%@ include file="base_tags.jsp"%>
-		<!--css-->
-		<link rel="stylesheet" href="${staticPath}css/frame/bootstrap.min.css" />
-		<link rel="stylesheet" href="${staticPath}css/system/base_login.css" />
-		<!-- jQuery -->
-		<script src="${staticPath}js/frame/jquery.min.js"></script>
-		<!-- script base system -->
-		<script src="${staticPath}js/system/base_Global.js"></script>
-		<script src="${staticPath}js/system/base_functions.js"></script>
-		<script src="${staticPath}js/system/base_utils.js"></script>
-		<!-- layer.js -->
-		<script src="${staticPath}js/layui/layer/layer.js"></script>
-	</head>
-	<body>
+<template>
+	<div>
 		<header>
 			
 		</header>
@@ -30,6 +11,8 @@
 		<footer>
 			<div id="fo_tag">qizuo</div>
 		</footer>
+	</div>
+</template>
 		<!--js-->
 		<script type="text/javascript" src="${staticPath}js/frame/bootstrap.min.js" ></script>
 		<script type="text/javascript">
@@ -85,5 +68,5 @@
 				}
 			}
 		</script>
-	</body>
-</html>
+<style lang="scss" scoped>
+</style>
