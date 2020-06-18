@@ -2,11 +2,15 @@
   <div>
     <!-- 最上层一行的头 -->
     <!-- 控制最左侧菜单的总菜单 -->
-    <a href="" id="menu-toggle"></a>
+    <div>
+      <a href="" id="menu-toggle"></a>
+    </div>
     <!-- 项目名称 -->
-    <a class="logo pull-left" href="" onclick="window.location.reload()"
-      >上辈子是条鱼</a
-    >
+    <div>
+      <a class="logo pull-left" href="" onclick="window.location.reload()"
+        >上辈子是条鱼</a
+      >
+    </div>
 
     <!-- 这一行剩下的右侧部分 -->
     <div class="media-body">

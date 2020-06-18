@@ -1,20 +1,5 @@
 <template>
   <div>
-    <!-- 邮件图标点击头 -->
-    <div id="messages" class="tile drawer animated">
-      <div class="listview narrow">
-        <div class="media">
-          <a
-            href="#"
-            onclick="pjaxFunc('${pageContext.request.contextPath}/jump/system/msgDo');"
-            >Send a New Message</a
-          >
-          <span class="drawer-close">&times;</span>
-        </div>
-        <div class="overflow" style="height: 254px;"></div>
-      </div>
-    </div>
-
     <!-- 标题 -->
     <ol class="breadcrumb hidden-xs">
       <li class="active"><a href="#">首页</a></li>

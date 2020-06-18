@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import commonRouter from '/src/commonRouter/index'
+import commonRouter from '@/commonRouter/index'
 Vue.use(VueRouter)
 const routes = [
     ...commonRouter
