@@ -7,9 +7,7 @@
     </div>
     <!-- 项目名称 -->
     <div>
-      <a class="logo pull-left" href="" onclick="window.location.reload()"
-        >上辈子是条鱼</a
-      >
+      <a class="logo pull-left" href="#" @click="open">上辈子是条鱼</a>
     </div>
 
     <!-- 这一行剩下的右侧部分 -->
@@ -32,7 +30,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    open() {
+      window.open("/static/htmlframe/index.html");
+    },
+  },
 };
 </script>
 <style lang="scss" scoped></style>

@@ -15,7 +15,6 @@
       </aside>
       <!-- 头部分2 -->
       <section id="content" class="container">
-        <base-header2></base-header2>
         <!--iframe主体 -->
         <section id="baseFrame">
           <div id="app">
@@ -29,22 +28,25 @@
     <footer>
       <base-footer></base-footer>
     </footer>
+
+    <!-- alert弹框 -->
+    <alert></alert>
   </div>
 </template>
 
 <script>
 import baseFooter from "./views/frames/base_footer";
 import baseHeader from "./views/frames/base_header";
-import baseHeader2 from "./views/frames/base_header2";
 import baseLeftbar from "./views/frames/base_leftbar";
 import baseLeftbar2 from "./views/frames/base_leftbar2";
+import alert from "@comp/dialog/alert";
 export default {
   components: {
     baseFooter,
     baseHeader,
-    baseHeader2,
     baseLeftbar,
     baseLeftbar2,
+    alert,
   },
 };
 </script>

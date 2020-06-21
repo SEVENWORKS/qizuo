@@ -8,12 +8,17 @@
         <a href="" data-toggle="dropdown">
           <img
             class="profile-pic animated"
-            src="/static/img/frame/profile-pic.jpg"
+            src="/static/img/frame/profile-pics/profile-pic.jpg"
             alt=""
           />
         </a>
         <!-- 头像点击菜单 -->
-        <ul class="dropdown-menu profile-menu"></ul>
+        <ul class="dropdown-menu profile-menu">
+          <li>
+            <a href="#" onclick="">退出登录</a> <i class="icon left">&#61903;</i
+            ><i class="icon right">&#61815;</i>
+          </li>
+        </ul>
         <!-- 头像下文字 -->
         <h4 class="m-0">qizuo</h4>
       </div>
@@ -30,49 +35,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    baseLeftBar2_userMenu(userMenus) {
-      if (isNotBlank(userMenus)) {
-        var html = "";
-        for (var i = 0; i < userMenus.length; i++) {
-          //参数
-          var title = isNotBlank(userMenus[i].title) ? userMenus[i].title : "";
-          var url = isNotBlank(userMenus[i].url)
-            ? "${pageContext.request.contextPath}/" + userMenus[i].url
-            : "";
-          var type = isNotBlank(userMenus[i].type) ? userMenus[i].type : "";
-          var func = userMenus[i].func;
-          //html
-          html +=
-            '<li><a href="#" onclick="baseLeftBar2_userFunc(\'' +
-            url +
-            "'," +
-            type +
-            "," +
-            func +
-            ')">' +
-            title +
-            '</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i>';
-        }
-        $("#profile-menu ul").append(html);
-      }
-    },
-    baseLeftBar2_userFunc(url, type, func) {
-      if (isNotBlank(url) && isNotBlank(type)) {
-        if (type == global$urlGetType) {
-          window.open(url);
-        } else {
-          $.post(url, {}, function (data) {
-            backResultAlert(data, function () {
-              if (isFunction(func)) {
-                func();
-              }
-            });
-          });
-        }
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 <style lang="scss" scoped></style>

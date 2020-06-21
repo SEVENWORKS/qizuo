@@ -91,9 +91,10 @@ module.exports = {
     config.resolve.alias
       .set("vue$", "vue/dist/vue.esm.js")
       .set("@", resolve("src"))
-      .set("@components", resolve("src/components"))
+      .set("@comp", resolve("src/components"))
       .set("@pages", resolve("src/pages"))
-      .set("@utils", resolve("src/utils"));
+      .set("@utils", resolve("src/utils"))
+      .set("@static", resolve("public/static"));
 
     //优化处理压缩图片和打包分析
     if (IS_PROD) {

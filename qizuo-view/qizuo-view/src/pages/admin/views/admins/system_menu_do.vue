@@ -32,68 +32,65 @@ export default {
   data() {
     return {};
   },
-  methods: {},
-};
-globalJs(function () {
-  /** ************************************************************ */
-  //新增按钮(这个函数第二个参数可以传入复杂函数)
-  buttonOne(
-    "保存",
-    function () {
-      iuFunc();
-    },
-    "45%"
-  );
-  buttonOne(
-    "返回",
-    function () {
-      pjaxFunc("${jumpPath}system/sys/menu");
-    },
-    "55%"
-  );
-  /** ************************************************************ */
-  qData();
-  //查询数据
-  function qData() {
-    //只有更新的时候才去查找数据
-    if (isNotBlank("${baseId}")) {
-      $.post(
-        "${modulePath}system/menu/query",
-        { baseId: "${baseId}" },
-        function (data) {
-          backResult(data, function (data) {
-            if (isNotBlank(data)) {
-              //模板(数据，容器，模板)(当出现不在返回元素中值的时候，可以往对象中添加数据，毕竟从java返回过来后就是一个js对象)
-              tplFunc(data);
+  methods: {
+    init() {
+      buttonOne(
+        "保存",
+        function () {
+          iuFunc();
+        },
+        "45%"
+      );
+      buttonOne(
+        "返回",
+        function () {
+          pjaxFunc("${jumpPath}system/sys/menu");
+        },
+        "55%"
+      );
+      /** ************************************************************ */
+      qData();
+      //查询数据
+      function qData() {
+        //只有更新的时候才去查找数据
+        if (isNotBlank("${baseId}")) {
+          $.post(
+            "${modulePath}system/menu/query",
+            { baseId: "${baseId}" },
+            function (data) {
+              backResult(data, function (data) {
+                if (isNotBlank(data)) {
+                  //模板(数据，容器，模板)(当出现不在返回元素中值的时候，可以往对象中添加数据，毕竟从java返回过来后就是一个js对象)
+                  tplFunc(data);
+                }
+              });
             }
-          });
+          );
+        } else {
+          tplFunc();
         }
-      );
-    } else {
-      tplFunc();
-    }
-  }
-  //添加或者修改
-  function iuFunc() {
-    if (formValid()) {
-      $.post(
-        "${modulePath}system/menu/iuDo",
-        $("#dataContainer").serialize(),
-        function (data) {
-          backResultAlert(data, function (data) {
-            f5();
-          });
+      }
+      //添加或者修改
+      function iuFunc() {
+        if (formValid()) {
+          $.post(
+            "${modulePath}system/menu/iuDo",
+            $("#dataContainer").serialize(),
+            function (data) {
+              backResultAlert(data, function (data) {
+                f5();
+              });
+            }
+          );
         }
-      );
-    }
-  }
-  //表单验证
-  function formValid() {
-    return true;
-  }
-  /** ************************************************************ */
-});
-/** ********************************************** */
+      }
+      //表单验证
+      function formValid() {
+        return true;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

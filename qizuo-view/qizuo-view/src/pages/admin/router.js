@@ -5,6 +5,10 @@ Vue.use(VueRouter)
 const routes = [
     ...commonRouter,
     {
+        path: '/',
+        redirect:'/system_user'
+    },
+    {
         path: '/system_user',
         name: 'systemUser',
         component: () => import('./views/admins/system_user')
@@ -33,11 +37,26 @@ const routes = [
         path: '/system_menu_do',
         name: 'systemMenuDo',
         component: () => import('./views/admins/system_menu_do')
+    },
+    {
+        path: '/base_frames',
+        name: 'baseFrames',
+        component: () => import('./views/frames/base_frames')
+    },
+    {
+        path: '/error',
+        name: 'error',
+        component: () => import('@comp/error/404')
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@comp/login/base_login')
     }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })

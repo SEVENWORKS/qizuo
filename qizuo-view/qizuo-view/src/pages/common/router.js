@@ -4,15 +4,10 @@ import commonRouter from '@/commonRouter/index'
 Vue.use(VueRouter)
 const routes = [
     ...commonRouter
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    // }
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes
 })

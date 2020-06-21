@@ -75,134 +75,135 @@ export default {
   data() {
     return {};
   },
-  methods: {},
-};
-globalJs(function () {
-  /** ************************************************************ */
-  //新增按钮(这个函数第二个参数可以传入复杂函数)
-  buttonOne(
-    "保存",
-    function () {
-      iuFunc();
-    },
-    "45%"
-  );
-  buttonOne(
-    "返回",
-    function () {
-      pjaxFunc("${jumpPath}system/user");
-    },
-    "55%"
-  );
-  /** ************************************************************ */
-  qData();
-  //查询数据
-  function qData() {
-    //只有更新的时候才去查找数据
-    if (isNotBlank("${baseId}")) {
-      $.post(
-        "${modulePath}system/user/query",
-        { baseId: "${baseId}" },
-        function (data) {
-          backResult(data, function (data) {
-            if (isNotBlank(data)) {
-              //模板(数据，容器，模板)(当出现不在返回元素中值的时候，可以往对象中添加数据，毕竟从java返回过来后就是一个js对象)
-              tplFunc(data);
-              //slect插件初始化(select.min.js)
-              if ($(".select")[0]) {
-                $(".select").selectpicker({
-                  noneSelectedText: "单选...", //设置没有任何选择时候的文字显示
-                });
-              }
-              //选择
-              if ($(".select")[0]) {
-                var dataScopeCdsArr = isNotBlank(data.sexCd)
-                  ? data.sexCd.split(",")
-                  : null;
-                if (isNotBlank(dataScopeCdsArr)) {
-                  //这个地方如果是多个初始化就放数组，如果是单个就放单个值就行了(bootstrap selectpicker)，记住一定要refresh
-                  $(".select").selectpicker("val", dataScopeCdsArr);
-                  $(".select").selectpicker("refresh");
+  methods: {
+    init() {
+      //新增按钮(这个函数第二个参数可以传入复杂函数)
+      buttonOne(
+        "保存",
+        function () {
+          iuFunc();
+        },
+        "45%"
+      );
+      buttonOne(
+        "返回",
+        function () {
+          pjaxFunc("${jumpPath}system/user");
+        },
+        "55%"
+      );
+      /** ************************************************************ */
+      qData();
+      //查询数据
+      function qData() {
+        //只有更新的时候才去查找数据
+        if (isNotBlank("${baseId}")) {
+          $.post(
+            "${modulePath}system/user/query",
+            { baseId: "${baseId}" },
+            function (data) {
+              backResult(data, function (data) {
+                if (isNotBlank(data)) {
+                  //模板(数据，容器，模板)(当出现不在返回元素中值的时候，可以往对象中添加数据，毕竟从java返回过来后就是一个js对象)
+                  tplFunc(data);
+                  //slect插件初始化(select.min.js)
+                  if ($(".select")[0]) {
+                    $(".select").selectpicker({
+                      noneSelectedText: "单选...", //设置没有任何选择时候的文字显示
+                    });
+                  }
+                  //选择
+                  if ($(".select")[0]) {
+                    var dataScopeCdsArr = isNotBlank(data.sexCd)
+                      ? data.sexCd.split(",")
+                      : null;
+                    if (isNotBlank(dataScopeCdsArr)) {
+                      //这个地方如果是多个初始化就放数组，如果是单个就放单个值就行了(bootstrap selectpicker)，记住一定要refresh
+                      $(".select").selectpicker("val", dataScopeCdsArr);
+                      $(".select").selectpicker("refresh");
+                    }
+                  }
+                  //角色select
+                  roleSelect(data.roleIds);
                 }
-              }
-              //角色select
-              roleSelect(data.roleIds);
+              });
             }
-          });
-        }
-      );
-    } else {
-      tplFunc();
-      //slect插件初始化(select.min.js)
-      if ($(".select")[0]) {
-        $(".select").selectpicker({
-          noneSelectedText: "单选...", //设置没有任何选择时候的文字显示
-        });
-      }
-      //角色select
-      roleSelect();
-    }
-  }
-  //添加或者修改
-  function iuFunc() {
-    if (formValid()) {
-      $.post(
-        "${modulePath}system/user/iuDo",
-        $("#dataContainer").serialize(),
-        function (data) {
-          backResultAlert(data, function (data) {
-            //刷新
-            f5();
-          });
-        }
-      );
-    }
-  }
-  //表单验证
-  function formValid() {
-    return true;
-  }
-  /** ************************************************************ */
-  //获取角色select数据
-  function roleSelect(sData) {
-    $.post("${modulePath}system/role/list", {}, function (data) {
-      backResult(data, function (data) {
-        if (isNotBlank(data)) {
-          //填充
-          var selectOptions = "";
-          for (var i = 0; i < data.length; i++) {
-            selectOptions +=
-              '<option value="' +
-              data[i].baseId +
-              '">' +
-              data[i].name +
-              "</option>";
-          }
-          $(".select2").append(selectOptions);
-
-          //select渲染
-          if ($(".select2")[0]) {
-            $(".select2").selectpicker({
-              noneSelectedText: "多选...", //设置没有任何选择时候的文字显示
+          );
+        } else {
+          tplFunc();
+          //slect插件初始化(select.min.js)
+          if ($(".select")[0]) {
+            $(".select").selectpicker({
+              noneSelectedText: "单选...", //设置没有任何选择时候的文字显示
             });
           }
+          //角色select
+          roleSelect();
+        }
+      }
+      //添加或者修改
+      function iuFunc() {
+        if (formValid()) {
+          $.post(
+            "${modulePath}system/user/iuDo",
+            $("#dataContainer").serialize(),
+            function (data) {
+              backResultAlert(data, function (data) {
+                //刷新
+                f5();
+              });
+            }
+          );
+        }
+      }
+      //表单验证
+      function formValid() {
+        return true;
+      }
+      /** ************************************************************ */
+      //获取角色select数据
+      function roleSelect(sData) {
+        $.post("${modulePath}system/role/list", {}, function (data) {
+          backResult(data, function (data) {
+            if (isNotBlank(data)) {
+              //填充
+              var selectOptions = "";
+              for (var i = 0; i < data.length; i++) {
+                selectOptions +=
+                  '<option value="' +
+                  data[i].baseId +
+                  '">' +
+                  data[i].name +
+                  "</option>";
+              }
+              $(".select2").append(selectOptions);
 
-          //数据回溯
-          if (isNotBlank(sData)) {
-            if ($(".select2")[0]) {
-              var dataScopeCdsArr = isNotBlank(sData) ? sData.split(",") : null;
-              if (isNotBlank(dataScopeCdsArr)) {
-                //这个地方如果是多个初始化就放数组，如果是单个就放单个值就行了(bootstrap selectpicker)，记住一定要refresh
-                $(".select2").selectpicker("val", dataScopeCdsArr);
-                $(".select2").selectpicker("refresh");
+              //select渲染
+              if ($(".select2")[0]) {
+                $(".select2").selectpicker({
+                  noneSelectedText: "多选...", //设置没有任何选择时候的文字显示
+                });
+              }
+
+              //数据回溯
+              if (isNotBlank(sData)) {
+                if ($(".select2")[0]) {
+                  var dataScopeCdsArr = isNotBlank(sData)
+                    ? sData.split(",")
+                    : null;
+                  if (isNotBlank(dataScopeCdsArr)) {
+                    //这个地方如果是多个初始化就放数组，如果是单个就放单个值就行了(bootstrap selectpicker)，记住一定要refresh
+                    $(".select2").selectpicker("val", dataScopeCdsArr);
+                    $(".select2").selectpicker("refresh");
+                  }
+                }
               }
             }
-          }
-        }
-      });
-    });
-  }
-});
-/** ********************************************** */
+          });
+        });
+      }
+    },
+  },
+};
 </script>
 <style lang="scss" scoped></style>
