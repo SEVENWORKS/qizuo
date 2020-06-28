@@ -1,9 +1,14 @@
 <template>
-  <index :show="isShow">{{ msg }}</index>
+  <index :show="isShow">
+    <template #header>
+      {{ alertMsg }}
+    </template>
+  </index>
 </template>
 
 <script>
 import index from "./index";
+import { mapState, mapMutations } from "vuex";
 export default {
   components: {
     index,
@@ -14,14 +19,21 @@ export default {
     };
   },
   computed: {
-    msg() {
-      console.log(this.$global);
-      return this.$global;
-    },
+    ...mapState(["alertMsg"]),
+  },
+  methods: {
+    ...mapMutations(["updateAlertMsg"]),
   },
   watch: {
-    msg(newVal, oldVal) {
-      console.log(33333);
+    //监听弹框消息
+    alertMsg(newVal, oldVal) {
+      if (newVal) {
+        this.isShow = true;
+        setTimeout(() => {
+          this.isShow = false;
+          this.updateAlertMsg("");
+        }, 1500);
+      }
     },
   },
 };

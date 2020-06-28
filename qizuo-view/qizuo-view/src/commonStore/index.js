@@ -1,11 +1,13 @@
 //公共store
 export default {
-    state: {
+  state: {
+    alertMsg: "",
+  },
+  mutations: {
+    updateAlertMsg(state, alertMsg) {
+      state.alertMsg = alertMsg;
     },
-    mutations: {
-    },
-    actions: {
-    },
-    modules: {
-    }
-}
+  },
+  actions: {},
+  modules: {},
+};

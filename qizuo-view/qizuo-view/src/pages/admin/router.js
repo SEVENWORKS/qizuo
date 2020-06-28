@@ -44,11 +44,6 @@ const routes = [
         component: () => import('./views/frames/base_frames')
     },
     {
-        path: '/error',
-        name: 'error',
-        component: () => import('@comp/error/404')
-    },
-    {
         path: '/login',
         name: 'login',
         component: () => import('@comp/login/base_login')

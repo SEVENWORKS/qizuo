@@ -71,7 +71,7 @@ export default {
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 9999;
+  z-index: 888;
   background: url("/static/img/frame/body/qizuo-backgroudimg.png");
 }
 

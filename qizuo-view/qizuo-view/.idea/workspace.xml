@@ -1,600 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b132037-3cf1-4f7a-805a-6138e8c1fd1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dialog/alert.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/error/404.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/login/base_login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+    <list default="true" id="6b132037-3cf1-4f7a-805a-6138e8c1fd1e" name="Default Changelist" comment="two">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/fontawesome/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/fontawesome/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/fontawesome/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/fontawesome/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/icons/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/icons/icon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/icons/icon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Light-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Light-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Light-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Light-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Regular-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Regular-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Regular-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Regular-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Semibold-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Semibold-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Semibold-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/fonts/opan-sans/OpenSans-Semibold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/calendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/file-manager.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/file-manager.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/generics.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/generics.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/lightbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/lightbox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/media-player.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/media-player.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/system/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/system/base_login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/alerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/alerts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/buttons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/calendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/content-widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/content-widgets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/file-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/file-manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-elements.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-elements.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-examples.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-validation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/labels.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/labels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/list-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/list-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/messages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/other-components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/other-components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/profile-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/profile-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/sa.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/sa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/typography.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/cover-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/projects/cover-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/loadinfo.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/icon/loadinfo.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/profile-pics/profile-pic.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/select-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/icon/select-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-blue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-blue.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-chrome.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-chrome.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-city.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-city.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-cloth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-cloth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-greenish.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-greenish.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-kiwi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-kiwi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-lights.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-lights.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-night.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-night.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-ocean.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-ocean.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-sunny.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-sunny.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-sunset.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-sunset.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-tectile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-tectile.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-violate.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-violate.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/skin-yellow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/skin-yellow.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/frame/sort.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/icon/sort.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/system/qizuo-backgroudimg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frame/body/qizuo-backgroudimg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/echarts/echarts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/frame/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/jqueryPage/pagination.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/jqueryPage/pagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/jqueryPage/pagination.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/jqueryPage/pagination.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/layui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/layui.mobile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/code.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/10.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/10.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/11.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/11.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/12.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/12.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/13.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/13.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/14.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/14.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/15.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/15.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/16.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/16.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/17.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/17.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/18.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/18.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/19.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/19.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/20.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/20.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/21.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/21.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/22.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/22.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/23.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/23.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/25.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/25.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/26.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/26.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/27.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/27.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/28.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/28.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/29.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/29.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/3.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/3.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/30.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/30.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/31.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/31.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/32.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/32.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/33.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/33.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/34.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/34.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/35.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/35.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/36.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/36.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/37.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/37.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/38.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/38.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/39.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/39.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/4.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/4.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/40.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/40.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/41.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/41.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/42.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/42.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/43.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/43.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/44.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/44.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/45.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/45.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/46.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/46.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/47.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/47.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/48.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/48.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/49.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/49.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/5.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/50.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/51.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/51.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/52.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/52.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/53.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/53.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/54.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/54.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/55.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/55.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/56.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/56.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/57.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/57.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/58.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/58.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/59.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/59.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/6.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/6.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/60.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/60.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/61.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/61.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/62.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/62.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/63.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/63.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/64.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/64.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/65.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/65.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/66.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/66.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/67.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/67.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/68.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/68.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/69.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/69.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/7.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/7.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/70.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/70.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/71.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/71.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/8.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/8.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/images/face/9.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/9.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/colorpicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/element.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/flow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laydate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/layedit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/mobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/rate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/mobile/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/mobile/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/mobile/need/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/mobile/need/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/icon-ext.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/loading-0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/loading-1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layer/theme/default/loading-2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frame/layui/layui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/pjax/jquery.pjax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/dompurify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/hotkeys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/mobilecheck.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/page-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/page-doc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/page-download.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/page-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/simditor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/simditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/simditor/uploader.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/static/js/system/base_Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/system/base_Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/system/base_functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/system/base_page.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/static/js/system/base_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/system/base_utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/template/art-template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/anchor/anchor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/attachment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/attachment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/alignicon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/alignicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/file-icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/file-icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/progress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/success.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/attachment/images/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/background/background.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/background/background.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/background/background.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/background/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/background/images/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/chart.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/charts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/charts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/charts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/charts/images/charts5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/emotion.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/emotion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/emotion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/bface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/cface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/fface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/jxface2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/tface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/wface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/emotion/images/yface.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/gmap/gmap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/help/help.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/help/help.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/help/help.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/image.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/image.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/alignicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/progress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/success.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/image/images/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/insertframe/insertframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/internal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/link/link.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/map/map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/map/show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/music/music.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/music/music.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/music/music.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/preview/preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/addimg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/brush.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/delimg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/delimgH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/empty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/emptyH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/eraser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/redo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/redoH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/scale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/scaleH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/size.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/undo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/images/undoH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/scrawl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/scrawl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/scrawl/scrawl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/searchreplace/searchreplace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/searchreplace/searchreplace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/snapscreen/snapscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/spechars/spechars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/spechars/spechars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/dragicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/edittable.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/edittable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/edittable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/edittd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/table/edittip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/pre0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/pre1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/pre2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/pre3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/images/pre4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/template.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/template/template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/center_focus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/file-icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/file-icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/left_focus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/none_focus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/progress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/right_focus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/success.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/images/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/video.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/video.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/video/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/webapp/webapp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/wordimage/imageUploader.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/wordimage/tangram.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/wordimage/wordimage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/dialogs/wordimage/wordimage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/controller.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/lib/commons-codec-1.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/lib/commons-io-2.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/lib/json.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/jsp/lib/ueditor-1.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/addimage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/alldeletebtnhoverskin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/alldeletebtnupskin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/deletedisable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/deleteenable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/listbackground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/localimage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/rotateleftdisable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/rotateleftenable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/rotaterightdisable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/rotaterightenable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/en/images/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/zh-cn/images/copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/zh-cn/images/localimage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/zh-cn/images/music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/zh-cn/images/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/lang/zh-cn/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/css/ueditor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/css/ueditor.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/dialogbase.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/anchor.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/arrow_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/arrow_up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/button-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/cancelbutton.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/charts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/cursor_h.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/cursor_h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/cursor_v.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/cursor_v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/dialog-title-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/filescan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/highlighted.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/icons-all.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/loaderror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/lock.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/neweditor-tab-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/pagebreak.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/scale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/sortable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/spacer.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/sparator_v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/table-cell-align.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/tangram-colorpicker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/toolbar_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/unhighlighted.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/videologo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/word.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/default/images/wordpaste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/themes/iframe.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/SyntaxHighlighter/shCore.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/codemirror/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/codemirror/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/mootools-adapter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/prototype-adapter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/standalone-framework.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/highcharts-more.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/highcharts-more.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/highcharts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/highcharts.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/annotations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/annotations.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/canvas-tools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/canvas-tools.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/data.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/drilldown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/drilldown.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/exporting.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/exporting.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/funnel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/funnel.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/heatmap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/heatmap.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/map.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/no-data-to-display.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/themes/dark-blue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/themes/dark-green.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/themes/gray.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/themes/grid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/highcharts/themes/skies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/jquery-1.10.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/jquery-1.10.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/jquery-1.10.2.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/font/vjs.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/font/vjs.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/font/vjs.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/font/vjs.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/video-js.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/video-js.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/video-js.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/video.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/video-js/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/Uploader.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.custom.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.flashonly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.flashonly.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.html5only.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.html5only.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.withoutimage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/xss.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/zeroclipboard/ZeroClipboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/ueditor.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/ueditor.all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/ueditor.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/ueditor.parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ueditor/ueditor.parse.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/css/browse-btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/css/uploadify-cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/css/uploadify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/css/uploadify.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/jquery.uploadify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/jquery.uploadify.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/jquery.uploadify_source2013.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/uploadify/uploadify3.2版本参数使用详解.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/1_close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/1_open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/diy/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/line_conn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/zTreeStandard.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/img/zTreeStandard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/metroStyle/img/line_conn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/metroStyle/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/metroStyle/img/metro.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/metroStyle/img/metro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/metroStyle/metroStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/zTreeStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/zTreeStyle/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/css/zTreeStyle/zTreeStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/img/file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.all-3.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.all-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.core-3.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.core-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.excheck-3.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.excheck-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.exedit-3.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.exedit-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.exhide-3.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/ztree/js/jquery.ztree.exhide-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/media/frame/flashmediaelement.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/404.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/base_login.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commonRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commonStore/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonStore/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialog/alert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialog/alert.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/base_login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/base_login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_msg_do.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role_do.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user_do.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/404.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_container.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_copy_frame_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_copy_frame_do_frame.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_copy_frame_list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_copy_iframe.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_header2.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_leftbar.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_leftbar2.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frame/base_tags.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_header2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_table.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_table_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_dict.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_dict_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_log.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_log_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_menu.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_menu_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_msg_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_role.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_role_do.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_user.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/system/system_user_do.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/common/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/common/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/common/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -666,65 +85,68 @@
     <session id="593367497">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.69" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="25" />
           <entry key="gif" value="4" />
-          <entry key="html" value="24" />
+          <entry key="html" value="25" />
           <entry key="jpg" value="38" />
-          <entry key="js" value="97" />
-          <entry key="json" value="7" />
+          <entry key="js" value="109" />
+          <entry key="json" value="8" />
           <entry key="jsp" value="16" />
           <entry key="png" value="21" />
           <entry key="production" value="1" />
           <entry key="svg" value="2" />
-          <entry key="vue" value="151" />
+          <entry key="vue" value="164" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="25" />
-          <entry key="HTML" value="24" />
+          <entry key="HTML" value="25" />
           <entry key="Image" value="63" />
-          <entry key="JSON" value="7" />
+          <entry key="JSON" value="8" />
           <entry key="JSP" value="16" />
-          <entry key="JavaScript" value="97" />
+          <entry key="JavaScript" value="109" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SVG" value="2" />
-          <entry key="Vue.js" value="151" />
+          <entry key="Vue.js" value="164" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="63" />
-          <entry key="html" value="101" />
-          <entry key="js" value="1456" />
+          <entry key="html" value="130" />
+          <entry key="js" value="1547" />
           <entry key="json" value="15" />
           <entry key="jsp" value="1" />
           <entry key="txt" value="10" />
-          <entry key="vue" value="4072" />
+          <entry key="vue" value="4310" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="63" />
-          <entry key="HTML" value="101" />
+          <entry key="HTML" value="130" />
           <entry key="JSON" value="15" />
           <entry key="JSP" value="1" />
-          <entry key="JavaScript" value="1456" />
+          <entry key="JavaScript" value="1547" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Vue.js" value="4072" />
+          <entry key="Vue.js" value="4310" />
         </counts>
       </usages-collector>
     </session>
@@ -733,7 +155,38 @@
     <favorites_list name="qizuo-view" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/dialog/alert.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding>
+                <element signature="e#75#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/js/system/base_utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commonStore/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -745,7 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pages</find>
       <find>ready</find>
       <find>refresh</find>
       <find>async</find>
@@ -775,6 +227,7 @@
       <find>Global.alert_msg</find>
       <find>alert_msg</find>
       <find>this.Global</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>./static/</replace>
@@ -790,8 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/commonRouter/index.js" />
-        <option value="$PROJECT_DIR$/src/commonStore/index.js" />
         <option value="$PROJECT_DIR$/src/pages/common/App.vue" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_footer.vue" />
@@ -818,7 +269,6 @@
         <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" />
         <option value="$PROJECT_DIR$/src/components/table/index.vue" />
         <option value="$PROJECT_DIR$/vue.config.js" />
-        <option value="$PROJECT_DIR$/src/pages/common/main.js" />
         <option value="$PROJECT_DIR$/public/static/js/system/base_page.js" />
         <option value="$PROJECT_DIR$/src/pages/admin/views/frame/base_container.jsp" />
         <option value="$PROJECT_DIR$/src/components/page/index.vue" />
@@ -826,21 +276,24 @@
         <option value="$PROJECT_DIR$/src/components/index.js" />
         <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" />
         <option value="$PROJECT_DIR$/src/components/table/base_table.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue" />
         <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/router.js" />
         <option value="$PROJECT_DIR$/public/static/css/frame/style.css" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/error/404.vue" />
-        <option value="$PROJECT_DIR$/src/components/login/base_login.vue" />
         <option value="$PROJECT_DIR$/src/components/dialog/index.vue" />
         <option value="$PROJECT_DIR$/src/pages/admin/App.vue" />
-        <option value="$PROJECT_DIR$/public/static/js/system/base_Global.js" />
-        <option value="$PROJECT_DIR$/src/components/dialog/alert.vue" />
         <option value="$PROJECT_DIR$/src/utils/request.js" />
-        <option value="$PROJECT_DIR$/public/static/js/system/base_utils.js" />
         <option value="$PROJECT_DIR$/src/pages/admin/main.js" />
+        <option value="$PROJECT_DIR$/src/pages/admin/router.js" />
+        <option value="$PROJECT_DIR$/src/commonRouter/index.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue" />
+        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" />
+        <option value="$PROJECT_DIR$/src/pages/common/main.js" />
+        <option value="$PROJECT_DIR$/public/static/js/system/base_Global.js" />
+        <option value="$PROJECT_DIR$/src/components/login/base_login.vue" />
+        <option value="$PROJECT_DIR$/public/static/js/system/base_utils.js" />
+        <option value="$PROJECT_DIR$/src/commonStore/index.js" />
+        <option value="$PROJECT_DIR$/src/components/dialog/alert.vue" />
       </list>
     </option>
   </component>
@@ -851,6 +304,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -869,6 +325,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -890,7 +347,34 @@
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonRouter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonStore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
@@ -985,13 +469,19 @@
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1050,7 +540,10 @@
       <workItem from="1592229935330" duration="5416000" />
       <workItem from="1592393947182" duration="6484000" />
       <workItem from="1592454124425" duration="7993000" />
-      <workItem from="1592705956941" duration="40360000" />
+      <workItem from="1592705956941" duration="40477000" />
+      <workItem from="1592755307630" duration="20000" />
+      <workItem from="1593344986108" duration="2526000" />
+      <workItem from="1593351428826" duration="1065000" />
     </task>
     <task id="LOCAL-00001" summary="one">
       <created>1592232808198</created>
@@ -1080,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1592754616648</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="two">
+      <created>1592755181901</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592755181901</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75252000" />
+    <option name="totallyTimeSpent" value="78980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1097,6 +597,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.25605902" />
       <window_info id="Structure" order="1" sideWeight="0.5005429" side_tool="true" weight="0.19072708" />
@@ -1140,13 +641,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="two" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_do.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_table.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/outMutualControl/dataBase_table_do.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/system/system_user.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/system/system_user.jsp" />
     <entry file="file://$PROJECT_DIR$/public/static/js/system/base_functions.js" />
     <entry file="file://$PROJECT_DIR$/src/pages/admin/views/qizuo/qizuo_qizuo.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1165,9 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1188,27 +680,8 @@
     <entry file="file://$PROJECT_DIR$/src/components/form/index.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commonStore/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/common/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/common/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -1217,29 +690,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="294" column="40" selection-start-line="294" selection-start-column="40" selection-end-line="294" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frame/base_container.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_page.js" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frame/base_container.jsp" />
     <entry file="file://$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.all-3.5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,10 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-65">
           <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#177#222#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,27 +710,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/system/system_dict.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_header2.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_footer.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/system/system_dict.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_header2.vue" />
     <entry file="file://$PROJECT_DIR$/public/static/js/frame/editor2.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1293,44 +729,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/htmlframe/404.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/base_login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/base_login.css" />
+    <entry file="file://$PROJECT_DIR$/public/base.css" />
     <entry file="file://$PROJECT_DIR$/public/static/css/frame/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -1338,27 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/error/404.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#section#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
           <caret line="80" column="58" lean-forward="true" selection-start-line="80" selection-start-column="58" selection-end-line="80" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1380,9 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-147">
           <caret line="86" column="28" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="28" />
-          <folding>
-            <element signature="e#221#228#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,47 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-          <folding>
-            <element signature="e#757#809#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/base_login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_Global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2223">
-          <caret line="107" column="23" lean-forward="true" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dialog/alert.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1444,20 +786,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/main.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_footer.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="22">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_utils.js">
+    <entry file="file://$PROJECT_DIR$/src/components/error/404.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state relative-caret-position="374">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1465,6 +820,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="102" column="54" lean-forward="true" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="54" />
+          <folding>
+            <element signature="e#349#356#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/frame/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="271" column="4" selection-start-line="271" selection-start-column="4" selection-end-line="283" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/common/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/login/base_login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_Global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonRouter/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonStore/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/system/base_utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dialog/alert.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="e#75#103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

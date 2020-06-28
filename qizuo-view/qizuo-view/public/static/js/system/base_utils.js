@@ -1,6 +1,8 @@
 /** 弹出窗(重写，基于layer) */
 window.alert = function (msg, func) {
-  window._vm.$global.alert_msg = msg;
+  //更新store消息
+  window._vm.$store.commit("updateAlertMsg", msg);
+  //函数执行
   if (isFunction(func)) {
     func();
   }

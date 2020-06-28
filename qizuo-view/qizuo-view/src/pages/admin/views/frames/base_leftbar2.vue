@@ -31,11 +31,31 @@
   </div>
 </template>
 <script>
+import "@static/js/frame/calendar.min.js";
 export default {
   data() {
     return {};
   },
-  methods: {},
+  mounted() {
+    this.initCalender();
+  },
+  methods: {
+    initCalender() {
+      if ($("#sidebar-calendar")[0]) {
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        $("#sidebar-calendar").fullCalendar({
+          editable: false,
+          events: [],
+          header: {
+            left: "title",
+          },
+        });
+      }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped></style>

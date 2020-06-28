@@ -16,7 +16,5 @@ export default {
     publicPath: process.env.BASE_URL,
     /** pagesize */
     pageSize: 10,
-    /** alert弹框 */
-    alert_msg: "",
   },
 };
