@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 内容区域 -->
-    <base-table :header="header" :data="data" @doClick="doClick"></base-table>
+    <qz-table :header="header" :data="data" @doClick="doClick"></qz-table>
     <!--<tr-->
     <!--id="tr{{index+1}}"-->
     <!--@click="-->
@@ -18,13 +18,13 @@
     <!--<td>{{ value.url }}</td>-->
     <!--</tr>-->
     <!-- tree -->
-    <base-tree :data="treeData" ref="ztree"></base-tree>
+    <qz-tree :data="treeData" ref="ztree"></qz-tree>
     <!-- 分页 -->
-    <base-page
+    <qz-page
       @pageChange="queryData"
       :pageCount="pageData.totalCount"
       ref="page"
-    ></base-page>
+    ></qz-page>
   </div>
 </template>
 <!-- 执行js -->

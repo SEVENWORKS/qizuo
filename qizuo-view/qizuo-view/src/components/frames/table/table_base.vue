@@ -22,7 +22,7 @@
       </template>
     </index>
     <!-- 弹框 -->
-    <base-dialog :show="isShow">
+    <qz-dialog-index :show="isShow">
       <template #header>
         <div>
           <button
@@ -48,7 +48,7 @@
           </button>
         </div>
       </template>
-    </base-dialog>
+    </qz-dialog-index>
   </div>
 </template>
 

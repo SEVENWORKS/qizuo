@@ -1,11 +1,11 @@
 <template>
-  $END$
+  <div>
+    example
+  </div>
 </template>
 
 <script>
-export default {
-  name: "index.vue",
-};
+export default {};
 </script>
 
 <style scoped></style>

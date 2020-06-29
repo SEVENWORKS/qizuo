@@ -8,7 +8,7 @@
 
 <script>
 import index from "./index";
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations } from "../../../../../node_modules/vuex";
 export default {
   components: {
     index,
