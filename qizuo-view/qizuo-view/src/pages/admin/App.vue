@@ -30,7 +30,7 @@
     </footer>
 
     <!-- alert弹框 -->
-    <alert></alert>
+    <qz-alert></qz-alert>
   </div>
 </template>
 
@@ -39,14 +39,12 @@ import baseFooter from "./views/frames/base_footer";
 import baseHeader from "./views/frames/base_header";
 import baseLeftbar from "./views/frames/base_leftbar";
 import baseLeftbar2 from "./views/frames/base_leftbar2";
-import alert from "@comp/dialog/alert";
 export default {
   components: {
     baseFooter,
     baseHeader,
     baseLeftbar,
     baseLeftbar2,
-    alert,
   },
 };
 </script>

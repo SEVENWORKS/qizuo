@@ -22,7 +22,7 @@
       </template>
     </index>
     <!-- 弹框 -->
-    <qz-dialog-index :show="isShow">
+    <qz-dialog-index :show.sync="isShow">
       <template #header>
         <div>
           <button

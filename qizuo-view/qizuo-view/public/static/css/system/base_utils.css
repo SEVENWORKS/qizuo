@@ -3,6 +3,9 @@
 .w-100 {
   width: 100%;
 }
+.h-100 {
+  height: 100%;
+}
 
 /* Position */
 .p-relative {
@@ -37,12 +40,27 @@
 
 /* Line height */
 .l-100 {
+  height: 100%;
   line-height: 100%;
 }
 
 /* Display */
 .d-block {
   display: block;
+}
+
+/* flex */
+.fl_row {
+  display: flex;
+  flex-direction: row;
+}
+.fl_column {
+  display: flex;
+  flex-direction: column;
+}
+.fl_center {
+  align-items: center;
+  justify-content: center;
 }
 
 /* Shadow */

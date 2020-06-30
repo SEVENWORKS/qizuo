@@ -1,41 +1,33 @@
 <template>
-  <index :show="isShow">
-    <template #header>
-      {{ alertMsg }}
-    </template>
-  </index>
+  <div
+    :class="{
+      alert: true,
+      'alert-success': type == 1,
+      'alert-info': type == 2,
+      'alert-warning': type == 3,
+      'alert-danger': type == 4,
+      'alert-dismissable': close,
+      'alert-icon': icon,
+      fade: close,
+      in: close,
+    }"
+  >
+    <button
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-hidden="true"
+      v-if="close"
+    >
+      x
+    </button>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-import index from "./index";
-import { mapState, mapMutations } from "../../../../../node_modules/vuex";
 export default {
-  components: {
-    index,
-  },
-  data() {
-    return {
-      isShow: false,
-    };
-  },
-  computed: {
-    ...mapState(["alertMsg"]),
-  },
-  methods: {
-    ...mapMutations(["updateAlertMsg"]),
-  },
-  watch: {
-    //监听弹框消息
-    alertMsg(newVal, oldVal) {
-      if (newVal) {
-        this.isShow = true;
-        setTimeout(() => {
-          this.isShow = false;
-          this.updateAlertMsg("");
-        }, 1500);
-      }
-    },
-  },
+  props: { type: { default: 1, type: Number }, icon: {}, close: {} },
 };
 </script>
 

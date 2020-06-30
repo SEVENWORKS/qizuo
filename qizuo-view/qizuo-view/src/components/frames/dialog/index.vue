@@ -4,10 +4,12 @@
     :style="{ 'z-index': zIndex }"
     ref="dialog_container"
     v-show="show"
+    @click.self="close()"
   >
     <div
       class="dialog_content"
       :style="{ width: width, height: height, 'z-index': zIndex + 1 }"
+      @click.self="close()"
     >
       <slot name="header"></slot>
     </div>
@@ -41,6 +43,11 @@ export default {
     document
       .getElementsByTagName("body")[0]
       .appendChild(this.$refs.dialog_container);
+  },
+  methods: {
+    close() {
+      this.$emit("update:show", false);
+    },
   },
 };
 </script>

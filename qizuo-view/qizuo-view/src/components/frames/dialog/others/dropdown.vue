@@ -1,42 +1,25 @@
 <template>
-  <index :show="isShow">
-    <template #header>
-      {{ alertMsg }}
-    </template>
-  </index>
+  <div class="dropdown open">
+    <ul class="dropdown-menu dropdown-menu-alt">
+      <li>
+        <a href="#">Action</a>
+      </li>
+      <li>
+        <a href="#">Another action</a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="1" href="#">Something else here</a>
+      </li>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="#">Separated link</a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import index from "./index";
-import { mapState, mapMutations } from "../../../../../../node_modules/vuex";
-export default {
-  components: {
-    index,
-  },
-  data() {
-    return {
-      isShow: false,
-    };
-  },
-  computed: {
-    ...mapState(["alertMsg"]),
-  },
-  methods: {
-    ...mapMutations(["updateAlertMsg"]),
-  },
-  watch: {
-    //监听弹框消息
-    alertMsg(newVal, oldVal) {
-      if (newVal) {
-        this.isShow = true;
-        setTimeout(() => {
-          this.isShow = false;
-          this.updateAlertMsg("");
-        }, 1500);
-      }
-    },
-  },
-};
+export default {};
 </script>
 
 <style scoped></style>
