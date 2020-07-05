@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <button class="btn btn-sm btn-alt m-r-5">
-      <slot></slot>
-    </button>
-  </div>
+  <hr class="whiter" />
 </template>
 
 <script>

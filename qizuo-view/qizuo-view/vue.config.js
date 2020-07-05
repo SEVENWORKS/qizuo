@@ -50,13 +50,18 @@ module.exports = {
     //cdn加速文件下载
     const cdn = {
       // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
-      css: ["//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css"],
+      css: [
+        "//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css",
+        "//unpkg.com/bootstrap/dist/css/bootstrap.min.css",
+        "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css",
+      ],
       js: [
         "//unpkg.com/vue@2.6.10/dist/vue.min.js", // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
         "//unpkg.com/vue-router@3.0.6/dist/vue-router.min.js",
         "//unpkg.com/vuex@3.1.1/dist/vuex.min.js",
         "//unpkg.com/axios@0.19.0/dist/axios.min.js",
         "//unpkg.com/element-ui@2.10.1/lib/index.js",
+        "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js",
       ],
     };
     config.plugins.forEach((item) => {

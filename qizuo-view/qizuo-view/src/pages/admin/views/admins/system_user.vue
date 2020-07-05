@@ -19,9 +19,9 @@
             <!--@click="-->
             <!--buttonPanel(-->
             <!--'修改',-->
-            <!--'updateDate(\'${jumpPath}system/userDo?baseId={{$value.baseId}}\')',-->
+            <!--'updateDate(\'${jumpPath}base/userDo?baseId={{$value.baseId}}\')',-->
             <!--'删除',-->
-            <!--'deleteData({baseId:{{$value.baseId}}},\'${modulePath}system/user/delete\',\'#tr{{$index+1}}\')'-->
+            <!--'deleteData({baseId:{{$value.baseId}}},\'${modulePath}base/user/delete\',\'#tr{{$index+1}}\')'-->
             <!--)-->
             <!--"-->
             <!--&gt;-->
@@ -61,7 +61,7 @@ export default {
       /** ************************************************************ */
       //新增按钮(这个函数第二个参数可以传入复杂函数)
       buttonOne("新增", function () {
-        pjaxFunc("${jumpPath}system/userDo");
+        pjaxFunc("${jumpPath}base/userDo");
       });
       /** ************************************************************ */
       //分页(传入获取分页数据的方法,可传分页size和分页no)
@@ -69,7 +69,7 @@ export default {
       //分页数据查询(都默认一个函数)
       function qPage(func, pageNo, pageSize) {
         $.post(
-          "${modulePath}system/user/page",
+          "${modulePath}base/user/page",
           { pageNo: pageNo, pageSize: pageSize },
           function (data) {
             backResult(data, function (data) {

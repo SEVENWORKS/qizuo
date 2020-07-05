@@ -44,7 +44,7 @@ export default {
       buttonOne(
         "返回",
         function () {
-          pjaxFunc("${jumpPath}system/sys/menu");
+          pjaxFunc("${jumpPath}base/sys/menu");
         },
         "55%"
       );
@@ -55,7 +55,7 @@ export default {
         //只有更新的时候才去查找数据
         if (isNotBlank("${baseId}")) {
           $.post(
-            "${modulePath}system/menu/query",
+            "${modulePath}base/menu/query",
             { baseId: "${baseId}" },
             function (data) {
               backResult(data, function (data) {
@@ -74,7 +74,7 @@ export default {
       function iuFunc() {
         if (formValid()) {
           $.post(
-            "${modulePath}system/menu/iuDo",
+            "${modulePath}base/menu/iuDo",
             $("#dataContainer").serialize(),
             function (data) {
               backResultAlert(data, function (data) {

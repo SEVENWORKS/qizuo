@@ -7,9 +7,9 @@
     <!--@click="-->
     <!--buttonPanel(-->
     <!--'修改',-->
-    <!--'updateDate(\'${jumpPath}system/menuDo?baseId={{$value.baseId}}\')',-->
+    <!--'updateDate(\'${jumpPath}base/menuDo?baseId={{$value.baseId}}\')',-->
     <!--'删除',-->
-    <!--'deleteDataReload({baseId:{{$value.baseId}}},\'${modulePath}system/menu/delete\')'-->
+    <!--'deleteDataReload({baseId:{{$value.baseId}}},\'${modulePath}base/menu/delete\')'-->
     <!--)-->
     <!--"-->
     <!--&gt;-->
@@ -67,7 +67,7 @@ export default {
     queryTree() {
       this.pageData.totalCount += 10;
       //ztree
-      //   $.post("${modulePath}system/menu/list", {}, function (data) {
+      //   $.post("${modulePath}base/menu/list", {}, function (data) {
       //     backResult(data, function (data) {
       //       if (isNotBlank(data)) {
       //         var setting = {
@@ -105,7 +105,7 @@ export default {
       // //分页数据查询(都默认一个函数)
       // qPage(func, pageNo, pageSize) {
       //     $.post(
-      //         "${modulePath}system/menu/page",
+      //         "${modulePath}base/menu/page",
       //         { pageNo: pageNo, pageSize: pageSize, baseId: baseId },
       //         function (data) {
       //             backResult(data, function (data) {

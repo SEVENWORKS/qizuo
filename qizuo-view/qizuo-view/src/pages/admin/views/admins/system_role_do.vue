@@ -66,7 +66,7 @@ export default {
       buttonOne(
         "返回",
         function () {
-          pjaxFunc("${jumpPath}system/role");
+          pjaxFunc("${jumpPath}base/role");
         },
         "55%"
       );
@@ -77,7 +77,7 @@ export default {
         //只有更新的时候才去查找数据
         if (isNotBlank("${baseId}")) {
           $.post(
-            "${modulePath}system/role/query",
+            "${modulePath}base/role/query",
             { baseId: "${baseId}" },
             function (data) {
               backResult(data, function (data) {
@@ -137,7 +137,7 @@ export default {
           }
           //保存
           $.post(
-            "${modulePath}system/role/iuDo",
+            "${modulePath}base/role/iuDo",
             $("#dataContainer").serialize(),
             function (data) {
               backResultAlert(data, function () {
@@ -155,7 +155,7 @@ export default {
       /** ************************************************************ */
       //ztree
       function ztree(dataString) {
-        $.post("${modulePath}system/menu/list", {}, function (data) {
+        $.post("${modulePath}base/menu/list", {}, function (data) {
           backResult(data, function (data) {
             if (isNotBlank(data)) {
               var setting = {

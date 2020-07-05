@@ -1,47 +1,568 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b132037-3cf1-4f7a-805a-6138e8c1fd1e" name="Default Changelist" comment="two">
+    <list default="true" id="6b132037-3cf1-4f7a-805a-6138e8c1fd1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/static/css/frames/frame.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/admin-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/generics.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/system/base_utils.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/font-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/css/frame/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frame/frame.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/alerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/alerts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/buttons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/calendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/content-widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/content-widgets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/file-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/file-manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-elements.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-elements.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-examples.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/form-validation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/labels.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/labels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/list-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/list-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/messages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/other-components.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/other-components.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/profile-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/profile-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/sa.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/sa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/htmlframe/typography.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/calendar/calendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/calendar/calendar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/alert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/dialog/alert.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/dialog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/dialog/others/modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/form/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/form/button/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frames/table/table_base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/table/table_base.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frames/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/animate.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frames/animate.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/file-manager.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/font-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/fontawesome/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/fontawesome/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/fontawesome/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/icons/icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/icons/icon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/icons/icon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/icons/icon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Light-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Light-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Light-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Light-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Light-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Regular-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Regular-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Regular-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Regular-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Regular-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Semibold-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Semibold-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Semibold-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/fonts/opan-sans/OpenSans-Semibold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/fonts/opan-sans/OpenSans-Semibold-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/frame.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/lightbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/frame/media-player.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/css/system/base_utils.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/css/frames/base/base_utils.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/alerts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/components.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/content-widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/file-manager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-components.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-examples.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/form-validation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/labels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/list-view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/media.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/messages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/other-components.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/profile-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/sa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/tables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/htmlframe/typography.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/blue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/blue.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/chrome.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/chrome.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/city.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/city.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/cloth.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/cloth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/greenish.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/greenish.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/kiwi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/kiwi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/lights.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/lights.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/night.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/night.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/ocean.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/ocean.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/qizuo-backgroudimg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/qizuo-backgroudimg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-blue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-blue.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-chrome.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-chrome.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-city.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-city.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-cloth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-cloth.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-greenish.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-greenish.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-kiwi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-kiwi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-lights.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-lights.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-night.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-night.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-ocean.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-ocean.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-sunny.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-sunny.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-sunset.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-sunset.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-tectile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-tectile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-violate.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-violate.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/skin-yellow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/skin-yellow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/sunny.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/sunny.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/sunset.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/sunset.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/tectile.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/tectile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/violate.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/violate.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/body/yellow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/body-theme/yellow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/browsers/chrome.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/browsers/chrome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/browsers/firefox.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/browsers/firefox.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/browsers/ie.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/browsers/ie.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/browsers/opera.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/browsers/opera.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/browsers/safari.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/browsers/safari.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/carousel/c-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/carousel/c-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/carousel/c-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/color-picker/alpha.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/color-picker/alpha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/color-picker/hue.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/color-picker/hue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/color-picker/saturation.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/color-picker/saturation.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/align.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/align@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/bold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/bold@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/code@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/font.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/font@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/full-screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/full-screen@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/heading.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/heading@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/help@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/italic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/italic@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/line-height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/line-height@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/link@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/orderlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/orderlist@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/picture@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/table@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/text@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/underline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/underline@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/unlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/unlist@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/unstyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/unstyle@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/video.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/editor/video@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/arrows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/css.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/exe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/flash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/html.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/js.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/mp3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/perl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/php.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/ppt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/psd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/py.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/rar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/video.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/xls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/xml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/icon/zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/progress.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/quicklook-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/resize-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/filemanager/spinner-mini.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/thumbs/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/thumbs/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/thumbs/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/thumbs/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/gallery/thumbs/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/add@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/archive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/archive@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/back@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/calendar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/calendar@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/chart@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/day.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/day@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/delete@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/file@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/folder-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/folder-sm@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/folder@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/form.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/form@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/forwad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/forwad@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/home@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/icon-view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/icon-view@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/list-view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/list-view@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/loadinfo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/menu@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/message@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/month.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/month@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/move.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/move@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/pages.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/pages@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/photos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/photos@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/plus-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/plus-sm@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/refresh@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/search-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/search@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/select-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/sort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/sorting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/sorting@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/spam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/spam@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/table@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/tile-actions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/tile-actions@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/typography.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/typography@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/ui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/ui@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/updates.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/updates@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/upload@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/week.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/week@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/widgets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/icon/widgets@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/images-doc/circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/images-doc/rounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/images-doc/shadowed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/images-doc/thumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/bigplay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/bigplay.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/controls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/controls.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/media-player/media-player-poster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/profile-pics/profile-pic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/img/frames/profile-pics/profile-pic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/projects/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/projects/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/projects/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/projects/cover-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/calendar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/connections.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/money.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/reports.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/stats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/img/frame/shortcuts/twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/autosize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/calendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.animator.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.orderBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.pie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.resize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/charts/jquery.flot.time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/chosen.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/colorpicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/datetimepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/easypiechart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/editor.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/editor2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/feeds.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/file-manager/elfinder.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/fileupload.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/icheck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/input-mask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/jquery.cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/jquery.easing.1.3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/layui.mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/14.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/15.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/16.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/17.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/18.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/19.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/20.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/21.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/22.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/23.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/24.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/25.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/26.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/27.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/28.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/29.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/30.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/31.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/32.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/33.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/34.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/35.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/36.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/37.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/38.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/39.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/40.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/41.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/42.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/43.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/44.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/45.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/46.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/47.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/48.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/49.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/51.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/52.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/53.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/54.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/55.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/56.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/57.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/58.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/59.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/60.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/61.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/62.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/63.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/64.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/65.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/66.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/67.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/68.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/69.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/70.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/71.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/images/face/9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/colorpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/element.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/layedit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laypage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/laytpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/rate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/lay/modules/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/mobile/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/mobile/need/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layer/theme/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layui.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/layui/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/maps/jvectormap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/maps/usa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/maps/world.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/markdown.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/media-player.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/media/flashmediaelement.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/pirobox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/scroll.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/slider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/spinner.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/toggler.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/validation/validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/validation/validationEngine.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/weather.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/1_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/1_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/diy/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/line_conn.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/zTreeStandard.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/img/zTreeStandard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/metroStyle/img/line_conn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/metroStyle/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/metroStyle/img/metro.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/metroStyle/img/metro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/metroStyle/metroStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/zTreeStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/zTreeStyle/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/css/zTreeStyle/zTreeStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/img/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.all-3.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.all-3.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.core-3.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.core-3.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.excheck-3.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.excheck-3.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.exedit-3.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.exedit-3.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.exhide-3.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/frame/ztree/js/jquery.ztree.exhide-3.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/system/base_Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frames/base/base_Global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/system/base_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/frames/base/base_utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/calendar/calendar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/modal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/popover.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/dialog/others/tooltips.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/checkbox.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/img.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/input.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/radio.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/select.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/textarea.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/textarea_editor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/base/upload.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/button/button.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/button/button_group.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/button/button_switch.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/others/dropdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/others/slider.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/others/slider_bar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/addresses.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/blockquote.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_list_table.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_media.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/base/animate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/layout/base/animate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/base/block.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/base/hr.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/layout/base/hr.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/base/icon.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/base/label.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/header/title.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/header/title_head.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/header/title_page.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/chat.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/collapse.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/content_box.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/jumbotron.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/layout/panel/panel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/panel_shortcut.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/panel_title.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/tabs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/layout/panel/well.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/layout/panel/well.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/media/audio.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/media/carousel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/media/lightbox.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/media/video.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/table/list/list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frames/tree/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frames/tree/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_role_do.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user_do.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/admins/system_user_do.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/alert/artDialog.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/alert/layui.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/chart/echarts.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/css/css2.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/css/css3.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/formValidate/jqueryValidate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/html/html.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/html/html5.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/map/baidu.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/select/bootstrapSelectpicker.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/select/chosen.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/template/artTemplate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/template/jqueryTemplate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/autosize.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/markedown.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/scroll.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/simditor.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/ueditor.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/textarea/wysiwyeEditor.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/time/layui.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/tree/ztree.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/upload/jqueryUploadify.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/before/upload/layui.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/views/qizuo/qizuo_qizuo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -116,69 +637,77 @@
           <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="2" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="28" />
-          <entry key="gif" value="4" />
-          <entry key="html" value="29" />
-          <entry key="jpg" value="38" />
-          <entry key="js" value="116" />
-          <entry key="json" value="8" />
+          <entry key="css" value="40" />
+          <entry key="gif" value="7" />
+          <entry key="html" value="43" />
+          <entry key="jpg" value="58" />
+          <entry key="js" value="144" />
+          <entry key="json" value="15" />
           <entry key="jsp" value="16" />
-          <entry key="png" value="21" />
+          <entry key="png" value="73" />
           <entry key="production" value="1" />
-          <entry key="svg" value="2" />
-          <entry key="vue" value="283" />
+          <entry key="scss" value="1" />
+          <entry key="svg" value="5" />
+          <entry key="vue" value="344" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="28" />
-          <entry key="HTML" value="29" />
-          <entry key="Image" value="63" />
-          <entry key="JSON" value="8" />
+          <entry key="CSS" value="40" />
+          <entry key="HTML" value="43" />
+          <entry key="Image" value="138" />
+          <entry key="JSON" value="15" />
           <entry key="JSP" value="16" />
-          <entry key="JavaScript" value="116" />
+          <entry key="JavaScript" value="144" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SVG" value="2" />
-          <entry key="Vue.js" value="283" />
+          <entry key="SCSS" value="1" />
+          <entry key="SVG" value="5" />
+          <entry key="Vue.js" value="344" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="139" />
-          <entry key="html" value="135" />
-          <entry key="js" value="1801" />
-          <entry key="json" value="15" />
+          <entry key="css" value="193" />
+          <entry key="html" value="193" />
+          <entry key="js" value="1859" />
+          <entry key="json" value="18" />
           <entry key="jsp" value="1" />
           <entry key="txt" value="10" />
-          <entry key="vue" value="5529" />
+          <entry key="vue" value="6655" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="139" />
-          <entry key="HTML" value="135" />
-          <entry key="JSON" value="15" />
+          <entry key="CSS" value="193" />
+          <entry key="HTML" value="193" />
+          <entry key="JSON" value="18" />
           <entry key="JSP" value="1" />
-          <entry key="JavaScript" value="1801" />
+          <entry key="JavaScript" value="1859" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Vue.js" value="5529" />
+          <entry key="Vue.js" value="6655" />
         </counts>
       </usages-collector>
     </session>
@@ -187,65 +716,7 @@
     <favorites_list name="qizuo-view" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="30" column="18" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/alert.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/htmlframe/components.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="424" column="20" lean-forward="true" selection-start-line="424" selection-start-column="20" selection-end-line="432" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#2;n#section#0;n#section#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -257,36 +728,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Global.alert_msg</find>
-      <find>alert_msg</find>
-      <find>this.Global</find>
-      <find>console</find>
-      <find>All four sizes</find>
-      <find>btn-alt</find>
-      <find>base_table</find>
-      <find>base-dialog</find>
-      <find>base-tree</find>
-      <find>base-page</find>
-      <find>base-table</find>
-      <find>dropdown</find>
-      <find>qz_table_base</find>
-      <find>base-</find>
-      <find>style.css</find>
-      <find>font.css</find>
-      <find>icons.css</find>
-      <find>generics.css</find>
-      <find>index</find>
-      <find>./index</find>
-      <find>carousel</find>
-      <find>#calendar</find>
-      <find>draggable</find>
-      <find>calendar</find>
-      <find>h-100</find>
-      <find>Basic example</find>
-      <find>DROPDOWN</find>
-      <find>&quot;vuex&quot;</find>
-      <find>vuex</find>
-      <find>`</find>
+      <find>shortcut-area</find>
+      <find>&lt;div class=&quot;tile&quot;&gt;</find>
+      <find>Tabs on bottom</find>
+      <find>profile4</find>
+      <find>PANEL</find>
+      <find>CHECKBOX + RADIO</find>
+      <find>check</find>
+      <find>to</find>
+      <find>todo-list</find>
+      <find>list-parent-check</find>
+      <find>checkbox</find>
+      <find>bo</find>
+      <find>widgets</find>
+      <find>block</find>
+      <find>login</find>
+      <find>profile-pic</find>
+      <find>icon</find>
+      <find>dropcap</find>
+      <find>blockquote</find>
+      <find>cover</find>
+      <find>tile-config</find>
+      <find>chart-info</find>
+      <find>sidebar</find>
+      <find>base_Global</find>
+      <find>gallery/1.jpg</find>
+      <find>glyphicons-halflings-regular</find>
+      <find>calendar.min.js</find>
+      <find>zTreeStyle</find>
+      <find>$(</find>
+      <find>help-block</find>
     </findStrings>
     <replaceStrings>
       <replace>./static/</replace>
@@ -302,36 +773,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu_do.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_msg_do.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_role_do.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_user_do.vue" />
-        <option value="$PROJECT_DIR$/src/components/404.vue" />
-        <option value="$PROJECT_DIR$/src/components/base_login.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_user.vue" />
-        <option value="$PROJECT_DIR$/src/pages/common/router.js" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_role.vue" />
-        <option value="$PROJECT_DIR$/src/components/table/index.vue" />
-        <option value="$PROJECT_DIR$/vue.config.js" />
-        <option value="$PROJECT_DIR$/public/static/js/system/base_page.js" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frame/base_container.jsp" />
-        <option value="$PROJECT_DIR$/src/components/page/index.vue" />
-        <option value="$PROJECT_DIR$/src/components/tree/index.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue" />
-        <option value="$PROJECT_DIR$/src/components/table/base_table.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue" />
-        <option value="$PROJECT_DIR$/public/static/css/frame/style.css" />
-        <option value="$PROJECT_DIR$/src/components/error/404.vue" />
-        <option value="$PROJECT_DIR$/src/components/dialog/index.vue" />
-        <option value="$PROJECT_DIR$/src/utils/request.js" />
-        <option value="$PROJECT_DIR$/src/pages/admin/main.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" />
-        <option value="$PROJECT_DIR$/src/pages/common/main.js" />
-        <option value="$PROJECT_DIR$/public/static/js/system/base_Global.js" />
-        <option value="$PROJECT_DIR$/src/components/login/base_login.vue" />
-        <option value="$PROJECT_DIR$/public/static/js/system/base_utils.js" />
         <option value="$PROJECT_DIR$/src/commonStore/index.js" />
         <option value="$PROJECT_DIR$/src/components/dialog/alert.vue" />
         <option value="$PROJECT_DIR$/src/commonRouter/index.js" />
@@ -340,19 +781,49 @@
         <option value="$PROJECT_DIR$/src/components/layout/block.vue" />
         <option value="$PROJECT_DIR$/src/components/form/index.vue" />
         <option value="$PROJECT_DIR$/src/components/layout/index.vue" />
-        <option value="$PROJECT_DIR$/src/components/index.js" />
         <option value="$PROJECT_DIR$/src/components/frames/dialog/alert.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/dialog/index.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/App.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/form/button/button.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/table/table_base.vue" />
         <option value="$PROJECT_DIR$/public/static/css/system/base_utils.css" />
         <option value="$PROJECT_DIR$/src/components/frames/calendar/calendar.vue" />
-        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/dialog/others/modal.vue" />
         <option value="$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/base/animate.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/base/block.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/base/hr.vue" />
+        <option value="$PROJECT_DIR$/public/static/htmlframe/images-icons.html" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/base/icon.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/base/label.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/header/title_head.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/header/title.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/header/title_page.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/index.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/chat.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/content_box.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/collapse.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/jumbotron.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/panel.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/well.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/panel_shortcut.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/panel_title.vue" />
+        <option value="$PROJECT_DIR$/public/static/htmlframe/components.html" />
+        <option value="$PROJECT_DIR$/src/components/frames/layout/panel/tabs.vue" />
+        <option value="$PROJECT_DIR$/src/components/frames/form/base/checkbox.vue" />
+        <option value="$PROJECT_DIR$/vue.config.js" />
+        <option value="$PROJECT_DIR$/public/static/css/frame/form.css" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue" />
+        <option value="$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" />
+        <option value="$PROJECT_DIR$/src/pages/admin/App.vue" />
+        <option value="$PROJECT_DIR$/src/pages/admin/main.js" />
+        <option value="$PROJECT_DIR$/public/static/css/frame/frame.css" />
+        <option value="$PROJECT_DIR$/public/static/js/frames/base/base_Global.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -364,19 +835,16 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="385" />
-    <option name="y" value="12" />
-    <option name="width" value="1498" />
-    <option name="height" value="1000" />
+    <option name="x" value="481" />
+    <option name="y" value="15" />
+    <option name="width" value="1873" />
+    <option name="height" value="1250" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -394,56 +862,13 @@
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="frame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
@@ -455,12 +880,34 @@
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonRouter" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="commonStore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonStore" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonStore" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -476,7 +923,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
@@ -484,136 +931,50 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="SvgIcon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-              <item name="others" type="462c0819:PsiDirectoryNode" />
+              <item name="directive" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="directive" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="directive" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="button" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="others" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="paragraph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="panel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-              <item name="tree" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
@@ -658,16 +1019,22 @@
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="qizuo" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+              <item name="element-admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -678,7 +1045,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/node.js/node_global/prettier.cmd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../vue-element-admin-master" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="E:\workspace\ide\vue-cli4-config-master\node_modules\stylelint" />
@@ -688,19 +1055,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\layout\panel" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\layout" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\table\list" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\paragraph" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\form" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\filters\frames\element-admin" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\directive\frames\element-admin" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\public\static\css\frame" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\public\static\js\frame" />
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\public\static\css\system" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\frames" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\form" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\dialog\others" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\public\static" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\commonRouter\frames" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\pages\admin\views\frames" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\public\static\css\frames" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\commonRouter\frames\element-admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -741,6 +1108,12 @@
       <workItem from="1593444465184" duration="3866000" />
       <workItem from="1593521127412" duration="4423000" />
       <workItem from="1593525623776" duration="5253000" />
+      <workItem from="1593531721990" duration="163000" />
+      <workItem from="1593610283492" duration="13925000" />
+      <workItem from="1593926940153" duration="1479000" />
+      <workItem from="1593930156654" duration="6213000" />
+      <workItem from="1593937416248" duration="7701000" />
+      <workItem from="1593955862615" duration="2798000" />
     </task>
     <task id="LOCAL-00001" summary="one">
       <created>1592232808198</created>
@@ -791,11 +1164,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593447141916</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="two">
+      <created>1593531823944</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593531823944</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101918000" />
+    <option name="totallyTimeSpent" value="134197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -807,16 +1187,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.25605902" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.32100397" />
       <window_info id="Structure" order="1" sideWeight="0.5005429" side_tool="true" weight="0.19072708" />
       <window_info id="npm" order="2" sideWeight="0.5005429" side_tool="true" weight="0.19072708" />
       <window_info id="Favorites" order="3" sideWeight="0.5005429" side_tool="true" weight="0.19072708" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -852,83 +1231,96 @@
     <option name="LAST_COMMIT_MESSAGE" value="two" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/login/base_login.vue">
+    <entry file="file://$PROJECT_DIR$/public/static/css/frame/form.css" />
+    <entry file="file://$PROJECT_DIR$/vue.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="418">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/media/audio.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/media/carousel.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue" />
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="264">
+          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/media/lightbox.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/base/icon.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/base/label.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/base/block.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/title.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/title_page.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/title_head.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/base/hr.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/media/video.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_list.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/blockquote.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/addresses.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/base/upload.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/base/textarea_editor.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/others/slider.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/others/dropdown.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/index.vue" />
     <entry file="file://$PROJECT_DIR$/src/components/frames/layout/base/animate.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/tabs.vue">
+    <entry file="file://$PROJECT_DIR$/public/static/fonts/icons/icon.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/login/base_login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar2.vue" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/admins/system_menu.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/collapse.vue">
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_footer.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/others/tooltips.vue">
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_leftbar.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/others/popover.vue">
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_header.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/others/slider_bar.vue">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/jumbotron.vue">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/title_page.vue">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/img/frames/profile-pics/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/css/frames/frame.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/panel.vue">
       <provider selected="true" editor-type-id="text-editor" />
@@ -936,162 +1328,103 @@
     <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/well.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_list_table.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/content_box.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/paragraph/paragraph_media.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/button/button_group.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/table/list/list.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/panel_title.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/chat.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/panel/panel_shortcut.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="e#108#157#0" expanded="true" />
-            <element signature="e#816#868#0" expanded="true" />
-            <element signature="e#3105#3161#0" expanded="true" />
-            <element signature="e#5024#5072#0" expanded="true" />
-            <element signature="e#5489#5543#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/layout/header/block_title.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/form/button/button.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/frames/table/index.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/frames/table/table_base.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="-462" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/frames/element-admin/BackToTop/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1679">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/css/frame/frame.css">
+    <entry file="file://$PROJECT_DIR$/src/filters/frames/element-admin/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/css/system/base_utils.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/static/scss/frames/element-admin/btn.scss">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/calendar/calendar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base/charts/line.vue">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/htmlframe/calendar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="415" column="45" selection-start-line="415" selection-start-column="37" selection-end-line="415" selection-end-column="45" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/apis/admin-user.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/apis/admin.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/htmlframe/alerts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="441" column="24" selection-start-line="441" selection-start-column="24" selection-end-line="442" selection-end-column="52" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/utils/frames/element-admin/auth.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/base_frames.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/utils/frames/element-admin/vendor/Export2Zip.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/htmlframe/components.html">
+    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/element-admin/modules/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/element-admin/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="424" column="20" lean-forward="true" selection-start-line="424" selection-start-column="20" selection-end-line="432" selection-end-column="26" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#section#0;n#section#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/alert_theme.vue">
+    <entry file="file://$PROJECT_DIR$/src/commonRouter/frames/element-admin/modules/table.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/admin/views/frames/layout/mixin/ResizeHandler.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonRouter/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonRouter/frames/permission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/index.vue">
+    <entry file="file://$PROJECT_DIR$/public/static/js/frames/base/base_utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="-1386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/icons/svg/qq.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/frames/base/base_Global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/alert.vue">
+    <entry file="file://$PROJECT_DIR$/public/static/icons/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="44" />
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/others/modal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/static/icons/svgo.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/frames/dialog/others/dropdown.vue">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="154">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>

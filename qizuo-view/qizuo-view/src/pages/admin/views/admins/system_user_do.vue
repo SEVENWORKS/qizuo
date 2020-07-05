@@ -88,7 +88,7 @@ export default {
       buttonOne(
         "返回",
         function () {
-          pjaxFunc("${jumpPath}system/user");
+          pjaxFunc("${jumpPath}base/user");
         },
         "55%"
       );
@@ -99,7 +99,7 @@ export default {
         //只有更新的时候才去查找数据
         if (isNotBlank("${baseId}")) {
           $.post(
-            "${modulePath}system/user/query",
+            "${modulePath}base/user/query",
             { baseId: "${baseId}" },
             function (data) {
               backResult(data, function (data) {
@@ -145,7 +145,7 @@ export default {
       function iuFunc() {
         if (formValid()) {
           $.post(
-            "${modulePath}system/user/iuDo",
+            "${modulePath}base/user/iuDo",
             $("#dataContainer").serialize(),
             function (data) {
               backResultAlert(data, function (data) {
@@ -163,7 +163,7 @@ export default {
       /** ************************************************************ */
       //获取角色select数据
       function roleSelect(sData) {
-        $.post("${modulePath}system/role/list", {}, function (data) {
+        $.post("${modulePath}base/role/list", {}, function (data) {
           backResult(data, function (data) {
             if (isNotBlank(data)) {
               //填充

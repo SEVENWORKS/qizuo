@@ -11,7 +11,6 @@
       <!-- 左侧菜单栏 -->
       <aside id="sidebar">
         <base-leftbar></base-leftbar>
-        <base-leftbar2></base-leftbar2>
       </aside>
       <!-- 头部分2 -->
       <section id="content" class="container">
