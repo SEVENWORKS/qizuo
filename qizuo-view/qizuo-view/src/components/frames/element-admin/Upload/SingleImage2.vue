@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { getToken } from "@/api/qiniu";
+import { getToken } from "@apis/element-admin";
 
 export default {
   name: "SingleImageUpload2",
@@ -88,8 +88,8 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     border: 1px dashed #d9d9d9;
     .image-preview-wrapper {
       position: relative;

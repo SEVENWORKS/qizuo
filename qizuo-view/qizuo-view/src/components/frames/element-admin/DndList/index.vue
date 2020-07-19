@@ -16,7 +16,7 @@
           <div class="list-complete-item-handle">
             {{ element.id }}[{{ element.author }}] {{ element.title }}
           </div>
-          <div style="position: absolute; right: 0px;">
+          <div style="position: absolute; right: 0;">
             <span
               style="float: right; margin-top: -20px; margin-right: 5px;"
               @click="deleteEle(element)"
@@ -124,7 +124,7 @@ export default {
 .dndList {
   background: #fff;
   padding-bottom: 40px;
-  &:after {
+  &::after {
     content: "";
     display: table;
     clear: both;

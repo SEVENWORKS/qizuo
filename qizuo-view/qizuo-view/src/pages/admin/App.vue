@@ -37,13 +37,11 @@
 import baseFooter from "./views/frames/base_footer";
 import baseHeader from "./views/frames/base_header";
 import baseLeftbar from "./views/frames/base_leftbar";
-import baseLeftbar2 from "./views/frames/base_leftbar2";
 export default {
   components: {
     baseFooter,
     baseHeader,
     baseLeftbar,
-    baseLeftbar2,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 // Inspired by https://github.com/Inndy/vue-clipboard2
-const Clipboard = require('src/directive/frames/element-admin/clipboard/clipboard')
+const Clipboard = require('@directive/frames/element-admin/clipboard/clipboard')
 if (!Clipboard) {
   throw new Error('you should npm install `clipboard` --save at first ')
 }

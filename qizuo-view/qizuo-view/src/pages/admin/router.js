@@ -44,15 +44,27 @@ const routes = [
         component: () => import('./views/frames/base_frames')
     },
     {
-        path: '/login',
-        name: 'login',
+        path: '/qizuo',
+        name: 'qizuo',
         component: () => import('@comp/login/base_login')
     }
 ]
 
-const router = new VueRouter({
-  mode: 'hash',
-  base: process.env.BASE_URL,
-  routes
-})
+
+//创建路由
+const createRouter = () =>
+    new VueRouter({
+        mode: 'hash',
+        scrollBehavior: () => ({ y: 0 }),
+        base: process.env.BASE_URL,
+        routes
+    })
+const router = createRouter();
+
+//重置路由
+export function resetRouter() {
+    const newRouter = createRouter();
+    router.matcher = newRouter.matcher;
+}
+
 export default router

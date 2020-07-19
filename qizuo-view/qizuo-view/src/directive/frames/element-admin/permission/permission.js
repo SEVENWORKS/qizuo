@@ -1,4 +1,4 @@
-import store from '@/store'
+import store from '@/pages/admin/store'
 
 function checkPermission(el, binding) {
   const { value } = binding

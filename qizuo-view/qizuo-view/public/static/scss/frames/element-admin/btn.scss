@@ -6,7 +6,7 @@
   &:hover {
     color: $color;
 
-    &:before,
+    &:before,element-variables
     &:after {
       background: $color;
     }

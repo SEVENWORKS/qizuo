@@ -141,6 +141,6 @@ export default {
 
 .pan-item:hover .pan-info p a {
   opacity: 1;
-  transform: translateX(0px) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
 }
 </style>

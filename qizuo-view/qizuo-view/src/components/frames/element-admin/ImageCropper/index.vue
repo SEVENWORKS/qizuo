@@ -877,25 +877,25 @@ export default {
 @-webkit-keyframes vicp {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0) translatey(-60px);
-    transform: scale(0) translatey(-60px);
+    -webkit-transform: scale(0) translateY(-60px);
+    transform: scale(0) translateY(-60px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1) translatey(0);
-    transform: scale(1) translatey(0);
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 @keyframes vicp {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0) translatey(-60px);
-    transform: scale(0) translatey(-60px);
+    -webkit-transform: scale(0) translateY(-60px);
+    transform: scale(0) translateY(-60px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1) translatey(0);
-    transform: scale(1) translatey(0);
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 .vue-image-crop-upload {
@@ -1326,10 +1326,12 @@ export default {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+
   /* 滑块
-               ---------------------------------------------------------------*/
+               --------------------------------------------------------------- */
+
   /* 轨道
-               ---------------------------------------------------------------*/
+               --------------------------------------------------------------- */
 }
 .vue-image-crop-upload
   .vicp-wrap

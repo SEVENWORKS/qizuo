@@ -3,16 +3,16 @@ import Vuex from 'vuex'
 import commonStore from '@/commonStore/index'
 Vue.use(Vuex)
 
-let store={
+let module={
     state: {
     },
     mutations: {
     },
     actions: {
-    },
-    modules: {
     }
 }
-Object.assign(store,commonStore)
 
-export default new Vuex.Store(store)
+export default new Vuex.Store({
+    modules:Object.assign(commonStore,module),
+    getters:{}
+})

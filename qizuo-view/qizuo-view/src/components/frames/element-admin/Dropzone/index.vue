@@ -7,7 +7,7 @@
 <script>
 import Dropzone from "dropzone";
 import "dropzone/dist/dropzone.css";
-// import { getToken } from 'api/qiniu';
+import { getToken } from "@apis/element-admin";
 
 Dropzone.autoDiscover = false;
 
@@ -244,7 +244,7 @@ i {
 }
 
 .dropzone .dz-preview .dz-image {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .dropzone .dz-preview:hover .dz-image img {
@@ -255,8 +255,8 @@ i {
 }
 
 .dropzone .dz-preview .dz-details {
-  bottom: 0px;
-  top: 0px;
+  bottom: 0;
+  top: 0;
   color: white;
   background-color: rgba(33, 150, 243, 0.8);
   transition: opacity 0.2s linear;

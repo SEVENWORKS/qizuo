@@ -252,7 +252,8 @@ export default {
   position: absolute;
   right: 4px;
   top: 4px;
-  /*z-index: 2005;*/
+
+  /* z-index: 2005; */
 }
 
 .fullscreen .editor-custom-btn-container {

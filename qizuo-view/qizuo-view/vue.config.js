@@ -10,7 +10,7 @@ const resolve = (dir) => path.join(__dirname, dir); //定义一个拼接方法�
 const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV); //是否是生成环境
 const IS_DEV = ["development"].includes(process.env.NODE_ENV); //是否是开发环境
 
-//多路径撇脂，利用glob匹配对应的路径，然后遍历所有符合路径，最后组合成webpack的page入口
+//多路径匹配，利用glob匹配对应的路径，然后遍历所有符合路径，最后组合成webpack的page入口
 const glob = require("glob"); //glob 在webpack中对文件的路径处理非常之方便，比如当搭建多页面应用时就可以使用glob对页面需要打包文件的路径进行很好的处理。
 const pagesInfo = require("./pages.config"); //入口配置文件
 const pages = {};
@@ -96,9 +96,13 @@ module.exports = {
     config.resolve.alias
       .set("vue$", "vue/dist/vue.esm.js")
       .set("@", resolve("src"))
+      .set("~", resolve("public"))
       .set("@comp", resolve("src/components"))
       .set("@pages", resolve("src/pages"))
       .set("@utils", resolve("src/utils"))
+      .set("@directive", resolve("src/directive"))
+      .set("@filters", resolve("src/filters"))
+      .set("@apis", resolve("src/apis"))
       .set("@static", resolve("public/static"));
 
     //优化处理压缩图片和打包分析
@@ -134,9 +138,6 @@ module.exports = {
         // 向全局sass样式传入共享的全局变量, $src可以配置图片cdn前缀
         // 详情: https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
         prependData: `
-          @import "@scss/variables.scss";
-          @import "@scss/mixins.scss";
-          @import "@scss/function.scss";
           $src: "${process.env.VUE_APP_BASE_API}";
           `,
       },
@@ -157,17 +158,17 @@ module.exports = {
     // port: "8080", // 代理断就
     // https: false,
     // hotOnly: false, // 热更新
-    proxy: {
-      "/api": {
-        target:
-          "https://www.easy-mock.com/mock/5bc75b55dc36971c160cad1b/sheets", // 目标代理接口地址
-        secure: false,
-        changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
-        // ws: true, // 是否启用websockets
-        pathRewrite: {
-          "^/api": "/",
-        },
-      },
-    },
+    // proxy: {
+    //   "/api": {
+    //     target:
+    //       "https://www.easy-mock.com/mock/5bc75b55dc36971c160cad1b/sheets", // 目标代理接口地址
+    //     secure: false,
+    //     changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
+    //     // ws: true, // 是否启用websockets
+    //     pathRewrite: {
+    //       "^/api": "/",
+    //     },
+    //   },
+    // },
   },
 };

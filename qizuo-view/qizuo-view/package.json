@@ -63,6 +63,21 @@
     "serve-static": "1.13.2",
     "svg-sprite-loader": "4.1.3",
     "svgo": "1.2.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-plugin-vuex": "^4.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "glob-all": "^3.1.0",
+    "image-webpack-loader": "^6.0.0",
+    "node-sass": "^4.12.0",
+    "postcss-import": "^12.0.1",
+    "purgecss-webpack-plugin": "^1.6.0",
+    "spritesheet-templates": "^10.4.2",
+    "spritesmith": "^3.4.0",
+    "standard-version": "^7.0.0",
+    "stylelint": "^13.0.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-webpack-plugin": "^1.2.1",
     "vue-template-compiler": "2.6.10"
   }
 }

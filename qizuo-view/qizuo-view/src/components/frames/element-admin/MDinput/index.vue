@@ -212,7 +212,7 @@ $apixel: 1px;
 // Utils
 $spacer: 12px;
 $transition: 0.2s ease all;
-$index: 0px;
+$index: 0;
 $index-has-icon: 30px;
 // Theme:
 $color-white: white;
@@ -293,12 +293,14 @@ $color-black: black;
     position: relative;
     display: block;
     width: 100%;
-    &:before {
+    &::before {
       @extend %base-bar-pseudo;
+
       left: 50%;
     }
-    &:after {
+    &::after {
       @extend %base-bar-pseudo;
+
       right: 50%;
     }
   }
@@ -317,8 +319,8 @@ $color-black: black;
   // Active state:
   &.material--active {
     .material-input-bar {
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         width: 50%;
       }
     }
@@ -337,8 +339,8 @@ $color-black: black;
     color: $color-grey;
   }
   .material-input-bar {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background: $color-blue;
     }
   }
@@ -354,8 +356,8 @@ $color-black: black;
       color: $color-red;
     }
     .material-input-bar {
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         background: transparent;
       }
     }

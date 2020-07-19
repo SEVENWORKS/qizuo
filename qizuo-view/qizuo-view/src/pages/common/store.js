@@ -9,8 +9,6 @@ let store={
     mutations: {
     },
     actions: {
-    },
-    modules: {
     }
 }
 Object.assign(store,commonStore)

@@ -1,4 +1,4 @@
-import defaultSettings from "@/settings";
+import defaultSettings from "@pages/frames/settings";
 
 const title = defaultSettings.title || "Vue Element Admin";
 

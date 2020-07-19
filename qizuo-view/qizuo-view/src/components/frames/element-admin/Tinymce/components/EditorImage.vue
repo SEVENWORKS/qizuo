@@ -36,7 +36,7 @@
 </template>
 
 <script>
-// import { getToken } from 'api/qiniu'
+import { getToken } from "@apis/element-admin";
 
 export default {
   name: "EditorSlideUpload",
