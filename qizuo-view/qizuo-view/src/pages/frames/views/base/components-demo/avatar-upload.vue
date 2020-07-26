@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import ImageCropper from "@/components/frames/element-admin/ImageCropper";
-import PanThumb from "@/components/frames/element-admin/PanThumb";
+import ImageCropper from "@/components/ImageCropper";
+import PanThumb from "@/components/PanThumb";
 
 export default {
   name: "AvatarUploadDemo",

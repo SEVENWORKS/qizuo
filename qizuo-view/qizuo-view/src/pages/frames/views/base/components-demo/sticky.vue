@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import Sticky from "@/components/frames/element-admin/Sticky";
+import Sticky from "@/components/Sticky";
 
 export default {
   name: "StickyDemo",

@@ -30,8 +30,8 @@
 
 <script>
 import { mapGetters } from "vuex";
-import PanThumb from "@/components/frames/element-admin/PanThumb";
-import Mallki from "@/components/frames/element-admin/TextHoverEffect/Mallki";
+import PanThumb from "@/components/PanThumb";
+import Mallki from "@/components/TextHoverEffect/Mallki";
 
 export default {
   components: { PanThumb, Mallki },

@@ -1,4 +1,4 @@
-//多如可配置文件
+//多页面可配置文件
 module.exports = {
   admin: {
     template: "public/index.html",

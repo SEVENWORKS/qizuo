@@ -133,7 +133,7 @@
 </template>
 
 <script>
-import BackToTop from "@/components/frames/element-admin/BackToTop";
+import BackToTop from "@/components/BackToTop";
 
 export default {
   name: "BackToTopDemo",

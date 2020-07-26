@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import { fetchList } from "@apis/element-admin";
+import { fetchList } from "@/apis/frames/article";
 import Sortable from "sortablejs";
 
 export default {

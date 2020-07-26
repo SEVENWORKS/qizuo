@@ -77,8 +77,8 @@
 </template>
 
 <script>
-import { fetchList } from "@apis/element-admin";
-import Pagination from "@/components/frames/element-admin/Pagination"; // Secondary package based on el-pagination
+import { fetchList } from "@/apis/frames/article";
+import Pagination from "@/components/Pagination"; // Secondary package based on el-pagination
 
 export default {
   name: "ArticleList",

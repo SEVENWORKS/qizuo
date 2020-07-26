@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { transactionList } from "@apis/element-admin";
+import { transactionList } from "@/apis/frames/remote-search";
 
 export default {
   filters: {

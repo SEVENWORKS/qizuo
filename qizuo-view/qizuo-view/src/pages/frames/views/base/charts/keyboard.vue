@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Chart from "@/components/frames/element-admin/Charts/Keyboard";
+import Chart from "@/components/Charts/Keyboard";
 
 export default {
   name: "KeyboardChart",

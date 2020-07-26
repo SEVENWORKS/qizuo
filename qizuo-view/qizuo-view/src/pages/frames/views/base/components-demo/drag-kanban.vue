@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import Kanban from "@/components/frames/element-admin/Kanban";
+import Kanban from "@/components/Kanban";
 
 export default {
   name: "DragKanbanDemo",

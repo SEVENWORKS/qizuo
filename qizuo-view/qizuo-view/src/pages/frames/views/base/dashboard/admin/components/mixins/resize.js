@@ -1,4 +1,4 @@
-import { debounce } from "@/utils/frames/element-admin";
+import { debounce } from "@/utils/frames";
 
 export default {
   data() {

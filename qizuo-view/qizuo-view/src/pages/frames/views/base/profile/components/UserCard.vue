@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import PanThumb from "@/components/frames/element-admin/PanThumb";
+import PanThumb from "@/components/PanThumb";
 
 export default {
   components: { PanThumb },

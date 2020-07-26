@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { getToken } from "@apis/element-admin";
+import { getToken } from "@/apis/frames/qiniu";
 // 获取七牛token 后端通过Access Key,Secret Key,bucket等生成token
 // 七牛官方sdk https://developer.qiniu.com/sdk#official-sdk
 

@@ -132,19 +132,19 @@
 </template>
 
 <script>
-import Tinymce from "@/components/frames/element-admin/Tinymce";
-import Upload from "@/components/frames/element-admin/Upload/SingleImage3";
-import MDinput from "@/components/frames/element-admin/MDinput";
-import Sticky from "@/components/frames/element-admin/Sticky"; // 粘性header组件
-import { validURL } from "@/utils/frames/element-admin/validate";
-import { fetchArticle } from "@apis/element-admin";
-import { searchUser } from "@apis/element-admin";
+import Tinymce from "@/components/Tinymce";
+import Upload from "@/components/Upload/SingleImage3";
+import MDinput from "@/components/MDinput";
+import Sticky from "@/components/Sticky"; // 粘性header组件
+import { validURL } from "@/utils/frames/validate";
+import { fetchArticle } from "@/apis/frames/article";
+import { searchUser } from "@/apis/frames/remote-search";
 import Warning from "./Warning";
 import {
   CommentDropdown,
   PlatformDropdown,
   SourceUrlDropdown,
-} from "./Dropdown/index";
+} from "./Dropdown";
 
 const defaultForm = {
   status: "draft",
@@ -326,7 +326,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@static/scss/frames/element-admin/mixin.scss";
+@import "~@/assets/scss/frames/mixin.scss";
 
 .createPost-container {
   position: relative;

@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import MarkdownEditor from "@/components/frames/element-admin/MarkdownEditor";
+import MarkdownEditor from "@/components/MarkdownEditor";
 
 const content = `
 **This is test**

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Tinymce from "@/components/frames/element-admin/Tinymce";
+import Tinymce from "@/components/Tinymce";
 
 export default {
   name: "TinymceDemo",

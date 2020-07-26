@@ -70,14 +70,14 @@
 
 <script>
 import path from "path";
-import { deepClone } from "@/utils/frames/element-admin";
+import { deepClone } from "@/utils/frames";
 import {
   getRoutes,
   getRoles,
   addRole,
   deleteRole,
   updateRole,
-} from "@apis/element-admin";
+} from "@/apis/frames/role";
 
 const defaultRole = {
   key: "",

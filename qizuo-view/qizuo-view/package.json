@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
+    "new": "plop",
+    "svgo": "svgo -f src/assets/icons/frames/svg --config=src/assets/icons/frames/svgo.yml"
   },
   "dependencies": {
     "axios": "0.18.1",

@@ -63,8 +63,8 @@
 </template>
 
 <script>
-import { fetchList } from "@apis/element-admin";
-import { parseTime } from "@/utils/frames/element-admin";
+import { fetchList } from "@/apis/frames/article";
+import { parseTime } from "@/utils/frames";
 // options components
 import FilenameOption from "./components/FilenameOption";
 import AutoWidthOption from "./components/AutoWidthOption";
@@ -96,28 +96,26 @@ export default {
     },
     handleDownload() {
       this.downloadLoading = true;
-      import("@utils/frames/element-admin/vendor/Export2Excel").then(
-        (excel) => {
-          const tHeader = ["Id", "Title", "Author", "Readings", "Date"];
-          const filterVal = [
-            "id",
-            "title",
-            "author",
-            "pageviews",
-            "display_time",
-          ];
-          const list = this.list;
-          const data = this.formatJson(filterVal, list);
-          excel.export_json_to_excel({
-            header: tHeader,
-            data,
-            filename: this.filename,
-            autoWidth: this.autoWidth,
-            bookType: this.bookType,
-          });
-          this.downloadLoading = false;
-        }
-      );
+      import("@utils/frames/vendor/Export2Excel").then((excel) => {
+        const tHeader = ["Id", "Title", "Author", "Readings", "Date"];
+        const filterVal = [
+          "id",
+          "title",
+          "author",
+          "pageviews",
+          "display_time",
+        ];
+        const list = this.list;
+        const data = this.formatJson(filterVal, list);
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: this.filename,
+          autoWidth: this.autoWidth,
+          bookType: this.bookType,
+        });
+        this.downloadLoading = false;
+      });
     },
     formatJson(filterVal, jsonData) {
       return jsonData.map((v) =>

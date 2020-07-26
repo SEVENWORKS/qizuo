@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Dropzone from "@/components/frames/element-admin/Dropzone";
+import Dropzone from "@/components/Dropzone";
 
 export default {
   name: "DropzoneDemo",

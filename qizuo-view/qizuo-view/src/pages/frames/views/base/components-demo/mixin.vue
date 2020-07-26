@@ -125,11 +125,11 @@
 </template>
 
 <script>
-import PanThumb from "@/components/frames/element-admin/PanThumb";
-import MdInput from "@/components/frames/element-admin/MDinput";
-import Mallki from "@/components/frames/element-admin/TextHoverEffect/Mallki";
-import DropdownMenu from "@/components/frames/element-admin/Share/DropdownMenu";
-import waves from "@/directive/frames/element-admin/waves/index.js"; // 水波纹指令
+import PanThumb from "@/components/PanThumb";
+import MdInput from "@/components/MDinput";
+import Mallki from "@/components/TextHoverEffect/Mallki";
+import DropdownMenu from "@/components/Share/DropdownMenu";
+import waves from "@/directive/frames/waves/index.js"; // 水波纹指令
 
 export default {
   name: "ComponentMixinDemo",

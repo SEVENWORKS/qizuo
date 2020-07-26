@@ -47,7 +47,7 @@
 
 <script>
 import path from "path";
-import { isExternal } from "@/utils/frames/element-admin/validate";
+import { isExternal } from "@/utils/frames/validate";
 import Item from "./Item";
 import AppLink from "./Link";
 import FixiOSBug from "./FixiOSBug";

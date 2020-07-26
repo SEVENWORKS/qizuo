@@ -1,8 +1,4 @@
-const req = require.context(
-  "@static/icons/frames/element-admin/svg",
-  false,
-  /\.svg$/
-);
+const req = require.context("@assets/icons/frames/svg", false, /\.svg$/);
 const requireAll = (requireContext) => requireContext.keys();
 
 const re = /\.\/(.*)\.svg/;

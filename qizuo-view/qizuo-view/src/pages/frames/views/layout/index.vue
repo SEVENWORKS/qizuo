@@ -20,14 +20,8 @@
 </template>
 
 <script>
-import RightPanel from "@/components/frames/element-admin/RightPanel";
-import {
-  AppMain,
-  Navbar,
-  Settings,
-  Sidebar,
-  TagsView,
-} from "./components/index";
+import RightPanel from "@/components/RightPanel";
+import { AppMain, Navbar, Settings, Sidebar, TagsView } from "./components";
 import ResizeMixin from "./mixin/ResizeHandler";
 import { mapState } from "vuex";
 
@@ -68,8 +62,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@static/scss/frames/element-admin/mixin.scss";
-@import "@static/scss/frames/element-admin/variables.scss";
+@import "~@/assets/scss/frames/mixin.scss";
+@import "~@/assets/scss/frames/variables.scss";
 
 .app-wrapper {
   @include clearfix;

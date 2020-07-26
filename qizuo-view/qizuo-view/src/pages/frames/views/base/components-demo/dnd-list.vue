@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import DndList from "@/components/frames/element-admin/DndList";
-import { fetchList } from "@apis/element-admin";
+import DndList from "@/components/DndList";
+import { fetchList } from "@/apis/frames/article";
 
 export default {
   name: "DndListDemo",

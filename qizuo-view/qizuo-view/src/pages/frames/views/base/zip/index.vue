@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { fetchList } from "@apis/element-admin";
+import { fetchList } from "@/apis/frames/article";
 
 export default {
   name: "ExportZip",
@@ -78,7 +78,7 @@ export default {
     },
     handleDownload() {
       this.downloadLoading = true;
-      import("@utils/frames/element-admin/vendor/Export2Zip").then((zip) => {
+      import("@utils/frames/vendor/Export2Zip").then((zip) => {
         const tHeader = ["Id", "Title", "Author", "Readings", "Date"];
         const filterVal = [
           "id",

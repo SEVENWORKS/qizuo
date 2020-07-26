@@ -60,12 +60,12 @@
 
 <script>
 import { mapGetters } from "vuex";
-import Breadcrumb from "@/components/frames/element-admin/Breadcrumb";
-import Hamburger from "@/components/frames/element-admin/Hamburger";
-import ErrorLog from "@/components/frames/element-admin/ErrorLog";
-import Screenfull from "@/components/frames/element-admin/Screenfull";
-import SizeSelect from "@/components/frames/element-admin/SizeSelect";
-import Search from "@/components/frames/element-admin/HeaderSearch";
+import Breadcrumb from "@/components/Breadcrumb";
+import Hamburger from "@/components/Hamburger";
+import ErrorLog from "@/components/ErrorLog";
+import Screenfull from "@/components/Screenfull";
+import SizeSelect from "@/components/SizeSelect";
+import Search from "@/components/HeaderSearch";
 
 export default {
   components: {

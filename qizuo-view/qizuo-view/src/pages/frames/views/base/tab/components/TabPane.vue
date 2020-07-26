@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { fetchList } from "@apis/element-admin";
+import { fetchList } from "@/apis/frames/article";
 
 export default {
   filters: {

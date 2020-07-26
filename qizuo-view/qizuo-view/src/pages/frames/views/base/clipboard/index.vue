@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import clip from "@/utils/frames/element-admin/clipboard"; // use clipboard directly
-import clipboard from "@/directive/frames/element-admin/clipboard/index.js"; // use clipboard by v-directive
+import clip from "@/utils/frames/clipboard"; // use clipboard directly
+import clipboard from "@/directive/frames/clipboard/index.js"; // use clipboard by v-directive
 
 export default {
   name: "ClipboardDemo",

@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import clipboard from "@/utils/frames/element-admin/clipboard";
+import clipboard from "@/utils/frames/clipboard";
 import svgIcons from "./svg-icons";
 import elementIcons from "./element-icons";
 

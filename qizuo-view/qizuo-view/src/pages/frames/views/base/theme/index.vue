@@ -84,8 +84,8 @@
 </template>
 
 <script>
-import { toggleClass } from "@/utils/frames/element-admin";
-import "@static/css/frames/element-admin/index.css"; // the theme changed version element-ui css
+import { toggleClass } from "@/utils/frames";
+import "@/assets/css/frames/index.css"; // the theme changed version element-ui css
 
 export default {
   name: "Theme",

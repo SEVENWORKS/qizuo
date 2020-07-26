@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import DropdownMenu from "@/components/frames/element-admin/Share/DropdownMenu";
+import DropdownMenu from "@/components/Share/DropdownMenu";
 
 export default {
   name: "Documentation",

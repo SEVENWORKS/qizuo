@@ -313,10 +313,10 @@ import {
   fetchPv,
   createArticle,
   updateArticle,
-} from "@apis/element-admin";
-import waves from "@directive/frames/element-admin/waves"; // waves directive
-import { parseTime } from "@/utils/frames/element-admin";
-import Pagination from "@/components/frames/element-admin/Pagination"; // secondary package based on el-pagination
+} from "@/apis/frames/article";
+import waves from "@/directive/frames/waves"; // waves directive
+import { parseTime } from "@/utils/frames";
+import Pagination from "@/components/Pagination"; // secondary package based on el-pagination
 
 const calendarTypeOptions = [
   { key: "CN", display_name: "China" },
@@ -529,31 +529,23 @@ export default {
     },
     handleDownload() {
       this.downloadLoading = true;
-      import("@utils/frames/element-admin/vendor/Export2Excel").then(
-        (excel) => {
-          const tHeader = [
-            "timestamp",
-            "title",
-            "type",
-            "importance",
-            "status",
-          ];
-          const filterVal = [
-            "timestamp",
-            "title",
-            "type",
-            "importance",
-            "status",
-          ];
-          const data = this.formatJson(filterVal);
-          excel.export_json_to_excel({
-            header: tHeader,
-            data,
-            filename: "table-list",
-          });
-          this.downloadLoading = false;
-        }
-      );
+      import("@utils/frames/vendor/Export2Excel").then((excel) => {
+        const tHeader = ["timestamp", "title", "type", "importance", "status"];
+        const filterVal = [
+          "timestamp",
+          "title",
+          "type",
+          "importance",
+          "status",
+        ];
+        const data = this.formatJson(filterVal);
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: "table-list",
+        });
+        this.downloadLoading = false;
+      });
     },
     formatJson(filterVal) {
       return this.list.map((v) =>

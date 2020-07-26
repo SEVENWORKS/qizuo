@@ -88,8 +88,8 @@
 </template>
 
 <script>
-import permission from "@/directive/frames/element-admin/permission/index.js"; // 权限判断指令
-import checkPermission from "@/utils/frames/element-admin/permission"; // 权限判断函数
+import permission from "@/directive/frames/permission/index.js"; // 权限判断指令
+import checkPermission from "@/utils/frames/permission"; // 权限判断函数
 import SwitchRoles from "./components/SwitchRoles";
 
 export default {

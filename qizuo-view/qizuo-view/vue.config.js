@@ -4,7 +4,6 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 const webpack = require("webpack"); //webpack引入
 const StylelintPlugin = require("stylelint-webpack-plugin"); //webpack中stylelint
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 const path = require("path"); //node path
 const resolve = (dir) => path.join(__dirname, dir); //定义一个拼接方法，方便后面使用，就是和当前目录进行拼接
 const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV); //是否是生成环境
@@ -26,13 +25,15 @@ glob.sync("./src/pages/**/main.js").forEach((entry) => {
   }
 });
 
+//端口
+const port = process.env.port || process.env.npm_config_port || 9100;
+
 //核心webpack
 module.exports = {
   publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "./", // 默认'/'，部署应用包时的基本 URL 就是dist目录之后的路径
   outputDir: process.env.outputDir || "dist", // 'dist', 生产环境构建文件的目录
-  // assetsDir: "", // 相对于outputDir的静态资源(js、css、img、fonts)目录
-  //多入口配置
-  pages,
+  assetsDir: "static", // 相对于outputDir的静态资源(js、css、img、fonts)目录
+  pages, //多入口配置
   configureWebpack: (config) => {
     //防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖
     config.externals = {
@@ -52,8 +53,8 @@ module.exports = {
       // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
       css: [
         "//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css",
-        "//unpkg.com/bootstrap/dist/css/bootstrap.min.css",
-        "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css",
+        // "//unpkg.com/bootstrap/dist/css/bootstrap.min.css",
+        // "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css",
       ],
       js: [
         "//unpkg.com/vue@2.6.10/dist/vue.min.js", // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
@@ -61,7 +62,7 @@ module.exports = {
         "//unpkg.com/vuex@3.1.1/dist/vuex.min.js",
         "//unpkg.com/axios@0.19.0/dist/axios.min.js",
         "//unpkg.com/element-ui@2.10.1/lib/index.js",
-        "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js",
+        // "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js",
       ],
     };
     config.plugins.forEach((item) => {
@@ -76,7 +77,7 @@ module.exports = {
       //Stylelint Plugin
       plugins.push(
         new StylelintPlugin({
-          files: ["src/**/*.vue", "src/assets/**/*.scss"],
+          files: ["src/**/*.vue", "**/*.scss"],
           fix: true,
         })
       );
@@ -96,13 +97,14 @@ module.exports = {
     config.resolve.alias
       .set("vue$", "vue/dist/vue.esm.js")
       .set("@", resolve("src"))
-      .set("~", resolve("public"))
+      .set("mock", resolve("mock"))
       .set("@comp", resolve("src/components"))
       .set("@pages", resolve("src/pages"))
       .set("@utils", resolve("src/utils"))
       .set("@directive", resolve("src/directive"))
       .set("@filters", resolve("src/filters"))
       .set("@apis", resolve("src/apis"))
+      .set("@assets", resolve("src/assets"))
       .set("@static", resolve("public/static"));
 
     //优化处理压缩图片和打包分析
@@ -126,6 +128,77 @@ module.exports = {
         },
       ]);
     }
+
+    //其它配置
+    // it can improve the speed of the first screen, it is recommended to turn on preload
+    // config.plugin("preload").tap(() => [
+    //   {
+    //     rel: "preload",
+    //     // to ignore runtime.js
+    //     // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+    //     fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
+    //     include: "initial",
+    //   },
+    // ]);
+
+    // when there are many pages, it will cause too many meaningless requests
+    config.plugins.delete("prefetch");
+
+    // set svg-sprite-loader
+    config.module
+      .rule("svg")
+      .exclude.add(resolve("src/assets/icons/frames"))
+      .end();
+    config.module
+      .rule("icons")
+      .test(/\.svg$/)
+      .include.add(resolve("src/assets/icons/frames"))
+      .end()
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({
+        symbolId: "icon-[name]",
+      })
+      .end();
+
+    config.when(process.env.NODE_ENV !== "development", (config) => {
+      config
+        .plugin("ScriptExtHtmlWebpackPlugin")
+        .after("html")
+        .use("script-ext-html-webpack-plugin", [
+          {
+            // `runtime` must same as runtimeChunk name. default is `runtime`
+            inline: /runtime\..*\.js$/,
+          },
+        ])
+        .end();
+      config.optimization.splitChunks({
+        chunks: "all",
+        cacheGroups: {
+          libs: {
+            name: "chunk-libs",
+            test: /[\\/]node_modules[\\/]/,
+            priority: 10,
+            chunks: "initial", // only package third parties that are initially dependent
+          },
+          elementUI: {
+            name: "chunk-elementUI", // split elementUI into a single package
+            priority: 20, // the weight needs to be larger than libs and app or it will be packaged into libs or app
+            test: /[\\/]node_modules[\\/]_?element-ui(.*)/, // in order to adapt to cnpm
+          },
+          commons: {
+            name: "chunk-commons",
+            test: resolve("src/components"), // can customize your rules
+            minChunks: 3, //  minimum common number
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
+      });
+      // https:// webpack.js.org/configuration/optimization/#optimizationruntimechunk
+      config.optimization.runtimeChunk("single");
+    });
+
     return config;
   }, //Vue CLI 内部的 webpack 配置是通过 webpack-chain 维护的。这个库提供了一个 webpack 原始配置的上层抽象，使其可以定义具名的 loader 规则和具名插件，并有机会在后期进入这些规则并对它们的选项进行修改。
   // css,
@@ -149,26 +222,12 @@ module.exports = {
   pwa: {}, //Progressive web apps, 渐进式Web应用
   // 跨越代理
   devServer: {
-    // overlay: { // 让浏览器 overlay 同时显示警告和错误
-    //   warnings: true,
-    //   errors: true
-    // },
-    // open: false, // 是否打开浏览器
-    // host: "localhost",
-    // port: "8080", // 代理断就
-    // https: false,
-    // hotOnly: false, // 热更新
-    // proxy: {
-    //   "/api": {
-    //     target:
-    //       "https://www.easy-mock.com/mock/5bc75b55dc36971c160cad1b/sheets", // 目标代理接口地址
-    //     secure: false,
-    //     changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
-    //     // ws: true, // 是否启用websockets
-    //     pathRewrite: {
-    //       "^/api": "/",
-    //     },
-    //   },
-    // },
+    port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true,
+    },
+    before: require("./mock/mock-server.js"),
   },
 };

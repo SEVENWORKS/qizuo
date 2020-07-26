@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import { validUsername } from "@/utils/frames/element-admin/validate";
+import { validUsername } from "@/utils/frames/validate";
 import SocialSign from "./components/SocialSignin";
 
 export default {

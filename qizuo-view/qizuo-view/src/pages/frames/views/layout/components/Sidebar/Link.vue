@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { isExternal } from "@/utils/frames/element-admin/validate";
+import { isExternal } from "@/utils/frames/validate";
 
 export default {
   props: {

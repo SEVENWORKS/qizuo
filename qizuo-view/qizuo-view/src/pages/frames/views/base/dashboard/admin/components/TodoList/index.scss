@@ -97,6 +97,7 @@
   .toggle-all {
     text-align: center;
     border: none;
+
     /* Mobile Safari */
     opacity: 0;
     position: absolute;
@@ -111,13 +112,13 @@
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
-  .toggle-all + label:before {
+  .toggle-all + label::before {
     content: "❯";
     font-size: 22px;
     color: #e6e6e6;
     padding: 10px 27px 10px 27px;
   }
-  .toggle-all:checked + label:before {
+  .toggle-all:checked + label::before {
     color: #737373;
   }
   .todo-list {
@@ -149,6 +150,7 @@
   .todo-list li .toggle {
     text-align: center;
     width: 40px;
+
     /* auto, since non-WebKit browsers doesn't support input styling */
     height: auto;
     position: absolute;
@@ -156,6 +158,7 @@
     bottom: 0;
     margin: auto 0;
     border: none;
+
     /* Mobile Safari */
     -webkit-appearance: none;
     appearance: none;
@@ -206,7 +209,7 @@
   .todo-list li .destroy:hover {
     color: #af5b5e;
   }
-  .todo-list li .destroy:after {
+  .todo-list li .destroy::after {
     content: "×";
   }
   .todo-list li:hover .destroy {
@@ -226,7 +229,7 @@
     text-align: center;
     border-top: 1px solid #e6e6e6;
   }
-  .footer:before {
+  .footer::before {
     content: "";
     position: absolute;
     right: 0;
@@ -298,6 +301,7 @@
   .info a:hover {
     text-decoration: underline;
   }
+
   /*
   Hack to remove background from Mobile Safari.
   Can't use it globally since it destroys checkboxes in Firefox
