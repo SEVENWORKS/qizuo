@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b132037-3cf1-4f7a-805a-6138e8c1fd1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/errorLog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/permission.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/tagsView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/frames/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commonStore/getters.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/redirect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commonRouter/permission.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commonStore/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commonStore/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightPanel/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightPanel/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ThemePicker/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ThemePicker/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/base/animate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/base/hr.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/panel/panel.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/panel/well.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tree/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/store.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -130,7 +109,7 @@
           <entry key="hbs" value="7" />
           <entry key="html" value="49" />
           <entry key="jpg" value="58" />
-          <entry key="js" value="544" />
+          <entry key="js" value="550" />
           <entry key="json" value="25" />
           <entry key="jsp" value="16" />
           <entry key="png" value="73" />
@@ -150,7 +129,7 @@
           <entry key="Image" value="139" />
           <entry key="JSON" value="25" />
           <entry key="JSP" value="16" />
-          <entry key="JavaScript" value="544" />
+          <entry key="JavaScript" value="550" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="19" />
           <entry key="SVG" value="6" />
@@ -190,89 +169,7 @@
     <favorites_list name="qizuo-view" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/admin/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/admin/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/admin/store.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commonStore/frames/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1210">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/frames/store/getters.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/frames/store/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commonStore/getters.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/commonStore/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="46" selection-start-column="46" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -434,24 +331,6 @@
               <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonStore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qizuo-view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qizuo-view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonStore" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -472,10 +351,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\commonStore\frames" />
+      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\commonRouter" />
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\commonStore" />
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components" />
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view" />
-      <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\pages\frames" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\workspace\ide\qizuo\qizuo-view\qizuo-view\src\components\layout" />
@@ -536,7 +415,7 @@
       <workItem from="1595423723079" duration="4397000" />
       <workItem from="1595598217582" duration="17397000" />
       <workItem from="1595737777624" duration="2223000" />
-      <workItem from="1595742476753" duration="20075000" />
+      <workItem from="1595742476753" duration="21130000" />
     </task>
     <task id="LOCAL-00001" summary="one">
       <created>1592232808198</created>
@@ -622,11 +501,18 @@
       <option name="project" value="LOCAL" />
       <updated>1595738464487</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="two">
+      <created>1595775824280</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595775824280</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210838000" />
+    <option name="totallyTimeSpent" value="211893000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -639,7 +525,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.20607662" />
       <window_info id="Structure" order="1" sideWeight="0.5005429" side_tool="true" weight="0.19072708" />
@@ -683,29 +568,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="two" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/views/base/redirect/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/views/layout/index.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/views/layout/components/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/frames/views/layout/components/AppMain.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -819,13 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="27" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" selection-start-column="18" selection-end-line="34" />
         </state>
       </provider>
     </entry>
@@ -949,16 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/frames/store/modules/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/frames/store/modules/tagsView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1010,13 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1210">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/frames/store/getters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1044,6 +882,49 @@
           <caret column="46" selection-start-column="46" selection-end-column="46" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/permission.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/frames/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/frames/permission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-506">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonRouter/permission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/frames/store/modules/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commonStore/frames/settings_base.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
