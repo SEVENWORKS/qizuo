@@ -19,6 +19,7 @@
 <script>
 const version = require("element-ui/package.json").version; // element-ui version from node_modules
 const ORIGINAL_THEME = "#409EFF"; // default color
+import variables from "@assets/scss/frames/element-variables.scss";
 
 export default {
   data() {
@@ -29,7 +30,7 @@ export default {
   },
   computed: {
     defaultTheme() {
-      return this.$store.state.settings.theme;
+      return variables.theme;
     },
   },
   watch: {

@@ -1,26 +1,80 @@
+//frames
+import BackToTop from "@comp/BackToTop";
+import Breadcrumb from "@comp/Breadcrumb";
+import Keyboard from "@comp/Charts/Keyboard";
+import LineMarker from "@comp/Charts/LineMarker";
+import MixChart from "@comp/Charts/MixChart";
+import DndList from "@comp/DndList";
+import DragSelect from "@comp/DragSelect";
+import Dropzone from "@comp/Dropzone";
+import ErrorLog from "@comp/ErrorLog";
+import GithubCorner from "@comp/GithubCorner";
+import Hamburger from "@comp/Hamburger";
+import HeaderSearch from "@comp/HeaderSearch";
+import ImageCropper from "@comp/ImageCropper";
+import JsonEditor from "@comp/JsonEditor";
+import Kanban from "@comp/Kanban";
+import MarkdownEditor from "@comp/MarkdownEditor";
+import MDinput from "@comp/MDinput";
+import Pagination from "@comp/Pagination";
+import PanThumb from "@comp/PanThumb";
+import RightPanel from "@comp/RightPanel";
+import Screenfull from "@comp/Screenfull";
+import Share from "@comp/Share/DropdownMenu";
+import SizeSelect from "@comp/SizeSelect";
+import Sticky from "@comp/Sticky";
+import SvgIcon from "@comp/SvgIcon";
+import Mallki from "@comp/TextHoverEffect/Mallki";
+import ThemePicker from "@comp/ThemePicker";
+import Tinymce from "@comp/Tinymce";
+import SingleImage from "@comp/Upload/SingleImage";
+import SingleImage2 from "@comp/Upload/SingleImage2";
+import SingleImage3 from "@comp/Upload/SingleImage3";
+import UploadExcel from "@comp/UploadExcel";
+Vue.component("BackToTop",BackToTop);
+Vue.component("Breadcrumb",Breadcrumb);
+Vue.component("Keyboard",Keyboard);
+Vue.component("LineMarker",LineMarker);
+Vue.component("MixChart",MixChart);
+Vue.component("DndList",DndList);
+Vue.component("DragSelect",DragSelect);
+Vue.component("Dropzone",Dropzone);
+Vue.component("ErrorLog",ErrorLog);
+Vue.component("GithubCorner",GithubCorner);
+Vue.component("Hamburger",Hamburger);
+Vue.component("HeaderSearch",HeaderSearch);
+Vue.component("ImageCropper",ImageCropper);
+Vue.component("JsonEditor",JsonEditor);
+Vue.component("Kanban",Kanban);
+Vue.component("MarkdownEditor",MarkdownEditor);
+Vue.component("MDinput",MDinput);
+Vue.component("Pagination",Pagination);
+Vue.component("PanThumb",PanThumb);
+Vue.component("RightPanel",RightPanel);
+Vue.component("Screenfull",Screenfull);
+Vue.component("Share",Share);
+Vue.component("SizeSelect",SizeSelect);
+Vue.component("Sticky",Sticky);
+Vue.component("SvgIcon",SvgIcon);
+Vue.component("Mallki",Mallki);
+Vue.component("ThemePicker",ThemePicker);
+Vue.component("Tinymce",Tinymce);
+Vue.component("SingleImage",SingleImage);
+Vue.component("SingleImage2",SingleImage2);
+Vue.component("SingleImage3",SingleImage3);
+Vue.component("UploadExcel",UploadExcel);
+
 //公共组件
 import qz_alert from "@comp/dialog/alert";
-import qz_dialog_index from "@comp/dialog/index";
+import qz_dialog_index from "@comp/dialog";
 Vue.component("qz-alert",qz_alert);
 Vue.component("qz-dialog-index",qz_dialog_index);
 
-import qz_animate from "@comp/layout/base/animate";
-import qz_hr from "@comp/layout/base/hr";
-import qz_panel from "@comp/layout/panel/panel";
-import qz_well from "@comp/layout/panel/well";
+import qz_animate from "@comp/animate";
 Vue.component("qz-animate",qz_animate);
-Vue.component("qz-hr",qz_hr);
-Vue.component("qz-panel",qz_panel);
-Vue.component("qz-well",qz_well);
 
-import qz_page_index from "@comp/page/index";
-Vue.component("qz-page-index",qz_page_index);
-
-import qz_table_index from "@comp/table/index";
+import qz_table_index from "@comp/table";
 import qz_table_base from "@comp/table/table_base";
 Vue.component("qz-table-index",qz_table_index);
 Vue.component("qz-table-base",qz_table_base);
-
-import qz_tree_index from "@comp/tree/index";
-Vue.component("qz-tree-index",qz_tree_index);
 

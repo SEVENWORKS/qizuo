@@ -18,6 +18,7 @@
 
 <script>
 import { addClass, removeClass } from "@/utils/frames";
+import variables from "@assets/scss/frames/element-variables.scss";
 
 export default {
   name: "RightPanel",
@@ -38,7 +39,7 @@ export default {
   },
   computed: {
     theme() {
-      return this.$store.state.settings.theme;
+      return variables.theme;
     },
   },
   watch: {
