@@ -1,16 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import commonStore from '@/commonStore/index'
-Vue.use(Vuex)
+import store from '@/commonStore/index'
 
-let store={
+const commonModule={
     state: {
     },
     mutations: {
     },
     actions: {
-    }
+    },
+    namespaced: true,
 }
-Object.assign(store,commonStore)
 
-export default new Vuex.Store(store)
+store.registerModule('commonModule',commonModule)
+
+export default store

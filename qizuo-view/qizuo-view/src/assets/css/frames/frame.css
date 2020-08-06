@@ -58,7 +58,6 @@
 }
 
 * {
-  border-radius: 0 !important;
   box-shadow: none;
   -ms-touch-action: manipulation;
   touch-action: manipulation;

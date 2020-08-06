@@ -1,5 +1,5 @@
 import variables from "@assets/scss/frames/element-variables.scss";
-import defaultSettings from "../../settings";
+import defaultSettings from "./setting";
 
 const { showSettings, tagsView, fixedHeader, sidebarLogo } = defaultSettings;
 

@@ -1,21 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import commonStore from '@/commonStore/index'
-import commonGetters from '@/commonStore/getters'
-Vue.use(Vuex)
+import store from '@/commonStore/index'
 
-let module={
-    admin:{
-        state: {
-        },
-        mutations: {
-        },
-        actions: {
-        }
-    }
+const adminModule={
+    state: {
+    },
+    mutations: {
+    },
+    actions: {
+    },
+    namespaced: true,
 }
 
-export default new Vuex.Store({
-    modules:Object.assign(commonStore,module),
-    getters:commonGetters
-})
+store.registerModule('adminModule',adminModule)
+
+export default store

@@ -1,6 +1,6 @@
 import { login, logout, getInfo } from "@/apis/frames/user";
 import { getToken, setToken, removeToken } from "@/utils/frames/auth";
-import router, { resetRouter } from "../../router";
+import router, { resetRouter } from "@router";
 
 const state = {
   token: getToken(),

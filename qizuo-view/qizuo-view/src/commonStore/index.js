@@ -1,4 +1,8 @@
-const modulesFiles = require.context("./frames", true, /\.js$/);
+import Vue from "vue";
+import Vuex from "vuex";
+Vue.use(Vuex);
+import commonGetters from "@/commonStore/getters";
+const modulesFiles = require.context("./frames", false, /\.js$/);
 // you do not need `import app from './modules/app'`
 // it will auto require all vuex module from modules file
 const modules = modulesFiles.keys().reduce((modules, modulePath) => {
@@ -8,17 +12,8 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
   modules[moduleName] = value.default;
   return modules;
 }, {});
-//公共store
-export default Object.assign(modules, {
-  base: {
-    state: {
-      alertMsg: "", //弹框消息
-    },
-    mutations: {
-      updateAlertMsg(state, alertMsg) {
-        state.alertMsg = alertMsg;
-      },
-    },
-    actions: {},
-  },
+
+export default new Vuex.Store({
+  modules: modules,
+  getters: commonGetters,
 });

@@ -1,14 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import commonRouter from '@/commonRouter/index'
-Vue.use(VueRouter)
-const routes = [
-    ...commonRouter
+import router from '@/commonRouter/index'
+
+const commonRoutes = [
 ]
 
-const router = new VueRouter({
-    mode: 'hash',
-    base: process.env.BASE_URL,
-    routes
-})
+router.addRoutes(commonRoutes)
+
 export default router
+

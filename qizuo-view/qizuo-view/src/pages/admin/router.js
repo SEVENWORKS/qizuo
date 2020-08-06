@@ -1,14 +1,6 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import commonRouter from '@/commonRouter/index'
-Vue.use(VueRouter)
-const routes = [
-    ...commonRouter,
-    {
-        path: '/qizuo',
-        name: 'qizuo',
-        component: () => import('@comp/login/base_login')
-    },
+import router from '@/commonRouter/index'
+
+const adminRoutes = [
     {
         path: "/",
         component: () => import('@comp/layout'),
@@ -54,21 +46,7 @@ const routes = [
     }
 ]
 
-
-//创建路由
-const createRouter = () =>
-    new VueRouter({
-        mode: 'hash',
-        scrollBehavior: () => ({ y: 0 }),
-        base: process.env.BASE_URL,
-        routes
-    })
-const router = createRouter();
-
-//重置路由
-export function resetRouter() {
-    const newRouter = createRouter();
-    router.matcher = newRouter.matcher;
-}
+router.addRoutes(adminRoutes)
 
 export default router
+

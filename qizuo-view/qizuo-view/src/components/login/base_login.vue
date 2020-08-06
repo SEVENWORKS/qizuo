@@ -2,7 +2,11 @@
   <div class="base_login" ref="base_login">
     <header></header>
     <section id="seo">
-      <input class="form-control" type="password" value="" />
+      <el-input
+        class="form-control"
+        v-model="value"
+        :style="{ display: display }"
+      />
     </section>
     <footer>
       <div id="fo_tag">qizuo</div>
@@ -13,14 +17,31 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      value: "",
+      display: "none",
+      redirect: undefined, //跳转地址
+      otherQuery: {}, //跳转参数
+    };
+  },
+  watch: {
+    $route: {
+      handler: function (route) {
+        const query = route.query;
+        if (query) {
+          this.redirect = query.redirect;
+          this.otherQuery = this.getOtherQuery(query);
+        }
+      },
+      immediate: true,
+    },
   },
   mounted() {
     document.getElementsByTagName("body")[0].appendChild(this.$refs.base_login);
     //监听键盘事件
     const vm = this;
     var openP = new Array();
-    $(document).keydown(function (e) {
+    const handel = function (e) {
       //密码存储
       if (27 == e.keyCode) {
         //清除键盘数字
@@ -32,35 +53,58 @@ export default {
       //判断是否显现
       if (20 == openP.length) {
         if (70 == openP[0] && 73 == openP[19]) {
-          $(document).unbind();
+          document.removeEventListener("keydown", handel, false);
           vm.coolSty();
         }
       }
-    });
+    };
+    document.addEventListener("keydown", handel, false);
   },
-
   methods: {
     /**显现样式*/
     coolSty() {
       const vm = this;
       setTimeout(() => {
-        $("#seo input").css("display", "block");
-        $("#seo input").focus();
+        this.display = "block";
         //二次绑定
-        $(document).keydown(function (e) {
-          if (88 == e.keyCode && e.ctrlKey) {
-            //发送
-            vm.send();
-          }
-        });
+        document.addEventListener(
+          "keydown",
+          function (e) {
+            if (88 == e.keyCode && e.ctrlKey) {
+              //发送
+              vm.send();
+            }
+          },
+          false
+        );
       }, 100);
     },
     /**发送*/
     send() {
-      var value = $("#seo input").val();
+      const value = this.value;
       if (null != value && "" != value) {
-        alert("发送");
+        this.$store
+          .dispatch("user/login", {
+            username: "admin",
+            password: "111111",
+          })
+          .then(() => {
+            this.$router.push({
+              path: this.redirect || "/",
+              query: this.otherQuery,
+            });
+          })
+          .catch(() => {});
       }
+    },
+    //重定向参数
+    getOtherQuery(query) {
+      return Object.keys(query).reduce((acc, cur) => {
+        if (cur !== "redirect") {
+          acc[cur] = query[cur];
+        }
+        return acc;
+      }, {});
     },
   },
 };
@@ -72,7 +116,7 @@ export default {
   height: 100%;
   top: 0;
   z-index: 888;
-  background: url("/static/img/frame/body/qizuo-backgroudimg.png");
+  background: url("~@assets/img/body-theme/qizuo-backgroudimg.png");
 }
 
 header {
@@ -87,7 +131,7 @@ footer {
   height: 10%;
 }
 
-#seo input {
+.form-control {
   width: 30%;
   margin: 0 auto;
   display: none;
