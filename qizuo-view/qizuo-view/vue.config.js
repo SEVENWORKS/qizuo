@@ -73,6 +73,7 @@ module.exports = {
     });
 
     const plugins = [];
+    //针对开发环境的插件配置
     if (IS_DEV) {
       //Stylelint Plugin
       plugins.push(
@@ -86,6 +87,7 @@ module.exports = {
         disableHostCheck: true,
       };
     }
+
     //合并plugins
     config.plugins = [...config.plugins, ...plugins];
   }, //如果这个值是一个函数，则会接收被解析的配置作为参数。该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本

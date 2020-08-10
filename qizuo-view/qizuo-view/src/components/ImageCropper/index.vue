@@ -858,46 +858,55 @@ export default {
 
 <style lang="scss">
 @charset "UTF-8";
+
 @-webkit-keyframes vicp_progress {
   0% {
     background-position-y: 0;
   }
+
   100% {
     background-position-y: 40px;
   }
 }
+
 @keyframes vicp_progress {
   0% {
     background-position-y: 0;
   }
+
   100% {
     background-position-y: 40px;
   }
 }
+
 @-webkit-keyframes vicp {
   0% {
     opacity: 0;
     -webkit-transform: scale(0) translateY(-60px);
     transform: scale(0) translateY(-60px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: scale(1) translateY(0);
     transform: scale(1) translateY(0);
   }
 }
+
 @keyframes vicp {
   0% {
     opacity: 0;
     -webkit-transform: scale(0) translateY(-60px);
     transform: scale(0) translateY(-60px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: scale(1) translateY(0);
     transform: scale(1) translateY(0);
   }
 }
+
 .vue-image-crop-upload {
   position: fixed;
   display: block;
@@ -914,6 +923,7 @@ export default {
   -webkit-tap-highlight-color: transparent;
   -moz-tap-highlight-color: transparent;
 }
+
 .vue-image-crop-upload .vicp-wrap {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.23);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.23);
@@ -935,11 +945,13 @@ export default {
   -webkit-animation: vicp 0.12s ease-in;
   animation: vicp 0.12s ease-in;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-close {
   position: absolute;
   right: -30px;
   top: -30px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-close .vicp-icon4 {
   position: relative;
   display: block;
@@ -954,6 +966,7 @@ export default {
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-close .vicp-icon4::after,
 .vue-image-crop-upload .vicp-wrap .vicp-close .vicp-icon4::before {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.23);
@@ -969,16 +982,19 @@ export default {
   transform: rotate(45deg);
   background-color: #fff;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-close .vicp-icon4::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-close .vicp-icon4:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -990,6 +1006,7 @@ export default {
   border: 1px dashed rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area .vicp-icon1 {
   display: block;
   margin: 0 auto 6px;
@@ -997,6 +1014,7 @@ export default {
   height: 42px;
   overflow: hidden;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step1
@@ -1011,6 +1029,7 @@ export default {
   border-left: 14.7px solid transparent;
   border-right: 14.7px solid transparent;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step1
@@ -1023,6 +1042,7 @@ export default {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step1
@@ -1036,6 +1056,7 @@ export default {
   border: 6px solid rgba(0, 0, 0, 0.3);
   border-top: none;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area .vicp-hint {
   display: block;
   padding: 15px;
@@ -1043,6 +1064,7 @@ export default {
   color: #666;
   line-height: 30px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step1
@@ -1061,17 +1083,21 @@ export default {
   color: #666;
   font-size: 14px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area:hover {
   cursor: pointer;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.05);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop {
   overflow: hidden;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left {
   float: left;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1085,6 +1111,7 @@ export default {
   background-color: #e5e5e0;
   overflow: hidden;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1100,6 +1127,7 @@ export default {
   -ms-user-select: none;
   user-select: none;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1112,6 +1140,7 @@ export default {
   position: absolute;
   background-color: rgba(241, 242, 243, 0.8);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1122,6 +1151,7 @@ export default {
   top: 0;
   left: 0;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1132,6 +1162,7 @@ export default {
   bottom: 0;
   right: 0;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1142,6 +1173,7 @@ export default {
   width: 240px;
   height: 18px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1161,6 +1193,7 @@ export default {
   color: #fff;
   overflow: hidden;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1173,6 +1206,7 @@ export default {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.14);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1182,6 +1216,7 @@ export default {
   i:first-child {
   float: left;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1191,6 +1226,7 @@ export default {
   i:last-child {
   float: right;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1202,6 +1238,7 @@ export default {
   width: 240px;
   height: 18px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1223,6 +1260,7 @@ export default {
   border-radius: 100%;
   background-color: rgba(0, 0, 0, 0.08);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1242,6 +1280,7 @@ export default {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.14);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1251,6 +1290,7 @@ export default {
   .vicp-icon5 {
   left: 0;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1267,6 +1307,7 @@ export default {
   height: 2px;
   background-color: #fff;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1276,6 +1317,7 @@ export default {
   .vicp-icon6 {
   right: 0;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1292,6 +1334,7 @@ export default {
   height: 2px;
   background-color: #fff;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1308,6 +1351,7 @@ export default {
   height: 12px;
   background-color: #fff;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1333,6 +1377,7 @@ export default {
   /* 轨道
                --------------------------------------------------------------- */
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1342,6 +1387,7 @@ export default {
   input[type="range"]:focus {
   outline: none;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1362,6 +1408,7 @@ export default {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1380,6 +1427,7 @@ export default {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1397,6 +1445,7 @@ export default {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1408,6 +1457,7 @@ export default {
   width: 14px;
   height: 14px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1419,6 +1469,7 @@ export default {
   width: 14px;
   height: 14px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1432,6 +1483,7 @@ export default {
   width: 14px;
   height: 14px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1448,6 +1500,7 @@ export default {
   border: none;
   background-color: rgba(68, 170, 119, 0.3);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1463,6 +1516,7 @@ export default {
   border: none;
   background-color: rgba(68, 170, 119, 0.3);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1480,6 +1534,7 @@ export default {
   border-radius: 2px;
   border: none;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1489,6 +1544,7 @@ export default {
   input[type="range"]::-ms-fill-lower {
   background-color: rgba(68, 170, 119, 0.3);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1498,6 +1554,7 @@ export default {
   input[type="range"]::-ms-fill-upper {
   background-color: rgba(68, 170, 119, 0.15);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1507,6 +1564,7 @@ export default {
   input[type="range"]:focus::-webkit-slider-runnable-track {
   background-color: rgba(68, 170, 119, 0.5);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1516,6 +1574,7 @@ export default {
   input[type="range"]:focus::-moz-range-track {
   background-color: rgba(68, 170, 119, 0.5);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1525,6 +1584,7 @@ export default {
   input[type="range"]:focus::-ms-fill-lower {
   background-color: rgba(68, 170, 119, 0.45);
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1534,9 +1594,11 @@ export default {
   input[type="range"]:focus::-ms-fill-upper {
   background-color: rgba(68, 170, 119, 0.25);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-right {
   float: right;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1546,6 +1608,7 @@ export default {
   height: 150px;
   overflow: hidden;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1560,6 +1623,7 @@ export default {
   float: left;
   margin-right: 16px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1576,6 +1640,7 @@ export default {
   display: block;
   text-align: center;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1600,6 +1665,7 @@ export default {
   -ms-user-select: none;
   user-select: none;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1609,6 +1675,7 @@ export default {
   .vicp-preview-item.vicp-preview-item-circle {
   margin-right: 0;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step2
@@ -1619,6 +1686,7 @@ export default {
   img {
   border-radius: 100%;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -1629,6 +1697,7 @@ export default {
   text-align: center;
   border: 1px dashed #ddd;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload .vicp-loading {
   display: block;
   padding: 15px;
@@ -1636,11 +1705,13 @@ export default {
   color: #999;
   line-height: 30px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload .vicp-progress-wrap {
   margin-top: 12px;
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 3px;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step3
@@ -1680,6 +1751,7 @@ export default {
   -webkit-animation: vicp_progress 0.5s linear infinite;
   animation: vicp_progress 0.5s linear infinite;
 }
+
 .vue-image-crop-upload
   .vicp-wrap
   .vicp-step3
@@ -1699,16 +1771,19 @@ export default {
   border-radius: 100%;
   background-color: #4a7;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload .vicp-error,
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload .vicp-success {
   height: 100px;
   line-height: 100px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-operate {
   position: absolute;
   right: 20px;
   bottom: 20px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-operate a {
   position: relative;
   float: left;
@@ -1728,9 +1803,11 @@ export default {
   -ms-user-select: none;
   user-select: none;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-operate a:hover {
   background-color: rgba(0, 0, 0, 0.03);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-error,
 .vue-image-crop-upload .vicp-wrap .vicp-success {
   display: block;
@@ -1741,9 +1818,11 @@ export default {
   text-align: center;
   vertical-align: top;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-success {
   color: #4a7;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-icon3 {
   position: relative;
   display: inline-block;
@@ -1751,6 +1830,7 @@ export default {
   height: 20px;
   top: 4px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-icon3::after {
   position: absolute;
   top: 3px;
@@ -1765,6 +1845,7 @@ export default {
   transform: rotate(45deg);
   content: "";
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-icon2 {
   position: relative;
   display: inline-block;
@@ -1772,6 +1853,7 @@ export default {
   height: 20px;
   top: 4px;
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-icon2::after,
 .vue-image-crop-upload .vicp-wrap .vicp-icon2::before {
   content: "";
@@ -1785,11 +1867,13 @@ export default {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .vue-image-crop-upload .vicp-wrap .vicp-icon2::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+
 .e-ripple {
   position: absolute;
   border-radius: 100%;
@@ -1805,6 +1889,7 @@ export default {
   transform: scale(0);
   opacity: 1;
 }
+
 .e-ripple.z-active {
   opacity: 0;
   -webkit-transform: scale(2);

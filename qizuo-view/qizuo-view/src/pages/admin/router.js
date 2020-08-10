@@ -1,6 +1,6 @@
 import router from '@/commonRouter/index'
 
-const adminRoutes = [
+window.routes = [
     {
         path: "/",
         component: () => import('@comp/layout'),
@@ -45,8 +45,6 @@ const adminRoutes = [
         ],
     }
 ]
-
-router.addRoutes(adminRoutes)
 
 export default router
 

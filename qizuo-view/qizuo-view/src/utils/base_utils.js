@@ -1,7 +1,7 @@
 /** 弹出窗(重写，基于layer) */
 window.alert = function (msg, func) {
   //更新store消息
-  window._vm.$message(msg);
+  window._vm.$message(msg + "");
   //函数执行
   if (isFunction(func)) {
     func();

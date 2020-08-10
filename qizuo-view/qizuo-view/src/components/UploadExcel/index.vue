@@ -143,6 +143,7 @@ export default {
   display: none;
   z-index: -9999;
 }
+
 .drop {
   border: 2px dashed #bbb;
   width: 600px;

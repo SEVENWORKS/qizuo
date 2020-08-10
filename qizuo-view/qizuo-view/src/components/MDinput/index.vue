@@ -243,9 +243,11 @@ $color-black: black;
 .material-input__component {
   margin-top: 36px;
   position: relative;
+
   * {
     box-sizing: border-box;
   }
+
   .iconClass {
     .material-input__icon {
       position: absolute;
@@ -259,13 +261,16 @@ $color-black: black;
       font-weight: $font-weight-normal;
       pointer-events: none;
     }
+
     .material-label {
       left: $index-has-icon;
     }
+
     .material-input {
       text-indent: $index-has-icon;
     }
   }
+
   .material-input {
     font-size: $font-size-base;
     padding: $spacer $spacer $spacer - $apixel * 10 $spacer / 2;
@@ -274,12 +279,14 @@ $color-black: black;
     border: none;
     line-height: 1;
     border-radius: 0;
+
     &:focus {
       outline: none;
       border: none;
       border-bottom: 1px solid transparent; // fixes the height issue
     }
   }
+
   .material-label {
     font-weight: $font-weight-normal;
     position: absolute;
@@ -289,15 +296,18 @@ $color-black: black;
     transition: $transition;
     font-size: $font-size-small;
   }
+
   .material-input-bar {
     position: relative;
     display: block;
     width: 100%;
+
     &::before {
       @extend %base-bar-pseudo;
 
       left: 50%;
     }
+
     &::after {
       @extend %base-bar-pseudo;
 
@@ -329,15 +339,18 @@ $color-black: black;
 
 .material-input__component {
   background: $color-white;
+
   .material-input {
     background: none;
     color: $color-black;
     text-indent: $index;
     border-bottom: 1px solid $color-grey-light;
   }
+
   .material-label {
     color: $color-grey;
   }
+
   .material-input-bar {
     &::before,
     &::after {
@@ -355,6 +368,7 @@ $color-black: black;
     &.material--active .material-label {
       color: $color-red;
     }
+
     .material-input-bar {
       &::before,
       &::after {

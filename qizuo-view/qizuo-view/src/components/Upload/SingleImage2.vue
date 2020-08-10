@@ -81,9 +81,11 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
+
   .image-uploader {
     height: 100%;
   }
+
   .image-preview {
     width: 100%;
     height: 100%;
@@ -91,15 +93,18 @@ export default {
     left: 0;
     top: 0;
     border: 1px dashed #d9d9d9;
+
     .image-preview-wrapper {
       position: relative;
       width: 100%;
       height: 100%;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+
     .image-preview-action {
       position: absolute;
       width: 100%;
@@ -116,10 +121,12 @@ export default {
       cursor: pointer;
       text-align: center;
       line-height: 200px;
+
       .el-icon-delete {
         font-size: 36px;
       }
     }
+
     &:hover {
       .image-preview-action {
         opacity: 1;

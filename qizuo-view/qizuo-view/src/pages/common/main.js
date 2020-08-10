@@ -28,10 +28,9 @@ if (process.env.NODE_ENV !== "production") {
   const { mockXHR } = require("mock");
   mockXHR();
 }
-
 //config
 Vue.config.productionTip = false; //阻止启动生产消息，常用作指令。
-Vue.prototype.$global = global.base; //全局静态变量
+Vue.prototype.$global = global; //全局静态变量
 Vue.prototype.$request = request; //全局request
 window._vm = new Vue({
   router,

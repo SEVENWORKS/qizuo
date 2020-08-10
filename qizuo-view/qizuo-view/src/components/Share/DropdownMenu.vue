@@ -48,11 +48,13 @@ export default {
 <style lang="scss">
 $n: 9; //和items.length 相同
 $t: 0.1s;
+
 .share-dropdown-menu {
   width: 250px;
   position: relative;
   z-index: 1;
   height: auto !important;
+
   &-title {
     width: 100%;
     display: block;
@@ -66,9 +68,11 @@ $t: 0.1s;
     z-index: 2;
     transform: translate3d(0, 0, 0);
   }
+
   &-wrapper {
     position: relative;
   }
+
   &-item {
     text-align: center;
     position: absolute;
@@ -82,10 +86,12 @@ $t: 0.1s;
     overflow: hidden;
     opacity: 1;
     transition: transform 0.28s ease;
+
     &:hover {
       background: black;
       color: white;
     }
+
     @for $i from 1 through $n {
       &:nth-of-type(#{$i}) {
         z-index: -1;
@@ -94,10 +100,12 @@ $t: 0.1s;
       }
     }
   }
+
   &.active {
     .share-dropdown-menu-wrapper {
       z-index: 1;
     }
+
     .share-dropdown-menu-item {
       @for $i from 1 through $n {
         &:nth-of-type(#{$i}) {

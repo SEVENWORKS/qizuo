@@ -3,9 +3,6 @@
     <div id="app">
       <router-view />
     </div>
-
-    <!-- alert弹框 -->
-    <qz-alert></qz-alert>
   </div>
 </template>
 

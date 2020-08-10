@@ -37,7 +37,8 @@ export default {
     },
   },
   mounted() {
-    document.getElementsByTagName("body")[0].appendChild(this.$refs.base_login);
+    //路由跳转页面如果不在app元素中会出现空白页面的问题，所以这句话不能加！
+    // document.getElementsByTagName("body")[0].appendChild(this.$refs.base_login);
     //监听键盘事件
     const vm = this;
     var openP = new Array();

@@ -124,17 +124,21 @@ export default {
 .dndList {
   background: #fff;
   padding-bottom: 40px;
+
   &::after {
     content: "";
     display: table;
     clear: both;
   }
+
   .dndList-list {
     float: left;
     padding-bottom: 30px;
+
     &:first-of-type {
       margin-right: 2%;
     }
+
     .dragArea {
       margin-top: 15px;
       min-height: 50px;
