@@ -2,6 +2,6 @@
 //它由PostCSS提供
 module.exports = {
   ignoreFiles: ["**/frames/**", "public", "dist", "node_modules"], //忽略文件
-  extends: ["stylelint-config-standard", "stylelint-config-recommended"], //继承规则
+  // extends: ["stylelint-config-standard", "stylelint-config-recommended"], //继承规则
   rules: {}, //自定义规则
 };

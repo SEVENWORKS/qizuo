@@ -5,7 +5,7 @@ module.exports = {
     //环配置 如 "browser": true, node: true,
     node: true,
   },
-  extends: ["plugin:vue/essential", "@vue/airbnb"],
+  extends: ["plugin:vue/essential"],
   rules: {
     "array-callback-return": 1, //return 后面是否允许省略
     "arrow-parens": ["error", "as-needed"], // 箭头函数的参数可以不使用圆括号
@@ -41,9 +41,9 @@ module.exports = {
     "prefer-rest-params": 1, //要求使用剩余参数而不是 arguments
     "prefer-arrow-callback": 0, //要求回调函数使用箭头函数
     "prefer-const": 1, //首选const
-    semi: false, // 使用分号, 默认true
-    singleQuote: true, // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
-    tabWidth: 4, // tab缩进大小,默认为4
+    semi: 0, // 使用分号, 默认true
+    singleQuote: 0, // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
+    tabWidth: 2, // tab缩进大小,默认为4
     "template-curly-spacing": "off", //要求或禁止模板字符串中的嵌入表达式周围空格的使用
   },
   parserOptions: {

@@ -1,6 +1,6 @@
 const tokens = {
   admin: {
-    token: "admin-token",
+    token: "qizuo-token",
   },
   editor: {
     token: "editor-token",
@@ -8,7 +8,7 @@ const tokens = {
 };
 
 const users = {
-  "admin-token": {
+  "qizuo-token": {
     roles: ["admin"],
     introduction: "I am a super administrator",
     avatar:

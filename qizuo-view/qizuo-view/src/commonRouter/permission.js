@@ -4,33 +4,34 @@ import { Message } from "element-ui";
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 import { getToken } from "@/utils/frames/auth"; // get token from cookie
-import getPageTitle from "@/utils/frames/get-page-title";
 
+//config
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
+const whiteList = ["/login"]; // no redirect whitelist
 
-const whiteList = ["/login", "/auth-redirect"]; // no redirect whitelist
-
+//路由守卫
 router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start();
 
   // set page title
-  document.title = getPageTitle(to.meta.title);
+  document.title = to.meta.title || "QIZUO";
 
-  // determine whether the user has logged in
+  // token处理
   const hasToken = getToken();
-
+  //有token
   if (hasToken) {
+    //存在token的情况下直接跳转到对应页面就行
     if (to.path === "/login") {
-      // if is logged in, redirect to the home page
       next({ path: "/" });
-      NProgress.done(); // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
+      NProgress.done();
     } else {
-      // determine whether the user has obtained his permission roles through getInfo
+      //判断是否有角色，即在有token的情况下，也可能会出现重新登录这种情况，或者过期的情况
       const hasRoles = store.getters.roles && store.getters.roles.length > 0;
       if (hasRoles) {
         next();
       } else {
+        //重新获取用户信息
         try {
           // get user info
           // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
@@ -38,7 +39,7 @@ router.beforeEach(async (to, from, next) => {
 
           // generate accessible routes map based on roles
           const accessRoutes = await store.dispatch(
-            "permission/generateRoutes",
+            "routes/generateRoutes",
             roles
           );
 
@@ -49,7 +50,7 @@ router.beforeEach(async (to, from, next) => {
           // set the replace: true, so the navigation will not leave a history record
           next({ ...to, replace: true });
         } catch (error) {
-          // remove token and go to login page to re-login
+          //中间有差错，这地方弥补下，重新登录
           await store.dispatch("user/resetToken");
           Message.error(error || "Has Error");
           next(`/login?redirect=${to.path}`);
@@ -58,19 +59,19 @@ router.beforeEach(async (to, from, next) => {
       }
     }
   } else {
-    /* has no token*/
-
+    //没有token
+    //判断白名单
     if (whiteList.indexOf(to.path) !== -1) {
       // in the free login whitelist, go directly
       next();
     } else {
-      // other pages that do not have permission to access are redirected to the login page.
+      //不在白名单直接登录
       next(`/login?redirect=${to.path}`);
       NProgress.done();
     }
   }
 });
-
+//最终不管如何都done一下
 router.afterEach(() => {
   // finish progress bar
   NProgress.done();

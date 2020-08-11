@@ -1,4 +1,5 @@
-import { login, logout, getInfo } from "@/apis/frames/user";
+import { login, logout } from "@/apis/admin";
+import { getInfo } from "@/apis/admin-user";
 import { getToken, setToken, removeToken } from "@/utils/frames/auth";
 import router, { resetRouter } from "@router";
 
@@ -106,28 +107,6 @@ const actions = {
       removeToken();
       resolve();
     });
-  },
-
-  // dynamically modify permissions
-  async changeRoles({ commit, dispatch }, role) {
-    const token = role + "-token";
-
-    commit("SET_TOKEN", token);
-    setToken(token);
-
-    const { roles } = await dispatch("getInfo");
-
-    resetRouter();
-
-    // generate accessible routes map based on roles
-    const accessRoutes = await dispatch("permission/generateRoutes", roles, {
-      root: true,
-    });
-    // dynamically add accessible routes
-    router.addRoutes(accessRoutes);
-
-    // reset visited views and cached views
-    dispatch("tagsView/delAllViews", null, { root: true });
   },
 };
 

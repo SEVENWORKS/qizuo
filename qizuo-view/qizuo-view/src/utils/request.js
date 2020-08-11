@@ -1,32 +1,72 @@
 import axios from "axios";
+import { MessageBox, Message } from "element-ui";
+import store from "@store";
+import { getToken } from "@/utils/frames/auth";
 
-// 创建axios实例
+// create an axios instance
 const service = axios.create({
-  //这里baseurl就是刚开始配置的开发环境和线上环境地址，webpack会自动读取无需手动再改
-  baseURL: process.env.BASE_URL, //baseurl
-  timeout: 5000, // 请求超时时间
+  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  timeout: 5000, // request timeout
 });
 
-// request拦截器
+// request interceptor
 service.interceptors.request.use(
   (config) => {
-    if (
-      config.method.toLocaleLowerCase() === "post" ||
-      config.method.toLocaleLowerCase() === "put" ||
-      config.method.toLocaleLowerCase() === "delete"
-    ) {
-      config.data = qs.stringify(config.data);
+    //对token进行处理
+    if (store.getters.token) {
+      config.headers["X-Token"] = getToken();
     }
     return config;
   },
   (error) => {
-    return Promise.reject(error); // 在调用的那边可以拿到(catch)你想返回的错误信息
+    //发送异常处理
+    return Promise.reject(error);
   }
 );
 
-// respone拦截器
+// response interceptor
 service.interceptors.response.use(
-  (response) => response,
-  (error) => {}
+  (response) => {
+    const res = response.data;
+    //错误异常处理
+    if (res.code !== 20000) {
+      Message({
+        message: res.message || "Error",
+        type: "error",
+        duration: 5 * 1000,
+      });
+      // token相关异常处理:50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
+      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+        //重新登录弹框
+        MessageBox.confirm(
+          "You have been logged out, you can cancel to stay on this page, or log in again",
+          "Confirm logout",
+          {
+            confirmButtonText: "重新登录",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+        ).then(() => {
+          store.dispatch("user/resetToken").then(() => {
+            location.reload();
+          });
+        });
+      }
+      return Promise.reject(new Error(res.message || "Error"));
+    } else {
+      //正确返回
+      return res;
+    }
+  },
+  (error) => {
+    //返回异常处理
+    Message({
+      message: error.message,
+      type: "error",
+      duration: 5 * 1000,
+    });
+    return Promise.reject(error);
+  }
 );
+
 export default service;
