@@ -5,11 +5,6 @@ Vue.use(VueRouter);
 //公共路由
 export const baseRoutes = [
   {
-    path: "*",
-    name: "*",
-    component: () => import("@comp/error/404"),
-  },
-  {
     path: "/error",
     name: "error",
     component: () => import("@comp/error/404"),

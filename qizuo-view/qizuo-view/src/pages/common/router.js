@@ -1,4 +1,4 @@
-import router from '@/commonRouter/index'
+import router from '@router'
 
 window.routes = []
 

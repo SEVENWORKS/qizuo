@@ -65,16 +65,14 @@ Vue.component("SingleImage3",SingleImage3);
 Vue.component("UploadExcel",UploadExcel);
 
 //公共组件
-import qz_alert from "@comp/dialog/alert";
-import qz_dialog_index from "@comp/dialog";
-Vue.component("qz-alert",qz_alert);
-Vue.component("qz-dialog-index",qz_dialog_index);
+import qz_dialog from "@comp/dialog";
+Vue.component("qz-dialog",qz_dialog);
+import qz_base_form from "@comp/dialog/base_form";
+Vue.component("qz-base-form",qz_base_form);
 
 import qz_animate from "@comp/animate";
 Vue.component("qz-animate",qz_animate);
 
-import qz_table_index from "@comp/table";
-import qz_table_base from "@comp/table/table_base";
-Vue.component("qz-table-index",qz_table_index);
-Vue.component("qz-table-base",qz_table_base);
+import qz_base_table from "@comp/table/base_table";
+Vue.component("qz-base-table",qz_base_table);
 

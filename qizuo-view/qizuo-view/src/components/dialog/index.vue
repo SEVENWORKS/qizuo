@@ -11,7 +11,7 @@
       :style="{ width: width, height: height, 'z-index': zIndex + 1 }"
       @click.self="close()"
     >
-      <slot name="header"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>

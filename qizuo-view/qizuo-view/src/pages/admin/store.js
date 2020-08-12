@@ -1,4 +1,4 @@
-import store from '@/commonStore/index'
+import store from '@store'
 
 const adminModule={
     state: {

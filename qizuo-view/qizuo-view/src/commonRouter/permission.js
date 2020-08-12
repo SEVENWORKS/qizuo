@@ -43,7 +43,7 @@ router.beforeEach(async (to, from, next) => {
             roles
           );
 
-          // dynamically add accessible routes
+          // dynamically add accessible routes，这个地方动态路由的时候，不能在路由中配置*的路由，要不然就会自动先转向*的路由
           router.addRoutes(accessRoutes);
 
           // hack method to ensure that addRoutes is complete

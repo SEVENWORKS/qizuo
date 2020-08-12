@@ -1,87 +1,69 @@
 <template>
   <div>
-    <!-- 内容区域 -->
-    <!-- 有悬浮效果的表格 -->
-    <div class="block-area" id="tableHover">
-      <div class="table-responsive overflow">
-        <table class="table table-bordered table-hover tile" id="dataContainer">
-          <thead>
-            <tr>
-              <th>序号</th>
-              <th>姓名</th>
-              <th>性别</th>
-              <th>身份证号码</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--<tr-->
-            <!--id="tr{{index+1}}"-->
-            <!--@click="-->
-            <!--buttonPanel(-->
-            <!--'修改',-->
-            <!--'updateDate(\'${jumpPath}base/userDo?baseId={{$value.baseId}}\')',-->
-            <!--'删除',-->
-            <!--'deleteData({baseId:{{$value.baseId}}},\'${modulePath}base/user/delete\',\'#tr{{$index+1}}\')'-->
-            <!--)-->
-            <!--"-->
-            <!--&gt;-->
-            <!--<td>{{ index + 1 }}</td>-->
-            <!--<td>{{ value.name }}</td>-->
-            <!--<td>{{ value.sexCd }}</td>-->
-            <!--<td>{{ value.idCard }}</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<td style="text-align: center;">-->
-            <!--暂无数据-->
-            <!--</td>-->
-            <!--</tr>-->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 分页 -->
-    <div class="block-area">
-      <div class="row">
-        <div id="pageContainer" class="col-md-12 text-center">
-          <ul class="pagination" id="page_ul"></ul>
-        </div>
-      </div>
-    </div>
+    <qz-base-table
+      @getData="getData"
+      @deleteData="deleteData"
+      @addUpdateData="addUpdateData"
+    >
+      <template v-slot:table>
+        <el-table-column align="center" label="序号" width="80" type="index" />
+        <el-table-column align="center" label="姓名" prop="name" />
+        <el-table-column align="center" label="ID" prop="idCard" />
+        <el-table-column align="center" label="角色" prop="roles" />
+        <el-table-column align="center" label="头像" prop="photo" />
+        <el-table-column align="center" label="简介" prop="remarks" />
+      </template>
+      <template v-slot:form>
+        <el-form
+          ref="form"
+          :rules="rules"
+          :model="form"
+          label-position="left"
+          label-width="70px"
+        >
+          <el-form-item label="名称">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
+          <el-form-item label="ID">
+            <el-input v-model="form.idCard"></el-input>
+          </el-form-item>
+          <el-form-item label="角色">
+            <el-input v-model="form.roles"></el-input>
+          </el-form-item>
+          <el-form-item label="头像">
+            <el-input v-model="form.photo"></el-input>
+          </el-form-item>
+          <el-form-item label="简介">
+            <el-input v-model="form.remarks"></el-input>
+          </el-form-item>
+        </el-form>
+      </template>
+    </qz-base-table>
   </div>
 </template>
 <!-- 执行js -->
 <script>
 export default {
   data() {
-    return {};
+    return {
+      form: {
+        name: "",
+        idCard: "",
+        roles: "",
+        photo: "",
+        remarks: "",
+      },
+      rules: [],
+    };
   },
+  created() {},
   methods: {
-    init() {
-      /** ************************************************************ */
-      //新增按钮(这个函数第二个参数可以传入复杂函数)
-      buttonOne("新增", function () {
-        pjaxFunc("${jumpPath}base/userDo");
-      });
-      /** ************************************************************ */
-      //分页(传入获取分页数据的方法,可传分页size和分页no)
-      pageHtml(qPage, 10, 1);
-      //分页数据查询(都默认一个函数)
-      function qPage(func, pageNo, pageSize) {
-        $.post(
-          "${modulePath}base/user/page",
-          { pageNo: pageNo, pageSize: pageSize },
-          function (data) {
-            backResult(data, function (data) {
-              //模板(数据，容器，模板)(当出现不在返回元素中值的时候，可以往对象中添加数据，毕竟从java返回过来后就是一个js对象)
-              tplFuncTable(data.entitys);
-              //执行分页
-              func(data);
-            });
-          }
-        );
-      }
-    },
+    //获取基本数据
+    getData() {},
+    //删除
+    deleteData(data) {},
+    //新增修改
+    addUpdateData() {},
   },
 };
 </script>
