@@ -5,7 +5,7 @@ import { getToken } from "@/utils/frames/auth";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  baseURL: "http://127.0.0.1:9300/", // process.env.VUE_APP_BASE_API
   timeout: 5000, // request timeout
 });
 

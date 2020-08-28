@@ -35,6 +35,7 @@ public class QiZuoZuulApplication {
     SpringApplication.run(QiZuoZuulApplication.class, args);
   }
 
+  // 允许跨域设置
   @Bean
   public CorsFilter corsFilter() {
     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

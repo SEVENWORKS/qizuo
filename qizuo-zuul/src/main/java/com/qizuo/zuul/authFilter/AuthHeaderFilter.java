@@ -74,13 +74,13 @@ public class AuthHeaderFilter extends ZuulFilter {
     HttpServletRequest request = requestContext.getRequest();
     // 请求路径判断
     // 正式跨域之前，浏览器会根据需要发起一次预检（也就是option请求），用来让服务端返回允许的方法（如get、post），被跨域访问的Origin（来源或者域），还有是否需要Credentials(认证信息)等,所以options请求需要去掉
-    //    String requestURI = request.getRequestURI();
-    //    if (OPTIONS.equalsIgnoreCase(request.getMethod()) || requestURI.contains(OAUTH)) {
-    //      // 这几种路径也要打上标识，只不过打上特殊的这种
-    //      requestContext.addZuulRequestHeader(
-    //          GlobalConstant.HttpConfig.HEADER_ZUUL, GlobalConstant.Global);
-    //      return;
-    //    }
+    String requestURI = request.getRequestURI();
+    if (OPTIONS.equalsIgnoreCase(request.getMethod()) || requestURI.contains(OAUTH)) {
+      // 这几种路径也要打上标识，只不过打上特殊的这种
+      requestContext.addZuulRequestHeader(
+          GlobalConstant.HttpConfig.HEADER_ZUUL, GlobalConstant.Global);
+      return;
+    }
 
     // 请求头判断
     String authHeader = RequestUtil.getAuthHeader(request);

@@ -1,9 +1,8 @@
 /*
- * Copyright (c) 2020.
- * author：qizuo
+ *Copyright(c)2020.
+ *author：qizuo
  */
-
-package com.qizuo.zuul.restTemplateHeader;
+package com.qizuo.base.interceptor;
 
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariableDefault;

@@ -69,11 +69,11 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
         <!-- config client父 -->
-       <dependency>
-           <groupId>org.springframework.cloud</groupId>
-           <artifactId>spring-cloud-starter-config</artifactId>
-       </dependency>
-       <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -267,17 +267,17 @@
                 <artifactId>joda-time</artifactId>
                 <version>2.9.6</version>
             </dependency>
-            <!-- 随机验证码 -->
+            <!-- 随机验证码(为什么去掉这个，因为不让它加载进来就会少一个api 会启动报错during start) -->
             <dependency>
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
                 <version>2.3.2</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>javax.servlet-api</artifactId>
-                        <groupId>javax.servlet</groupId>
-                    </exclusion>
-                </exclusions>
+                <!--<exclusions>-->
+                <!--<exclusion>-->
+                <!--<artifactId>javax.servlet-api</artifactId>-->
+                <!--<groupId>javax.servlet</groupId>-->
+                <!--</exclusion>-->
+                <!--</exclusions>-->
             </dependency>
             <!-- 编码解码工具 -->
             <dependency>
@@ -376,9 +376,9 @@
                 <version>${boot.admin.version}</version>
             </dependency>
             <!--<dependency>-->
-                <!--<groupId>de.codecentric</groupId>-->
-                <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
-                <!--<version>1.5.7</version>-->
+            <!--<groupId>de.codecentric</groupId>-->
+            <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
+            <!--<version>1.5.7</version>-->
             <!--</dependency>-->
             <dependency>
                 <groupId>de.codecentric</groupId>

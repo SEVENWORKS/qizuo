@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2020.
- * author：qizuo
+ *Copyright(c)2020.
+ *author：qizuo
  */
-package com.qizuo.zuul.restTemplateHeader;
+package com.qizuo.base.interceptor;
 
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import lombok.extern.slf4j.Slf4j;

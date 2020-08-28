@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.authorizationServer.token;
+package com.qizuo.base.utils.token;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

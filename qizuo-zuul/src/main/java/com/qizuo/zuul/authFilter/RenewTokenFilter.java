@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RenewTokenFilter extends ZuulFilter {
   // @Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，而@Resource默认按 byName自动注入罢了
   // token管理
-  @Resource private JwtTokenStore jwtTokenStore;
+  @Resource private TokenStore jwtTokenStore;
   // token过期时间
   private static final int EXPIRES_IN = 60 * 20;
 

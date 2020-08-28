@@ -64,18 +64,18 @@ qizuo.interceptor.token: true
 
 #路由配置
 zuul:
-  prefix: /qizuo #路由匹配前缀
-  ignored-services: * #先排除所有代理服务，只有以下配置的才会被路由代理
+  #prefix: /port #路由匹配前缀
+  ignored-services: '*' #先排除所有代理服务，只有以下配置的才会被路由代理
   routes:
     qizuo-provider-user: #用户认证服务
+      strip-prefix: false #是否去掉转发配置的前缀，比如这个地方是不去掉path前面的user
       path: /user/**
       serviceId: qizuo-provider-user
     qizuo-provider-user-admin: #用户信息修改服务
+      strip-prefix: false
       path: /user/admin/**
       serviceId: qizuo-provider-user-admin
-    qizuo-provider-file: #用户信息修改服务
+    qizuo-provider-file: #上传服务
+      strip-prefix: false
       path: /file/**
       serviceId: qizuo-provider-file
-    qizuo-provider-user-admin: #用户信息修改服务
-      path: /view/**
-      serviceId: qizuo-provider-view

@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.authorizationServer.token;
+package com.qizuo.base.utils.token;
 
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import org.springframework.beans.factory.annotation.Autowired;

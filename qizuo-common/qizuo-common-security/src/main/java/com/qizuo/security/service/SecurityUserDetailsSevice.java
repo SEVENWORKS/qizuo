@@ -22,17 +22,18 @@ public class SecurityUserDetailsSevice implements UserDetailsService {
   // 返回user对象
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    UserDto user = UserUtil.loadUserByUsername(username);
+    UserDto user = UserUtil.qUser();
     if (user == null) {
       throw new BadCredentialsException("用户名不存在或者密码错误");
     }
     //    Collection<GrantedAuthority> grantedAuthorities;权限暂时不加
     return new SecurityUser(
-        user.getBaseIdL(),
+        user.getBaseIdL() + "",
         user.getUserName(),
         user.getPassWord(),
         user.getName(),
-        user.getGroupIdL(),
-        user.getGroupName());
+        user.getGroupIdL() + "",
+        user.getGroupName(),
+        user.getStatus());
   }
 }

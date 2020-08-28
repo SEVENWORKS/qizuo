@@ -24,10 +24,10 @@ import * as filters from "@filters/frames"; // global filters
 Object.keys(filters).forEach((key) => {
   Vue.filter(key, filters[key]);
 });
-if (process.env.NODE_ENV !== "production") {
-  const { mockXHR } = require("mock");
-  mockXHR();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   const { mockXHR } = require("mock");
+//   mockXHR();
+// }
 //config
 Vue.config.productionTip = false; //阻止启动生产消息，常用作指令。
 Vue.prototype.$global = global; //全局静态变量

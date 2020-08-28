@@ -225,13 +225,13 @@ module.exports = {
   productionSourceMap: !IS_PROD, // 生产环境的 source map 默认会产生.map文件，该文件保存有原始代码与运行代码的映射关系， 浏览器可以通过它找到原始代码的位置，所以会很慢
   pwa: {}, //Progressive web apps, 渐进式Web应用
   // 跨越代理
-  devServer: {
-    port: port,
-    open: true,
-    overlay: {
-      warnings: false,
-      errors: true,
-    },
-    before: require("./mock/mock-server.js"),
-  },
+  // devServer: {
+  //   port: port,
+  //   open: true,
+  //   overlay: {
+  //     warnings: false,
+  //     errors: true,
+  //   },
+  //   before: require("./mock/mock-server.js"),
+  // },
 };

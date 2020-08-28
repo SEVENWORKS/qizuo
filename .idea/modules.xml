@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/com-qizuo-user.iml" filepath="$PROJECT_DIR$/com-qizuo-user.iml" />
-      <module fileurl="file://$PROJECT_DIR$/qizuo-provider/qizuo-provider-user/paascloud-provider-user.iml" filepath="$PROJECT_DIR$/qizuo-provider/qizuo-provider-user/paascloud-provider-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo.iml" filepath="$PROJECT_DIR$/qizuo.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-admin/qizuo-admin.iml" filepath="$PROJECT_DIR$/qizuo-admin/qizuo-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/qizuo-common/qizuo-common.iml" filepath="$PROJECT_DIR$/qizuo-common/qizuo-common.iml" />

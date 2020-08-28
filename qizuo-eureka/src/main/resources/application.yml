@@ -41,7 +41,7 @@ spring.cloud:
 #端口
 server:
   port: 9100
-  context-path: /eureka
+  context-path: /eureka #注意所有注册到eureka注册中心的地址，都必须以eureka结尾，如果eureka contentpath有路径，则还需要在后面拼接上这个路径。
 
 #安全
 security:

@@ -18,7 +18,7 @@ import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +35,7 @@ public class TokenInterceptor implements HandlerInterceptor {
   @Value("${token_rules}")
   private String tokenRules;
   // token管理
-  @Resource private JwtTokenStore jwtTokenStore;
+  @Resource private TokenStore jwtTokenStore;
   // redis操作对象
   @Resource private RedisTemplate<String, Object> redisTemplate;
 
