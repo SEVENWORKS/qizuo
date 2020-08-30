@@ -85,17 +85,23 @@ export default {
       const value = this.value;
       if (null != value && "" != value) {
         this.$store
-          .dispatch("user/login", {
-            username: "admin",
-            password: "111111",
-          })
+          .dispatch("user/queryToken")
           .then(() => {
-            this.$router.push({
-              path: this.redirect || "/",
-              query: this.otherQuery,
-            });
+            this.$store
+              .dispatch("user/login", { key: this.value })
+              .then(() => {
+                this.$router.push({
+                  path: this.redirect || "/",
+                  query: this.otherQuery,
+                });
+              })
+              .catch(() => {
+                alert("登录失败");
+              });
           })
-          .catch(() => {});
+          .catch(() => {
+            alert("验证失败");
+          });
       }
     },
     //重定向参数

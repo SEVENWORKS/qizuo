@@ -90,7 +90,7 @@ public class RenewTokenFilter extends ZuulFilter {
     // 判断时间是否过期，小于1200秒时候，就返回需要刷新token的信息
     if (expiresIn < EXPIRES_IN) {
       HttpServletResponse servletResponse = requestContext.getResponse();
-      servletResponse.addHeader("Renew-Header", "true");
+      servletResponse.addHeader("QIZUO-Renew-Header", "true");
     }
   }
 }

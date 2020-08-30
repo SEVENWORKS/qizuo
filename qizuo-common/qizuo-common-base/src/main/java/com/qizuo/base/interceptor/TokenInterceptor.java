@@ -79,10 +79,11 @@ public class TokenInterceptor implements HandlerInterceptor {
       HttpServletRequest request, HttpServletResponse response, Object handler) {
     // 请求头判断，如果不是从zuul触发的请求，都返回
     String zuulHeader = request.getHeader(GlobalConstant.HttpConfig.HEADER_ZUUL);
-    if (ObjectIsEmptyUtils.isNotEmpty(zuulHeader)) {
+    if (ObjectIsEmptyUtils.isEmpty(zuulHeader)) {
       log.error("请求错误，不是路由的请求");
       return false;
     }
+
     // 获取请求uri
     String uri = request.getRequestURI();
     log.info("<== preHandle - 权限拦截器.  url={}", uri);

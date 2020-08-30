@@ -1,10 +1,11 @@
-import { login, logout } from "@/apis/admin";
+import { login, logout, token } from "@/apis/admin";
 import { getInfo } from "@/apis/admin-user";
 import { getToken, setToken, removeToken } from "@/utils/frames/auth";
 import router, { resetRouter } from "@router";
 
 const state = {
   token: getToken(),
+  tokenTime: 0,
   name: "",
   avatar: "",
   introduction: "",
@@ -14,6 +15,9 @@ const state = {
 const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token;
+  },
+  SET_TOKEN_TIME: (state, tokentTime) => {
+    state.tokenTime = tokentTime;
   },
   SET_INTRODUCTION: (state, introduction) => {
     state.introduction = introduction;
@@ -32,14 +36,15 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    const { username, password } = userInfo;
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password })
+      login(userInfo)
         .then((response) => {
           const { data } = response;
-          commit("SET_TOKEN", data.token);
-          setToken(data.token);
-          resolve();
+          if (data.code == window.$global.success) {
+            resolve();
+          } else {
+            reject();
+          }
         })
         .catch((error) => {
           reject(error);
@@ -98,7 +103,30 @@ const actions = {
         });
     });
   },
-
+  //获取token
+  queryToken({ commit }) {
+    return new Promise((resolve, reject) => {
+      const fd = new FormData();
+      fd.append("grant_type", "client_credentials");
+      fd.append("client_id", "qizuo");
+      fd.append("client_secret", "qizuo");
+      token(fd)
+        .then((response) => {
+          const { access_token } = response;
+          if (access_token) {
+            commit("SET_TOKEN", access_token);
+            commit("SET_TOKEN_TIME", access_token);
+            setToken(access_token);
+            resolve();
+          } else {
+            reject();
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
   // remove token
   resetToken({ commit }) {
     return new Promise((resolve) => {

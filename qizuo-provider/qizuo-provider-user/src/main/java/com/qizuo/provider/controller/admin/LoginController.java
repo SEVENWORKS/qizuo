@@ -36,7 +36,7 @@ public class LoginController extends BaseController {
    * @description: 用户登录
    * @date: 15:45 2019/1/8
    */
-  @PostMapping("loginIn")
+  @PostMapping("login")
   @ApiOperation(httpMethod = "POST", value = "用户登录")
   @LogAnnotation
   @ValidateRequestAnnotation
@@ -51,7 +51,7 @@ public class LoginController extends BaseController {
    * @description: 登出
    * @date: 16:14 2019/1/9
    */
-  @PostMapping("loginOut")
+  @PostMapping("logout")
   @ApiOperation(httpMethod = "POST", value = "用户登出")
   @LogAnnotation
   @ValidateRequestAnnotation

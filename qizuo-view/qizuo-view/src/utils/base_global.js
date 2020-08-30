@@ -1,20 +1,14 @@
-export default {
+window.$global = {
+  /** 全局有效 */
+  success: 0,
+  /** 全局无效 */
+  error: -1,
   base: {
-    /** 全局yes */
-    yes: 1,
-    /** 全局no */
-    no: 0,
-    /** 全局有效 */
-    statusYes: 0,
-    /** 全局无效 */
-    statusNo: 1,
-    /** 返回成功码 */
-    backSuccessCode: 0,
-    /** 返回异常码 */
-    backErrorCode: -9,
     /** public路径 */
     publicPath: process.env.BASE_URL,
     /** pagesize */
     pageSize: 10,
+    /** url prefix */
+    url_prefix: "http://localhost:9400/port",
   },
 };

@@ -84,9 +84,8 @@ public class AuthHeaderFilter extends ZuulFilter {
 
     // 请求头判断
     String authHeader = RequestUtil.getAuthHeader(request);
-    // security的请求头为空
-    if (ObjectIsEmptyUtils.isNotEmpty(authHeader)
-        && authHeader.startsWith(GlobalConstant.HttpConfig.AUTH_HEADER_SPLIT)) {
+    // security的请求头为空&& authHeader.startsWith(GlobalConstant.HttpConfig.AUTH_HEADER_SPLIT)
+    if (ObjectIsEmptyUtils.isNotEmpty(authHeader)) {
       log.info("authHeader={} ", authHeader);
       // 传递给后续微服务
       // 添加请求头

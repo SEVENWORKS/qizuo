@@ -2,11 +2,12 @@ import axios from "axios";
 import { MessageBox, Message } from "element-ui";
 import store from "@store";
 import { getToken } from "@/utils/frames/auth";
+import "@utils/base_global";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: "http://127.0.0.1:9300/", // process.env.VUE_APP_BASE_API
-  timeout: 5000, // request timeout
+  baseURL: window.$global.base.url_prefix, // process.env.VUE_APP_BASE_API
+  timeout: 10000, // request timeout
 });
 
 // request interceptor
@@ -14,7 +15,8 @@ service.interceptors.request.use(
   (config) => {
     //对token进行处理
     if (store.getters.token) {
-      config.headers["X-Token"] = getToken();
+      config.headers["X-QIZUO"] = getToken();
+      config.headers["Authorization"] = getToken();
     }
     return config;
   },
@@ -28,15 +30,21 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response) => {
     const res = response.data;
+    //请求头判断，是否需要重新请求token
+    const isNewtoken = response.headers["QIZUO-Renew-Header"];
     //错误异常处理
-    if (res.code !== 20000) {
+    if (response.status !== 200) {
       Message({
         message: res.message || "Error",
         type: "error",
         duration: 5 * 1000,
       });
       // token相关异常处理:50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      if (
+        response.status === 401 ||
+        response.status === 403 ||
+        response.status === 402
+      ) {
         //重新登录弹框
         MessageBox.confirm(
           "You have been logged out, you can cancel to stay on this page, or log in again",
@@ -51,9 +59,18 @@ service.interceptors.response.use(
             location.reload();
           });
         });
+      } else {
+        //重新请求token
+        if (isNewtoken) {
+          window._vm.$store.dispatch("user/queryToken");
+        }
       }
       return Promise.reject(new Error(res.message || "Error"));
     } else {
+      //重新请求token
+      if (isNewtoken) {
+        window._vm.$store.dispatch("user/queryToken");
+      }
       //正确返回
       return res;
     }

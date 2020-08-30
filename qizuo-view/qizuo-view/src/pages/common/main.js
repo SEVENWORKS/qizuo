@@ -3,7 +3,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import global from "@utils/base_global";
+import "@utils/base_global";
 import request from "@utils/request";
 import "../../components/index";
 import "@assets/css/frames/frame.css";
@@ -30,7 +30,6 @@ Object.keys(filters).forEach((key) => {
 // }
 //config
 Vue.config.productionTip = false; //阻止启动生产消息，常用作指令。
-Vue.prototype.$global = global; //全局静态变量
 Vue.prototype.$request = request; //全局request
 window._vm = new Vue({
   router,
