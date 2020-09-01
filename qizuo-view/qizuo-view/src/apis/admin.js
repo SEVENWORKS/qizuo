@@ -1,8 +1,9 @@
 import request from "@/utils/request";
+
 //登录
 export function login(data) {
   return request({
-    url: "/user/login",
+    url: "/user/login/login",
     method: "post",
     data,
   });
@@ -11,7 +12,7 @@ export function login(data) {
 //登出
 export function logout(data) {
   return request({
-    url: "/user/logout",
+    url: "/user/login/logout",
     method: "post",
     data,
   });

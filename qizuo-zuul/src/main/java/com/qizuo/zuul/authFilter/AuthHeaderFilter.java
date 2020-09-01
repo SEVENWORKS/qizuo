@@ -14,6 +14,7 @@ import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
 import com.qizuo.util.http.RequestUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @Component
 public class AuthHeaderFilter extends ZuulFilter {
+  @Value("${token_rules}")
+  private String tokenRules;
   // uri判断标识
   private static final String OPTIONS = "OPTIONS";
   private static final String OAUTH = GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH;
@@ -77,21 +80,21 @@ public class AuthHeaderFilter extends ZuulFilter {
     String requestURI = request.getRequestURI();
     if (OPTIONS.equalsIgnoreCase(request.getMethod()) || requestURI.contains(OAUTH)) {
       // 这几种路径也要打上标识，只不过打上特殊的这种
-      requestContext.addZuulRequestHeader(
-          GlobalConstant.HttpConfig.HEADER_ZUUL, GlobalConstant.Global);
+      requestContext.addZuulRequestHeader(tokenRules, GlobalConstant.Global);
       return;
     }
 
     // 请求头判断
     String authHeader = RequestUtil.getAuthHeader(request);
-    // security的请求头为空&& authHeader.startsWith(GlobalConstant.HttpConfig.AUTH_HEADER_SPLIT)
-    if (ObjectIsEmptyUtils.isNotEmpty(authHeader)) {
+    // security的请求头为空
+    if (ObjectIsEmptyUtils.isNotEmpty(authHeader)
+        && authHeader.startsWith(GlobalConstant.HttpConfig.AUTH_HEADER_SPLIT)) {
       log.info("authHeader={} ", authHeader);
       // 传递给后续微服务
       // 添加请求头
       requestContext.addZuulRequestHeader(HttpHeaders.AUTHORIZATION, authHeader);
       // 添加自主标识
-      requestContext.addZuulRequestHeader(GlobalConstant.HttpConfig.HEADER_ZUUL, authHeader);
+      requestContext.addZuulRequestHeader(tokenRules, authHeader);
 
     } else {
       // zuulException

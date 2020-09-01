@@ -122,4 +122,13 @@ public class GlobalConstant {
   public static final class RedisCode {
     private RedisCode() {}
   }
+
+  /** 常用安全 keys */
+  public static final class SafeCode {
+    private SafeCode() {}
+    // token标识
+    public static final String TOKEN = "token";
+    // token过期事件
+    public static final int TOKEN_TIME = 600;
+  }
 }

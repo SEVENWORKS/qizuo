@@ -12,13 +12,18 @@ import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
 import com.qizuo.base.utils.BackResultUtils;
+import com.qizuo.config.properties.baseProperties.GlobalConstant;
+import com.qizuo.util.Thread.ThreadLocalMap;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /** 用户登录. */
 // produces有两个好处：一个是浏览器查看方便（json自动格式化，带搜索），另一个可以防止中文乱码。
@@ -31,6 +36,11 @@ import org.springframework.web.bind.annotation.RestController;
 // swagger
 @Api(value = "User-LoginController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class LoginController extends BaseController {
+  // 管理员终极账号
+  @Value("${qizuo}")
+  private String qizuo;
+  // redis操作对象
+  @Resource private RedisTemplate<String, Object> redisTemplate;
   /**
    * @author: fangl
    * @description: 用户登录
@@ -42,8 +52,21 @@ public class LoginController extends BaseController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult loginIn() {
-    return BackResultUtils.ok();
+  public BackResult login(@RequestParam(value = "key") String key) {
+    // 存入token
+    String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);
+    if (redisTemplate.opsForValue().get(token) != null) {
+      return BackResultUtils.ok();
+    } else {
+      if (StringUtils.equals(key, qizuo)) {
+        redisTemplate
+            .opsForValue()
+            .set(token, key, GlobalConstant.SafeCode.TOKEN_TIME, TimeUnit.SECONDS);
+        return BackResultUtils.ok();
+      } else {
+        return BackResultUtils.error();
+      }
+    }
   }
 
   /**
@@ -56,8 +79,7 @@ public class LoginController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult loginOut() {
+  public BackResult logOut() {
     return BackResultUtils.ok();
   }
 }

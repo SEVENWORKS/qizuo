@@ -6,7 +6,6 @@
 package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
@@ -78,7 +77,7 @@ public class TokenInterceptor implements HandlerInterceptor {
   public boolean preHandle(
       HttpServletRequest request, HttpServletResponse response, Object handler) {
     // 请求头判断，如果不是从zuul触发的请求，都返回
-    String zuulHeader = request.getHeader(GlobalConstant.HttpConfig.HEADER_ZUUL);
+    String zuulHeader = request.getHeader(tokenRules);
     if (ObjectIsEmptyUtils.isEmpty(zuulHeader)) {
       log.error("请求错误，不是路由的请求");
       return false;
@@ -92,12 +91,6 @@ public class TokenInterceptor implements HandlerInterceptor {
         || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH)
         || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH2)) {
       log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
-      return true;
-    }
-
-    // 如果包含不需要验证的注解，也是不走token验证方法
-    if (isHaveAccess(handler)) {
-      log.info("<== preHandle - 不需要认证注解不走认证.  token={}");
       return true;
     }
 
@@ -115,16 +108,24 @@ public class TokenInterceptor implements HandlerInterceptor {
       log.error("token过期或者无法获取token");
       return false;
     }
+    // 存入token
+    ThreadLocalMap.put(GlobalConstant.SafeCode.TOKEN, token);
+
+    // 如果包含不需要验证的注解，即不需要User信息
+    if (isHaveAccess(handler)) {
+      log.info("<== preHandle - 不需要认证注解不走认证.  token={}");
+      return true;
+    }
 
     // 下面是user验证，顺便把user信息放入到localmap中
-    UserDto loginUser = (UserDto) redisTemplate.opsForValue().get(token);
-    if (loginUser == null) {
+    String user = (String) redisTemplate.opsForValue().get(token);
+    if (StringUtils.isBlank(user)) {
       log.error("获取用户信息失败");
       return false;
     }
-    log.info("<== preHandle - 权限拦截器.  loginUser={}", loginUser);
-    ThreadLocalMap.put(GlobalConstant.Role.COMMON_USER, loginUser);
-    log.info("<== preHandle - 权限拦截器.  url={}, loginUser={}", uri, loginUser);
+    log.info("<== preHandle - 权限拦截器.  loginUser={}", user);
+    ThreadLocalMap.put(GlobalConstant.Role.COMMON_USER, user);
+    log.info("<== preHandle - 权限拦截器.  url={}, loginUser={}", uri, user);
 
     return true;
   }

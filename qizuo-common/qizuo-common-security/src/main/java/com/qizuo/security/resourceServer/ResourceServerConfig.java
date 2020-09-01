@@ -20,16 +20,18 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-/** 认证的资源服务器配置,如果存在springsecurity的资源服务器的包，就必须要配置这个，否则报错 */
+/**
+ * 认证的资源服务器配置,如果存在springsecurity的资源服务器的包，就必须要配置这个，否则报错 !注意这地方是资源服务器
+ * 认证服务器主要用于获取token，即oauth/token等一些url的访问 资源服务器主要用于资源获取，比如controller中方法
+ * 所以在配置认证服务的服务器，并不代表我可以去访问它的资源，如果要访问它的资源，则还需要配置资源服务器
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
   @Autowired private AuthenAccessDeniedHandler authenAccessDeniedHandler;
   @Autowired private AuthenticationEntryPointHandler authenticationEntryPointHandler;
-
   @Autowired private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
-
   @Resource private DataSource dataSource;
 
   /**

@@ -16,7 +16,9 @@ service.interceptors.request.use(
     //对token进行处理
     if (store.getters.token) {
       config.headers["X-QIZUO"] = getToken();
-      config.headers["Authorization"] = getToken();
+      //spring security的token必须要加上token的类别，通常是bearer
+      config.headers["Authorization"] =
+        window._vm.$store.state.user.tokenType + " " + getToken();
     }
     return config;
   },

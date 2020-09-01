@@ -6,6 +6,7 @@ import router, { resetRouter } from "@router";
 const state = {
   token: getToken(),
   tokenTime: 0,
+  tokenType: "Bearer",
   name: "",
   avatar: "",
   introduction: "",
@@ -18,6 +19,9 @@ const mutations = {
   },
   SET_TOKEN_TIME: (state, tokentTime) => {
     state.tokenTime = tokentTime;
+  },
+  SET_TOKEN_TYPE: (state, type) => {
+    state.tokenType = type || "Bearer";
   },
   SET_INTRODUCTION: (state, introduction) => {
     state.introduction = introduction;
@@ -112,10 +116,11 @@ const actions = {
       fd.append("client_secret", "qizuo");
       token(fd)
         .then((response) => {
-          const { access_token } = response;
+          const { access_token, token_type, expires_in } = response;
           if (access_token) {
             commit("SET_TOKEN", access_token);
-            commit("SET_TOKEN_TIME", access_token);
+            commit("SET_TOKEN_TIME", expires_in);
+            commit("SET_TOKEN_TYPE", token_type);
             setToken(access_token);
             resolve();
           } else {

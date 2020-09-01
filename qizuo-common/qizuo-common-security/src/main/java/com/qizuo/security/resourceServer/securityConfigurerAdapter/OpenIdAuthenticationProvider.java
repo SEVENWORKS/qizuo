@@ -6,6 +6,7 @@
 package com.qizuo.security.resourceServer.securityConfigurerAdapter;
 
 import com.qizuo.security.service.SecurityUserDetailsSevice;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
@@ -18,7 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class OpenIdAuthenticationProvider implements AuthenticationProvider {
 
-  private SecurityUserDetailsSevice userDetailsService;
+  @Autowired SecurityUserDetailsSevice userDetailsService;
 
   /**
    * Authenticate authentication. 进行认证

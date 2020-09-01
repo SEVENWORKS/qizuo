@@ -5,6 +5,7 @@
 
 package com.qizuo.provider.security.authorizationServer;
 
+import com.qizuo.provider.security.authorizationServer.doResult.AuthenLogoutSuccessHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -35,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .logout()
         .logoutUrl("/logout") // 发起登出请求的URL
+        .logoutSuccessHandler(new AuthenLogoutSuccessHandler())
         .and()
         .csrf()
         .disable() // 关闭默认打开的crsf protection，因为打开这个会对自制的一些token认证功能有影响

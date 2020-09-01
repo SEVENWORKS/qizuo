@@ -12,6 +12,7 @@ import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.TimeUnit;
 
 /** zuul过滤器，在route和error过滤器之后进行认证续租，主要是返回一个需要刷新token的Renew-Header,只要获取到这个header说明就需要刷新token了 */
 @Component
@@ -28,8 +30,8 @@ public class RenewTokenFilter extends ZuulFilter {
   // @Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，而@Resource默认按 byName自动注入罢了
   // token管理
   @Resource private TokenStore jwtTokenStore;
-  // token过期时间
-  private static final int EXPIRES_IN = 60 * 20;
+  // redis操作对象
+  @Resource private RedisTemplate<String, Object> redisTemplate;
 
   /**
    * filterType：返回一个字符串代表过滤器的类型，在zuul中定义了四种不同生命周期的过滤器类型，具体如下： pre：可以在请求被路由之前调用 route：在路由请求时候被调用
@@ -88,9 +90,25 @@ public class RenewTokenFilter extends ZuulFilter {
     // 获取过期时间
     int expiresIn = oAuth2AccessToken.getExpiresIn();
     // 判断时间是否过期，小于1200秒时候，就返回需要刷新token的信息
-    if (expiresIn < EXPIRES_IN) {
+    if (expiresIn < GlobalConstant.SafeCode.TOKEN_TIME) {
       HttpServletResponse servletResponse = requestContext.getResponse();
       servletResponse.addHeader("QIZUO-Renew-Header", "true");
+    }
+
+    // 判断是否更新Redis信息
+    String uri = request.getRequestURI();
+    // 当路径包含以上是不会走权限验证的,这地方error的直接放行给error处理
+    if (uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH)) {
+      // 获取key
+      String key = (String) redisTemplate.opsForValue().get("hehe");
+      if (StringUtils.isNotBlank(key)) {
+        String token2 = requestContext.getResponseBody();
+        // 重新塞入
+        redisTemplate
+            .opsForValue()
+            .set(token2, key, GlobalConstant.SafeCode.TOKEN_TIME, TimeUnit.SECONDS);
+      }
+      log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
     }
   }
 }

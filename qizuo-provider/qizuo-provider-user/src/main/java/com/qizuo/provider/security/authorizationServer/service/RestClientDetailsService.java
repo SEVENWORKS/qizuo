@@ -41,7 +41,7 @@ public class RestClientDetailsService implements ClientDetailsService {
         .secret(GlobalConstant.Global) // (可信客户端需要）客户机密码（如果有）。没有可不填
         .authorizedGrantTypes("client_credentials", "password", "refresh_token") // **授予客户端使用授权的类型
         // 密码授权模式和刷新令牌,注意这个地方会限制客户端访问模式"authorization_code""implicit"
-        .accessTokenValiditySeconds(accessTokenValidateSeconds) // 授权码存活时间
+        .accessTokenValiditySeconds(GlobalConstant.SafeCode.TOKEN_TIME) // 授权码存活时间
         .refreshTokenValiditySeconds(refreshTokenValiditySeconds) // //默认30天，这里修改
         .scopes("read"); // 客户受限的范围。如果范围未定义或为空（默认值），客户端不受范围限制。read write all
     builder
@@ -49,7 +49,7 @@ public class RestClientDetailsService implements ClientDetailsService {
         .secret(GlobalConstant.Global) // (可信客户端需要）客户机密码（如果有）。没有可不填
         .authorizedGrantTypes("authorization_code", "implicit", "refresh_token") // **授予客户端使用授权的类型
         // 密码授权模式和刷新令牌,注意这个地方会限制客户端访问模式"authorization_code""implicit"
-        .accessTokenValiditySeconds(accessTokenValidateSeconds) // 授权码存活时间
+        .accessTokenValiditySeconds(GlobalConstant.SafeCode.TOKEN_TIME) // 授权码存活时间
         .refreshTokenValiditySeconds(refreshTokenValiditySeconds) // //默认30天，这里修改
         .scopes("write"); // 客户受限的范围。如果范围未定义或为空（默认值），客户端不受范围限制。read write all
     builder
@@ -59,7 +59,7 @@ public class RestClientDetailsService implements ClientDetailsService {
         .authorizedGrantTypes(
             "authorization_code", "implicit", "password", "refresh_token") // **授予客户端使用授权的类型
         // 密码授权模式和刷新令牌,注意这个地方会限制客户端访问模式"authorization_code""implicit"
-        .accessTokenValiditySeconds(accessTokenValidateSeconds) // 授权码存活时间
+        .accessTokenValiditySeconds(GlobalConstant.SafeCode.TOKEN_TIME) // 授权码存活时间
         .refreshTokenValiditySeconds(refreshTokenValiditySeconds) // //默认30天，这里修改
         .scopes("all"); // 客户受限的范围。如果范围未定义或为空（默认值），客户端不受范围限制。read write all
     try {

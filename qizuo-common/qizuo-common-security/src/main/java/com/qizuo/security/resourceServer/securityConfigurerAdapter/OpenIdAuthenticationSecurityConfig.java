@@ -34,21 +34,21 @@ import org.springframework.stereotype.Component;
 public class OpenIdAuthenticationSecurityConfig
     extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
   // 成功处理
-  private final AuthenticationSuccessHandler authenticationSuccessHandler;
+  @Autowired AuthenticationSuccessHandler authenticationSuccessHandler;
   // 异常处理
-  private final AuthenticationFailureHandler authenticationFailureHandler;
-  private final SecurityUserDetailsSevice userDetailsService;
+  @Autowired AuthenticationFailureHandler authenticationFailureHandler;
+  @Autowired SecurityUserDetailsSevice userDetailsService;
 
   // 统一给上依赖
-  @Autowired
-  public OpenIdAuthenticationSecurityConfig(
-      AuthenticationSuccessHandler authenticationSuccessHandler,
-      AuthenticationFailureHandler authenticationFailureHandler,
-      SecurityUserDetailsSevice userDetailsService) {
-    this.authenticationSuccessHandler = authenticationSuccessHandler;
-    this.authenticationFailureHandler = authenticationFailureHandler;
-    this.userDetailsService = userDetailsService;
-  }
+  //  @Autowired
+  //  public OpenIdAuthenticationSecurityConfig(
+  //      AuthenticationSuccessHandler authenticationSuccessHandler,
+  //      AuthenticationFailureHandler authenticationFailureHandler,
+  //      SecurityUserDetailsSevice userDetailsService) {
+  //    this.authenticationSuccessHandler = authenticationSuccessHandler;
+  //    this.authenticationFailureHandler = authenticationFailureHandler;
+  //    this.userDetailsService = userDetailsService;
+  //  }
 
   /**
    * Configure.

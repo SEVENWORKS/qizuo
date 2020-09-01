@@ -2,11 +2,10 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.provider.security.authorizationServer.doResult;
+package com.qizuo.security.resourceServer.exception;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qizuo.base.utils.BackResultUtils;
-import com.qizuo.provider.service.UserService;
 import com.qizuo.security.model.SecurityUser;
 import com.qizuo.util.http.RequestUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +33,6 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
 
   @Resource private ObjectMapper objectMapper;
   @Resource private ClientDetailsService clientDetailsService;
-  @Resource private UserService userService;
   //  @Resource private AuthorizationServerTokenServices authorizationServerTokenServices;
 
   private static final String BEARER_TOKEN_TYPE = "Basic ";

@@ -16,7 +16,7 @@ public class OpenIdAuthenticationToken extends AbstractAuthenticationToken {
 
   private static final long serialVersionUID = SpringSecurityCoreVersion.SERIAL_VERSION_UID;
 
-  private final Object principal;
+  private Object principal;
   private String providerId;
 
   /**
