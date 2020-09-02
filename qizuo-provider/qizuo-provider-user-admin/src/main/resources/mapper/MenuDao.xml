@@ -45,6 +45,7 @@
             BASE_UPDATE_TM=now(),
             BASE_REMARKS=#{baseRemarks},
             BASE_UPDATE_IP=#{baseUpdateIp},
+            PARENT_ID=#{parentId},
             NAME=#{name},
             URL=#{url},
             THEME=#{theme}

@@ -6,10 +6,12 @@
 package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
+import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
 import com.qizuo.util.common.ObjectIsEmptyUtils;
+import com.qizuo.util.parse.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -118,8 +120,14 @@ public class TokenInterceptor implements HandlerInterceptor {
     }
 
     // 下面是user验证，顺便把user信息放入到localmap中
-    String user = (String) redisTemplate.opsForValue().get(token);
-    if (StringUtils.isBlank(user)) {
+    UserDto user = null;
+    try {
+      user = JacksonUtil.parseJson((String) redisTemplate.opsForValue().get(token), UserDto.class);
+    } catch (IOException e) {
+      log.error("获取用户信息失败");
+      return false;
+    }
+    if (ObjectIsEmptyUtils.isEmpty(user)) {
       log.error("获取用户信息失败");
       return false;
     }

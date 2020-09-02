@@ -20,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,8 +46,7 @@ public class UserController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult iuDo(UserPoJo userPoJo) {
+  public BackResult iuDo(@RequestBody UserPoJo userPoJo) {
     if (StringUtils.isBlank(userPoJo.getBaseId())) {
       // 插入
       userService.insert(userPoJo);
@@ -68,7 +68,7 @@ public class UserController extends BaseController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult delete(UserPoJo userPoJo) {
+  public BackResult delete(@RequestBody UserPoJo userPoJo) {
     userPoJo.setBaseStatus(GlobalConstant.STATUS_NO);
     userService.uStatus(userPoJo);
     return BackResultUtils.ok();

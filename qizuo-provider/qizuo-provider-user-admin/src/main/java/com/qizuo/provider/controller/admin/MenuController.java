@@ -13,6 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +42,7 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult iuDo(MenuPoJo menuPoJo) {
+  public BackResult iuDo(@RequestBody MenuPoJo menuPoJo) {
     if (StringUtils.isBlank(menuPoJo.getBaseId())) {
       // 插入
       menuService.insert(menuPoJo);
@@ -64,7 +64,7 @@ public class MenuController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult delete(MenuPoJo menuPoJo) {
+  public BackResult delete(@RequestBody MenuPoJo menuPoJo) {
     menuService.delete(menuPoJo);
     return BackResultUtils.ok();
   }

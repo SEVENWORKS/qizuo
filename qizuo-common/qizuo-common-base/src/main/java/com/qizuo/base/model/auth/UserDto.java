@@ -50,6 +50,8 @@ public class UserDto {
   private String groupName;
   /** 状态 */
   private String status;
+  /** 简介 */
+  private String remarks;
   /** 权限 */
   private Collection<GrantedAuthority> grantedAuthorities;
 }

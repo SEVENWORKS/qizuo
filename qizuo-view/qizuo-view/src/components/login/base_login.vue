@@ -87,8 +87,10 @@ export default {
         this.$store
           .dispatch("user/queryToken")
           .then(() => {
+            const fd = new FormData();
+            fd.append("key", this.value);
             this.$store
-              .dispatch("user/login", { key: this.value })
+              .dispatch("user/login", fd)
               .then(() => {
                 this.$router.push({
                   path: this.redirect || "/",

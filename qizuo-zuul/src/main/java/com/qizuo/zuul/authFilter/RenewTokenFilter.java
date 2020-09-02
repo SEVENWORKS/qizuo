@@ -10,7 +10,9 @@ import com.netflix.zuul.context.RequestContext;
 import com.qizuo.base.exception.BusinessException;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
+import com.qizuo.util.parse.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
@@ -21,6 +23,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** zuul过滤器，在route和error过滤器之后进行认证续租，主要是返回一个需要刷新token的Renew-Header,只要获取到这个header说明就需要刷新token了 */
@@ -95,20 +100,34 @@ public class RenewTokenFilter extends ZuulFilter {
       servletResponse.addHeader("QIZUO-Renew-Header", "true");
     }
 
-    // 判断是否更新Redis信息
+    // 判断是否更新Redis信息(即重新获取token时候重新redis时间)
     String uri = request.getRequestURI();
     // 当路径包含以上是不会走权限验证的,这地方error的直接放行给error处理
     if (uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH)) {
       // 获取key
-      String key = (String) redisTemplate.opsForValue().get("hehe");
+      String key = (String) redisTemplate.opsForValue().get(token);
       if (StringUtils.isNotBlank(key)) {
-        String token2 = requestContext.getResponseBody();
-        // 重新塞入
-        redisTemplate
-            .opsForValue()
-            .set(token2, key, GlobalConstant.SafeCode.TOKEN_TIME, TimeUnit.SECONDS);
+        String token2 = "";
+        // 获取返回内容
+        try {
+          InputStream stream = RequestContext.getCurrentContext().getResponseDataStream();
+          String body = IOUtils.toString(stream, "UTF-8");
+          Map map = JacksonUtil.parseJson(body, Map.class);
+          token2 = (String) map.get("access_token");
+        } catch (IOException e) {
+          log.info("重置token失败");
+        }
+        // 重新塞入redis
+        if (StringUtils.isNotBlank(token2) && !StringUtils.equals(token, token2)) {
+          // 重新塞入
+          redisTemplate
+              .opsForValue()
+              .set(token2, key, GlobalConstant.SafeCode.TOKEN_TIME, TimeUnit.SECONDS);
+          // 删除之前
+          redisTemplate.delete(token);
+          log.info("重置token成功");
+        }
       }
-      log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
     }
   }
 }

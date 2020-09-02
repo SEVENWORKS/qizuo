@@ -73,9 +73,16 @@ zuul:
       serviceId: qizuo-provider-user
     qizuo-provider-user-admin: #用户信息修改服务
       strip-prefix: false
-      path: /user/admin/**
+      path: /userAdmin/**
       serviceId: qizuo-provider-user-admin
     qizuo-provider-file: #上传服务
       strip-prefix: false
       path: /file/**
       serviceId: qizuo-provider-file
+
+#超时时间
+ribbon.ReadTimeout: 5000
+# 请求连接超时时间
+ribbon.ConnectTimeout: 1000
+# 断路器超时时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 9000

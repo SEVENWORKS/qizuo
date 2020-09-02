@@ -2,10 +2,12 @@ package com.qizuo.provider.model.po;
 
 import com.qizuo.base.model.base.BasePoJo;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
 /** @Author: fangl @Description: 用户 @Date: 14:20 2018/10/29 */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserPoJo extends BasePoJo {
   /** 登录名 */

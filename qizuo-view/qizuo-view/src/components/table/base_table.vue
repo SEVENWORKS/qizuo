@@ -7,6 +7,7 @@
       fit
       highlight-current-row
       @row-click="rowClick"
+      @header-click="headerClick"
     >
       <slot name="table"></slot>
     </el-table>
@@ -17,7 +18,7 @@
       :total="page.total"
       :page.sync="page.pageNo"
       :limit.sync="page.pageSize"
-      @pagination="getData"
+      @pagination="getDatas"
       style="text-align: center;"
     />
 
@@ -29,9 +30,9 @@
     <!-- 按钮 -->
     <qz-dialog :show.sync="dialogShow">
       <div>
-        <el-button @click="addData">新增</el-button>
-        <el-button @click="updateData">修改</el-button>
-        <el-button @click="deleteData">删除</el-button>
+        <el-button @click="addData" v-if="isHeaderClick">新增</el-button>
+        <el-button @click="updateData" v-if="!isHeaderClick">修改</el-button>
+        <el-button @click="deleteData" v-if="!isHeaderClick">删除</el-button>
       </div>
     </qz-dialog>
   </div>
@@ -42,6 +43,7 @@ export default {
   data() {
     return {
       dialogShow: false, //弹框是否隐藏
+      isHeaderClick: false, //是否是头点击
       row: null, //当前row
       data: [], //数据
       page: {
@@ -51,19 +53,23 @@ export default {
       }, //分页
     };
   },
+  mounted() {
+    this.getDatas();
+  },
   methods: {
     //行点击事件
     rowClick(row, column, event) {
       this.dialogShow = true;
       this.row = row;
+      this.isHeaderClick = false;
+    },
+    headerClick() {
+      this.dialogShow = true;
+      this.isHeaderClick = true;
     },
     //获取基本数据
-    getData() {
-      this.$emit("getData").then((data) => {
-        if (data) {
-          this.data = data;
-        }
-      });
+    getDatas() {
+      this.$emit("getDatas", this.page);
     },
     //删除
     deleteData() {
@@ -74,7 +80,7 @@ export default {
         type: "warning",
       })
         .then(() => {
-          this.$emit("deleteData");
+          this.$emit("deleteData", this.row);
         })
         .catch((err) => {});
     },
@@ -85,6 +91,7 @@ export default {
     },
     //修改
     updateData() {
+      this.$emit("getData", this.row);
       this.dialogShow = false;
       this.$refs.form.isShow(true);
     },

@@ -56,7 +56,6 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult singleUpload(
       MultipartFile multipartFile, FilePoJo filePoJo, FileLogPoJo fileLogPoJo) {
     if (multipartFile.isEmpty()) {
@@ -120,7 +119,6 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult downFile(HttpServletResponse response, Model model, FilePoJo filePoJo) {
     // 查询文件
     filePoJo = fileService.query(filePoJo);

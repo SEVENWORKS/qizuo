@@ -84,6 +84,23 @@ service.interceptors.response.use(
       type: "error",
       duration: 5 * 1000,
     });
+    //token过期
+    if (error.response.status === 401) {
+      //重新登录弹框
+      MessageBox.confirm(
+        "You have been logged out, you can cancel to stay on this page, or log in again",
+        "Confirm logout",
+        {
+          confirmButtonText: "重新登录",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
+      ).then(() => {
+        store.dispatch("user/resetToken").then(() => {
+          location.reload();
+        });
+      });
+    }
     return Promise.reject(error);
   }
 );

@@ -6,8 +6,8 @@ package com.qizuo.provider.security.authorizationServer;
 
 import com.qizuo.provider.security.authorizationServer.doResult.AuthenLogoutSuccessHandler;
 import com.qizuo.provider.security.authorizationServer.exception.AuthenWebResponseExceptionTranslator;
-import com.qizuo.provider.security.authorizationServer.service.RestClientDetailsService;
-import com.qizuo.provider.security.authorizationServer.service.SecurityServerUserDetailsSevice;
+import com.qizuo.security.service.RestClientDetailsService;
+import com.qizuo.security.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +39,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   /** 认证管理器 */
   @Autowired private AuthenticationManager authenticationManager;
   /** UserDetailsService */
-  @Autowired private SecurityServerUserDetailsSevice securityServerUserDetailsSevice;
+  @Autowired private SecurityUserDetailsSevice securityUserDetailsSevice;
   /** UserDetailsService */
   @Autowired private RestClientDetailsService restClientDetailsService;
   /** authenWebResponseExceptionTranslator 认证异常 */
@@ -87,7 +87,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     endpoints
         .tokenStore(tokenStore)
         .authenticationManager(authenticationManager)
-        .userDetailsService(securityServerUserDetailsSevice)
+        .userDetailsService(securityUserDetailsSevice)
         .exceptionTranslator(authenWebResponseExceptionTranslator)
         .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
 

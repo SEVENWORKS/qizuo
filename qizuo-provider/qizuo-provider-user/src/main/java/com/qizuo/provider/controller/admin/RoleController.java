@@ -12,6 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +42,7 @@ public class RoleController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult list(RolePoJo rolePoJo) {
+  public BackResult list(@RequestBody RolePoJo rolePoJo) {
     return BackResultUtils.ok(roleService.qList(rolePoJo));
   }
 
@@ -57,7 +57,7 @@ public class RoleController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult query(RolePoJo rolePoJo) {
+  public BackResult query(@RequestBody RolePoJo rolePoJo) {
     return BackResultUtils.ok(roleService.query(rolePoJo));
   }
 }

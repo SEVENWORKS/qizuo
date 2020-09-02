@@ -36,7 +36,7 @@ public class SpringmvcException {
   public BackResult defaultHandler(
       HttpServletRequest request, HttpServletResponse response, final Exception e) {
     // 是否打印异常
-    // e.printStackTrace();
+    e.printStackTrace();
 
     // 是否保存异常
     LogDto logDto = new LogDto();

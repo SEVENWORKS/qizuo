@@ -14,14 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  * user exception.
  */
 @Slf4j
-public class UserException extends BusinessException {
+public class UserAdminException extends BusinessException {
 
 	private static final long serialVersionUID = -6552248511084911254L;
 
 	/**
 	 * Instantiates a new Uac rpc exception.
 	 */
-	public UserException() {
+	public UserAdminException() {
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class UserException extends BusinessException {
 	 * @param msgFormat the msg format
 	 * @param args      the args
 	 */
-	public UserException(int code, String msgFormat, Object... args) {
+	public UserAdminException(int code, String msgFormat, Object... args) {
 		super(code, msgFormat, args);
 		log.info("<== UserException, code:{}, message:{}", this.code, super.getMessage());
 	}
@@ -42,7 +42,7 @@ public class UserException extends BusinessException {
 	 * @param code the code
 	 * @param msg  the msg
 	 */
-	public UserException(int code, String msg) {
+	public UserAdminException(int code, String msg) {
 		super(code, msg);
 		log.info("<== UserException, code:{}, message:{}", this.code, super.getMessage());
 	}
@@ -52,7 +52,7 @@ public class UserException extends BusinessException {
 	 *
 	 * @param codeEnum the code enum
 	 */
-	public UserException(ResultCodeEnum codeEnum) {
+	public UserAdminException(ResultCodeEnum codeEnum) {
 		super(codeEnum.code(), codeEnum.msg());
 		log.info("<== UserException, code:{}, message:{}", this.code, super.getMessage());
 	}
@@ -63,7 +63,7 @@ public class UserException extends BusinessException {
 	 * @param codeEnum the code enum
 	 * @param args     the args
 	 */
-	public UserException(ResultCodeEnum codeEnum, Object... args) {
+	public UserAdminException(ResultCodeEnum codeEnum, Object... args) {
 		super(codeEnum, args);
 		log.info("<== UserException, code:{}, message:{}", this.code, super.getMessage());
 	}

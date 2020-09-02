@@ -13,10 +13,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author: fangl
@@ -43,8 +40,7 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult list(MenuPoJo menuPoJo) {
+  public BackResult list(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qList(menuPoJo));
   }
 
@@ -59,7 +55,7 @@ public class MenuController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult qEachList(MenuPoJo menuPoJo) {
+  public BackResult qEachList(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qEachList(menuPoJo));
   }
 
@@ -73,8 +69,7 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult page(PageDto<MenuPoJo> pagePoJo, MenuPoJo menuPoJo) {
+  public BackResult page(@RequestBody PageDto<MenuPoJo> pagePoJo, @RequestBody MenuPoJo menuPoJo) {
     pagePoJo.setEntity(menuPoJo);
     return BackResultUtils.ok(menuService.qPageQZ(pagePoJo));
   }
@@ -90,7 +85,7 @@ public class MenuController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult query(MenuPoJo menuPoJo) {
+  public BackResult query(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.query(menuPoJo));
   }
 }

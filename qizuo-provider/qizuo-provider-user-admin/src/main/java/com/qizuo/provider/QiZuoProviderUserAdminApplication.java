@@ -25,10 +25,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 // Spring Boot 使用事务非常简单，首先使用注解 @EnableTransactionManagement 开启事务支持后，然后在访问数据库的Service方法上添加注解
 // @Transactional 便可。
 @EnableTransactionManagement
-public class QiZuoProviderUserApplication {
+public class QiZuoProviderUserAdminApplication {
 
   /** 启动方法. */
   public static void main(String[] args) {
-    SpringApplication.run(QiZuoProviderUserApplication.class, args);
+    SpringApplication.run(QiZuoProviderUserAdminApplication.class, args);
   }
 }

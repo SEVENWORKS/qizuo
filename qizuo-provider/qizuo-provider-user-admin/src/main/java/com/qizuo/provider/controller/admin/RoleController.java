@@ -13,6 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +42,7 @@ public class RoleController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult iuDo(RolePoJo rolePoJo) {
+  public BackResult iuDo(@RequestBody RolePoJo rolePoJo) {
     if (StringUtils.isBlank(rolePoJo.getBaseId())) {
       // 插入
       roleService.insert(rolePoJo);
@@ -64,7 +64,7 @@ public class RoleController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   @NoNeedAccessAuthentication
-  public BackResult delete(RolePoJo rolePoJo) {
+  public BackResult delete(@RequestBody RolePoJo rolePoJo) {
     roleService.delete(rolePoJo);
     return BackResultUtils.ok();
   }

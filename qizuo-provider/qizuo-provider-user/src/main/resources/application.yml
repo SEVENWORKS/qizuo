@@ -109,6 +109,10 @@ spring.boot:
 #springboot配置
 spring.cloud:
 
+#mybatis配置
+mybatis:
+  mapperLocations: classpath*:mapper/*.xml #xml位置
+
 #端口
 server:
   port: 9900

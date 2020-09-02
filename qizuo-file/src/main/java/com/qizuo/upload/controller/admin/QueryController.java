@@ -49,7 +49,6 @@ public class QueryController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult fileQueryList(FilePoJo filePoJo) {
     return BackResultUtils.ok(fileService.qList(filePoJo));
   }
@@ -80,7 +79,6 @@ public class QueryController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult fileLogQueryList(FileLogPoJo fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.qList(fileLogPoJo));
   }
