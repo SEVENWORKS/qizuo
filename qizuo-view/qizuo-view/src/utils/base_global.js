@@ -8,6 +8,9 @@ window.$global = {
     publicPath: process.env.BASE_URL,
     /** pagesize */
     pageSize: 10,
+    /** url current prefix */
+    url_current_prefix:
+      window.location.protocol + "//" + window.location.host + "/",
     /** url prefix */
     url_prefix: "http://localhost:9400/port",
   },

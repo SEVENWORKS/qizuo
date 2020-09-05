@@ -1,10 +1,8 @@
 package com.qizuo.provider.service;
 
 import com.qizuo.base.model.service.BaseService;
-import com.qizuo.provider.model.dao.MenuDao;
+import com.qizuo.provider.service.dao.MenuDao;
 import com.qizuo.provider.model.po.MenuPoJo;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

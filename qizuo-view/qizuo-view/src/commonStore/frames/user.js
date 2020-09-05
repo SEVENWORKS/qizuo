@@ -29,7 +29,7 @@ const mutations = {
     state.name = name;
   },
   SET_AVATAR: (state, avatar) => {
-    state.avatar = avatar || "profile-pic.jpg";
+    state.avatar = avatar;
   },
   SET_ROLES: (state, roles) => {
     state.roles = roles;

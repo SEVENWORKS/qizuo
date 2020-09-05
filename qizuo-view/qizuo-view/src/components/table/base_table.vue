@@ -14,8 +14,8 @@
 
     <!-- 分页 -->
     <pagination
-      v-show="page.total > 0"
-      :total="page.total"
+      v-show="page.totalCount > 0"
+      :total="page.totalCount"
       :page.sync="page.pageNo"
       :limit.sync="page.pageSize"
       @pagination="getDatas"
@@ -47,9 +47,10 @@ export default {
       row: null, //当前row
       data: [], //数据
       page: {
-        total: 0,
+        totalCount: 0,
         pageNo: 1,
         pageSize: 10,
+        entity: {},
       }, //分页
     };
   },

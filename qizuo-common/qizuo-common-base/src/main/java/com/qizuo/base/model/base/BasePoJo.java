@@ -12,6 +12,8 @@ import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.common.IDUtil;
 import com.qizuo.util.http.HttpBaseUtil;
 import com.qizuo.util.spring.SpringUtils;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,39 +22,52 @@ import javax.persistence.Transient;
 
 /** @Author: fangl @Description: 基本实体类 @Date: 10:25 2018/10/30 */
 @Data
+@ApiModel
 public class BasePoJo extends KvDto {
   /** id */
   // 映射id
   // 主键自增的方式
   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @ApiModelProperty(value = "id")
   private String baseId;
   /** 创建ip */
   // 映射字段
   @Column(name = "")
+  @ApiModelProperty(value = "创建ip")
   private String baseCreateIp;
   /** 更新ip */
+  @ApiModelProperty(value = "更新ip")
   private String baseUpdateIp;
   /** 创建人 */
+  @ApiModelProperty(value = "创建人")
   private String baseCreateUserId;
 
+  @ApiModelProperty(value = "创建人 name")
   private String baseCreateUserNm;
   /** 创建时间 */
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+  @ApiModelProperty(value = "创建时间")
   private String baseCreateTime;
   /** 更新人 */
+  @ApiModelProperty(value = "更新人")
   private String baseUpdateUserId;
 
+  @ApiModelProperty(value = "更新人 name")
   private String baseUpdateUserNm;
   /** 更新时间 */
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+  @ApiModelProperty(value = "更新时间")
   private String baseUpdateTime;
   /** 状态 1有效 0无效 */
+  @ApiModelProperty(value = "状态 1有效 0无效")
   private String baseStatus;
   /** 备注 数据备注 */
+  @ApiModelProperty(value = "备注")
   private String baseRemarks;
   /** 排序 */
+  @ApiModelProperty(value = "排序")
   private String orderBy;
 
   /** 其它 */

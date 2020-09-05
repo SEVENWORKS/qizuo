@@ -5,164 +5,140 @@
 
 package com.qizuo.base.model.base;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
-
-/**
- * 组织/系统日志container
- */
+/** 组织/系统日志container */
 @Data
+@ApiModel(value = "日志操作类")
 public class LogDto implements Serializable {
-	private static final long serialVersionUID = -5606865665592482762L;
-	private String id;
-	/**
-	 * 日志内容
-	 */
-	private String content;
-	/**
-	 * 日志类型
-	 */
-	private Enum type;
-	private String typeCd;
-	private String typeName;
+  private static final long serialVersionUID = -5606865665592482762L;
 
-	/** 以下是其他可能出现信息  */
-	/**
-	 * 组织流水号
-	 */
-	private String groupId;
+  @ApiModelProperty(value = "id")
+  private String id;
+  /** 日志内容 */
+  @ApiModelProperty(value = "日志内容")
+  private String content;
+  /** 日志类型 */
+  @ApiModelProperty(value = "日志类型")
+  private Enum type;
 
-	/**
-	 * 组织名称
-	 */
-	private String groupName;
+  @ApiModelProperty(value = "日志类型 id")
+  private String typeCd;
 
-	/**
-	 * 日志类型
-	 */
-	private String logType;
+  @ApiModelProperty(value = "日志类型 name")
+  private String typeName;
 
-	/**
-	 * 日志类型名称
-	 */
-	private String logName;
+  /** 以下是其他可能出现信息 */
+  /** 组织流水号 */
+  @ApiModelProperty(value = "组织流水号")
+  private String groupId;
 
-	/**
-	 * 权限ID
-	 */
-	private Long actionId;
+  /** 组织名称 */
+  @ApiModelProperty(value = "组织名称")
+  private String groupName;
 
-	/**
-	 * 权限编码
-	 */
-	private String actionCode;
+  /** 日志类型 */
+  @ApiModelProperty(value = "日志类型")
+  private String logType;
 
-	/**
-	 * 权限名称
-	 */
-	private String actionName;
+  /** 日志类型名称 */
+  @ApiModelProperty(value = "日志类型名称")
+  private String logName;
 
-	/**
-	 * 操作系统
-	 */
-	private String os;
+  /** 权限ID */
+  @ApiModelProperty(value = "权限ID")
+  private Long actionId;
 
-	/**
-	 * 浏览器类型
-	 */
-	private String browser;
+  /** 权限编码 */
+  @ApiModelProperty(value = "权限编码")
+  private String actionCode;
 
-	/**
-	 * IP地址
-	 */
-	private String ip;
+  /** 权限名称 */
+  @ApiModelProperty(value = "权限名称")
+  private String actionName;
 
-	/**
-	 * 操作位置
-	 */
-	private String location;
+  /** 操作系统 */
+  @ApiModelProperty(value = "操作系统")
+  private String os;
 
-	/**
-	 * 物理地址
-	 */
-	private String mac;
+  /** 浏览器类型 */
+  @ApiModelProperty(value = "浏览器类型")
+  private String browser;
 
-	/**
-	 * 详细描述
-	 */
-	private String description;
+  /** IP地址 */
+  @ApiModelProperty(value = "IP地址")
+  private String ip;
 
-	/**
-	 * 请求参数
-	 */
-	private String requestData;
+  /** 操作位置 */
+  @ApiModelProperty(value = "操作位置")
+  private String location;
 
-	/**
-	 * 请求地址
-	 */
-	private String requestUrl;
+  /** 物理地址 */
+  @ApiModelProperty(value = "物理地址")
+  private String mac;
 
-	/**
-	 * 响应结果
-	 */
-	private String responseData;
+  /** 详细描述 */
+  @ApiModelProperty(value = "详细描述")
+  private String description;
 
-	/**
-	 * 类名
-	 */
-	private String className;
+  /** 请求参数 */
+  @ApiModelProperty(value = "请求参数")
+  private String requestData;
 
-	/**
-	 * 方法名
-	 */
-	private String methodName;
+  /** 请求地址 */
+  @ApiModelProperty(value = "请求地址")
+  private String requestUrl;
 
-	/**
-	 * 开始时间
-	 */
-	private Date startTime;
+  /** 响应结果 */
+  @ApiModelProperty(value = "响应结果")
+  private String responseData;
 
-	/**
-	 * 结束时间
-	 */
-	private Date endTime;
+  /** 类名 */
+  @ApiModelProperty(value = "类名")
+  private String className;
 
-	/**
-	 * 耗时,秒
-	 */
-	private Long excuteTime;
+  /** 方法名 */
+  @ApiModelProperty(value = "方法名")
+  private String methodName;
 
-	/**
-	 * 创建人
-	 */
-	private String creator;
+  /** 开始时间 */
+  @ApiModelProperty(value = "开始时间")
+  private Date startTime;
 
-	/**
-	 * 创建人ID
-	 */
-	private String creatorId;
+  /** 结束时间 */
+  @ApiModelProperty(value = "结束时间")
+  private Date endTime;
 
-	/**
-	 * 创建时间
-	 */
-	private Date createdTime;
+  /** 耗时,秒 */
+  @ApiModelProperty(value = "耗时,秒")
+  private Long excuteTime;
 
-	/**
-	 * 最近操作人
-	 */
-	private String lastOperator;
+  /** 创建人 */
+  @ApiModelProperty(value = "创建人")
+  private String creator;
 
-	/**
-	 * 最后操作人ID
-	 */
-	private String lastOperatorId;
+  /** 创建人ID */
+  @ApiModelProperty(value = "创建人ID")
+  private String creatorId;
 
-	/**
-	 * 更新时间
-	 */
-	private Date updateTime;
+  /** 创建时间 */
+  @ApiModelProperty(value = "创建时间")
+  private Date createdTime;
 
+  /** 最近操作人 */
+  @ApiModelProperty(value = "最近操作人")
+  private String lastOperator;
+
+  /** 最后操作人ID */
+  @ApiModelProperty(value = "最后操作人ID")
+  private String lastOperatorId;
+
+  /** 更新时间 */
+  @ApiModelProperty(value = "更新时间")
+  private Date updateTime;
 }

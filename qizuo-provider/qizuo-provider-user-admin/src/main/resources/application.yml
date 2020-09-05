@@ -126,6 +126,9 @@ security:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
 
+# 保证调用 /refresh的时候不需要验证
+management.security.enabled: false
+
 #swagger文档配置
 swagger:
   title: qizuo-provider-user-admin #swagger title
@@ -139,3 +142,9 @@ qizuo.interceptor.token: true
 qizuo.security.oauth2.token: jwt
 #是否开启debug模式
 debug: false
+#fein token获取配置
+qizuo.feign.id: qizuo
+qizuo.feign.accessTokenUrl: "http://localhost:9400/port/user/oauth/token"
+qizuo.feign.clientId: qizuo
+qizuo.feign.clientSecret: qizuo
+qizuo.feign.clientAuthenticationScheme: qizuo

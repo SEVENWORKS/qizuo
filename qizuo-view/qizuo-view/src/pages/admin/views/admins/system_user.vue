@@ -92,10 +92,11 @@ export default {
     },
     //获取基本数据
     getDatas(page) {
-      getUsers(page).then((reponse) => {
+      getUsersPage(page).then((reponse) => {
         const { result } = reponse;
-        this.options = result;
-        this.$refs.baseTable.data = result;
+        this.options = result.entitys;
+        this.$refs.baseTable.data = result.entitys;
+        this.$refs.baseTable.page = result;
       });
     },
     //删除

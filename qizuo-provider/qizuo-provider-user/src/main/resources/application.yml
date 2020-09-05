@@ -126,6 +126,9 @@ security:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
 
+# 保证调用 /refresh的时候不需要验证 暴露/refresh /bus-refresh接口,注意有风险，会暴露其它接口
+management.security.enabled: false
+
 #swagger文档配置
 swagger:
   title: qizuo-provider-user #swagger title

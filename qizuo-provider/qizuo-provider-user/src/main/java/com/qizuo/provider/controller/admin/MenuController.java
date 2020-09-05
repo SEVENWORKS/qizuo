@@ -40,6 +40,8 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
+  // @RequestBody是前台传递json数据才需要的，即使用之后会被视图解析器按照json方式解析，即我们自定义实现的jackson转的那个视图
+  // @RequestBody流只能被读取一次，即一个方法上只能用一次
   public BackResult list(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qList(menuPoJo));
   }
@@ -69,8 +71,7 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  public BackResult page(@RequestBody PageDto<MenuPoJo> pagePoJo, @RequestBody MenuPoJo menuPoJo) {
-    pagePoJo.setEntity(menuPoJo);
+  public BackResult page(@RequestBody PageDto<MenuPoJo> pagePoJo) {
     return BackResultUtils.ok(menuService.qPageQZ(pagePoJo));
   }
 

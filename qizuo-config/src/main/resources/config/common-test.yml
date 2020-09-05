@@ -3,3 +3,7 @@ qizuo: woaiwojia
 token_rules: 123
 #上传文件地址
 file_upload_path: ""
+#是否开启swagger
+swagger: true
+#入口
+port_url: "http://localhost:9400/port/"

@@ -1,7 +1,7 @@
 package com.qizuo.provider.service;
 
 import com.qizuo.base.model.service.BaseService;
-import com.qizuo.provider.model.dao.RoleDao;
+import com.qizuo.provider.service.dao.RoleDao;
 import com.qizuo.provider.model.po.RolePoJo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

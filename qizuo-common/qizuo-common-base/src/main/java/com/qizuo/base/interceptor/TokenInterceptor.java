@@ -15,6 +15,7 @@ import com.qizuo.util.parse.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
@@ -32,6 +33,7 @@ import java.lang.reflect.Method;
 
 /** spring拦截器，验证token */
 @Slf4j
+@RefreshScope
 public class TokenInterceptor implements HandlerInterceptor {
   @Value("${token_rules}")
   private String tokenRules;

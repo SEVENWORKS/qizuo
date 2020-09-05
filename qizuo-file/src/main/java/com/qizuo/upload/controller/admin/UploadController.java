@@ -21,6 +21,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +39,7 @@ import java.util.List;
   produces = {"application/json;charset=UTF-8"}
 )
 @RestController
+@RefreshScope
 // swagger
 @Api(value = "File-UploadController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UploadController extends BaseController {

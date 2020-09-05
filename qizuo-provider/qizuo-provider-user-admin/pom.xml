@@ -27,5 +27,11 @@
       <artifactId>qizuo-provider-api-user-admin</artifactId>
       <version>1.0</version>
     </dependency>
+    <!-- rpc调用 -->
+    <dependency>
+      <groupId>com.qizuo.provider.api.user</groupId>
+      <artifactId>qizuo-provider-api-user</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 </project>

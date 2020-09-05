@@ -7,6 +7,7 @@ import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;
 import com.qizuo.provider.model.po.MenuPoJo;
+import com.qizuo.provider.service.MenuFeignApi;
 import com.qizuo.provider.service.MenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,6 +33,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "UserAdmin-MenuController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MenuController {
   @Autowired private MenuService menuService;
+  // 示例
+  @Autowired private MenuFeignApi menuFeignApi;
   /**
    * @author: fangl
    * @description: 菜单新增或者修改
@@ -43,6 +46,8 @@ public class MenuController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   public BackResult iuDo(@RequestBody MenuPoJo menuPoJo) {
+    // 示例
+    // BackResult backResult = menuFeignApi.list(menuPoJo);
     if (StringUtils.isBlank(menuPoJo.getBaseId())) {
       // 插入
       menuService.insert(menuPoJo);

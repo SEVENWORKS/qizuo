@@ -5,35 +5,40 @@
 
 package com.qizuo.provider.controller.rpc;
 
+import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
+import com.qizuo.base.utils.BackResultUtils;
+import com.qizuo.provider.model.po.UserPoJo;
 import com.qizuo.provider.service.UserFeignApi;
+import com.qizuo.provider.service.UserService;
 import io.swagger.annotations.Api;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-/**
- * rpc调用接口.
- */
-@RefreshScope
+/** rpc调用接口. */
 @RestController
 @Api(value = "API-UserFeignClient", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserFeignClient extends BaseController implements UserFeignApi {
-    @Override
-    public BackResult<List<String>> queryMessageKeyList(List<String> messageKeyList) {
-        return null;
-    }
-//	@Resource
-//	private OmcOrderService omcOrderService;
-//
-//	@Override
-//	@ApiOperation(httpMethod = "POST", value = "根据订单号查询订单信息")
-//	public Wrapper<OrderDto> queryByOrderNo(@PathVariable("orderNo") String orderNo) {
-//		logger.info("selectByOrderNo - 根据订单号查询订单信息. orderNo={}", orderNo);
-//		OrderDto orderDto = omcOrderService.queryOrderDtoByOrderNo(orderNo);
-//		return WrapMapper.ok(orderDto);
-//	}
+  @Autowired private UserService userService;
+
+  @Override
+  @ApiOperation(httpMethod = "POST", value = "查询用户列表")
+  public BackResult list(UserPoJo userPoJo) {
+    return BackResultUtils.ok(userService.qList(userPoJo));
+  }
+
+  @Override
+  @ApiOperation(httpMethod = "POST", value = "获取用户分页列表")
+  public BackResult page(PageDto<UserPoJo> poJos) {
+    return BackResultUtils.ok(userService.qPageQZ(poJos));
+  }
+
+  @Override
+  @ApiOperation(httpMethod = "POST", value = "查询单个用户")
+  public BackResult query(UserPoJo userPoJo) {
+    return BackResultUtils.ok(userService.query(userPoJo));
+  }
 }

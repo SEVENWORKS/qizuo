@@ -9,6 +9,8 @@ import com.qizuo.security.resourceServer.exception.AuthenAccessDeniedHandler;
 import com.qizuo.security.resourceServer.exception.AuthenticationEntryPointHandler;
 import com.qizuo.security.resourceServer.securityConfigurerAdapter.OpenIdAuthenticationSecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,7 +29,11 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableResourceServer
+@RefreshScope
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+  // 是否swagger
+  @Value("${swagger}")
+  private Boolean swagger;
 
   @Autowired private AuthenAccessDeniedHandler authenAccessDeniedHandler;
   @Autowired private AuthenticationEntryPointHandler authenticationEntryPointHandler;
@@ -66,7 +72,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         .authenticationEntryPoint(authenticationEntryPointHandler) // 异常处理的handler
         .and()
         .authorizeRequests() // 启用基于 HttpServletRequest 的访问限制，开始配置哪些URL需要被保护、哪些不需要被保护，为后面设置启用
-        .antMatchers("/favicon.icon") // 未登陆用户允许的请求 /**/*.css
+        .antMatchers(
+            swagger ? "/webjars/springfox-swagger-ui/**" : "/favicon.icon",
+            swagger ? "/swagger-resources/**" : "/favicon.icon",
+            swagger ? "/swagger-ui.html" : "/favicon.icon",
+            swagger ? "/v2/api-docs" : "/favicon.icon") // 未登陆用户允许的请求 /**/*.css  动态配置swagger
         .permitAll() // 未登陆用户允许的请求
         .anyRequest()
         .authenticated() // 其他请求全部需要登陆

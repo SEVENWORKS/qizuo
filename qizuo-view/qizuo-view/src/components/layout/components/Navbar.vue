@@ -27,7 +27,10 @@
         trigger="click"
       >
         <div class="avatar-wrapper">
-          <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
+          <img
+            :src="avatar ? avatar + '?imageView2/1/w/80/h/80' : pic"
+            class="user-avatar"
+          />
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -51,6 +54,7 @@ import ErrorLog from "@/components/ErrorLog";
 import Screenfull from "@/components/Screenfull";
 import SizeSelect from "@/components/SizeSelect";
 import Search from "@/components/HeaderSearch";
+import pic from "@assets/img/profile-pics/profile-pic.jpg";
 
 export default {
   components: {
@@ -63,6 +67,9 @@ export default {
   },
   computed: {
     ...mapGetters(["sidebar", "avatar", "device"]),
+    pic() {
+      return pic;
+    },
   },
   methods: {
     toggleSideBar() {

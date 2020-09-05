@@ -11,16 +11,15 @@ import lombok.Data;
 /** Swagger properties yaml.带y的表示是和yaml对应的，并且包含基本启动 */
 @Data
 public class SwaggerPropertiesGY {
+  private String title = "qizuo";
 
-  private String title;
-
-  private String description;
+  private String description = "contro & model";
 
   private String version = "1.0";
 
   private String license = "tokenGet";
 
-  private String licenseUrl = "http://www.baidu.com";
+  private String licenseUrl = "http://localhost:9400/port/user/oauth/token";
 
   private String contactName = GlobalConstant.Global;
 

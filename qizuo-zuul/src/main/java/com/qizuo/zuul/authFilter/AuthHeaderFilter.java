@@ -15,6 +15,7 @@ import com.qizuo.util.common.ObjectIsEmptyUtils;
 import com.qizuo.util.http.RequestUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 /** zuul过滤器，请求头处理，主要是判断是否有鉴权的请求头和对鉴权的请求头进行延续，方便后面微服务可以取到 */
 @Slf4j
 @Component
+@RefreshScope
 public class AuthHeaderFilter extends ZuulFilter {
   @Value("${token_rules}")
   private String tokenRules;

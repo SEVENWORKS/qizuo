@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qizuo.provider.model.dao.UserDao">
+<mapper namespace="com.qizuo.provider.service.dao.UserDao">
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
@@ -76,14 +76,14 @@
     <!-- 根据用户去权限拼接查询角色信息 -->
     <select id="qRolesByString" resultType="com.qizuo.provider.model.po.RolePoJo">
         select
-        <include refid="com.qizuo.provider.model.dao.RoleDao.exclusiveColumns"/>
+        <include refid="com.qizuo.provider.service.dao.RoleDao.exclusiveColumns"/>
         from sys_role a
         where a.BASE_STATUS=0 and a.base_id in (#{value})
     </select>
     <!-- 根据用户权限拼接查询菜单信息 -->
     <select id="qMenusByString" resultType="com.qizuo.provider.model.po.MenuPoJo">
         select
-        <include refid="com.qizuo.provider.model.dao.MenuDao.exclusiveColumns"/>
+        <include refid="com.qizuo.provider.service.dao.MenuDao.exclusiveColumns"/>
         from sys_menu a
         where a.BASE_STATUS=0 and a.base_id in
         (select group_concat(b.MENU_IDS) from sys_role b where b.BASE_STATUS=0 and b.base_id in (#{value}))

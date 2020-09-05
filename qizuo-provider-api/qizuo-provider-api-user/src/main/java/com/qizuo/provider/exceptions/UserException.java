@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 /**
- * The class Mdc biz exception.
+ * user exception.
  */
 @Slf4j
 public class UserException extends BusinessException {

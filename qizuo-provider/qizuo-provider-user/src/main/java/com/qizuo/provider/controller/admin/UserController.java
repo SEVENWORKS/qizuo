@@ -46,8 +46,7 @@ public class UserController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  public BackResult page(@RequestBody PageDto<UserPoJo> poJos, @RequestBody UserPoJo userPoJo) {
-    poJos.setEntity(userPoJo);
+  public BackResult page(@RequestBody PageDto<UserPoJo> poJos) {
     return BackResultUtils.ok(userService.qPageQZ(poJos));
   }
 

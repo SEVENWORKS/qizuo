@@ -25,7 +25,7 @@
         <!-- 基本路径 -->
         <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
         <!-- mapper路径 -->
-        <targetMapperPackage>com.qizuo.provider.model.dao.mapper</targetMapperPackage>
+        <targetMapperPackage>com.qizuo.provider.service.dao.mapper</targetMapperPackage>
         <!-- mapper实体类路径 -->
         <targetModelPackage>com.qizuo.provider.model.domain</targetModelPackage>
         <!-- XML生成路径 -->
