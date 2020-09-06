@@ -2,7 +2,7 @@
 
 #spring配置
 spring:
-  #环境配置文件(dev/prd/test)
+  #环境配置文件(dev/prd/test native代表本地)
   profiles:
     active: prd
   #当前服务名
@@ -34,23 +34,13 @@ spring:
 
 #springboot配置
 spring.boot:
-  #admin连接信息
-  admin:
-    username: qizuo
-    password: qizuo
-    #turbine监控
-    #routes.endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
-    #turbine.clusters: default
-    #turbine服务id,turbine服务可以作为单独的服务
-    #Turbine服务器的ServiceId或URL(不包含/turbine.stream)。 必须可以从管理服务器访问。
-    #turbine.location: hystrix-dashboard-turbine
 
 #springboot配置
 spring.cloud:
 
 #端口
 server:
-  port: 9300
+  port: 9400
   context-path: /admin
 
 #安全
@@ -67,6 +57,8 @@ swagger:
   description: qizuo-admin #swagger 描述
 
 #是否打开SqlLogInterceptor
-qizuo.interceptor.sqllog: true
+qizuo.interceptor.sqllog: false
 #是否打开token
-qizuo.interceptor.token: true
+qizuo.interceptor.token: false
+#token_rules
+token_rules: false

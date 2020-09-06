@@ -20,6 +20,7 @@
     <modules>
         <module>qizuo-provider-user</module>
         <module>qizuo-provider-user-admin</module>
+        <module>qizuo-provider-file</module>
     </modules>
 
     <properties>

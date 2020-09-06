@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="paascloud-zipkin:war">
-    <output-path>$PROJECT_DIR$/qizuo-zipkin/target</output-path>
-    <root id="archive" name="qizuo-zipkin.war">
-      <element id="artifact" artifact-name="paascloud-zipkin:war exploded" />
-    </root>
-  </artifact>
-</component>

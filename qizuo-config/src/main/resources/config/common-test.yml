@@ -6,4 +6,4 @@ file_upload_path: ""
 #是否开启swagger
 swagger: true
 #入口
-port_url: "http://localhost:9400/port/"
+port_url: "http://localhost:9300/port/"

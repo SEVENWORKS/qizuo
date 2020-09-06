@@ -144,7 +144,7 @@ qizuo.security.oauth2.token: jwt
 debug: false
 #fein token获取配置
 qizuo.feign.id: qizuo
-qizuo.feign.accessTokenUrl: "http://localhost:9400/port/user/oauth/token"
+qizuo.feign.accessTokenUrl: "http://localhost:9300/port/user/oauth/token"
 qizuo.feign.clientId: qizuo
 qizuo.feign.clientSecret: qizuo
 qizuo.feign.clientAuthenticationScheme: qizuo

@@ -20,7 +20,6 @@
         <module>qizuo-config</module>
         <module>qizuo-zuul</module>
         <module>qizuo-admin</module>
-        <module>qizuo-file</module>
         <module>qizuo-view</module>
         <module>qizuo-generator</module>
         <module>qizuo-provider</module>

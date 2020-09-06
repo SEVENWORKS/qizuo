@@ -19,7 +19,7 @@ public class SwaggerPropertiesGY {
 
   private String license = "tokenGet";
 
-  private String licenseUrl = "http://localhost:9400/port/user/oauth/token";
+  private String licenseUrl = "http://localhost:9300/port/user/oauth/token";
 
   private String contactName = GlobalConstant.Global;
 

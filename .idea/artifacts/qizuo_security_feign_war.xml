@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="qizuo-security-feign:war">
-    <output-path>$PROJECT_DIR$/qizuo-common/qizuo-security-feign/target</output-path>
-    <root id="archive" name="qizuo-security-feign-1.0.war">
-      <element id="artifact" artifact-name="qizuo-security-feign:war exploded" />
-    </root>
-  </artifact>
-</component>

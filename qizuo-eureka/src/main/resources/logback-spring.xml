@@ -1,95 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    当前日志配置说明：
+    *前置：a.路径放到对应项目的磁盘根目录b.日志存放路径和名称是log_file c.日志输入格式console_log_pattern
+    1.控制台输出控制，ThresholdFilter没有生效
+    2.普通日志配置，回滚策略是每天生成一个文件，过期删除是七天
+    3.json 监控日志配置，回滚策略是每天生成一个文件，过期删除是七天，并且有配置对应json字段
+-->
 <configuration>
-  <!-- 默认配置文件引入进来 -->
-  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!-- 默认配置文件引入进来 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-  <!-- 回读application中的属性，生成一个叫springAppName的属性，下面可以用 -->
-  <springProperty scope="context" name="springAppName" source="spring.application.name"/>
-  <!-- 定义两个属性，下面可以用 -->
-  <!-- 文件名，即文件路径 -->
-  <property name="LOG_FILE" value="/data/logs/qizuo/${springAppName}/${springAppName}"/>
-  <!-- 文件内部日志输出格式 TODO -->
-  <property name="CONSOLE_LOG_PATTERN"
-            value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-B3-ParentSpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <!-- 回读application中的属性，生成一个叫springAppName的属性，下面可以用 -->
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <!-- 定义两个属性，下面可以用 -->
+    <!-- 文件名，即文件路径 第一个斜杠代表当前项目所在盘根目录 -->
+    <property name="LOG_FILE" value="/data/logs/qizuo/${springAppName}/${springAppName}"/>
+    <!-- 文件内部日志输出格式 这个格式中包含调用链的一些配置，但是本项目没有用到，就是那几个逗号 -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-B3-ParentSpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <!-- 文件内部日志输出格式 这个格式中包含调用链的一些配置，但是本项目没有用到，就是那几个逗号，为什么不用上面那个，因为上面那个有些格式只能被console解析，所以要去掉那些符号，重新弄个(主要是颜色配置那块解析有问题：%clr(表达式){faint}这个就代表颜色配置) -->
+    <property name="FILE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} [${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-B3-ParentSpanId:-},%X{X-Span-Export:-}] ${PID:- } --- [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 
-  <!-- console控制台日志输出组件 -->
-  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-      <!-- Minimum logging level to be presented in the console logs -->
-      <level>DEBUG</level>
-    </filter>
-    <!-- 日志输出配置 -->
-    <encoder>
-      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
-      <charset>utf8</charset>
-    </encoder>
-  </appender>
+    <!-- console控制台日志输出组件 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- ThresholdFilter是临界值过滤器，过滤掉低于指定临界值的日志。当日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝。 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- Minimum logging level to be presented in the console logs -->
+            <level>DEBUG</level>
+        </filter>
+        <!-- 日志输出配置 -->
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
 
-  <!-- file日志输出组件，生成文件 普通日志 -->
-  <appender name="flatfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <!-- 指定日志文件的名称,即生成路径 -->
-    <file>${LOG_FILE}</file>
+    <!-- file日志输出组件，生成文件 正常普通的日志文件 -->
+    <appender name="flatfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 指定日志文件的名称 -->
+        <file>${LOG_FILE}</file>
+        <!--
+         当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
+         TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
+        -->
+        <!-- 当前回滚配置表示一个天生成一个gz文件 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <!-- MaxHistory指的是文件数量，超过MaxHistory数量才会删除，只有当每天生成且只生成一个文件时才表示保留天数。 -->
+            <maxHistory>7</maxHistory>
+            <!--<maxFileSize>20MB</maxFileSize>-->
+        </rollingPolicy>
+        <!-- 日志输出配置 -->
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    ​
+    <!-- 日志收集日志输出组件，生成文件 日志收集需要配置的文件，json格式-->
+    <appender name="logstash" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 指定日志文件的名称 -->
+        <file>${LOG_FILE}.json</file>
+        <!--
+         当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
+         TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
+        -->
+        <!-- 当前回滚配置表示一个天生成一个gz文件 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.json.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <!--<maxFileSize>20MB</maxFileSize>-->
+        </rollingPolicy>
+        <!-- 日志输出配置 json -->
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <!-- json输出格式，即输出哪些字段 -->
+            <providers>
+                <timestamp>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <pattern>
+                    <pattern>
+                        {
+                        "severity": "%level",
+                        "service": "${springAppName:-}",
+                        "trace": "%X{X-B3-TraceId:-}",
+                        "span": "%X{X-B3-SpanId:-}",
+                        "parent": "%X{X-B3-ParentSpanId:-}",
+                        "exportable": "%X{X-Span-Export:-}",
+                        "pid": "${PID:-}",
+                        "thread": "%thread",
+                        "class": "%logger{40}",
+                        "rest": "%message"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
     <!--
-     当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
-     TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
+       root与logger是父子关系，没有特别定义则默认为root，任何一个类只会和一个logger对应，
+       要么是定义的logger，要么是root，判断的关键在于找到这个logger，然后判断这个logger的appender和level。
     -->
-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
-      <maxHistory>7</maxHistory>
-    </rollingPolicy>
-    <!-- 日志输出配置 -->
-    <encoder>
-      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
-      <charset>utf8</charset>
-    </encoder>
-  </appender>
-  ​
-  <!-- 日志收集日志输出组件，生成文件 收集的日志文件 -->
-  <appender name="logstash" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <!-- 指定日志文件的名称 -->
-    <file>${LOG_FILE}.json</file>
-    <!--
-     当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
-     TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
-    -->
-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_FILE}.json.%d{yyyy-MM-dd}.gz</fileNamePattern>
-      <maxHistory>7</maxHistory>
-    </rollingPolicy>
-    <!-- 日志输出配置 -->
-    <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-      <providers>
-        <timestamp>
-          <timeZone>UTC</timeZone>
-        </timestamp>
-        <pattern>
-          <pattern>
-            {
-            "severity": "%level",
-            "service": "${springAppName:-}",
-            "trace": "%X{X-B3-TraceId:-}",
-            "span": "%X{X-B3-SpanId:-}",
-            "parent": "%X{X-B3-ParentSpanId:-}",
-            "exportable": "%X{X-Span-Export:-}",
-            "pid": "${PID:-}",
-            "thread": "%thread",
-            "class": "%logger{40}",
-            "rest": "%message"
-            }
-          </pattern>
-        </pattern>
-      </providers>
-    </encoder>
-  </appender>
-
-  <!--
-     root与logger是父子关系，没有特别定义则默认为root，任何一个类只会和一个logger对应，
-     要么是定义的logger，要么是root，判断的关键在于找到这个logger，然后判断这个logger的appender和level。
-  -->
-  <!-- OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、 ALL从高到底，只打印大于等于它的 -->
-  <root level="INFO">
-    <appender-ref ref="console"/>
-    <appender-ref ref="logstash"/>
-    <appender-ref ref="flatfile"/>
-  </root>
+    <!-- OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、 ALL从高到底，只打印大于等于它的 -->
+    <root level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="logstash"/>
+        <appender-ref ref="flatfile"/>
+    </root>
 </configuration>

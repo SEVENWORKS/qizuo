@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="qizuo-provider-user:war">
-    <output-path>$PROJECT_DIR$/qizuo-provider/qizuo-provider-user/target</output-path>
-    <root id="archive" name="qizuo-provider-user.war">
-      <element id="artifact" artifact-name="qizuo-provider-user:war exploded" />
-    </root>
-  </artifact>
-</component>

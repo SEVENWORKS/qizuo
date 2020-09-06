@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="qizuo-zuul:war">
-    <output-path>$PROJECT_DIR$/qizuo-zuul/target</output-path>
-    <root id="archive" name="qizuo-zuul.war">
-      <element id="artifact" artifact-name="qizuo-zuul:war exploded" />
-    </root>
-  </artifact>
-</component>
