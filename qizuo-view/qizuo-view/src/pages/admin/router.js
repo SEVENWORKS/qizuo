@@ -51,6 +51,29 @@ window.routes = [
                 meta: {title: "菜单管理"}
             }
         ],
+    },
+    {
+        path: "/file",
+        component: () => import('@comp/layout'),
+        redirect: "/system_file",
+        meta: {
+            title: "文件",
+            icon: "tree-table",
+        },
+        children: [
+            {
+                path: '/system_file',
+                name: 'system_file',
+                component: () => import('./views/admins/system_file'),
+                meta: {title: "文件列表"}
+            },
+            {
+                path: '/system_file_log',
+                name: 'system_file_log',
+                component: () => import('./views/admins/system_file_log'),
+                meta: {title: "文件日志"}
+            }
+        ],
     }
 ]
 

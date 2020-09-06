@@ -56,7 +56,6 @@ public class RoleController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult query(@RequestBody RolePoJo rolePoJo) {
     return BackResultUtils.ok(roleService.query(rolePoJo));
   }

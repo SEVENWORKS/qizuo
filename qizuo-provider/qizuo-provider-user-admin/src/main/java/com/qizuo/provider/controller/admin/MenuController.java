@@ -68,7 +68,6 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult delete(@RequestBody MenuPoJo menuPoJo) {
     menuService.delete(menuPoJo);
     return BackResultUtils.ok();

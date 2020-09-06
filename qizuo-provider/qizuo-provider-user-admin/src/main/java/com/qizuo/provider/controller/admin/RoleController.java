@@ -63,7 +63,6 @@ public class RoleController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult delete(@RequestBody RolePoJo rolePoJo) {
     roleService.delete(rolePoJo);
     return BackResultUtils.ok();

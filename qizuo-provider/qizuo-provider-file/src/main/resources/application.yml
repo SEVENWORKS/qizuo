@@ -8,7 +8,7 @@ spring:
     active: prd
   #当前服务名
   application:
-    name: qizuo-file
+    name: qizuo-provider-file
   #redis
   redis:
     database: 0 # Redis数据库索引（默认为0）
@@ -36,7 +36,7 @@ spring:
   devtools:
     restart:
       enabled: false  #设置开启热部署
-      additional-paths: qizuo-file/src/main/java #重启目录
+      additional-paths: qizuo-provider-file/src/main/java #重启目录
       exclude: WEB-INF/**
   #上传文件大小限制
   servlet:
@@ -48,7 +48,7 @@ spring:
     # 数据库访问配置, 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/qizuo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://localhost:3306/qizuo_file?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: accp
     druid:
@@ -136,8 +136,8 @@ management.security.enabled: false
 
 #swagger文档配置
 swagger:
-  title: qizuo-file #swagger title
-  description: qizuo-file #swagger 描述
+  title: qizuo-provider-file #swagger title
+  description: qizuo-provider-file #swagger 描述
 
 #是否打开SqlLogInterceptor
 qizuo.interceptor.sqllog: true

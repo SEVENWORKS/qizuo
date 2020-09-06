@@ -67,7 +67,6 @@ public class UserController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult delete(@RequestBody UserPoJo userPoJo) {
     userPoJo.setBaseStatus(GlobalConstant.STATUS_NO);
     userService.uStatus(userPoJo);

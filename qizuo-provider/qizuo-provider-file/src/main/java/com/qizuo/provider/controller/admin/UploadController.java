@@ -6,7 +6,6 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.annotation.NotDisplaySql;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
@@ -29,7 +28,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.List;
 
 /** 文件上传下载. */
 // produces有两个好处：一个是浏览器查看方便（json自动格式化，带搜索），另一个可以防止中文乱码。
@@ -58,17 +56,18 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  public BackResult singleUpload(
-      MultipartFile multipartFile, FilePoJo filePoJo, FileLogPoJo fileLogPoJo) {
-    if (multipartFile.isEmpty()) {
+  public BackResult singleUpload(MultipartFile file) {
+    if (file.isEmpty()) {
       return BackResultUtils.error("上传失败，请选择文件");
     }
 
-    String fileName = multipartFile.getOriginalFilename();
+    String fileName = file.getOriginalFilename();
     File dest = new File(fileUploadPath + fileName);
     try {
-      multipartFile.transferTo(dest);
+      file.transferTo(dest);
       // 插入
+      FileLogPoJo fileLogPoJo =new FileLogPoJo();
+      FilePoJo filePoJo =new FilePoJo();
       fileService.insert(filePoJo);
       fileLogService.insert(fileLogPoJo);
       return BackResultUtils.ok();
@@ -87,11 +86,7 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult multiUpload(
-      @RequestParam(value = "files") MultipartFile[] multipartFiles,
-      List<FilePoJo> filePoJos,
-      List<FileLogPoJo> fileLogPoJos) {
+  public BackResult multiUpload(@RequestParam(value = "files") MultipartFile[] multipartFiles) {
     if (ObjectIsEmptyUtils.isEmpty(multipartFiles)) {
       return BackResultUtils.error("上传失败，请选择文件");
     }
@@ -103,8 +98,10 @@ public class UploadController extends BaseController {
       try {
         multipartFiles[i].transferTo(dest);
         // 插入
-        fileService.insert(filePoJos.get(i));
-        fileLogService.insert(fileLogPoJos.get(i));
+        FileLogPoJo fileLogPoJo =new FileLogPoJo();
+        FilePoJo filePoJo =new FilePoJo();
+        fileService.insert(filePoJo);
+        fileLogService.insert(fileLogPoJo);
       } catch (IOException e) {
       }
     }
@@ -121,7 +118,9 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  public BackResult downFile(HttpServletResponse response, Model model, FilePoJo filePoJo) {
+  public BackResult downFile(HttpServletResponse response, Model model, String resourceName) {
+    FilePoJo filePoJo = new FilePoJo();
+    filePoJo.setResourceName(resourceName);
     // 查询文件
     filePoJo = fileService.query(filePoJo);
     // 待下载文件名
@@ -181,8 +180,11 @@ public class UploadController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
-  public BackResult fileDelete(FilePoJo filePoJo, FileLogPoJo fileLogPoJo) {
+  public BackResult fileDelete(String resourceName) {
+    FileLogPoJo fileLogPoJo =new FileLogPoJo();
+    fileLogPoJo.setResourceName(resourceName);
+    FilePoJo filePoJo =new FilePoJo();
+    filePoJo.setResourceName(resourceName);
     // 查询文件
     filePoJo = fileService.query(filePoJo);
     // 文件路径

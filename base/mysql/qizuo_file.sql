@@ -21,8 +21,8 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `sys_upload_log`;
 CREATE TABLE `sys_upload_log` (
   `BASE_ID` varchar(255) NOT NULL COMMENT '标识',
-  `DATA_TYPE` varchar(100) NOT NULL,
-  `DATA_ID` varchar(255) NOT NULL COMMENT '数据关联ID',
+  `DATA_TYPE` varchar(100) DEFAULT NULL,
+  `DATA_ID` varchar(255) DEFAULT NULL COMMENT '数据关联ID',
   `DATA_COLUMN` varchar(255) DEFAULT '' COMMENT '关联字段类别',
   `RESOURCE_NAME` varchar(500) NOT NULL COMMENT '上传路径名称',
   `NAME` varchar(500) NOT NULL COMMENT '文件名',
@@ -44,8 +44,8 @@ CREATE TABLE `sys_upload_log` (
 DROP TABLE IF EXISTS `sys_upload_resource`;
 CREATE TABLE `sys_upload_resource` (
   `BASE_ID` varchar(255) NOT NULL COMMENT '标识',
-  `DATA_TYPE` varchar(100) NOT NULL COMMENT '数据类别',
-  `DATA_ID` varchar(255) NOT NULL COMMENT '数据关联ID',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类别',
+  `DATA_ID` varchar(255) DEFAULT NULL COMMENT '数据关联ID',
   `DATA_COLUMN` varchar(255) DEFAULT '' COMMENT '关联字段类别',
   `RESOURCE_NAME` varchar(500) NOT NULL COMMENT '上传资源名称',
   `NAME` varchar(500) NOT NULL COMMENT '文件名称',

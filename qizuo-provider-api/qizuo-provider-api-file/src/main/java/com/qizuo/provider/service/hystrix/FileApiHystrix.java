@@ -7,25 +7,26 @@ package com.qizuo.provider.service.hystrix;
 
 import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
-import com.qizuo.provider.model.po.UserPoJo;
-import com.qizuo.provider.service.UserFeignApi;
+import com.qizuo.provider.model.po.FilePoJo;
+import com.qizuo.provider.service.FileApi;
 import org.springframework.stereotype.Component;
 
-/** user hystrix. */
+/** file hystrix. */
 @Component
-public class UserApiHystrix implements UserFeignApi {
+public class FileApiHystrix implements FileApi {
+
   @Override
-  public BackResult list(final UserPoJo userPoJo) {
+  public BackResult list(FilePoJo filePoJo) {
     return null;
   }
 
   @Override
-  public BackResult page(final PageDto<UserPoJo> poJos) {
+  public BackResult page(PageDto<FilePoJo> poJos) {
     return null;
   }
 
   @Override
-  public BackResult query(final UserPoJo userPoJo) {
+  public BackResult query(FilePoJo filePoJo) {
     return null;
   }
 }

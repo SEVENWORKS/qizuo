@@ -10,8 +10,8 @@
 
     <!-- 父项目 -->
     <parent>
-        <groupId>com.qizuo</groupId>
-        <artifactId>qizuo</artifactId>
+        <groupId>com.qizuo.provider</groupId>
+        <artifactId>qizuo-provider</artifactId>
         <version>1.0</version>
     </parent>
 

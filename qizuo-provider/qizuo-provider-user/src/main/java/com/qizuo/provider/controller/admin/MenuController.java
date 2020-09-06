@@ -56,7 +56,6 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult qEachList(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qEachList(menuPoJo));
   }
@@ -85,7 +84,6 @@ public class MenuController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult query(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.query(menuPoJo));
   }

@@ -60,7 +60,6 @@ public class UserController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @NotDisplaySql
-  @NoNeedAccessAuthentication
   public BackResult list(@RequestBody UserPoJo userPoJo) {
     return BackResultUtils.ok(userService.qList(userPoJo));
   }
