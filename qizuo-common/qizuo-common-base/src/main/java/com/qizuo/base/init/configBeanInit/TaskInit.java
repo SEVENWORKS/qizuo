@@ -27,6 +27,8 @@ import java.util.concurrent.Executor;
  */
 
 /**
+ * @EnableScheduling开启后，可以用下面方式进行定时
+ *
  * @Component
 	public class Jobs {
 	//表示方法执行完成后5秒
@@ -51,7 +53,7 @@ import java.util.concurrent.Executor;
  */
 
 /**
- * 线程池使用，线程正常用就行，线程池已经初始化了
+ * 线程池使用，线程方式调用异步任务
  * @Autowired
 	Executor taskExecutor;
 
@@ -65,10 +67,21 @@ import java.util.concurrent.Executor;
 	 return "333";
 	 }
  */
+
+/**
+ * @EnableAsync开启后  搭配@Async可以直接异步调用线程任务
+ @Component
+ public class TreadTasks {
+ @Async
+ public void startMyTreadTask() {
+ System.out.println("this is my async task");
+ }
+ }
+ */
 @Configuration
-//支持异步，多线程
+//支持异步多线程(多线程)，即可以用上面方式开启
 @EnableAsync
-//开启定时
+//开启定时，开启定时后，可以用上面方式使用线程
 @EnableScheduling
 public class TaskInit implements AsyncConfigurer {
 	private final Logger log = LoggerFactory.getLogger(getClass());
@@ -87,6 +100,7 @@ public class TaskInit implements AsyncConfigurer {
 		executor.setQueueCapacity(qizuoConfigProperties.getTask().getQueueCapacity());
 		executor.setKeepAliveSeconds(qizuoConfigProperties.getTask().getKeepAliveSeconds());
 		executor.setThreadNamePrefix(qizuoConfigProperties.getTask().getThreadNamePrefix());
+		//用自定义的异步线程池，或者不用也行
 		return new TaskInitExceptionHandlingAsyncTaskExecutor(executor);
 	}
 

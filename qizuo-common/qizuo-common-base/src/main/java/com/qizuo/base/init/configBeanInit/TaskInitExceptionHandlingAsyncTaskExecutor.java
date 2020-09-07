@@ -14,7 +14,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
 /**
- * 自定义任务执行器.
+ * 自定义任务执行器_异步线程执行器(多线程执行器).
  * AsyncTaskExecutor异步线程池
  * 通过实现 InitializingBean ,DisposableBean 接口实现初始化方法和销毁前操作
  */

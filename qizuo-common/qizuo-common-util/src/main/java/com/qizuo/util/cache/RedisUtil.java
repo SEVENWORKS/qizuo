@@ -6,6 +6,7 @@ package com.qizuo.util.cache;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
 /**
@@ -26,20 +27,22 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RedisUtil {
+	@Autowired
+	private static RedisTemplate redisTemplate;
 	/**
 	 * 读取缓存
 	 *
 	 * @param key
 	 * @return
 	 */
-	public static String get(final String key,RedisTemplate<String, String> redisTemplate) {
+	public static Object get(final String key) {
 		return redisTemplate.opsForValue().get(key);
 	}
 
 	/**
 	 * 写入缓存
 	 */
-	public static boolean set(final String key, String value,RedisTemplate<String, String> redisTemplate) {
+	public static boolean set(final String key, String value) {
 		boolean result = false;
 		try {
 			redisTemplate.opsForValue().set(key, value);
@@ -53,7 +56,7 @@ public class RedisUtil {
 	/**
 	 * 更新缓存
 	 */
-	public static boolean getAndSet(final String key, String value,RedisTemplate<String, String> redisTemplate) {
+	public static boolean getAndSet(final String key, String value) {
 		boolean result = false;
 		try {
 			redisTemplate.opsForValue().getAndSet(key, value);
@@ -67,7 +70,7 @@ public class RedisUtil {
 	/**
 	 * 删除缓存
 	 */
-	public static boolean delete(final String key,RedisTemplate<String, String> redisTemplate) {
+	public static boolean delete(final String key) {
 		boolean result = false;
 		try {
 			redisTemplate.delete(key);
