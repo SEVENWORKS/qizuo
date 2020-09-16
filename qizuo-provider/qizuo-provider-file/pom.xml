@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qizuo.provider.file</groupId>
     <artifactId>qizuo-provider-file</artifactId>
+    <!-- war包和jar包的运行方式不同，war包可以运行在外部的tomcat中;jar包中自带tomcat可以直接部署到有jdk的环境就可以运行了，如果用的docker,最好还是war包 -->
     <packaging>war</packaging>
     <name>qizuo-provider-file</name>
     <description>文件上传</description>

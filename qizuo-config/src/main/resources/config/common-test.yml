@@ -1,6 +1,6 @@
 qizuo: woaiwojia
 #token验证规则
-token_rules: 123
+token_rules: qizuo
 #上传文件地址
 file_upload_path: ""
 #是否开启swagger

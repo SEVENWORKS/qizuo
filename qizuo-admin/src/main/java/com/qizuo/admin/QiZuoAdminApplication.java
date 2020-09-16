@@ -8,6 +8,7 @@ package com.qizuo.admin;
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
@@ -25,7 +26,8 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 @EnableHystrixDashboard
 //断路器启动
 @EnableCircuitBreaker
-public class QiZuoAdminApplication {
+//如果要按照war包方式部署，一定要继承SpringBootServletInitializer提示从这个地方入口(不行的话同时pom中去掉tomcat依赖)
+public class QiZuoAdminApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(QiZuoAdminApplication.class, args);
 	}

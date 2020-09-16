@@ -4,6 +4,7 @@
     <groupId>com.qizuo</groupId>
     <artifactId>qizuo</artifactId>
     <version>1.0</version>
+    <!-- 父项目必须为pom，而且存在依赖关系的子项目，打包的时候不能单个打包，最好在父项目中，直接install才能成功 -->
     <packaging>pom</packaging>
 
     <!-- 变成springboot项目 -->

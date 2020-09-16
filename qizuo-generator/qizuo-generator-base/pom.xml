@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qizuo.generator.base</groupId>
     <artifactId>qizuo-generator-base</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>qizuo-generator-base</name>
     <description>基本业务代码生成器</description>
 

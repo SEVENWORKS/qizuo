@@ -1,4 +1,5 @@
 #最新加载入口配置文件
+ip: 47.114.138.216
 
 #spring配置
 spring:
@@ -20,24 +21,26 @@ spring.cloud:
         #本地文件配置
 #       native:
 #        search-locations: E:/workspace/ide/qizuo/qizuo-config/src/main/resources/config #这个地方的斜杠只能是上斜杠，不能下斜杠，下斜杠解析不出来
-       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到
+       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次，比如重启，或者访问configserver的yml，示例：       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次，比如重启，或者访问configserver的yml，示例：http://47.114.138.216:9200/config/common-dev.yml
        git:
-        uri: https://github.com/SEVENWORKS/qizuo.git #仓库地址
+        uri: https://github.com/SEVENWORKS/config.git #仓库地址
         username: a554657207@126.com #仓库用户名，公有仓库不必配置，所以一定要准确
         password: 9a,1a,5a,1a,4a, #仓库密码，公有仓库不必配置，所以一定要准确
-        search-paths: /qizuo-config/src/main/resources/config #git仓库下相对地址(或者说是缓存到本地的文件夹路径,即相对于baseDir目录的配置，第一个斜杠就代表baseDir)
+        search-paths: / #git仓库下相对地址(或者说是缓存到本地的文件夹路径,即相对于baseDir目录的配置，第一个斜杠就代表baseDir,示例/qizuo-config/src/main/resources/config)
         default-label: master #仓库默认分支
-        basedir: E:/workspace/springConfig #远程仓库缓存到本地配置(即最终读取配置是从这个文件夹中读取，也就是上述Uri中仓库整个会被缓存到本地，目录结构和git上一样)
+        basedir: /springConfig #远程仓库缓存到本地配置(即最终读取配置是从这个文件夹中读取，也就是上述Uri中仓库整个会被缓存到本地，目录结构和git上一样；这里的第一个斜杠代表当前项目所在盘的根目录)(注意如果配置文件太大下不下来，这地方会有问题的，就是不会缓存到本地的！别的项目也是访问不到)
 
 #eureka注册中心配置
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
+    prefer-ip-address: true #用ip注册，如果不配置这个，就是用主机名注册，这个可能会导致一个问题，就是如果你没有解析域名的话，这个会导致访问失败，比如获取springcloudconfig
+    ip-address: ${ip} #写死ip，如果这地方不写，在使用容器部署的时候，会取的是容器的ip
     metadata-map:
       configPath: ${server.context-path} #如果config server配置了context-path 这个地方必须要配置这个
   client:
     serviceUrl:
-      defaultZone: http://qizuo:qizuo@localhost:9100/eureka/eureka #注册中心地址 前面是springserity的账号密码；注意这个地方，如果eureka配置了content-path,这个地方需要加上这个url；因为eureka是默认必须带上的
+      defaultZone: http://qizuo:qizuo@${ip}:9100/eureka/eureka #注册中心地址 前面是springserity的账号密码；注意这个地方，如果eureka配置了content-path,这个地方需要加上这个url；因为eureka是默认必须带上的
 
 #config配置加密
 encrypt:

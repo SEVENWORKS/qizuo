@@ -7,6 +7,7 @@ package com.qizuo.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
@@ -25,7 +26,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 // Spring Boot 使用事务非常简单，首先使用注解 @EnableTransactionManagement 开启事务支持后，然后在访问数据库的Service方法上添加注解
 // @Transactional 便可。
 @EnableTransactionManagement
-public class QiZuoProviderUserApplication {
+public class QiZuoProviderUserApplication extends SpringBootServletInitializer {
   /** 启动方法. */
   public static void main(String[] args) {
     SpringApplication.run(QiZuoProviderUserApplication.class, args);

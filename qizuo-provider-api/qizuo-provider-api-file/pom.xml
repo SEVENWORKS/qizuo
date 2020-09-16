@@ -4,7 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qizuo.provider.api.file</groupId>
     <artifactId>qizuo-provider-api-file</artifactId>
-    <packaging>war</packaging>
+    <!-- 如果这地方打包是war包的方式，别的兄弟项目就无法引入，必须打包成jar包才能引入使用 -->
+    <packaging>jar</packaging>
     <name>qizuo-provider-api-file</name>
     <description>文件上传api</description>
 

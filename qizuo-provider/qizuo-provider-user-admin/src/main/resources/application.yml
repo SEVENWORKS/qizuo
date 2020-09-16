@@ -12,7 +12,7 @@ spring:
   #redis
   redis:
     database: 0 # Redis数据库索引（默认为0）
-    host: 127.0.0.1 # Redis服务器地址
+    host: ${ip} # Redis服务器地址
     password: null # Redis服务器连接密码（默认为空）
     port: 6379 # Redis服务器连接端口
     timeout: 5000 #超时时间
@@ -23,7 +23,7 @@ spring:
       min-idle: 0 # 连接池中的最小空闲连接 默认 0
   #rabbitmq
   rabbitmq:
-    host: 127.0.0.1 # 主机地址
+    host: ${ip} # 主机地址
     port: 5672 # 端口号
     username: guest # 用户名
     password: guest # 密码
@@ -43,7 +43,7 @@ spring:
     # 数据库访问配置, 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/qizuo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://${ip}:3306/qizuo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: accp
     druid:
@@ -115,7 +115,7 @@ mybatis:
 
 #端口
 server:
-  port: 9901
+  port: 9910
   context-path: /userAdmin #斜杠后面最好一个,如果多个斜杠,zuul转发配置会比较麻烦
 
 #安全

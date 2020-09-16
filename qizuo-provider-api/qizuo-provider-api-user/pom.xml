@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.qizuo.provider.api.user</groupId>
 	<artifactId>qizuo-provider-api-user</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>qizuo-provider-api-user</name>
 	<description>服务提供者-用户验证api</description>
 

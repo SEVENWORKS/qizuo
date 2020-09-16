@@ -1,4 +1,5 @@
 #最新加载入口配置文件
+ip: 47.114.138.216
 
 #spring配置
 spring:
@@ -25,6 +26,8 @@ spring.cloud:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
+    prefer-ip-address: true #用ip注册，如果不配置这个，就是用主机名注册，这个可能会导致一个问题，就是如果你没有解析域名的话，这个会导致访问失败，比如获取springcloudconfig
+    ip-address: ${ip}
   client:
     serviceUrl:
-      defaultZone: http://qizuo:qizuo@localhost:9100/eureka/eureka #注册中心地址 前面是springserity的账号密码
+      defaultZone: http://qizuo:qizuo@${ip}:9100/eureka/eureka #注册中心地址 前面是springserity的账号密码

@@ -74,7 +74,7 @@
     <build>
         <finalName>${artifactId}</finalName>
         <plugins>
-            <!-- springboot maven打包插件 -->
+            <!-- springboot maven打包插件 这个只有打包的项目才需要引入，比如common的项目是不需要打包的，就不需要引入这个插件，因为它是被别人打包的 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
