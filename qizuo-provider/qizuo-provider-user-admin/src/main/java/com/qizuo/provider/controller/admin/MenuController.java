@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "UserAdmin-MenuController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MenuController {
   @Autowired private MenuService menuService;
-  // 示例
+  // rpc调用示例
   @Autowired private MenuFeignApi menuFeignApi;
   /**
    * @author: fangl
@@ -46,7 +46,7 @@ public class MenuController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   public BackResult iuDo(@RequestBody MenuPoJo menuPoJo) {
-    // 示例
+    // rpc调用示例
     // BackResult backResult = menuFeignApi.list(menuPoJo);
     if (StringUtils.isBlank(menuPoJo.getBaseId())) {
       // 插入
