@@ -1,5 +1,5 @@
 #最新加载入口配置文件
-ip: 47.114.138.216
+ip: 81.68.193.56
 
 #spring配置
 spring:
@@ -21,7 +21,7 @@ spring.cloud:
         #本地文件配置
 #       native:
 #        search-locations: E:/workspace/ide/qizuo/qizuo-config/src/main/resources/config #这个地方的斜杠只能是上斜杠，不能下斜杠，下斜杠解析不出来
-       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次，比如重启，或者访问configserver的yml，示例：       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次，比如重启，或者访问configserver的yml，示例：http://47.114.138.216:9200/config/common-dev.yml
+       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次，比如重启，或者访问configserver的yml，示例：       #线上配置，如果没有native，一定要用配置这个，要不然报错uri找不到；有可能文件没有缓存到，需要多请求几次！！！，比如重启，或者访问configserver的yml，示例：http://47.114.138.216:9200/config/common-dev.yml
        git:
         uri: https://github.com/SEVENWORKS/config.git #仓库地址
         username: a554657207@126.com #仓库用户名，公有仓库不必配置，所以一定要准确

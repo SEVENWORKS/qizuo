@@ -43,9 +43,9 @@ spring:
     # 数据库访问配置, 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${ip}:3306/qizuo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://${ip}:3306/qizuo_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
     username: root
-    password: accp
+    password: qizuo
     druid:
       # 连接池配置
       initial-size: 5
