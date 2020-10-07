@@ -1,14 +1,13 @@
 package com.qizuo.provider.config;
 
+import com.qizuo.provider.utils.JsonUtils;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
 
 /**
- * wechat mp properties
- *
- * @author Binary Wang(https://github.com/binarywang)
+ * wechat mp 配置项主要是否用redis缓存和基本配置
  */
 @Data
 @ConfigurationProperties(prefix = "wx.mp")

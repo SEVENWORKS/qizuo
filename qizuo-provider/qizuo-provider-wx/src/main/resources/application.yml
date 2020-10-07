@@ -126,7 +126,7 @@ server:
 #安全
 security:
   basic:
-    enabled: true #是否开启基本鉴权
+    enabled: false #是否开启基本鉴权
   user:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
@@ -143,17 +143,16 @@ wx:
   mp:
     useRedis: false
     redisConfig:
-      host: 127.0.0.1
+      host: ${ip}
       port: 6379
-    configs:
-      - appId: 1111 # 第一个公众号的appid
-        secret: 1111 # 公众号的appsecret
-        token: 111 # 接口配置里的Token值
-        aesKey: 111 # 接口配置里的EncodingAESKey值
-      - appId: 2222 # 第二个公众号的appid，以下同上
-        secret: 1111
-        token: 111
-        aesKey: 111
+    configs: #横杠代表yaml中集合类型
+      - appId: wx8d37841ba6e03714 # 第一个公众号的appid
+        secret: afe4f3fbb2c483dd49989e2d93504e15 # 公众号的appsecret
+        token: qizuo # 接口配置里的Token值
+        aesKey: 9QfrgBnLDC5JQVDMJos1IfsqopYOz2J8QocEoyr0IId # 接口配置里的EncodingAESKey值
+      - appId: wx27ab938b99409162 # 第二个测试公众号的appid，以下同上
+        secret: 967f30caab4eea39dd5206c33090df90
+        token: qizuo
 
 #是否打开SqlLogInterceptor
 qizuo.interceptor.sqllog: true

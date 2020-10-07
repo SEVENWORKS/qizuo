@@ -10,26 +10,28 @@ import java.util.Map;
 
 import static me.chanjar.weixin.common.api.WxConsts.EventType;
 
-/**
- * @author Binary Wang(https://github.com/binarywang)
- */
+/** 自定义菜单连接事件 就是自定义菜单的按钮事件触发后会到这里面来 */
 @Component
 public class MenuHandler extends AbstractHandler {
 
-    @Override
-    public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
-                                    Map<String, Object> context, WxMpService weixinService,
-                                    WxSessionManager sessionManager) {
-        String msg = String.format("type:%s, event:%s, key:%s",
-            wxMessage.getMsgType(), wxMessage.getEvent(),
-            wxMessage.getEventKey());
-        if (EventType.VIEW.equals(wxMessage.getEvent())) {
-            return null;
-        }
-
-        return WxMpXmlOutMessage.TEXT().content(msg)
-            .fromUser(wxMessage.getToUser()).toUser(wxMessage.getFromUser())
-            .build();
+  @Override
+  public WxMpXmlOutMessage handle(
+      WxMpXmlMessage wxMessage,
+      Map<String, Object> context,
+      WxMpService weixinService,
+      WxSessionManager sessionManager) {
+    String msg =
+        String.format(
+            "type:%s, event:%s, key:%s",
+            wxMessage.getMsgType(), wxMessage.getEvent(), wxMessage.getEventKey());
+    if (EventType.VIEW.equals(wxMessage.getEvent())) {
+      return null;
     }
 
+    return WxMpXmlOutMessage.TEXT()
+        .content(msg)
+        .fromUser(wxMessage.getToUser())
+        .toUser(wxMessage.getFromUser())
+        .build();
+  }
 }

@@ -7,17 +7,14 @@ package com.qizuo.provider.config;
 
 import com.qizuo.base.interceptor.TokenInterceptor;
 import com.qizuo.config.properties.otherProperties.SwaggerPropertiesGY;
-import com.qizuo.util.spring.SpringMVCJacksonConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /** Spring内部的一种配置方式采用JavaBean的形式来代替传统的xml配置文件形式进行针对框架个性化定制. */
 @Configuration
@@ -55,9 +52,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             "/**/*.html");
   }
 
-  // 视图内容解析器，准换成json
-  @Override
-  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-    SpringMVCJacksonConverter.buidMvcMessageConverter(converters);
-  }
+  // 视图内容解析器，准换成json的
+  //  @Override
+  //  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+  //    SpringMVCJacksonConverter.buidMvcMessageConverter(converters);
+  //  }
 }

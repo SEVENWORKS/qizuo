@@ -58,7 +58,7 @@ window.routes = [
         redirect: "/system_file",
         meta: {
             title: "文件",
-            icon: "tree-table",
+            icon: "documentation",
         },
         children: [
             {
@@ -72,6 +72,69 @@ window.routes = [
                 name: 'system_file_log',
                 component: () => import('./views/admins/system_file_log'),
                 meta: {title: "文件日志"}
+            }
+        ],
+    },
+    {
+        path: "/wx",
+        component: () => import('@comp/layout'),
+        redirect: "/wx_menu",
+        meta: {
+            title: "微信",
+            icon: "wechat",
+        },
+        children: [
+            {
+                path: '/wx_menu',
+                name: 'wx_menu',
+                component: () => import('./views/provider/wx/wx_menu'),
+                meta: {title: "微信菜单"}
+            },
+            {
+                path: '/wx_msg',
+                name: 'wx_msg',
+                component: () => import('./views/provider/wx/wx_msg'),
+                meta: {title: "微信信息"}
+            }
+        ],
+    },
+    {
+        path: "/spider",
+        component: () => import('@comp/layout'),
+        redirect: "/spider_run",
+        meta: {
+            title: "爬虫",
+            icon: "bug",
+        },
+        children: [
+            {
+                path: '/spider_run',
+                name: 'spider_run',
+                component: () => import('./views/provider/spider/spider_run'),
+                meta: {title: "爬虫"}
+            },
+            {
+                path: '/spider_data',
+                name: 'spider_data',
+                component: () => import('./views/provider/spider/spider_data'),
+                meta: {title: "爬虫数据"}
+            }
+        ],
+    },
+    {
+        path: "/qrcode",
+        component: () => import('@comp/layout'),
+        redirect: "/qrcode_make",
+        meta: {
+            title: "二维码",
+            icon: "search",
+        },
+        children: [
+            {
+                path: '/qrcode_make',
+                name: 'qrcode_make',
+                component: () => import('./views/provider/qrcode/qrcode_make'),
+                meta: {title: "二维码制作"}
             }
         ],
     }

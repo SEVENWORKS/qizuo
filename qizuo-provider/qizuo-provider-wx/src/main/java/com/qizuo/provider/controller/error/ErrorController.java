@@ -1,5 +1,7 @@
 package com.qizuo.provider.controller.error;
 
+import com.qizuo.base.model.result.BackResult;
+import com.qizuo.base.utils.BackResultUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,23 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * <pre>
  * 出错页面控制器
- * Created by Binary Wang on 2018/8/25.
  * </pre>
- *
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @Controller
 @RequestMapping("/error")
 public class ErrorController {
 
   @GetMapping(value = "/404")
-  public String error404() {
-    return "error";
+  public BackResult error404() {
+    return BackResultUtils.error("404");
   }
 
   @GetMapping(value = "/500")
-  public String error500() {
-    return "error";
+  public BackResult error500() {
+    return BackResultUtils.error("500");
   }
 
 }

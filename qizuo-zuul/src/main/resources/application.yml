@@ -79,15 +79,15 @@ zuul:
       strip-prefix: false
       path: /file/**
       serviceId: qizuo-provider-file
-    qizuo-provider-file: #二维码服务
+    qizuo-provider-qrcode: #二维码服务
         strip-prefix: false
         path: /qrcode/**
         serviceId: qizuo-provider-qrcode
-    qizuo-provider-file: #爬虫服务
+    qizuo-provider-spider: #爬虫服务
         strip-prefix: false
         path: /spider/**
         serviceId: qizuo-provider-spider
-    qizuo-provider-file: #微信相关服务
+    qizuo-provider-wx: #微信相关服务
         strip-prefix: false
         path: /wx/**
         serviceId: qizuo-provider-wx

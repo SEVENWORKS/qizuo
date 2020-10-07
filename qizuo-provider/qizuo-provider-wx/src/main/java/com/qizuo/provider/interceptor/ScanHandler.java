@@ -9,16 +9,18 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/**
- * @author Binary Wang(https://github.com/binarywang)
- */
+/** 调用微信扫码触发事件 */
 @Component
 public class ScanHandler extends AbstractHandler {
 
-    @Override
-    public WxMpXmlOutMessage handle(WxMpXmlMessage wxMpXmlMessage, Map<String, Object> map,
-                                    WxMpService wxMpService, WxSessionManager wxSessionManager) throws WxErrorException {
-        // 扫码事件处理
-        return null;
-    }
+  @Override
+  public WxMpXmlOutMessage handle(
+      WxMpXmlMessage wxMpXmlMessage,
+      Map<String, Object> map,
+      WxMpService wxMpService,
+      WxSessionManager wxSessionManager)
+      throws WxErrorException {
+    // 扫码事件处理
+    return null;
+  }
 }

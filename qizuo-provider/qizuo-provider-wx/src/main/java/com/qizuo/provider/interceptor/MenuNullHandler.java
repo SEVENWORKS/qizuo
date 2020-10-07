@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/** 进入客服处理 就是这个消息可以被其它微信号的人进行回复 */
+/** 空菜单点击连接事件 */
 @Component
-public class KfSessionHandler extends AbstractHandler {
+public class MenuNullHandler extends AbstractHandler {
 
   @Override
   public WxMpXmlOutMessage handle(
@@ -18,7 +18,6 @@ public class KfSessionHandler extends AbstractHandler {
       Map<String, Object> context,
       WxMpService wxMpService,
       WxSessionManager sessionManager) {
-    // TODO 对会话做处理
     return null;
   }
 }

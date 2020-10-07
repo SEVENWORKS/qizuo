@@ -76,7 +76,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
             swagger ? "/webjars/springfox-swagger-ui/**" : "/favicon.icon",
             swagger ? "/swagger-resources/**" : "/favicon.icon",
             swagger ? "/swagger-ui.html" : "/favicon.icon",
-            swagger ? "/v2/api-docs" : "/favicon.icon") // 未登陆用户允许的请求 /**/*.css  动态配置swagger
+            swagger ? "/v2/api-docs" : "/favicon.icon",
+            "/**/qizuo") // 未登陆用户允许的请求 /**/*.css  动态配置swagger
         .permitAll() // 未登陆用户允许的请求
         .anyRequest()
         .authenticated() // 其他请求全部需要登陆

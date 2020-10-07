@@ -66,6 +66,8 @@ public class GlobalConstant {
     // token相关路径
     public static final String TokenInterceptor_SECURITY_PATH = "/oauth/token";
     public static final String TokenInterceptor_SECURITY_PATH2 = "/oauth/authorize";
+    // 默认url
+    public static final String TokenInterceptor_SECURITY_PATH3 = "/qizuo";
   }
 
   /** http常用配置文件. */

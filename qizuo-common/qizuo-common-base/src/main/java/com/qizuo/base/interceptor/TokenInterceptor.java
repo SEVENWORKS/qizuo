@@ -80,20 +80,22 @@ public class TokenInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(
       HttpServletRequest request, HttpServletResponse response, Object handler) {
+    String uri = request.getRequestURI();
     // 请求头判断，如果不是从zuul触发的请求，都返回
     String zuulHeader = request.getHeader(tokenRules);
-    if (ObjectIsEmptyUtils.isEmpty(zuulHeader)) {
+    if (ObjectIsEmptyUtils.isEmpty(zuulHeader)
+        && !uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH3)) {
       log.error("请求错误，不是路由的请求");
       return false;
     }
 
     // 获取请求uri
-    String uri = request.getRequestURI();
     log.info("<== preHandle - 权限拦截器.  url={}", uri);
     // 当路径包含以上是不会走权限验证的,这地方error的直接放行给error处理
     if (uri.contains(GlobalConstant.Url$Path.TokenInterceptor_AUTH_PATH)
         || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH)
-        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH2)) {
+        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH2)
+        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH3)) {
       log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
       return true;
     }

@@ -6,7 +6,6 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.annotation.NotDisplaySql;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.page.PageDto;
