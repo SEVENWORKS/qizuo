@@ -14,9 +14,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 // eureka client启动
 @EnableDiscoveryClient
-public class QiZuoWXApplication extends SpringBootServletInitializer {
+public class QiZuoProviderWXApplication extends SpringBootServletInitializer {
   public static void main(String[] args) {
-    SpringApplication.run(QiZuoWXApplication.class, args);
+    SpringApplication.run(QiZuoProviderWXApplication.class, args);
   }
 
   // 允许跨域设置和一些header的允许

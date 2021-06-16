@@ -33,11 +33,11 @@ spring:
     #默认代理是接口代理，这个设置成实现类代理，可以解决事务因为service没有接口的问题
     proxy-target-class: true
   #devtools
-  devtools:
-    restart:
-      enabled: false  #设置开启热部署
-      additional-paths: qizuo-provider-file/src/main/java #重启目录
-      exclude: WEB-INF/**
+#  devtools:
+#    restart:
+#      enabled: false  #设置开启热部署
+#      additional-paths: qizuo-provider-file/src/main/java #重启目录
+#      exclude: WEB-INF/**
   #上传文件大小限制
   servlet:
     multipart:

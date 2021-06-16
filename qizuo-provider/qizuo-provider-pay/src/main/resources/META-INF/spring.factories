@@ -1,0 +1,4 @@
+#SPI的加载机制,它在META-INF/spring.factories文件中配置接口的实现类名称，然后在程序中读取这些配置文件并实例化
+# spring-boot项目包以外的bean（即在pom文件中添加依赖中的bean）注册到spring-boot项目的spring容器
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=

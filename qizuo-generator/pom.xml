@@ -20,19 +20,6 @@
     </modules>
 
     <properties>
-        <!-- MyBatis Generator -->
-        <!-- Java接口和实体类 -->
-        <!-- 基本路径 -->
-        <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-        <!-- mapper路径 -->
-        <targetMapperPackage>com.qizuo.provider.service.dao.mapper</targetMapperPackage>
-        <!-- mapper实体类路径 -->
-        <targetModelPackage>com.qizuo.provider.model.domain</targetModelPackage>
-        <!-- XML生成路径 -->
-        <!-- 基本路径 -->
-        <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
-        <!-- mapper路径 -->
-        <targetXMLPackage>mapper</targetXMLPackage>
     </properties>
 
     <dependencies>
@@ -92,7 +79,7 @@
                 <version>1.3.2</version>
                 <configuration>
                     <!--配置文件的位置(basedir:项目根目录)-->
-                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig-A.xml</configurationFile>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
                 </configuration>

@@ -2,7 +2,7 @@ qizuo: woaiwojia
 #token验证规则
 token_rules: qizuo
 #上传文件地址
-file_upload_path: ""
+file_upload_path: "qizuo"
 #是否开启swagger
 swagger: true
 #入口

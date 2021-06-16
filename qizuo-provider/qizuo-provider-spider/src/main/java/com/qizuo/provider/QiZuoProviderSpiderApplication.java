@@ -14,8 +14,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 // eureka client启动
 @EnableDiscoveryClient
-public class QiZuoQrcodeApplication extends SpringBootServletInitializer {
+public class QiZuoProviderSpiderApplication extends SpringBootServletInitializer {
   public static void main(String[] args) {
-    SpringApplication.run(QiZuoQrcodeApplication.class, args);
+    SpringApplication.run(QiZuoProviderSpiderApplication.class, args);
   }
 }

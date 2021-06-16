@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.base.init.configBeanInit;
+package com.qizuo.util.safe;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;

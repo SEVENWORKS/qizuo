@@ -61,8 +61,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
    */
   @Override
   public void configure(HttpSecurity http) throws Exception {
-    http.apply(openIdAuthenticationSecurityConfig) // 添加自定义配置，这个可以apply多个
-        .and()
+    http // 添加自定义配置，这个可以apply多个
         .headers()
         .frameOptions()
         .disable() // 请求头设置，这个地方是配置iframe权限，springSecurty使用X-Frame-Options防止网页被Frame，这是去掉

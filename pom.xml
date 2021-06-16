@@ -59,6 +59,7 @@
         <spring.version>4.3.11.RELEASE</spring.version>
         <fastjson.version>1.2.29</fastjson.version>
         <modelmapper.version>1.1.2</modelmapper.version>
+        <weixin-java-mp.version>3.9.0</weixin-java-mp.version>
     </properties>
 
     <!-- 依赖引入 -->
@@ -310,6 +311,7 @@
             </dependency>
             <!-- ***************工具结束*************** -->
             <!-- ***************json开始*************** -->
+            <!-- ***************各模块代码实际应用开始*************** -->
             <!-- jackson相关api -->
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
@@ -421,6 +423,93 @@
                 <version>4.6</version>
             </dependency>
             <!-- ***************分布式日志结束*************** -->
+            <!-- 热部署 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>springloaded</artifactId>
+                <version>1.2.5.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.didispace</groupId>
+                <artifactId>swagger-butler-core</artifactId>
+                <version>1.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java-mp.version}</version>
+            </dependency>
+            <!-- flying+freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.23</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xhtmlrenderer</groupId>
+                <artifactId>flying-saucer-pdf</artifactId>
+                <version>9.1.7</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.lowagie/itext-->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>2.1.7</version>
+            </dependency>
+            <!-- jxl -->
+            <dependency>
+                <groupId>net.sourceforge.jexcelapi</groupId>
+                <artifactId>jxl</artifactId>
+                <version>2.6.12</version>
+            </dependency>
+            <!-- poi 以下两种jar包分别对应两个版本的excel -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>3.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>3.8</version>
+            </dependency>
+            <!-- spring集成mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.4.2</version>
+            </dependency>
+            <!-- mybatis分页 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>5.0.3</version>
+            </dependency>
+            <!-- 集成druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.6</version>
+            </dependency>
+            <!-- 熔断 -->
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-core</artifactId>
+                <version>1.5.10</version>
+            </dependency>
+            <!-- 获取浏览器信息 -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>1.20</version>
+            </dependency>
+            <!-- 上传下载工具 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.3.1</version>
+            </dependency>
+            <!-- ***************各模块代码实际应用结束*************** -->
         </dependencies>
     </dependencyManagement>
 

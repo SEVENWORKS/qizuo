@@ -12,6 +12,6 @@ window.$global = {
     url_current_prefix:
       window.location.protocol + "//" + window.location.host + "/",
     /** url prefix */
-    url_prefix: "http://81.68.193.56:9300/zuul", //http://47.114.138.216:8091/port
+    url_prefix: "http://81.68.193.56:8091/port", //"http://81.68.193.56:9300/zuul", //http://47.114.138.216:8091/port
   },
 };

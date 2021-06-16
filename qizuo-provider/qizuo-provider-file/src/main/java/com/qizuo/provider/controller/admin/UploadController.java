@@ -44,7 +44,7 @@ public class UploadController extends BaseController {
   @Autowired private FileService fileService;
   @Autowired private FileLogService fileLogService;
 
-  @Value("file_upload_path")
+  @Value("${file_upload_path}")
   private String fileUploadPath;
   /**
    * @author: fangl
@@ -66,8 +66,8 @@ public class UploadController extends BaseController {
     try {
       file.transferTo(dest);
       // 插入
-      FileLogPoJo fileLogPoJo =new FileLogPoJo();
-      FilePoJo filePoJo =new FilePoJo();
+      FileLogPoJo fileLogPoJo = new FileLogPoJo();
+      FilePoJo filePoJo = new FilePoJo();
       fileService.insert(filePoJo);
       fileLogService.insert(fileLogPoJo);
       return BackResultUtils.ok();
@@ -98,8 +98,8 @@ public class UploadController extends BaseController {
       try {
         multipartFiles[i].transferTo(dest);
         // 插入
-        FileLogPoJo fileLogPoJo =new FileLogPoJo();
-        FilePoJo filePoJo =new FilePoJo();
+        FileLogPoJo fileLogPoJo = new FileLogPoJo();
+        FilePoJo filePoJo = new FilePoJo();
         fileService.insert(filePoJo);
         fileLogService.insert(fileLogPoJo);
       } catch (IOException e) {
@@ -181,9 +181,9 @@ public class UploadController extends BaseController {
   @ValidateRequestAnnotation
   @NotDisplaySql
   public BackResult fileDelete(String resourceName) {
-    FileLogPoJo fileLogPoJo =new FileLogPoJo();
+    FileLogPoJo fileLogPoJo = new FileLogPoJo();
     fileLogPoJo.setResourceName(resourceName);
-    FilePoJo filePoJo =new FilePoJo();
+    FilePoJo filePoJo = new FilePoJo();
     filePoJo.setResourceName(resourceName);
     // 查询文件
     filePoJo = fileService.query(filePoJo);

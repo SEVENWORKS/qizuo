@@ -10,20 +10,19 @@ import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /** Druid配置. */
-@Configuration
+// @Configuration
 public class DruidConfig {
   // 监控
   @Bean
   public ServletRegistrationBean druidServlet() { // 主要实现web监控的配置处理
     ServletRegistrationBean servletRegistrationBean =
         new ServletRegistrationBean(new StatViewServlet(), "/druid/*"); // 表示进行druid监控的配置处理操作
-    servletRegistrationBean.addInitParameter("allow", "127.0.0.1,129.168.1.11"); // 白名单
-    servletRegistrationBean.addInitParameter("deny", "129.168.1.12"); // 黑名单
-    servletRegistrationBean.addInitParameter("loginUsername", "root"); // 用户名
-    servletRegistrationBean.addInitParameter("loginPassword", "root"); // 密码
+    servletRegistrationBean.addInitParameter("allow", ""); // 白名单
+    servletRegistrationBean.addInitParameter("deny", ""); // 黑名单
+    servletRegistrationBean.addInitParameter("loginUsername", "qizuo"); // 用户名
+    servletRegistrationBean.addInitParameter("loginPassword", "qizuo"); // 密码
     servletRegistrationBean.addInitParameter("resetEnable", "false"); // 是否可以重置数据源
     return servletRegistrationBean;
   }

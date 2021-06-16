@@ -29,7 +29,6 @@
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
-            <version>1.5.10</version>
         </dependency>
         <!-- 熔断/限流/降级 -->
         <dependency>
@@ -53,8 +52,8 @@
         </dependency>
         <!-- spring aop 增强使用 -->
         <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-aop</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!-- spring aop -->
         <dependency>
@@ -70,7 +69,6 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.4.2</version>
         </dependency>
         <!-- 集成freemarker -->
         <dependency>
