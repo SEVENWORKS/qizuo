@@ -35,15 +35,8 @@
             负责：1，key类（见context的defaultModelType）；2，java类；3，查询类
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录 -->
-        <javaModelGenerator targetPackage="${targetModelPackage}"
-                            targetProject="${targetJavaProject}"/>
-
-        <!-- 生成SQL map的XML文件生成器，
-            注意，在Mybatis3之后，我们可以使用mapper.xml文件+Mapper接口（或者不用mapper接口），
-                或者只使用Mapper接口+Annotation，所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
-            targetPackage/targetProject:同javaModelGenerator -->
-        <sqlMapGenerator targetPackage="${targetXMLPackage}"
-                         targetProject="${targetResourcesProject}"/>
+        <javaModelGenerator targetPackage="${config.targetModelPackage}"
+                            targetProject="${config.targetJavaProject}"/>
 
         <!-- 对于mybatis来说，即生成Mapper接口，注意，如果没有配置该元素，那么默认不会生成Mapper接口
             targetPackage/targetProject:同javaModelGenerator
@@ -52,8 +45,15 @@
                 2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER -->
-        <javaClientGenerator targetPackage="${targetMapperPackage}"
-                             targetProject="${targetJavaProject}" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="${config.targetMapperPackage}"
+                             targetProject="${config.targetJavaProject}" type="XMLMAPPER"/>
+
+        <!-- 生成SQL map的XML文件生成器，
+        注意，在Mybatis3之后，我们可以使用mapper.xml文件+Mapper接口（或者不用mapper接口），
+        或者只使用Mapper接口+Annotation，所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
+        targetPackage/targetProject:同javaModelGenerator -->
+        <sqlMapGenerator targetPackage="${config.targetXMLPackage}"
+                         targetProject="${config.targetResourcesProject}"/>
 
 
         <!-- 选择一个table来生成相关文件，可以有一个或多个table，必须要有table元素
@@ -94,7 +94,7 @@
 
            注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
         -->
-        <table tableName="qizuo_user" domainObjectName="sys_user">
+        <table tableName="sys_user" domainObjectName="sysUser">
             <!-- generatedKey用于生成生成主键的方法，
                   如果设置了该元素，MBG会在生成的<insert>元素中生成一条正确的<selectKey>元素，该元素可选
                   column:主键的列名；
@@ -110,7 +110,7 @@
                       SYBASE    :相当于selectKey的SQL为：SELECT @@IDENTITY
                       JDBC      :相当于在生成的insert元素上添加useGeneratedKeys="true"和keyProperty属性
                -->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+            <generatedKey column="base_id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>
