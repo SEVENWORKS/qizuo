@@ -1,5 +1,5 @@
 #最新加载入口配置文件
-ip: 81.68.193.56
+ip: 47.101.136.113
 
 #spring配置
 spring:
@@ -45,7 +45,7 @@ eureka:
 #config配置加密
 encrypt:
   key-store:
-    location: classpath:/server.jks
-    password: paascloud-storepass
-    alias: paascloud-key-store
-    secret: paascloud-keypass
+    location: classpath:/qizuo.keystore
+    alias: qizuo
+    password: woaiwojia
+    secret: woaiwojia

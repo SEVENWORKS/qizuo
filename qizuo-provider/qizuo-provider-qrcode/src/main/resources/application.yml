@@ -120,7 +120,7 @@ mybatis:
 
 #端口
 server:
-  port: 9920
+  port: 9950
   context-path: /qrcode
 
 #安全

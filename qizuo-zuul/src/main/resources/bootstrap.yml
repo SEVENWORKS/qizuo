@@ -1,5 +1,5 @@
 #最新加载入口配置文件
-ip: 81.68.193.56
+ip: 47.101.136.113
 
 #spring配置
 spring:
@@ -27,7 +27,7 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port} #注册服务信息
     prefer-ip-address: true #用ip注册
-    ip-address: ${ip}
+    ip-address: ${ip} #127.0.0.1
   client:
     serviceUrl:
       defaultZone: http://qizuo:qizuo@${ip}:9100/eureka/eureka #注册中心地址 前面是springserity的账号密码

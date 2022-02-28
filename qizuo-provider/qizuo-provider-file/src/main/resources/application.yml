@@ -120,7 +120,7 @@ mybatis:
 
 #端口
 server:
-  port: 9500
+  port: 9920
   context-path: /file
 
 #安全

@@ -16,6 +16,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class QiZuoProviderPayApplication extends SpringBootServletInitializer {
   public static void main(String[] args) {
-    SpringApplication.run(QiZuoSpiderApplication.class, args);
+    SpringApplication.run(QiZuoProviderPayApplication.class, args);
   }
 }

@@ -1,6 +1,8 @@
 package com.qizuo.provider.service;
 
 import com.qizuo.base.model.service.BaseService;
+import com.qizuo.provider.model.po.PayPoJo;
+import com.qizuo.provider.service.dao.PayDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

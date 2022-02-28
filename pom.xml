@@ -14,7 +14,7 @@
         <version>1.5.11.RELEASE</version>
     </parent>
 
-    <!-- 子模块 -->
+    <!-- 子模块(打包时候如果找不到依赖子项目，要先父项目全局Install下，将所有包放到本地maven仓库中) -->
     <modules>
         <module>qizuo-common</module>
         <module>qizuo-eureka</module>
@@ -38,28 +38,55 @@
 
     <!-- 常用配置项(版本) -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <springfox.version>2.8.0</springfox.version>
+        <springfox-swagger.version>2.8.0</springfox-swagger.version>
         <commons-codec.version>1.10</commons-codec.version>
         <jjwt.version>0.7.0</jjwt.version>
-        <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
-        <mybatis-starter-version>1.2.0</mybatis-starter-version>
+        <jackson.version>1.9.13</jackson.version>
+        <mybatis-spring-boot-starter.version>1.2.0</mybatis-spring-boot-starter.version>
         <druid.version>1.0.29</druid.version>
         <mapper.version>3.4.0</mapper.version>
         <springframework.version>4.3.15.RELEASE</springframework.version>
-        <elastic-job.version>2.1.5</elastic-job.version>
         <curator.version>2.10.0</curator.version>
         <mysql.version>5.1.39</mysql.version>
         <guava.version>19.0</guava.version>
-        <boot.admin.version>1.5.7</boot.admin.version>
+        <spring-boot-admin.version>1.5.7</spring-boot-admin.version>
         <httpclientutil.version>1.0</httpclientutil.version>
-        <feign.form.spring.version>3.0.3</feign.form.spring.version>
+        <feign-form.version>3.0.3</feign-form.version>
         <spring.version>4.3.11.RELEASE</spring.version>
         <fastjson.version>1.2.29</fastjson.version>
         <modelmapper.version>1.1.2</modelmapper.version>
         <weixin-java-mp.version>3.9.0</weixin-java-mp.version>
+        <jaxb-api.version>2.3.0</jaxb-api.version>
+        <platform-bom.version>Brussels-SR8</platform-bom.version>
+        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
+        <hystrix-core.version>1.5.10</hystrix-core.version>
+        <swagger-butler-core.version>1.1.0</swagger-butler-core.version>
+        <UserAgentUtils.version>1.20</UserAgentUtils.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <springloaded.version>1.2.5.RELEASE</springloaded.version>
+        <lombok.version>1.16.14</lombok.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <joda-time.version>2.9.6</joda-time.version>
+        <hutool-all.version>3.0.7</hutool-all.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <poi.version>3.8</poi.version>
+        <jxl.version>2.6.12</jxl.version>
+        <itext.version>2.1.7</itext.version>
+        <flying-saucer-pdf.version>9.1.7</flying-saucer-pdf.version>
+        <freemarker.version>2.3.23</freemarker.version>
+        <jackson-databind.version>2.8.4</jackson-databind.version>
+        <logstash-logback-encoder.version>4.6</logstash-logback-encoder.version>
+        <com.dangdang.version>2.1.5</com.dangdang.version>
+        <liquibase-core.version>3.5.3</liquibase-core.version>
+        <druid-spring-boot-starter.version>1.1.6</druid-spring-boot-starter.version>
+        <mybatis.version>3.4.2</mybatis.version>
+        <pagehelper.version>5.0.3</pagehelper.version>
+        <mybatis-json-simple.version>1.1.1</mybatis-json-simple.version>
+        <mybatis-generator-core.version>1.3.2</mybatis-generator-core.version>
+        <pagehelper-spring-boot-starter.version>1.1.2</pagehelper-spring-boot-starter.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <webmagic-core.version>0.7.3</webmagic-core.version>
     </properties>
 
     <!-- 依赖引入 -->
@@ -74,21 +101,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
-        <!-- redis client父 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!-- 权限认证父 类似于spring-boot-starter-security -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-security</artifactId>
-        </dependency>
         <!-- 监控client父 -->
         <dependency>
             <groupId>de.codecentric</groupId>
@@ -98,6 +110,23 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- 权限认证父 类似于spring-boot-starter-security -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-security</artifactId>
+        </dependency>
+
+
+        <!-- 消息队列kafka client&springcloudbus父spring-cloud-starter-bus-kafka  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <!-- redis client父 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <!-- 日志收集 -->
         <dependency>
@@ -113,12 +142,18 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
+        <!-- jdk11必须要配置这个，jdk8就不需要了 -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api.version}</version>
+        </dependency>
     </dependencies>
 
-    <!-- 子项目版本控制 -->
+    <!-- 子项目版本控制(如果其他dependencies中有version，这个地方的version版本不会被下载)；如果下面包没有被实际应用，也不会下载 -->
     <dependencyManagement>
         <dependencies>
-            <!-- ***************spring原始集成jar包开始*************** -->
+            <!-- ***************spring开始*************** -->
             <!-- spring核心扩展 -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -131,64 +166,96 @@
                 <artifactId>spring-web</artifactId>
                 <version>${springframework.version}</version>
             </dependency>
-            <!-- spring集成mybatis -->
-            <dependency>
-                <groupId>com.googlecode.json-simple</groupId>
-                <artifactId>json-simple</artifactId>
-                <version>1.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>3.4.2</version>
-            </dependency>
             <!-- spring事务管理 -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-            <!-- ***************spring原始集成jar包结束*************** -->
-            <!-- ***************简化/优化项目开始*************** -->
+            <!-- spring-boot-admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-login</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>de.codecentric</groupId>-->
+            <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
+            <!--<version>1.5.7</version>-->
+            <!--</dependency>-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-turbine</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
             <!-- 以下两个配置可以解决不同版本springcloud jar包冲突 -->
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Brussels-SR8</version>
+                <version>${platform-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Edgware.SR3</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- swagger 接口文档 -->
+            <!-- 熔断 -->
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox.version}</version>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-core</artifactId>
+                <version>${hystrix-core.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <!--lombok 简化java代码 比如get和set方法可以省略 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.14</version>
-            </dependency>
-            <!-- ***************简化/优化项目结束*************** -->
+            <!-- ***************spring包结束*************** -->
+
+
             <!-- ***************dao层相关jar包开始*************** -->
             <!-- 集成mybatis -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-starter-version}</version>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- spring集成mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!-- mybatis分页 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!-- spring集成mybatis -->
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>${mybatis-json-simple.version}</version>
             </dependency>
             <!-- mybatis mapper -->
             <dependency>
@@ -199,19 +266,30 @@
             <dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
-                <version>1.1.1</version>
+                <version>${mybatis-json-simple.version}</version>
             </dependency>
-            <!-- mybatis 自动生成代码 -->
+            <!-- mybatis 自动生成代码1.3.5 -->
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
-                <version>1.3.5</version>
+                <version>${mybatis-generator-core.version}</version>
             </dependency>
             <!-- page 分页(tk.mybatis也可以) -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>1.1.2</version>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- mybatis generator -->
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${commons-dbcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
             </dependency>
             <!-- 集成mysql -->
             <dependency>
@@ -219,7 +297,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-            <!-- 集成druid -->
+            <!-- 集成druid1.1.0 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
@@ -228,16 +306,152 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.0</version>
+                <version>${druid-spring-boot-starter.version}</version>
             </dependency>
             <!-- 数据库迁移工具 -->
             <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
-                <version>3.5.3</version>
+                <version>${liquibase-core.version}</version>
             </dependency>
             <!-- ***************dao层相关jar包结束*************** -->
-            <!-- ***************工具开始*************** -->
+
+
+            <!-- ***************分布式定时开始*************** -->
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-lite-spring</artifactId>
+                <version>${com.dangdang.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>elastic-job-lite-core</artifactId>
+                <groupId>com.dangdang</groupId>
+                <version>${com.dangdang.version}</version>
+            </dependency>
+            <!-- curator和zookeeper有一定关系，这地方主要是为了搭配elastic定时 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- ***************分布式定时结束*************** -->
+            <!-- ***************分布式日志开始*************** -->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
+            </dependency>
+            <!-- ***************分布式日志结束*************** -->
+
+
+            <!-- *************** swagger *************** -->
+            <!-- 基本 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <!-- swagger和zuul相结合，统筹所有服务api -->
+            <dependency>
+                <groupId>com.didispace</groupId>
+                <artifactId>swagger-butler-core</artifactId>
+                <version>${swagger-butler-core.version}</version>
+            </dependency>
+            <!-- *************** swagger *************** -->
+
+
+            <!-- ***************json开始*************** -->
+            <!-- jackson相关api -->
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-jaxrs</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-smile</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-core-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- object to object utils(就是将两个相同的对象进行转换) -->
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+            <!-- ***************json结束*************** -->
+            <!-- ***************office开始*************** -->
+            <!-- flying+freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xhtmlrenderer</groupId>
+                <artifactId>flying-saucer-pdf</artifactId>
+                <version>${flying-saucer-pdf.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.lowagie/itext-->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>${itext.version}</version>
+            </dependency>
+            <!-- jxl -->
+            <dependency>
+                <groupId>net.sourceforge.jexcelapi</groupId>
+                <artifactId>jxl</artifactId>
+                <version>${jxl.version}</version>
+            </dependency>
+            <!-- poi 以下两种jar包分别对应两个版本的excel -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- ***************office结束*************** -->
+            <!-- ***************常用工具开始*************** -->
             <!-- google 常用java utils -->
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -248,31 +462,25 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.5</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
             <!-- hutool java utils -->
             <dependency>
                 <groupId>com.xiaoleilu</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>3.0.7</version>
-            </dependency>
-            <!-- 获取浏览器信息 -->
-            <dependency>
-                <groupId>eu.bitwalker</groupId>
-                <artifactId>UserAgentUtils</artifactId>
-                <version>1.20</version>
+                <version>${hutool-all.version}</version>
             </dependency>
             <!-- java 时间操作 -->
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.9.6</version>
+                <version>${joda-time.version}</version>
             </dependency>
             <!-- 随机验证码(为什么去掉这个，因为不让它加载进来就会少一个api 会启动报错during start) -->
             <dependency>
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
-                <version>2.3.2</version>
+                <version>${kaptcha.version}</version>
                 <!--<exclusions>-->
                 <!--<exclusion>-->
                 <!--<artifactId>javax.servlet-api</artifactId>-->
@@ -302,214 +510,55 @@
             <dependency>
                 <groupId>io.github.openfeign.form</groupId>
                 <artifactId>feign-form</artifactId>
-                <version>${feign.form.spring.version}</version>
+                <version>${feign-form.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.openfeign.form</groupId>
                 <artifactId>feign-form-spring</artifactId>
-                <version>${feign.form.spring.version}</version>
+                <version>${feign-form.version}</version>
             </dependency>
-            <!-- ***************工具结束*************** -->
-            <!-- ***************json开始*************** -->
-            <!-- ***************各模块代码实际应用开始*************** -->
-            <!-- jackson相关api -->
+            <!--lombok 简化java代码 比如get和set方法可以省略 -->
             <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-jaxrs</artifactId>
-                <version>${codehaus-jackson.version}</version>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-smile</artifactId>
-                <version>${codehaus-jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-core-asl</artifactId>
-                <version>${codehaus-jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-mapper-asl</artifactId>
-                <version>${codehaus-jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>2.8.4</version>
-            </dependency>
-            <!-- fastjson -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <!-- object to object utils(就是将两个相同的对象进行转换) -->
-            <dependency>
-                <groupId>org.modelmapper</groupId>
-                <artifactId>modelmapper</artifactId>
-                <version>${modelmapper.version}</version>
-            </dependency>
-            <!-- ***************json结束*************** -->
-            <!-- ***************spring-boot-admin开始*************** -->
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-login</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-starter-server</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-starter-client</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <!--<dependency>-->
-            <!--<groupId>de.codecentric</groupId>-->
-            <!--<artifactId>spring-boot-admin-server-ui-activiti</artifactId>-->
-            <!--<version>1.5.7</version>-->
-            <!--</dependency>-->
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-turbine</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <!-- ***************spring-boot-admin结束*************** -->
-            <!-- ***************分布式定时开始*************** -->
-            <dependency>
-                <groupId>com.dangdang</groupId>
-                <artifactId>elastic-job-lite-spring</artifactId>
-                <version>2.1.5</version>
-            </dependency>
-            <dependency>
-                <artifactId>elastic-job-lite-core</artifactId>
-                <groupId>com.dangdang</groupId>
-                <version>2.1.5</version>
-            </dependency>
-            <!-- curator和zookeeper有一定关系，这地方主要是为了搭配elastic定时 -->
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-client</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-recipes</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-framework</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <!-- ***************分布式定时结束*************** -->
-            <!-- ***************分布式日志开始*************** -->
-            <dependency>
-                <groupId>net.logstash.logback</groupId>
-                <artifactId>logstash-logback-encoder</artifactId>
-                <version>4.6</version>
-            </dependency>
-            <!-- ***************分布式日志结束*************** -->
             <!-- 热部署 -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>springloaded</artifactId>
-                <version>1.2.5.RELEASE</version>
+                <version>${springloaded.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.didispace</groupId>
-                <artifactId>swagger-butler-core</artifactId>
-                <version>1.1.0</version>
-            </dependency>
+            <!-- 微信包 -->
             <dependency>
                 <groupId>com.github.binarywang</groupId>
                 <artifactId>weixin-java-mp</artifactId>
                 <version>${weixin-java-mp.version}</version>
             </dependency>
-            <!-- flying+freemarker -->
-            <dependency>
-                <groupId>org.freemarker</groupId>
-                <artifactId>freemarker</artifactId>
-                <version>2.3.23</version>
-            </dependency>
-            <dependency>
-                <groupId>org.xhtmlrenderer</groupId>
-                <artifactId>flying-saucer-pdf</artifactId>
-                <version>9.1.7</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.lowagie/itext-->
-            <dependency>
-                <groupId>com.lowagie</groupId>
-                <artifactId>itext</artifactId>
-                <version>2.1.7</version>
-            </dependency>
-            <!-- jxl -->
-            <dependency>
-                <groupId>net.sourceforge.jexcelapi</groupId>
-                <artifactId>jxl</artifactId>
-                <version>2.6.12</version>
-            </dependency>
-            <!-- poi 以下两种jar包分别对应两个版本的excel -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.8</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi-ooxml</artifactId>
-                <version>3.8</version>
-            </dependency>
-            <!-- spring集成mybatis -->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>3.4.2</version>
-            </dependency>
-            <!-- mybatis分页 -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>5.0.3</version>
-            </dependency>
-            <!-- 集成druid -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.6</version>
-            </dependency>
-            <!-- 熔断 -->
-            <dependency>
-                <groupId>com.netflix.hystrix</groupId>
-                <artifactId>hystrix-core</artifactId>
-                <version>1.5.10</version>
-            </dependency>
             <!-- 获取浏览器信息 -->
             <dependency>
                 <groupId>eu.bitwalker</groupId>
                 <artifactId>UserAgentUtils</artifactId>
-                <version>1.20</version>
+                <version>${UserAgentUtils.version}</version>
             </dependency>
             <!-- 上传下载工具 -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
-                <version>1.3.1</version>
+                <version>${commons-fileupload.version}</version>
             </dependency>
-            <!-- ***************各模块代码实际应用结束*************** -->
+            <!-- 二维码 -->
+            <dependency>
+                <groupId>us.codecraft</groupId>
+                <artifactId>webmagic-core</artifactId>
+                <version>${webmagic-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>us.codecraft</groupId>
+                <artifactId>webmagic-extension</artifactId>
+                <version>${webmagic-core.version}</version>
+            </dependency>
+            <!-- ***************常用工具结束*************** -->
         </dependencies>
     </dependencyManagement>
 
@@ -529,4 +578,33 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- 为什么setting文件中配置这个地方还要再配置一个 -->
+    <!-- mavensetting文件中，mirrorOf和id一样，只能有一个，也就是central就算有多个，也只会走一个(最前面那个)；如果是*代表所有都从这走，所以这个一般放到最后 -->
+    <!-- 上述那种情况就会导致，无法设置多个，所以最好在pom.xml中配置，这样就不会覆盖了 -->
+    <!-- 最终请求的时候，会结合setting和pom中配置，如果id和mirrorOf一样，就会进行替换（即setting文件中只要配置一个阿里云center即可） -->
+    <!-- mvn help:effective-settings查看最终生效的配置 -->
+    <repositories>
+        <repository>
+            <id>huaweiyun</id>
+            <url>https://mirrors.huaweicloud.com/repository/maven</url>
+            <!-- 下载稳定版本，不要下载不稳定的 -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>tengxunyun</id>
+            <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
