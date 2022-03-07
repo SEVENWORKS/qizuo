@@ -150,7 +150,7 @@
         </dependency>
     </dependencies>
 
-    <!-- 子项目版本控制(如果其他dependencies中有version，这个地方的version版本不会被下载)；如果下面包没有被实际应用，也不会下载 -->
+    <!-- 子项目版本控制(如果其他dependencies中有version，这个地方的version版本不会被下载)；如果下面包没有被实际应用，也不会下载;其它情况只要子模块/父模块中dependencies引入了，并且没有version就会按照下面配置进行下载 -->
     <dependencyManagement>
         <dependencies>
             <!-- ***************spring开始*************** -->
@@ -401,6 +401,16 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-databind.version}</version>
+            </dependency>
+            <!-- 解决springboot中bom版本过低情况 -->
+            <!-- type默认为jar，也就是默认以jar方式导入，下面type=pom代表将pom文件import进来，然后引入其中的dependencyManagement所有依赖 -->
+            <!-- pom文件和java一样都是单继承，上述方式相当于解决多继承 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.10.0</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <!-- fastjson -->
             <dependency>
