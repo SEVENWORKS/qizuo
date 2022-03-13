@@ -62,6 +62,8 @@ import java.io.IOException;
  * Qualifier的意思是合格者，通过这个标示，表明了哪个实现类才是我们所需要的，添加@Qualifier注解，需要注意的是@Qualifier的参数名称为我们之前定义@Service注解的名称之一。
  * @autowired的时候如果有多个实现者的情况下可以用这个，类似于@resource的name
  */
+
+//总体流程：a.创建交换机exchange b.创建队列queue c.进行绑定 d.发送 e.接收
 @Configuration
 @Slf4j
 public class RabbitMqInit {
@@ -157,7 +159,7 @@ public class RabbitMqInit {
 		return rabbitTemplate;
 	}
 
-	//生产者
+	//生产者(注入依赖后按照下面方式即可发送，因为队列和交换机都已经创建了;发送成功后，可以去管理台看exchange和quene是否和预期一致)
 //	public void sendMessage(Employee employee){
 //		//CorrelationData作用是作为消息的附加消息传递，通常我们用它来保存消息的自定义id，用来表示当前消息唯一性。
 //		//这个在ConfirmCallback的时候会用到，用到确认问题
@@ -171,7 +173,16 @@ public class RabbitMqInit {
 //		rabbitTemplate.convertAndSend("directExchange", "direct", employee, correlationData);
 //	}
 
-	//消费者
+	//消费者(按照下面第一个简单使用即可；消费完成后去管理查看队列消息中是否没有了)
+//	@RabbitListener(queues = "directQueue")
+//	@Configuration
+//	public class Message {
+//		@RabbitHandler
+//		public void handleMessage(String employee){
+//			System.out.println(employee);
+//		}
+//	}
+	//复杂使用
 	//指定目标方法来作为消费消息的方法
 	//可以直接用queue简单使用
 //	@RabbitListener(

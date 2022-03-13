@@ -14,6 +14,7 @@ import java.util.Objects;
 
 /**
  * jedis分布式锁.
+ * TODO 分布式锁和线程锁(常用锁)
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RedisLock {
