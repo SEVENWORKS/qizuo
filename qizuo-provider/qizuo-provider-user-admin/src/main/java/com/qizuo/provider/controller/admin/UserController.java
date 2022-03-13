@@ -6,8 +6,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
@@ -45,7 +44,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "增加或者修改用户")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult iuDo(@RequestBody UserPoJo userPoJo) {
     if (StringUtils.isBlank(userPoJo.getBaseId())) {
       // 插入
@@ -66,7 +65,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "删除用户")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult delete(@RequestBody UserPoJo userPoJo) {
     userPoJo.setBaseStatus(GlobalConstant.STATUS_NO);
     userService.uStatus(userPoJo);

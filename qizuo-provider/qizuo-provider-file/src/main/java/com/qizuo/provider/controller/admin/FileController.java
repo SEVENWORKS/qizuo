@@ -6,16 +6,13 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
 import com.qizuo.base.utils.BackResultUtils;
-import com.qizuo.provider.model.po.FileLogPoJo;
 import com.qizuo.provider.model.po.FilePoJo;
-import com.qizuo.provider.service.FileLogService;
 import com.qizuo.provider.service.FileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -45,7 +42,7 @@ public class FileController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult list(@RequestBody FilePoJo filePoJo) {
     return BackResultUtils.ok(fileService.qList(filePoJo));
   }
@@ -59,7 +56,7 @@ public class FileController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件查询分页")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult page(@RequestBody PageDto<FilePoJo> poJos) {
     return BackResultUtils.ok(fileService.qPageQZ(poJos));
   }
@@ -73,7 +70,7 @@ public class FileController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "单个文件")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query(@RequestBody FilePoJo filePoJo) {
     return BackResultUtils.ok(fileService.query(filePoJo));
   }

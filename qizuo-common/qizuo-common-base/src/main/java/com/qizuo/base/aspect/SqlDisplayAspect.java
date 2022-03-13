@@ -14,11 +14,11 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * The class Not display sql aspect.
+ * The class Not display sql aspect.配合SqlLogInterceptor
  */
 @Aspect
 @Component
-public class NotDisplaySqlAspect {
+public class SqlDisplayAspect {
 	/**
 	 * 定义一个公共的pointcut
 	 *
@@ -26,7 +26,7 @@ public class NotDisplaySqlAspect {
 	 * 方法签名必须是 public及void型。可以将Pointcut中的方法看作是一个被Advice引用的助记符，因为表达式不直观，因此我们可以通过方法签名的方式为此表达式命名。
 	 * 因此Pointcut中的方法只需要方法签名，而不需要在方法体内编写实际代码。
 	 */
-	@Pointcut("@annotation(com.qizuo.base.annotation.NotDisplaySql)")
+	@Pointcut("@annotation(com.qizuo.base.annotation.SqlDisplay)")
 	private void myPointCut() {
 	}
 
@@ -35,8 +35,8 @@ public class NotDisplaySqlAspect {
 	 */
 	@Before(value = "myPointCut()")
 	public void before() {
-		//执行方法前存入一个变量，表明不需要打印sql
-		ThreadLocalMap.put(GlobalConstant.SqlConfig.NotDisplaySqlAspect_DISPLAY_SQL, Boolean.FALSE);
+		//执行方法前存入一个变量，表明不需要打印sql(TRUE打印)
+		ThreadLocalMap.put(GlobalConstant.SqlConfig.NotDisplaySqlAspect_DISPLAY_SQL, Boolean.TRUE);
 	}
 
 	/**

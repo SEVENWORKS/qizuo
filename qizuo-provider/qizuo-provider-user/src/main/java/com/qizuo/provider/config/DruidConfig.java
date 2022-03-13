@@ -10,9 +10,10 @@ import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-/** Druid配置. */
-// @Configuration
+/** Druid监控.http://localhost:9900/user/druid/index.html(注意这地方和yml中配置会覆盖，这地方为先) */
+@Configuration
 public class DruidConfig {
   // 监控
   @Bean

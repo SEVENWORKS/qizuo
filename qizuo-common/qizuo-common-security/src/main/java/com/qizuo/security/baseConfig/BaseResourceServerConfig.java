@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 import javax.servlet.http.HttpServletResponse;
 
-/** 普通资源服务器配置核心 就是没有spring security oath2的时候会用到这个 */
+/** (ResourceServerConfigurerAdapter是默认情况下spring security oauth 的http配置,注意和上面base的区别在于oauth)普通资源服务器配置核心 就是没有spring security oath2的时候会用到这个 */
 // @Configuration
 // @EnableResourceServer
 public class BaseResourceServerConfig extends ResourceServerConfigurerAdapter {

@@ -20,6 +20,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 //get和set方法
 @Data
 //把配置文件的信息读取并自动封装成实体类，prefix代表配置文件中前缀
+//举例：application.yml中配置qizuo.name:2，类中只要private String name即可注入
 @ConfigurationProperties(prefix = GlobalConstant.Url$Path.ROOT_PREFIX)
 public class QizuoConfigPropertiesGY {
 	private TaskPropertiesGY task = new TaskPropertiesGY();

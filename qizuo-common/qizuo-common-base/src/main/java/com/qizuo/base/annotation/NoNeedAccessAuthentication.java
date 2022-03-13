@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 
 /**
- * 有该注解的方法，表明不需要token鉴权，和token拦截器相互搭配.
+ * 有该注解的方法，表明不需要token鉴权，和token拦截器TokenInterceptor相互搭配.
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

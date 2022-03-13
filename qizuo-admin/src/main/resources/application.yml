@@ -27,10 +27,6 @@ spring:
       username: guest # 用户名
       password: guest # 密码
       connection-timeout: 60 # 连接超时时间
-  #是否开启favicon图标访问
-  mvc:
-    favicon:
-      enabled: false
 
 #springboot配置
 spring.boot:
@@ -51,14 +47,16 @@ security:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
 
-#swagger文档配置
-swagger:
-  title: qizuo-admin #swagger title
-  description: qizuo-admin #swagger 描述
-
 #是否打开SqlLogInterceptor
 qizuo.interceptor.sqllog: false
 #是否打开token
 qizuo.interceptor.token: false
 #token_rules
 token_rules: false
+
+#turbine监控配置
+#turbine:
+#  aggregator:
+#    clusterConfig: default  #turbine监控的服务名称，可以多个
+#  appConfig: qizuo-config,qizuo-zuul  #turbine监控的服务，可以有多个
+#  clusterNameExpression: "'default'"

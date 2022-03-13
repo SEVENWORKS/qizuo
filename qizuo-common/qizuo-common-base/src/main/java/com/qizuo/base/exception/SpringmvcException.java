@@ -9,6 +9,7 @@ import com.qizuo.base.model.result.BackResult;
 import com.qizuo.config.properties.baseProperties.LogTypeEnum;
 import com.qizuo.util.http.HttpBaseUtil;
 import com.qizuo.util.http.MobileUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,9 +22,11 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /** @Author: fangl @Description: 异常触发拦截器(属于springmvc) @Date: 10:12 2018/11/19 */
-// 所有@controller绑定的，都会在此对此拦截处理，相当于controller拦截器,包括@InitBinder/@ModelAttribute/@ExceptionHandler
+// 所有@controller绑定的，都会在此对此拦截处理，相当于controller拦截器,包括@InitBinder/@ModelAttribute/@ExceptionHandler(注意也可以指定包)
 // 和@RestControllerAdvice区别相当于，@controller和@restController
+// 区别：对于一些ControllerAdvice没有处理的异常，最后都会到ErrorController中来,即controller中异常都会先到当前这个Exception处理中来
 @ControllerAdvice
+@Slf4j
 public class SpringmvcException {
   /**
    * @Author: fangl @Description: 默认异常处理方法(这个地方的处理主要是web端的拦截, 移动端请求请自行catch) @Date: 0:04 2018/11/25
@@ -36,7 +39,7 @@ public class SpringmvcException {
   public BackResult defaultHandler(
       HttpServletRequest request, HttpServletResponse response, final Exception e) {
     // 是否打印异常
-    e.printStackTrace();
+    log.error("拦截器异常={}", e.getMessage(), e);
 
     // 是否保存异常
     LogDto logDto = new LogDto();
@@ -83,7 +86,6 @@ public class SpringmvcException {
       return "";
     }
     StringWriter stringWriter = new StringWriter();
-    e.printStackTrace(new PrintWriter(stringWriter));
     return stringWriter.toString();
   }
 }

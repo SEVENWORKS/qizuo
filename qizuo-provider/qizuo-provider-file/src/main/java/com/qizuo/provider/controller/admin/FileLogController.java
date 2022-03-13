@@ -6,17 +6,14 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
 import com.qizuo.base.utils.BackResultUtils;
 import com.qizuo.provider.model.po.FileLogPoJo;
-import com.qizuo.provider.model.po.FilePoJo;
 import com.qizuo.provider.service.FileLogService;
-import com.qizuo.provider.service.FileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +41,7 @@ public class FileLogController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult list(@RequestBody FileLogPoJo fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.qList(fileLogPoJo));
   }
@@ -58,7 +55,7 @@ public class FileLogController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件查询分页")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult page(@RequestBody PageDto<FileLogPoJo> fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.qPageQZ(fileLogPoJo));
   }
@@ -72,7 +69,7 @@ public class FileLogController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件日志查询")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query(@RequestBody FileLogPoJo fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.query(fileLogPoJo));
   }

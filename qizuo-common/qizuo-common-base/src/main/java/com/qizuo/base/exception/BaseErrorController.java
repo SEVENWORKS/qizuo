@@ -18,8 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
- * @Author: fangl @Description:
- * 实际上当springboot项目出现异常时，默认会跳转到/error，而/error则是由BasicErrorController进行处理，这里重写errorcode，统一采用resultcode处理,基本上针对404和500错误 @Date:
+ * @Author: fangl
+ * @Description: 实际上当springboot项目出现异常时，默认会跳转到/error，而/error则是由BasicErrorController进行处理，这里重写errorcode，统一采用resultcode处理,基本上针对404和500错误 @Date:
+ * 这个controller不能公共启动，单独写在每个项目中，要不然启动报错
  * 10:12 2018/11/19
  */
 @RestController

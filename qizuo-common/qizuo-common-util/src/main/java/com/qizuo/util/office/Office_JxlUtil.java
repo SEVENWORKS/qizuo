@@ -28,6 +28,7 @@
 // * @description: office工具类:jxl主要针对excel这一块
 // * @date: 9:10 2019/2/12
 // */
+//@Slf4j
 //public class Office_JxlUtil {
 //    /**
 //     * **************************Workbook*********************************
@@ -55,7 +56,7 @@
 //            //返回数据
 //            return imp_readFinal(sheet);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //            return new BackResultPoJo(BackResultPoJo.ERROR, "异常");
 //        } finally {
 //            if (workbook != null) {
@@ -105,9 +106,9 @@
 //            Workbook.getWorkbook(new FileInputStream(""));
 //            Workbook.getWorkbook(new FileInputStream(""), new WorkbookSettings());
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (BiffException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return null;
 //    }
@@ -143,9 +144,9 @@
 //            workbook.write();
 //            workbook.close();
 //        } catch (WriteException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -172,7 +173,7 @@
 //            //设置第二行行高
 //            sheet.setRowView(1, 1000);
 //        } catch (WriteException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -193,7 +194,7 @@
 //                }
 //            }
 //        } catch (WriteException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -235,7 +236,7 @@
 //            mapStyle.put("body", body);
 //            mapStyle.put("title", title);
 //        } catch (WriteException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return mapStyle;
 //    }
@@ -256,9 +257,9 @@
 //            Workbook.createWorkbook(new FileOutputStream(""), Workbook.getWorkbook(new File("")));
 //            Workbook.createWorkbook(new FileOutputStream(""), Workbook.getWorkbook(new File("")), new WorkbookSettings());
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (BiffException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return null;
 //    }

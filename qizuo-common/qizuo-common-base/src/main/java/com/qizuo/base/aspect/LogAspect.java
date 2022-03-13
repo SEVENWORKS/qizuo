@@ -122,13 +122,13 @@ public class LogAspect {
 			operationLogDto.setOs(os);
 			operationLogDto.setBrowser(browser);
 			operationLogDto.setRequestUrl(requestURI);
-			operationLogDto.setGroupId(loginUser.getGroupId());
-			operationLogDto.setGroupName(loginUser.getGroupName());
+//			operationLogDto.setGroupId(loginUser.getGroupId());
+//			operationLogDto.setGroupName(loginUser.getGroupName());
 			operationLogDto.setCreatedTime(new Date());
-			operationLogDto.setCreator(loginUser.getUserName());
-			operationLogDto.setCreatorId(loginUser.getBaseId());
-			operationLogDto.setLastOperator(loginUser.getUserName());
-			operationLogDto.setLastOperatorId(loginUser.getBaseId());
+//			operationLogDto.setCreator(loginUser.getUserName());
+//			operationLogDto.setCreatorId(loginUser.getBaseId());
+//			operationLogDto.setLastOperator(loginUser.getUserName());
+//			operationLogDto.setLastOperatorId(loginUser.getBaseId());
 			operationLogDto.setLogType(relog.logType().getType());
 			operationLogDto.setLogName(relog.logType().getName());
 

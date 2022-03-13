@@ -7,7 +7,7 @@ package com.qizuo.provider.controller.admin;
 
 import com.google.code.kaptcha.Producer;
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
@@ -54,7 +54,7 @@ public class ValidateCodeController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "图片验证码获取")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult imgCodeGet(HttpServletRequest request, HttpServletResponse response) {
     response.setDateHeader("Expires", 0);
     response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
@@ -94,7 +94,7 @@ public class ValidateCodeController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "图片验证码验证")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult imgCheck(String imgCode) {
     // 获取缓存了验证码
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);

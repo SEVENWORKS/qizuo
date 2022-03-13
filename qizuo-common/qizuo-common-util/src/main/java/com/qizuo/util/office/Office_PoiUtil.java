@@ -36,6 +36,7 @@
 // * HSMF提供读Microsoft Outlook格式档案的功能。
 // * @date: 9:10 2019/2/12
 // */
+//@Slf4j
 //public class Office_PoiUtil {
 //    /**
 //     * ***********************************************************
@@ -72,7 +73,7 @@
 //            //最终执行方法
 //            return imp_readFinal(sheet, rowBegin, colBegin);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //            return new BackResultPoJo(BackResultPoJo.ERROR, "异常");
 //        }
 //    }
@@ -98,7 +99,7 @@
 //                workbook = new XSSFWorkbook(inputStream);
 //            }
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return workbook;
 //    }
@@ -207,7 +208,7 @@
 //            //写入和关闭
 //            workbook.write(out);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //

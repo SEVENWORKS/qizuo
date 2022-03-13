@@ -89,8 +89,8 @@ spring:
         # 是否能够重置数据
         reset-enable: false
         # 需要账号密码才能访问控制台
-        login-username: druid
-        login-password: druid123
+        login-username: qizuo
+        login-password: qizuo
         # IP白名单
         # allow: 127.0.0.1
         #　IP黑名单（共同存在时，deny优先于allow）
@@ -99,10 +99,6 @@ spring:
       filter:
         stat:
           log-slow-sql: true
-  #是否开启favicon图标访问
-  mvc:
-    favicon:
-      enabled: false
 
 #springboot配置
 spring.boot:
@@ -133,11 +129,6 @@ security:
 
 # 保证调用 /refresh的时候不需要验证 暴露/refresh /bus-refresh接口,注意有风险，会暴露其它接口
 management.security.enabled: false
-
-#swagger文档配置
-swagger:
-  title: qizuo-provider-wx #swagger title
-  description: qizuo-provider-wx #swagger 描述
 
 wx:
   mp:

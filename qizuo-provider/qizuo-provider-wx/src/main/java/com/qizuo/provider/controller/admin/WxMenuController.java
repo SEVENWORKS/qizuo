@@ -1,7 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;
@@ -39,7 +39,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "POST", value = "自定义菜单创建接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult menuCreate(@PathVariable String appid, @RequestBody WxMenu menu) {
     String str = null;
     try {
@@ -66,7 +66,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "POST", value = "自定义菜单创建接口json")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult menuCreate(@PathVariable String appid, @RequestBody String json) {
     String str = null;
     try {
@@ -89,7 +89,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "GET", value = "自定义菜单删除接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult menuDelete(@PathVariable String appid) {
     try {
       this.wxService.switchoverTo(appid).getMenuService().menuDelete();
@@ -113,7 +113,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "GET", value = "删除个性化菜单接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult menuDelete(@PathVariable String appid, @PathVariable String menuId) {
     try {
       this.wxService.switchoverTo(appid).getMenuService().menuDelete(menuId);
@@ -135,7 +135,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "GET", value = "自定义菜单查询接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult menuGet(@PathVariable String appid) {
     WxMpMenu wxMpMenu = null;
     try {
@@ -167,7 +167,7 @@ public class WxMenuController {
   @ApiOperation(httpMethod = "GET", value = "获取自定义菜单配置接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult getSelfMenuInfo(@PathVariable String appid) {
     WxMpGetSelfMenuInfoResult wxMpGetSelfMenuInfoResult = null;
     try {

@@ -1,8 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
@@ -39,7 +38,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "获取相应菜单列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   // @RequestBody是前台传递json数据才需要的，即使用之后会被视图解析器按照json方式解析，即我们自定义实现的jackson转的那个视图
   // @RequestBody流只能被读取一次，即一个方法上只能用一次
   public BackResult list(@RequestBody MenuPoJo menuPoJo) {
@@ -55,7 +54,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "根据用户获取菜单递归列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult qEachList(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qEachList(menuPoJo));
   }
@@ -69,7 +68,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "菜单分页列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult page(@RequestBody PageDto<MenuPoJo> pagePoJo) {
     return BackResultUtils.ok(menuService.qPageQZ(pagePoJo));
   }
@@ -83,7 +82,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "查找单个")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.query(menuPoJo));
   }

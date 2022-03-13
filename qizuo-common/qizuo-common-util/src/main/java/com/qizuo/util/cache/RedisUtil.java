@@ -6,6 +6,7 @@ package com.qizuo.util.cache;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -19,6 +20,7 @@ import java.util.concurrent.TimeUnit;
  * System.out.println(RedisUtil.get("1",redisTemplate)); return "33"; }
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Slf4j
 public class RedisUtil {
   @Autowired private static RedisTemplate redisTemplate;
   /**
@@ -38,7 +40,7 @@ public class RedisUtil {
       redisTemplate.opsForValue().set(key, value);
       result = true;
     } catch (Exception e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return result;
   }
@@ -50,7 +52,7 @@ public class RedisUtil {
       redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
       result = true;
     } catch (Exception e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return result;
   }
@@ -62,7 +64,7 @@ public class RedisUtil {
       redisTemplate.opsForValue().getAndSet(key, value);
       result = true;
     } catch (Exception e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return result;
   }
@@ -74,7 +76,7 @@ public class RedisUtil {
       redisTemplate.delete(key);
       result = true;
     } catch (Exception e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return result;
   }

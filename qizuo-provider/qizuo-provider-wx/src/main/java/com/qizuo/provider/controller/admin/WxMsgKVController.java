@@ -1,7 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.base.KvDto;
 import com.qizuo.base.model.result.BackResult;
@@ -37,7 +37,7 @@ public class WxMsgKVController {
   @ApiOperation(httpMethod = "POST", value = "消息回复列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult list() {
     return BackResultUtils.ok(
         redisTemplate.opsForList().range(key, 0, redisTemplate.opsForList().size(key) - 1));
@@ -47,7 +47,7 @@ public class WxMsgKVController {
   @ApiOperation(httpMethod = "POST", value = "消息回复删除")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult delete() {
     redisTemplate.delete(key);
     return BackResultUtils.ok();
@@ -57,7 +57,7 @@ public class WxMsgKVController {
   @ApiOperation(httpMethod = "POST", value = "消息回复增加")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult iuDo(@RequestBody KvDto<String, String> kvDto) throws IOException {
     Map<String, String> map = new HashMap<>();
     map.put(kvDto.getKey(), kvDto.getValue());

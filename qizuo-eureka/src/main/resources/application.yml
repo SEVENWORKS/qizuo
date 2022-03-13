@@ -27,10 +27,6 @@ spring:
       username: guest # 用户名
       password: guest # 密码
       connection-timeout: 60 # 连接超时时间
-  #是否开启favicon图标访问
-  mvc:
-    favicon:
-      enabled: false
 
 #springboot配置
 spring.boot:
@@ -50,11 +46,6 @@ security:
   user:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
-
-#swagger文档配置
-swagger:
-  title: qizuo-eureka #swagger title
-  description: qizuo-eureka #swagger 描述
 
 #是否打开SqlLogInterceptor
 qizuo.interceptor.sqllog: false

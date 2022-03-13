@@ -23,6 +23,7 @@ import java.io.IOException;
  * <p>Spring提供了ClientHttpRequestInterceptor接口，可以对请求进行拦截，并在其被发送至服务端之前修改请求或是增强相应的信息
  *
  * <p>这个和authHeaderfilter做的事情其实一样的,只不过它是针对的spring RestTemplate做的请求头设置
+ * TODO 暂时没用
  */
 @Component
 @Slf4j

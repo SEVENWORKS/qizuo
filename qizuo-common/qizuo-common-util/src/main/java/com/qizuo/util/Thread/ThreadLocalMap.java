@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 /**
- * ThreadLocal工具.
+ * ThreadLocal工具.(ThreadLocal相当于单个线程里面Map存储，可以用于存取临时变量)
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ThreadLocalMap {

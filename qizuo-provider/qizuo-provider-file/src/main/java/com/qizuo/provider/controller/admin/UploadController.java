@@ -6,7 +6,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.model.service.BaseController;
@@ -55,7 +55,7 @@ public class UploadController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "单文件上传")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult singleUpload(MultipartFile file) {
     if (file.isEmpty()) {
       return BackResultUtils.error("上传失败，请选择文件");
@@ -85,7 +85,7 @@ public class UploadController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "多文件上传")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult multiUpload(@RequestParam(value = "files") MultipartFile[] multipartFiles) {
     if (ObjectIsEmptyUtils.isEmpty(multipartFiles)) {
       return BackResultUtils.error("上传失败，请选择文件");
@@ -117,7 +117,7 @@ public class UploadController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件下载")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult downFile(HttpServletResponse response, Model model, String resourceName) {
     FilePoJo filePoJo = new FilePoJo();
     filePoJo.setResourceName(resourceName);
@@ -179,7 +179,7 @@ public class UploadController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "文件删除")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult fileDelete(String resourceName) {
     FileLogPoJo fileLogPoJo = new FileLogPoJo();
     fileLogPoJo.setResourceName(resourceName);

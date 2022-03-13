@@ -4,6 +4,7 @@
  */
 package com.qizuo.util.http;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -32,6 +33,7 @@ import java.util.*;
  * @description: http工具
  * @date: 8:57 2019/1/14
  */
+@Slf4j
 public class HttpBaseUtil {
   /**
    * *****************************************HttpServletRequest操作*****************************************
@@ -259,7 +261,7 @@ public class HttpBaseUtil {
       respContent = EntityUtils.toString(entity, "UTF-8");
 
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return respContent;
   }
@@ -624,7 +626,7 @@ public class HttpBaseUtil {
         // System.out.println(respContent);
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     }
     return respContent;
   }

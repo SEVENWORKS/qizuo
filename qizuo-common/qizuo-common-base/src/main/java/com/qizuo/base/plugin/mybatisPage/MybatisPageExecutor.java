@@ -1,6 +1,7 @@
 package com.qizuo.base.plugin.mybatisPage;
 
 import com.qizuo.base.model.page.PageDto;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.cursor.Cursor;
 import org.apache.ibatis.executor.BatchResult;
@@ -32,6 +33,7 @@ import java.util.regex.Pattern;
  * @Description: 分页sql执行器：重写的executor专为分页所写：包含分页语句拦截和count编写
  * @Date: 21:45 2018/11/19
  */
+@Slf4j
 public class MybatisPageExecutor implements Executor {
     /**
      * 执行器
@@ -108,14 +110,14 @@ public class MybatisPageExecutor implements Executor {
                 return rs.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("异常={}", e.getMessage(), e);
         } finally {
             try {
                 if (connection != null && !connection.isClosed()) {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.error("异常={}", e.getMessage(), e);
             }
         }
         return 0;

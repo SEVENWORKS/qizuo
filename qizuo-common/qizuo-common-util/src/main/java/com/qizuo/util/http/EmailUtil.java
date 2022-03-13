@@ -23,6 +23,7 @@
 // * @description: 邮件类
 // * @date: 9:10 2019/2/12
 // */
+//@Slf4j
 //public class EmailUtil {
 //    /**
 //     * 邮箱后缀
@@ -168,7 +169,7 @@
 //                }
 //            }
 //        } catch (AddressException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return addresses;
 //    }
@@ -194,9 +195,9 @@
 //                }
 //            }
 //        } catch (MessagingException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return mimeBodyParts;
 //    }
@@ -222,7 +223,7 @@
 //                }
 //            }
 //        } catch (MessagingException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return mimeBodyParts;
 //    }

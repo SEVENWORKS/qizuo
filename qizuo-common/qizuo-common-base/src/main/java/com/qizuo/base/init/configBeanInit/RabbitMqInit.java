@@ -199,7 +199,7 @@ public class RabbitMqInit {
 //			//第二个参数，是否批量接收
 //			channel.basicAck(tag, false);
 //		} catch (IOException e) {
-//			e.printStackTrace();
+//			log.error("异常={}", e.getMessage(), e);
 //		}
 //	}
 }

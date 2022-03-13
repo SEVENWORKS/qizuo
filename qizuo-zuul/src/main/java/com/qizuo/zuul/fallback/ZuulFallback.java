@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-/** 出现异常的时候，zuul进行fallback */
+/** 出现异常的时候，zuul进行fallback,比如链接超时就会进去这里面 */
 // 普通pojo放到spring容器中
 // @Component
 // 不用每次单独定义一个Log，利用这个注解加上lombok插件，可以直接在下面类中使用log进行日志打印

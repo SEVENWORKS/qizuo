@@ -1,8 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;
@@ -41,7 +40,7 @@ public class RoleController {
   @ApiOperation(httpMethod = "POST", value = "角色新增或者修改")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult iuDo(@RequestBody RolePoJo rolePoJo) {
     if (StringUtils.isBlank(rolePoJo.getBaseId())) {
       // 插入
@@ -62,7 +61,7 @@ public class RoleController {
   @ApiOperation(httpMethod = "POST", value = "角色删除")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult delete(@RequestBody RolePoJo rolePoJo) {
     roleService.delete(rolePoJo);
     return BackResultUtils.ok();

@@ -31,7 +31,6 @@
 
     <!-- 常用配置项(版本) -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <!-- 依赖引入 -->

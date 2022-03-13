@@ -18,7 +18,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 
 /** rpc调用接口. */
-// @RefreshScope注解能帮助我们做局部的参数刷新
 @RestController
 @Api(value = "API-RoleFeignClient", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class RoleFeignClient extends BaseController implements RoleFeignApi {

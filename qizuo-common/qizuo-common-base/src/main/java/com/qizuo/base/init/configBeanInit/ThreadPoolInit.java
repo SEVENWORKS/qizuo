@@ -27,9 +27,9 @@ import java.util.concurrent.Executor;
  */
 
 /**
- * @EnableScheduling开启后，可以用下面方式进行定时
- *
- * @Component
+   定时任务
+    @Component
+    @EnableScheduling开启后，可以用下面方式进行定时
 	public class Jobs {
 	//表示方法执行完成后5秒
 	 @Scheduled(fixedDelay = 5000)
@@ -50,40 +50,50 @@ import java.util.concurrent.Executor;
 	 System.out.println(new Date() + " ...>>cron....");
 	 }
 	 }
- */
 
-/**
- * 线程池使用，线程方式调用异步任务
- * @Autowired
-	Executor taskExecutor;
 
+     下方线程池使用方式1，线程方式调用异步任务(run和start不同，run是不会异步线程的)
+	 public class MyRunnable implements Runnable{
+		 @Override
+		 public void run() {
+		 }
+	 }
+	 new Thread(new MyRunnable()).start();
+	 public class MyRunnable2 extends Thread{
+	    @Override
+	    public void run(){
+	     }
+	 }
+	 new MyRunnable2().start();
+
+     @Autowired
+	 Executor taskExecutor;
 	 @ResponseBody
 	 @RequestMapping("hehe")
 	 public String base() {
 	 Runnable ra=new MyRunnable();
-	 ra.run();
+	 //ra.run();
 	 //线程池使用方式
 	 taskExecutor.execute(ra);
 	 return "333";
 	 }
- */
 
-/**
- * @EnableAsync开启后  搭配@Async可以直接异步调用线程任务
- @Component
- public class TreadTasks {
- @Async
- public void startMyTreadTask() {
- System.out.println("this is my async task");
- }
- }
+     下方线程池使用方式2
+	 @EnableAsync开启后  搭配@Async可以直接异步调用线程任务
+	 @Component
+	 public class TreadTasks {
+	 @Async(taskExecutor)
+		 public void startMyTreadTask() {
+			System.out.println("this is my async task");
+		 }
+	 }
  */
 @Configuration
 //支持异步多线程(多线程)，即可以用上面方式开启
 @EnableAsync
 //开启定时，开启定时后，可以用上面方式使用线程
 @EnableScheduling
-public class TaskInit implements AsyncConfigurer {
+public class ThreadPoolInit implements AsyncConfigurer {
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	@Resource
 	private QizuoConfigPropertiesGY qizuoConfigProperties;
@@ -101,7 +111,7 @@ public class TaskInit implements AsyncConfigurer {
 		executor.setKeepAliveSeconds(qizuoConfigProperties.getTask().getKeepAliveSeconds());
 		executor.setThreadNamePrefix(qizuoConfigProperties.getTask().getThreadNamePrefix());
 		//用自定义的异步线程池，或者不用也行
-		return new TaskInitExceptionHandlingAsyncTaskExecutor(executor);
+		return new ThreadPoolExceptionHandlingAsyncTaskExecutor(executor);
 	}
 
 	//在使用void返回类型的异步方法执行期间抛出异常时要使用的实例

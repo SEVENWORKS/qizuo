@@ -3,6 +3,7 @@ package com.qizuo.provider.interceptor;
 import com.qizuo.provider.config.builder.TextBuilder;
 import com.qizuo.provider.controller.admin.WxMsgKVController;
 import com.qizuo.util.parse.JacksonUtil;
+import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
@@ -21,6 +22,7 @@ import static me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
 
 /** */
 @Component
+@Slf4j
 public class MsgHandler extends AbstractHandler {
   // redis操作对象
   @Resource private RedisTemplate<String, Object> redisTemplate;
@@ -47,7 +49,7 @@ public class MsgHandler extends AbstractHandler {
     //            .build();
     //      }
     //    } catch (WxErrorException e) {
-    //      e.printStackTrace();
+    //      log.error("异常={}", e.getMessage(), e);
     //    }
 
     // TODO 组装回复消息

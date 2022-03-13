@@ -1,7 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -43,7 +43,7 @@ public class WxPortalController {
   @ApiOperation(httpMethod = "GET", value = "这个方法主要是为了开启微信入口配置的验证的接口")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public String authGet(
       @PathVariable String appid,
       @RequestParam(name = "signature", required = false) String signature,
@@ -85,7 +85,7 @@ public class WxPortalController {
   @ApiOperation(httpMethod = "POST", value = "接口微信的消息")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public String post(
       @PathVariable String appid,
       @RequestBody String requestBody,

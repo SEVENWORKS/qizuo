@@ -34,6 +34,7 @@
 // * @description: office工具类:主要针对于pdf
 // * @date: 9:10 2019/2/12
 // */
+//@Slf4j
 //public class Office_ItextUtil {
 //    /**
 //     * **************************************************************************************************************
@@ -86,7 +87,7 @@
 //            huise10.setColor(Color.GRAY);
 //            huise10.setStyle(Font.ITALIC);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -113,9 +114,9 @@
 //            //结束
 //            response.flushBuffer();
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -155,7 +156,7 @@
 //            //关闭
 //            document.close();
 //        } catch (DocumentException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -176,7 +177,7 @@
 //            //设置加密方式
 //            pdfWriter.setEncryption(null, null, PdfWriter.ALLOW_PRINTING, PdfWriter.STANDARD_ENCRYPTION_128);
 //        } catch (DocumentException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return pdfWriter;
 //    }
@@ -238,7 +239,7 @@
 //            table.getDefaultCell().setBorder(0);
 //            table.setKeepTogether(true);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return table;
 //    }
@@ -263,7 +264,7 @@
 //            table.setHeaderRows(row);
 //            table.getDefaultCell().setBorder(0);
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return table;
 //    }
@@ -276,7 +277,7 @@
 //            table.setWidths(widthArr);
 //            table.setPadding(3);
 //        } catch (BadElementException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        return table;
 //    }
@@ -476,11 +477,11 @@
 //            //将BufferedImage转化为com.lowagie.text.Image
 //            image = com.lowagie.text.Image.getInstance(MatrixToImageWriter.toBufferedImage(bitMatrix), null);
 //        } catch (WriterException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } catch (BadElementException e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //        //设置图片在pdf的位置
 //        image.setAbsolutePosition(var1, var2);
@@ -588,14 +589,14 @@
 //            //添加水印
 //            // buildPDFWater(outputFile, "ZJT");
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        } finally {
 //            if (os != null) {
 //                try {
 //                    os.close();
 //                    os = null;
 //                } catch (IOException e) {
-//                    e.printStackTrace();
+//                    log.error("异常={}", e.getMessage(), e);
 //                }
 //            }
 //        }
@@ -630,7 +631,7 @@
 //            response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(filename, "UTF-8"));
 //            response.flushBuffer();
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            log.error("异常={}", e.getMessage(), e);
 //        }
 //    }
 //
@@ -662,7 +663,7 @@
 //                configuration.setDirectoryForTemplateLoading(new File(baseDir));
 //                //configuration.setClassForTemplateLoading(this.getClass(), "/com/havenliu/document/template");
 //            } catch (Exception e) {
-//                e.printStackTrace();
+//                log.error("异常={}", e.getMessage(), e);
 //            }
 //        }
 //
@@ -689,7 +690,7 @@
 //                try {
 //                    writerA.close();
 //                } catch (IOException e) {
-//                    e.printStackTrace();
+//                    log.error("异常={}", e.getMessage(), e);
 //                }
 //            }
 //        }
@@ -712,9 +713,9 @@
 //                //最终输出
 //                t.process(dataMap, out);
 //            } catch (TemplateException e) {
-//                e.printStackTrace();
+//                log.error("异常={}", e.getMessage(), e);
 //            } catch (IOException e) {
-//                e.printStackTrace();
+//                log.error("异常={}", e.getMessage(), e);
 //            }
 //        }
 //

@@ -6,7 +6,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.page.PageDto;
 import com.qizuo.base.model.result.BackResult;
@@ -44,7 +44,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "用户分页列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult page(@RequestBody PageDto<UserPoJo> poJos) {
     return BackResultUtils.ok(userService.qPageQZ(poJos));
   }
@@ -58,7 +58,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "用户分页列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult list(@RequestBody UserPoJo userPoJo) {
     return BackResultUtils.ok(userService.qList(userPoJo));
   }
@@ -72,7 +72,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "查找单个")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query() {
     return BackResultUtils.ok(UserUtil.qUser());
   }
@@ -86,7 +86,7 @@ public class UserController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "查找单个")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query(@RequestBody UserPoJo userPoJo) {
     return BackResultUtils.ok(userService.query(userPoJo));
   }

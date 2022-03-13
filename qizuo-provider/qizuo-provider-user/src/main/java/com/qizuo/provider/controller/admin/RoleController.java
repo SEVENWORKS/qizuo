@@ -1,8 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;
@@ -41,7 +40,7 @@ public class RoleController {
   @ApiOperation(httpMethod = "POST", value = "角色列表")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult list(@RequestBody RolePoJo rolePoJo) {
     return BackResultUtils.ok(roleService.qList(rolePoJo));
   }
@@ -55,7 +54,7 @@ public class RoleController {
   @ApiOperation(httpMethod = "POST", value = "查找单个")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult query(@RequestBody RolePoJo rolePoJo) {
     return BackResultUtils.ok(roleService.query(rolePoJo));
   }

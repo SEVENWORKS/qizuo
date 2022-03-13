@@ -8,6 +8,7 @@ package com.qizuo.base.interceptor;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.util.Thread.ThreadLocalMap;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -27,19 +28,20 @@ import java.util.*;
 /**
  * mybatis sql 拦截器(拦截update和query) 1.配合注解NotDisplaySql ，可以禁止指定的方法的SQL 不打印控制台。 2.SQL 执行时间超过 关注时间
  * noticeTime ,以error级别打印到控制台 使用时需要把mybatis logger级别设置为 INFO级别
+ * 注意！拦截对象和拦截方法要对，要不然拦截不到
  */
 // 表明当前对象是一个Interceptor
 @Intercepts({
   // 表明要拦截的接口、方法以及对应的参数类型
   @Signature(
-    type = Executor.class,
+    type = Executor.class, //四个拦截对象，这里是最先的执行对象
     method = "update",
     args = {MappedStatement.class, Object.class}
   ),
   @Signature(
     type = Executor.class,
     method = "query",
-    args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}
+    args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class}
   )
 })
 @Slf4j
@@ -50,6 +52,7 @@ public class SqlLogInterceptor implements Interceptor {
   /**
    * 1.@Value(“#{}”) 表示SpEl表达式通常用来获取bean的属性，或者调用bean的某个方法。当然还有可以表示常量
    * 2.@Value(“${xxxx}”)注解从配置文件读取值的用法
+   * 这地方有点多余，已经在切面塞入线程local进行判断是否打印日志
    */
   @Value("${qizuo.interceptor.sqllog}")
   private boolean enableSqlLogInterceptor;
@@ -107,7 +110,7 @@ public class SqlLogInterceptor implements Interceptor {
         return proceed;
       }
       // 只有DISPLAY_SQL为true的时候，或者简单的说方法上存在这个注解的时候，是不会sql到日志的
-      if (flag == null || Objects.equals(flag, true)) {
+      if (Objects.equals(flag, true)) {
         log.info("sql={}", sql);
         log.info("result={},time={}ms, params={}", result, time, paramList);
       }

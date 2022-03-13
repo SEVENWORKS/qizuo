@@ -26,7 +26,13 @@ import org.springframework.web.filter.CorsFilter;
 @EnableZuulProxy
 // oAuth2认证开启，单点登录
 @EnableOAuth2Sso
-// 熔断启动(对@EnableCircuitBreaker注解的封装)
+// 熔断启动(对@EnableCircuitBreaker注解的封装),开启之后就可以在requestMapping方法上加上如下熔断降级，注意这个和yaml中execution.isolation.thread.timeoutInMilliseconds配置value
+//@HystrixCommand(
+//  commandProperties ={
+//    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value ="3000" )
+//  }
+//  ,fallbackMethod ="myFallBack" //回退方法
+//)
 @EnableHystrix
 // swagger和zuul结合开启
 @EnableSwaggerButler
@@ -41,8 +47,8 @@ public class QiZuoZuulApplication extends SpringBootServletInitializer {
   public CorsFilter corsFilter() {
     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     final CorsConfiguration config = new CorsConfiguration();
-    // 允许cookies跨域
-    config.setAllowCredentials(true);
+    // 允许跨域(注意和csrf关系，这个主要解决跨域；csrf关闭主要解决跨站伪token的问题)
+    config.setAllowCredentials(false);
     // #允许向该服务器提交请求的URI，*表示全部允许，在SpringMVC中，如果设成*，会自动转成当前请求头中的Origin
     config.addAllowedOrigin("*");
     // #允许访问的头信息,*表示全部

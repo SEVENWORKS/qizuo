@@ -29,13 +29,13 @@ public class FileHelper {
         sb.append(tmp).append("\n");
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error("异常={}", e.getMessage(), e);
     } finally {
       if (br != null) {
         try {
           br.close();
         } catch (IOException e) {
-          e.printStackTrace();
+          log.error("异常={}", e.getMessage(), e);
         }
       }
     }

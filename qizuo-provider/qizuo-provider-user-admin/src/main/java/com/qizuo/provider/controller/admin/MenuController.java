@@ -1,8 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;
@@ -44,7 +43,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "菜单新增或者修改")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult iuDo(@RequestBody MenuPoJo menuPoJo) {
     // rpc调用示例
     // BackResult backResult = menuFeignApi.list(menuPoJo);
@@ -67,7 +66,7 @@ public class MenuController {
   @ApiOperation(httpMethod = "POST", value = "菜单删除")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult delete(@RequestBody MenuPoJo menuPoJo) {
     menuService.delete(menuPoJo);
     return BackResultUtils.ok();

@@ -10,7 +10,7 @@ import org.mybatis.generator.api.ShellRunner;
 
 import java.util.List;
 
-/** 生成器执行类. */
+/** 生成器执行类.生成之前记得先创建config中文件夹 */
 public class Generator extends PluginAdapter {
 
   /** validate方法调用，该方法一般用于验证传给参数的正确性，如果该方法返回false，则该插件结束执行； */

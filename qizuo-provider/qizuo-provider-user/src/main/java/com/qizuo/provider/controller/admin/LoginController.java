@@ -7,7 +7,7 @@ package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.base.model.result.BackResult;
@@ -24,6 +24,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +53,7 @@ import java.util.concurrent.TimeUnit;
   produces = {"application/json;charset=UTF-8"}
 )
 @RestController
-// @RefreshScope注解能帮助我们做局部的参数刷新
+@RefreshScope //注解能帮助我们做局部的参数刷新
 // swagger
 @Api(value = "User-LoginController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class LoginController extends BaseController {
@@ -66,13 +67,14 @@ public class LoginController extends BaseController {
   /**
    * @author: fangl
    * @description: 用户登录
+   * 操作日志打印；request参数验证；sql日志是否打印；不需要验证登录信息
    * @date: 15:45 2019/1/8
    */
   @PostMapping("login")
   @ApiOperation(httpMethod = "POST", value = "用户登录")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   @NoNeedAccessAuthentication
   public BackResult login(@RequestParam(value = "key") String key) {
     // 存入token
@@ -128,7 +130,7 @@ public class LoginController extends BaseController {
   @ApiOperation(httpMethod = "POST", value = "用户登出")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public BackResult logOut() {
     // 删除用户信息
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);

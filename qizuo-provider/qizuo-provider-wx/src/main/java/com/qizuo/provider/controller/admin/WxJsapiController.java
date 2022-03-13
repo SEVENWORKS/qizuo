@@ -1,7 +1,7 @@
 package com.qizuo.provider.controller.admin;
 
 import com.qizuo.base.annotation.LogAnnotation;
-import com.qizuo.base.annotation.NotDisplaySql;
+import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.base.annotation.ValidateRequestAnnotation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -27,7 +27,7 @@ public class WxJsapiController {
   @ApiOperation(httpMethod = "GET", value = "getJsapiTicket")
   @LogAnnotation
   @ValidateRequestAnnotation
-  @NotDisplaySql
+  @SqlDisplay
   public String getJsapiTicket(@PathVariable String appid) throws WxErrorException {
     final WxJsapiSignature jsapiSignature =
         this.wxService.switchoverTo(appid).createJsapiSignature("111");

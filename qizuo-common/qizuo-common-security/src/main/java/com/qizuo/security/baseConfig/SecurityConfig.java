@@ -8,7 +8,7 @@ package com.qizuo.security.baseConfig;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/** security基本配置器，对sercurity基本属性一些配置，比如登录页面，登录url，登出url等等,就是没有spring security oath2的时候会用到这个 */
+/** (WebSecurityConfigurerAdapter是默认情况下Spring security的http配置)security基本配置器，对sercurity基本属性一些配置，比如登录页面，登录url，登出url等等,就是没有spring security oath2的时候会用到这个 */
 // @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   /**

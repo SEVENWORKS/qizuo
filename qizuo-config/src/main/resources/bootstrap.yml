@@ -45,7 +45,7 @@ eureka:
 #config配置加密
 encrypt:
   key-store:
-    location: classpath:/qizuo.keystore
-    alias: qizuo
-    password: woaiwojia
-    secret: woaiwojia
+    location: classpath:/qizuo.jks
+    alias: qizuo0
+    password: qizuo0
+    secret: qizuo0

@@ -19,7 +19,7 @@ import java.util.concurrent.Future;
  * 通过实现 InitializingBean ,DisposableBean 接口实现初始化方法和销毁前操作
  */
 @Slf4j
-public class TaskInitExceptionHandlingAsyncTaskExecutor implements AsyncTaskExecutor, InitializingBean, DisposableBean {
+public class ThreadPoolExceptionHandlingAsyncTaskExecutor implements AsyncTaskExecutor, InitializingBean, DisposableBean {
 
 	private final AsyncTaskExecutor executor;
 
@@ -28,7 +28,7 @@ public class TaskInitExceptionHandlingAsyncTaskExecutor implements AsyncTaskExec
 	 *
 	 * @param executor the executor
 	 */
-	TaskInitExceptionHandlingAsyncTaskExecutor(AsyncTaskExecutor executor) {
+	ThreadPoolExceptionHandlingAsyncTaskExecutor(AsyncTaskExecutor executor) {
 		this.executor = executor;
 	}
 

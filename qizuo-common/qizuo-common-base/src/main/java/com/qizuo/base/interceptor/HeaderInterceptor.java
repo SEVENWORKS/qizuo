@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/** springmvc拦截所有的请求并做相应的处理,利用拦截器拦截请求或者认证请求头，并存储到跨线程存储器中方便后面取用 */
+/** springmvc拦截所有的请求并做相应的处理,利用拦截器拦截请求或者认证请求头，并存储到跨线程存储器中方便后面取用 TODO 暂时没用*/
 @Slf4j
 @Component
 public class HeaderInterceptor extends HandlerInterceptorAdapter {

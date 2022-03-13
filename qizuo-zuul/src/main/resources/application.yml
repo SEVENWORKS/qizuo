@@ -27,10 +27,6 @@ spring:
       username: guest # 用户名
       password: guest # 密码
       connection-timeout: 60 # 连接超时时间
-  #是否开启favicon图标访问
-  mvc:
-    favicon:
-      enabled: false
 
 #springboot配置
 spring.boot:
@@ -51,11 +47,6 @@ security:
     name: qizuo #鉴权用户名
     password: qizuo #鉴权密码
 
-#swagger文档配置
-swagger:
-  title: qizuo-zuul #swagger title
-  description: qizuo-zuul #swagger 描述
-
 #是否打开SqlLogInterceptor
 qizuo.interceptor.sqllog: true
 #是否打开token
@@ -67,6 +58,10 @@ zuul:
   #prefix: /port #路由匹配前缀
   ignored-services: '*' #先排除所有代理服务，只有以下配置的才会被路由代理
   routes:
+    qizuo-config: #加密解密
+      strip-prefix: false #是否去掉转发配置的前缀，比如这个地方是不去掉path前面的user
+      path: /config/**
+      serviceId: qizuo-config
     qizuo-provider-user: #用户认证服务
       strip-prefix: false #是否去掉转发配置的前缀，比如这个地方是不去掉path前面的user
       path: /user/**
@@ -92,9 +87,13 @@ zuul:
         path: /wx/**
         serviceId: qizuo-provider-wx
 
-#超时时间
-ribbon.ReadTimeout: 5000
-# 请求连接超时时间
-ribbon.ConnectTimeout: 1000
-# 断路器超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 9000
+#feign
+feign:
+  client:
+    config:
+      default:
+        ConnectTimeOut: 10000 # 请求连接超时时间
+        ReadTimeOut: 10000 #超时时间
+
+# 断路器超时时间(需要配合@HystrixProperty注解使用，单独配置不起效果)
+# hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 9000
