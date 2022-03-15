@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/** 退出成功处理器，返回json格式的响应。 */
+/** 退出成功处理器，返回json格式的响应。 TODO 暂时不用*/
 @Slf4j
 public class AuthenLogoutSuccessHandler implements LogoutSuccessHandler {
 

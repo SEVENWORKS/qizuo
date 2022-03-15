@@ -29,6 +29,8 @@ import org.springframework.stereotype.Component;
  * authentication)方法进行验证，由此可见，真正的验证逻辑是由各个各个AuthenticationProvider接口实现类来完成的,DaoAuthenticationProvider类是默认情况下注入的一个AuthenticationProvider接口实现类
  *
  * <p>4.AuthenticationProvider接口通过UserDetailsService来获取用户信息
+ *
+ * TODO 自定义的这个暂不要
  */
 @Component
 public class OpenIdAuthenticationSecurityConfig

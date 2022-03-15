@@ -28,8 +28,8 @@ import javax.security.sasl.AuthenticationException;
 import java.io.IOException;
 import java.util.Map;
 
-/** 自定义 ExceptionTranslator 实现认证服务器的异常信息处理. */
-@Configuration
+/** 自定义 ExceptionTranslator 实现认证服务器的异常信息处理. TODO 暂不使用*/
+//@Configuration
 public class AuthenWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
   private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
   /**

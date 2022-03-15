@@ -135,6 +135,8 @@ qizuo.interceptor.sqllog: true
 #是否打开token
 qizuo.interceptor.token: true
 #配置store模式,支持jwt和redis两种,主要是jwt
-qizuo.security.oauth2.token: jwt
+qizuo.security.oauth2.tokenStore: jwt
+#当前oauth2服务器ID
+qizuo.security.oauth2.resourceId: pay
 #是否开启debug模式
 debug: false

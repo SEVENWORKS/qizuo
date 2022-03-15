@@ -44,7 +44,7 @@ public class TokenStoreConfig {
     }
   }
 
-  /** 使用jwt时的配置，默认生效 这种存储不需要实际上的空间存储，它的解析和信息都放在令牌中 */
+  /** 使用jwt时的配置，默认生效 这种存储不需要实际上的空间存储，它的解析和信息都放在令牌中，matchIfMissing没有默认的值 */
   @Configuration
   @ConditionalOnProperty(
     prefix = "qizuo.security.oauth2",
@@ -55,7 +55,7 @@ public class TokenStoreConfig {
   public static class JwtConfig {
 
     /**
-     * Jwt token store token store.token存储 构建一个jwtstore
+     * Jwt token store token store.token存储 构建一个jwtstore jwt解析器
      *
      * @return the token store
      */
@@ -65,7 +65,7 @@ public class TokenStoreConfig {
     }
 
     /**
-     * Jwt access token converter jwt access token converter. 转换token
+     * Jwt access token converter jwt access token converter. 转换token jwt解析器核心
      *
      * @return the jwt access token converter
      */
@@ -77,7 +77,7 @@ public class TokenStoreConfig {
     }
 
     /**
-     * Jwt token enhancer token enhancer.附加信息放入token中
+     * Jwt token enhancer token enhancer.附加信息放入token中 jwt生成基本配置
      *
      * @return the token enhancer
      */

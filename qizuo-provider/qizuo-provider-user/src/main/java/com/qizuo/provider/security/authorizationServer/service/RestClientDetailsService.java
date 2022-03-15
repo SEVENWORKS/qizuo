@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.security.service;
+package com.qizuo.provider.security.authorizationServer.service;
 
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import lombok.extern.slf4j.Slf4j;
@@ -70,7 +70,7 @@ public class RestClientDetailsService implements ClientDetailsService {
   }
 
   /**
-   * Load client by client id client details.
+   * Load client by client id client details.这个地方只是为了复写当前类，必须写的方法
    *
    * @param clientId the client id
    * @return the client details

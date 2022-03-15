@@ -11,9 +11,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/** security基本配置器，对sercurity基本属性一些配置，比如登录页面，登录url，登出url等等,就是没有spring security oath2的时候会用到这个 */
-@Configuration
-@EnableWebSecurity
+/** security基本配置器，对sercurity基本属性一些配置，比如登录页面，登录url，登出url等等,就是没有spring security oath2的时候会用到这个，这个暂时没用到 */
+//@Configuration
+//@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   /**
    * Configure.

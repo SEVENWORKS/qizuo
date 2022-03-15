@@ -114,3 +114,22 @@ CREATE TABLE `sys_user` (
   UNIQUE KEY `idx_sys_user_username` (`USERNAME`),
   KEY `idx_sys_user_organization_id` (`ADDRESS`(255))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户表';
+
+-- ----------------------------
+-- Table structure for oauth_client_details 将请求的路径存在数据表
+-- ----------------------------
+DROP TABLE IF EXISTS `oauth_client_details`;
+CREATE TABLE `oauth_client_details` (
+`client_id` varchar(48) NOT NULL COMMENT '主键,clientID和clientSecret搭配(必须)',
+`resource_ids` varchar(256) DEFAULT NULL COMMENT '权限控制,控制访问的服务器ID',
+`client_secret` varchar(256) DEFAULT NULL COMMENT 'clientID和clientSecret搭配(必须)',
+`scope` varchar(256) DEFAULT NULL COMMENT '权限控制2,主要增删读写类',
+`authorized_grant_types` varchar(256) DEFAULT NULL COMMENT 'client类别password/client/简化/code/refreshtoken',
+`web_server_redirect_uri` varchar(256) DEFAULT NULL COMMENT 'url验证,只有简化和code才会用到',
+`authorities` varchar(256) DEFAULT NULL COMMENT '权限控制3,主要是角色控制,必须ROLE_开头',
+`access_token_validity` int(11) DEFAULT NULL COMMENT 'token时效',
+`refresh_token_validity` int(11) DEFAULT NULL COMMENT 'refreshtoken时效',
+`additional_information` varchar(4096) DEFAULT NULL COMMENT '预留字段',
+`autoapprove` varchar(256) DEFAULT NULL COMMENT '用户是否自动Approval操作,只有code模式才用到,自动跳过用户approval页面',
+PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='oauth2_client表';
