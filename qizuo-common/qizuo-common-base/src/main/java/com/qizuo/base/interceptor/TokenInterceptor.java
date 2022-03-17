@@ -7,6 +7,7 @@ package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.model.auth.UserDto;
+import com.qizuo.base.utils.PublicUtil;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
 import com.qizuo.config.properties.baseProperties.ResultCodeEnum;
 import com.qizuo.util.Thread.ThreadLocalMap;
@@ -92,10 +93,7 @@ public class TokenInterceptor implements HandlerInterceptor {
     // 获取请求uri
     log.info("<== preHandle - 权限拦截器.  url={}", uri);
     // 当路径包含以上是不会走权限验证的,这地方error的直接放行给error处理
-    if (uri.contains(GlobalConstant.Url$Path.TokenInterceptor_AUTH_PATH)
-        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH)
-        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH2)
-        || uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH3)) {
+    if (PublicUtil.isSpeUri(uri)) {
       log.info("<== preHandle - 配置URL不走认证.  url={}", uri);
       return true;
     }

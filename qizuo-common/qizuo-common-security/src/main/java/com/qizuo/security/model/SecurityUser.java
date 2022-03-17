@@ -113,6 +113,6 @@ public class SecurityUser implements UserDetails {
 
   @Override
   public boolean isEnabled() {
-    return this.status == GlobalConstant.STATUS_YES;
+    return this.status.equals(GlobalConstant.STATUS_YES);
   }
 }

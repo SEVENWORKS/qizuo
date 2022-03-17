@@ -5,7 +5,7 @@
 package com.qizuo.provider.security.authorizationServer;
 
 import com.qizuo.provider.security.authorizationServer.service.RestClientDetailsService;
-import com.qizuo.security.service.SecurityUserDetailsSevice;
+import com.qizuo.provider.security.authorizationServer.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -35,11 +35,35 @@ import java.util.List;
  * 2.通过解析出来resourceId进行验证，只有一致的才能访问对应的服务器，如果不配置，可以访问所有(clientservice进行配置,resource中进行验证)
  * 3.通过解析出来authorities进行验证，只有角色一致的才能访问对应的类或者方法，如果不配置，可以访问所有(clientservice进行配置)
  * 4.通过解析出来scope进行验证，只有读写权限一致的才能访问对应的类和方法，如果不配置，可以访问所有(clientservice进行配置)
- *
  * @PreAuthorize("hasAuthority('admin')")、@PreAuthorize("hasRole('admin')")
  * @PreAuthorize("#oauth2.hasScope('read')")
  * 这个注解可以用到类或者方法上都行，但是注解是不能重复的，并且方法会覆盖类上的配置，即如果配置两个，后面会覆盖前面的
  * 上述注解需要@EnableGlobalMethodSecurity(prePostEnabled = true)开启，这个要放到开启的类上面(如果是admin角色验证，可以不需要，因为resource上开启了，但是最好还是统一加上)
+ *
+ *五种模式请求(本质都是获取token；下面请求的参数都要和数据库oauth_client_details配置的一致)
+ * 1.客户端(client_credentials)
+ * http://127.0.0.1:9300/port/user/oauth/token?grant_type=client_credentials&client_id=qizuo&client_secret=qizuo
+ * 支持get和post请求；参数不要放到header中；不支持刷新token(没有返回刷新token)
+ * 2.密码(password)
+ * http://127.0.0.1:9300/port/user/oauth/token?grant_type=password&client_id=qizuo2&client_secret=qizuo2&password=qizuo&username=qizuo
+ * 支持get和post请求；参数不要放到header中；支持刷新token
+ * 3.code(authorization_code)
+ * 支持get和post请求;参数不要放到header中；支持刷新token
+ * a.第三方页面请求，跳转我们的登录页面http://localhost:9300/port/user/oauth/authorize?response_type=code&client_id=qizuo4&redirect_uri=http://www.baidu.com&scope=read(http://localhost:9900/user/oauth/authorize?response_type=code&client_id=qizuo4&redirect_uri=http://www.baidu.com)
+ * b.自动打开登录页面输入账号密码登录(可以是自定义登录页面http://localhost:9900/user/qizuo/login)
+ * c.自动跳入授权页面进行授权(可以是自定义授权页面http://localhost:9900/user/oauth/authorize?response_type=code&client_id=qizuo4&redirect_uri=http://www.baidu.com)
+ * d.跳入a中redirect_uri中网页，并返回鉴权code(https://www.baidu.com/?code=FAly1t)
+ * e.拿着code获取对应token(http://127.0.0.1:9900/user/oauth/token?grant_type=authorization_code&client_id=qizuo4&client_secret=qizuo4&code=Lb5Z2o&redirect_uri=http://www.baidu.com)
+ * 注意：code只能获取一次，后面都要通过refresh进行刷新
+ * 4.刷新(refresh_token)
+ * http://127.0.0.1:9300/port/user/oauth/token?grant_type=refresh_token&client_id=qizuo2&client_secret=qizuo2&refresh_token=ey...
+ * 支持get和post请求；参数不要放到header中;refresh_token要用返回的refresh_token的参数，不是token本身(所以客户端模式不支持刷新)；刷新token的参数要和获取token参数保持一致
+ * 5.简化(implicit)
+ * 整体步骤和授权码一致，只不过在d这一部的时候开始发生变化
+ * d.直接返回token：https://www.baidu.com/#access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJxaXp1byIsInNjb3BlIjpbInJlYWQiXSwibG9naW5OYW1lIjoicWl6dW8iLCJleHAiOjE2NTAxMjc0NjgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfVVNFUkFETUlOIl0sImp0aSI6ImYyNjA1MzdiLTZlNTctNGIwOS1hYTU4LTVmMzQ2Y2YwZGIzZiIsImNsaWVudF9pZCI6InFpenVvMyIsInRpbWVzdGFtcCI6MTY0NzUzNTQ2ODk1N30.dRKPxm7pvGhCU3U1ir3cxBd8kKbgwMBueUa4YlybSEw&token_type=bearer&expires_in=2591999&scope=read&timestamp=1647535468957&loginName=qizuo&jti=f260537b-6e57-4b09-aa58-5f346cf0db3f
+ * 注意：这个是没有refretoken的，也就是无法刷新
+ *
+ * 总结：客户端模式适合非常受信用，比如同服务器；密码模式适合亲儿子，比如同系统的登录；授权码模式适合第三方授权，因为不必透露用户名密码；简化模式用的比较少，比如一般扫码填报表啥的
  */
 @Configuration
 @EnableAuthorizationServer

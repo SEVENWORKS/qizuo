@@ -66,6 +66,7 @@ zuul:
       strip-prefix: false #是否去掉转发配置的前缀，比如这个地方是不去掉path前面的user
       path: /user/**
       serviceId: qizuo-provider-user
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization #允许这些header
     qizuo-provider-user-admin: #用户信息修改服务
       strip-prefix: false
       path: /userAdmin/**

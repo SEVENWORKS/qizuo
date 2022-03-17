@@ -52,7 +52,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             "*.css",
             "/**/*.css",
             "*.html",
-            "/**/*.html");
+            "/**/*.html","/qizuo/**");
   }
 
   // 视图内容解析器，准换成json

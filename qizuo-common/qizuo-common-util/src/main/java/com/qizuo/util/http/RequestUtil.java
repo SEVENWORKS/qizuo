@@ -102,11 +102,10 @@ public class RequestUtil {
    * @return the auth header
    */
   public static String getAuthHeader(HttpServletRequest request) {
-
     String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-    if (StringUtils.isEmpty(authHeader)) {
-      throw new RuntimeException();
-    }
+//    if (StringUtils.isEmpty(authHeader)) {
+//      throw new RuntimeException();
+//    }
     return authHeader;
   }
 

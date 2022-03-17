@@ -64,6 +64,7 @@ public class GlobalConstant {
     // 配置前缀
     public static final String ROOT_PREFIX = GlobalConstant.Global;
     // token相关路径
+    public static final String TokenInterceptor_SECURITY_PATH0 = "/oauth";
     public static final String TokenInterceptor_SECURITY_PATH = "/oauth/token";
     public static final String TokenInterceptor_SECURITY_PATH2 = "/oauth/authorize";
     // 默认url
