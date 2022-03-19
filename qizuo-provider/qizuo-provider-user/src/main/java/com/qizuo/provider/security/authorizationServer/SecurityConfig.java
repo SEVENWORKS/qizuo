@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    * 通过上面配置结论：只要在authorizeRequests前面加上antMatcher或者requestMatchers().antMatchers("/login/**")这种类似，当前这个filter只会处理这些路径，否则一旦filter HttpSecurity加上authorizeRequests就会对所有请求进行处理
    * 结论2：security这种验证filter只要路径匹配上就会进去其中一个，并且仅进入一个，进谁按照上面说的这种路径进行匹配，相同路径下，谁的filter Order顺序大，进谁！比如当前这个WebSecurityConfigurerAdapter和ResourceServerConfigurerAdapter，后面一个优先级大是3，也就是相同情况下先进后面，除非你用@order进行优先级调整
    * 结论3：每个filter中的HttpSecurity都是独立的，也就是独立配置的，不要指望别的filter中配置有啥影响
+   * TODO 经过zuul的授权码模式无法使用，主要因为自定义登录页面和授权路径问题
    * @param http the http
    * @throws Exception the exception
    */
