@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
+ * 这个主要是授权码模式和简化模式使用
  * 自定义授权码登录界面
  * 1.loginProcessUrl中的URL必须和WebSecurityConfigurerAdapter中配置的一样，就是页面commit的url必须和其保持一致,但要注意如果项目有前缀，只需要在两个相同的前提下，在commit页面加即可
  * 2.这个地方需要将鉴权路径放开，包括security、token、zuul
@@ -28,7 +29,7 @@ public class OauthLoginController  extends BaseController {
     @ApiOperation(httpMethod = "GET", value = "授权码登录界面")
     @NoNeedAccessAuthentication
     public String loginPage(Model model){
-        model.addAttribute("loginProcessUrl","/user/qizuo/authorize");
+        model.addAttribute("loginProcessUrl",port_url+"user/qizuo/authorize");///user/qizuo/authorize
         return "login";
     }
 }

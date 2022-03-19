@@ -6,6 +6,7 @@
 package com.qizuo.base.interceptor;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
+import com.qizuo.base.exception.QizuoException;
 import com.qizuo.base.model.auth.UserDto;
 import com.qizuo.base.utils.PublicUtil;
 import com.qizuo.config.properties.baseProperties.GlobalConstant;
@@ -18,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -35,6 +37,7 @@ import java.lang.reflect.Method;
 /** spring拦截器，验证token */
 @Slf4j
 @RefreshScope
+@Order(1)
 public class TokenInterceptor implements HandlerInterceptor {
   @Value("${token_rules}")
   private String tokenRules;
@@ -125,13 +128,11 @@ public class TokenInterceptor implements HandlerInterceptor {
     UserDto user = null;
     try {
       user = JacksonUtil.parseJson((String) redisTemplate.opsForValue().get(token), UserDto.class);
-    } catch (IOException e) {
-      log.error("获取用户信息失败");
-      return false;
+    } catch (Exception e) {
+      throw new QizuoException("获取用户信息失败");
     }
     if (ObjectIsEmptyUtils.isEmpty(user)) {
-      log.error("获取用户信息失败");
-      return false;
+      throw new QizuoException("获取用户信息失败");
     }
     log.info("<== preHandle - 权限拦截器.  loginUser={}", user);
     ThreadLocalMap.put(GlobalConstant.Role.COMMON_USER, user);

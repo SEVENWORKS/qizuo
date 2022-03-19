@@ -23,10 +23,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
+import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -64,10 +66,17 @@ public class LoginController extends BaseController {
   @Resource private RedisTemplate<String, Object> redisTemplate;
   // userservice
   @Autowired private UserService userService;
+
+  @Autowired
+  @Qualifier("consumerTokenServices")
+  ConsumerTokenServices consumerTokenServices;
   /**
    * @author: fangl
    * @description: 用户登录
    * 操作日志打印；request参数验证；sql日志是否打印；不需要验证登录信息
+   *
+   * 为什么不把用户登录放到token获取成功时候，即security验证成功success handel中？因为security几种模式，最终就是安全验证，说白了就是token，这个和页面login是两回事。
+   * 所以！就算是密码模式获取到token后，也必须暗中携带用户名密码到这个mapping下进行登录。
    * @date: 15:45 2019/1/8
    */
   @PostMapping("login")
@@ -132,8 +141,10 @@ public class LoginController extends BaseController {
   @ValidateRequestAnnotation
   @SqlDisplay
   public BackResult logOut() {
-    // 删除用户信息
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);
+    //oauth2失效token(下面这个对jwttoken没用，也就是下面方法即使撤销返回成功，但是下次携带jwttoken还是可以访问，是通病；所以采取第二种，redis校验用户是否存在，即后面删除用户信息这段)
+    consumerTokenServices.revokeToken(token);
+    // 删除用户信息
     if (redisTemplate.opsForValue().get(token) != null) {
       redisTemplate.delete(token);
     }

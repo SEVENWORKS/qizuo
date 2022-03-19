@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
+ * 这个主要是授权码模式和简化模式使用
  * 自定义授权码授权页面
  * 1.@Session这个必须有，相当于方法的覆盖
  * 2.requestMapping这个必须是这个url(要不然要配置别的麻烦)

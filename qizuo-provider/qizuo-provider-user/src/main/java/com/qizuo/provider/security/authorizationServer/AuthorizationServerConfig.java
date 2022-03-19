@@ -64,6 +64,12 @@ import java.util.List;
  * 注意：这个是没有refretoken的，也就是无法刷新
  *
  * 总结：客户端模式适合非常受信用，比如同服务器；密码模式适合亲儿子，比如同系统的登录；授权码模式适合第三方授权，因为不必透露用户名密码；简化模式用的比较少，比如一般扫码填报表啥的
+ *
+ * session/cookie和token两种方式认证(当前token)
+ * 基于Session的认证方式由Servlet规范定制，服务端要存储session信息需要占用内存资源，客户端需要支持 cookie；(session和cookie都是服务端创建的，一个用于后台，一个返回前台，让服务端和客户端产生联系的认证方式)
+ * 基于token的方式则一般不需要服务端存储token，并且不限制客户端的存储方式。如今移动互联网时代 更多类型的客户端需要接入系统，系统多是采用前后端分离的架构进行实现，所以基于token的方式更适合
+ *
+ * TODO 是否要将验证服务器放到zuul中
  */
 @Configuration
 @EnableAuthorizationServer
