@@ -4,9 +4,6 @@
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
-        a.DATA_TYPE as "dataType",
-        a.DATA_ID as "dataId",
-        a.DATA_COLUMN as "dataColumn",
         a.RESOURCE_NAME as "resourceName",
         a.NAME as "name"
     </sql>
@@ -20,9 +17,6 @@
         BASE_STATUS,
         BASE_REMARKS,
         BASE_CREATE_IP,
-        DATA_TYPE,
-        DATA_ID,
-        DATA_COLUMN,
         RESOURCE_NAME,
         NAME
         )
@@ -34,9 +28,6 @@
         #{baseStatus},
         #{baseRemarks},
         #{baseCreateIp},
-        #{dataType},
-        #{dataId},
-        #{dataColumn},
         #{resourceName},
         #{name}
         )
@@ -48,9 +39,6 @@
         BASE_UPDATE_TM=now(),
         BASE_REMARKS=#{baseRemarks},
         BASE_UPDATE_IP=#{baseUpdateIp},
-        DATA_TYPE=#{dataType},
-        DATA_ID=#{dataId},
-        DATA_COLUMN=#{dataColumn},
         RESOURCE_NAME=#{resourceName},
         NAME=#{name}
         where BASE_ID=#{baseId}
@@ -93,7 +81,7 @@
 
             </if>
         </where>
-        <if test="entity.orderBy != null and entity.orderBy != ''">
+        <if test="entity != null and entity.orderBy != null and entity.orderBy != ''">
             order by ${entity.orderBy}
         </if>
     </select>
@@ -115,9 +103,6 @@
         BASE_REMARKS,
         BASE_CREATE_IP,
         BASE_UPDATE_IP,
-        DATA_TYPE,
-        DATA_ID,
-        DATA_COLUMN,
         RESOURCE_NAME,
         NAME
         )
@@ -130,9 +115,6 @@
             #{baseStatus},
             #{baseRemarks},
             #{baseCreateIp},
-            #{dataType},
-            #{dataId},
-            #{dataColumn},
             #{resourceName},
             #{name}
             )

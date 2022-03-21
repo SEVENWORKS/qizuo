@@ -19,9 +19,8 @@
     <!-- 子项目 -->
     <modules>
         <module>qizuo-provider-user</module>
-        <module>qizuo-provider-user-admin</module>
         <module>qizuo-provider-file</module>
-        <module>qizuo-provider-qrcode</module>
+        <module>qizuo-provider-common</module>
         <module>qizuo-provider-spider</module>
         <module>qizuo-provider-wx</module>
         <module>qizuo-provider-pay</module>

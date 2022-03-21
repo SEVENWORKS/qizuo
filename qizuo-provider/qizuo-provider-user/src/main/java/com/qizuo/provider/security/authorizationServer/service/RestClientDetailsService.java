@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 /**
  * The class Rest client details service. 客户端详情信息在这里进行初始化，你能够把客户端详情信息写死在这里或者是通过数据库来存储调取详情信息
  * 注意这个和userDetailsservice不一样 这个是类似加载的配置项
+ * 这个是InMemory模式加载配置，暂时不用 TODO
  */
 @Slf4j
 @Component("restClientDetailsService")

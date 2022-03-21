@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-/** common user service. 这个好像采用密码登录才会用到，暂时系统用的是客户端的方式，不会用到这个 */
+/** common user service. 这个和认证服务器不同的，认证服务器是自己的，这个地方主要是资源服务器用到的，后续用到要重写 */
 @Configuration
 @Data
 public class SecurityUserDetailsSevice implements UserDetailsService {

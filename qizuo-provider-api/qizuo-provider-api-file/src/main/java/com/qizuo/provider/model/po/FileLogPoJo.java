@@ -9,15 +9,6 @@ import lombok.Data;
 @Data
 @ApiModel
 public class FileLogPoJo extends BasePoJo {
-  /** 上传数据类型 */
-  @ApiModelProperty(value = "上传数据类型")
-  private String dataType;
-  /** 关联数据id */
-  @ApiModelProperty(value = "关联数据id")
-  private String dataId;
-  /** 关联字段 */
-  @ApiModelProperty(value = "关联字段")
-  private String dataColumn;
   /** 上传路径 */
   @ApiModelProperty(value = "上传路径")
   private String resourceName;

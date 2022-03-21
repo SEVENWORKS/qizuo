@@ -23,6 +23,7 @@
 
     <!-- 依赖引入 -->
     <dependencies>
+        <!-- 微信 -->
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-mp</artifactId>

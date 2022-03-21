@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qizuo.provider.service.dao.MsgDao">
+    <!-- 专属字段 -->
+    <sql id="exclusiveColumns">
+        <include refid="CommonColumns.commonColumns"/>,
+        a.TITLE as "title",
+        a.TYPE as "type",
+        a.CONTENT as "content",
+        a.SEND_USER_ID as "sendUserId",
+        a.SEND_TYPE as "sendType",
+        a.IS_SEND as "isSend"
+    </sql>
+    <!-- 查找单个 -->
+    <select id="query" resultType="com.qizuo.provider.model.po.RolePoJo">
+        select
+        <include refid="exclusiveColumns"/>
+        from sys_msg a
+        <where>
+            a.BASE_ID=#{baseId}
+            and a.BASE_STATUS=0
+        </where>
+        limit 1
+    </select>
+    <!-- 查找列表 -->
+    <select id="qList" resultType="com.qizuo.provider.model.po.RolePoJo">
+        select
+        <include refid="exclusiveColumns"/>
+        from sys_msg a
+        <where>
+            and a.BASE_STATUS=0
+        </where>
+        <if test="orderBy != null and orderBy != ''">
+            order by ${orderBy}
+        </if>
+    </select>
+    <!-- 查找分页 -->
+    <select id="qPageQZ" resultType="com.qizuo.provider.model.po.RolePoJo">
+        select
+        <include refid="exclusiveColumns"/>
+        from sys_msg a
+        <where>
+            and a.BASE_STATUS=0
+            <if test="entity != null">
+
+            </if>
+        </where>
+        <if test="entity != null and entity.orderBy != null and entity.orderBy != ''">
+            order by ${entity.orderBy}
+        </if>
+    </select>
+    <!-- ********************************************************************************************************************** -->
+    <!-- 插入 -->
+    <insert id="insert">
+        insert into sys_msg
+        (
+            BASE_ID,
+            BASE_CREATE_USER_ID,
+            BASE_CREATE_TM,
+            BASE_STATUS,
+            BASE_REMARKS,
+            BASE_CREATE_IP,
+            TITLE,
+            TYPE,
+            CONTENT,
+            SEND_USER_ID,
+            SEND_TYPE,
+            IS_SEND
+        )
+        values
+            (
+                #{baseId},
+                #{baseCreateUserId},
+                now(),
+                #{baseStatus},
+                #{baseRemarks},
+                #{baseCreateIp},
+                #{title},
+                #{type},
+                #{content},
+                #{sendUserId},
+                #{sendType},
+                #{isSend}
+            )
+    </insert>
+    <!-- 修改 -->
+    <update id="update">
+        update sys_msg set
+                            BASE_UPDATE_USER_ID=#{baseUpdateUserId},
+                            BASE_UPDATE_TM=now(),
+                            BASE_REMARKS=#{baseRemarks},
+                            BASE_UPDATE_IP=#{baseUpdateIp},
+                            TITLE=#{title},
+                            TYPE=#{type},
+                            CONTENT=#{content},
+                            SEND_USER_ID=#{sendUserId},
+                            SEND_TYPE=#{sendType},
+                            IS_SEND=#{isSend}
+        where BASE_ID=#{baseId}
+    </update>
+    <!-- 删除 -->
+    <delete id="delete">
+        delete from sys_msg where BASE_ID=#{baseId}
+    </delete>
+    <!-- 更新状态 -->
+    <update id="uStatus">
+        update sys_msg set BASE_STATUS=#{baseStatus} where BASE_ID=#{baseId}
+    </update>
+    <!-- ********************************************************************************************************************** -->
+</mapper>

@@ -67,18 +67,14 @@ zuul:
       path: /user/**
       serviceId: qizuo-provider-user
       sensitiveHeaders: Cookie,Set-Cookie,Authorization #允许这些header
-    qizuo-provider-user-admin: #用户信息修改服务
-      strip-prefix: false
-      path: /userAdmin/**
-      serviceId: qizuo-provider-user-admin
     qizuo-provider-file: #上传服务
       strip-prefix: false
       path: /file/**
       serviceId: qizuo-provider-file
-    qizuo-provider-qrcode: #二维码服务
+    qizuo-provider-common: #二维码服务
         strip-prefix: false
-        path: /qrcode/**
-        serviceId: qizuo-provider-qrcode
+        path: /common/**
+        serviceId: qizuo-provider-common
     qizuo-provider-spider: #爬虫服务
         strip-prefix: false
         path: /spider/**

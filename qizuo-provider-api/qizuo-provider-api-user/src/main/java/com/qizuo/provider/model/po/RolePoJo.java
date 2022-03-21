@@ -20,12 +20,6 @@ public class RolePoJo extends BasePoJo {
   /** 数据操作权限拼接串 */
   @ApiModelProperty(value = "数据操作权限拼接串")
   private String dataScopeCds;
-  /** 首页路径 */
-  @ApiModelProperty(value = "首页路径")
-  private String indexUrl;
-  /** 跳转路径 */
-  @ApiModelProperty(value = "跳转路径")
-  private String jumpUrl;
 
   public String getName() {
     return name;
@@ -41,22 +35,6 @@ public class RolePoJo extends BasePoJo {
 
   public void setDataScopeCds(String dataScopeCds) {
     this.dataScopeCds = dataScopeCds;
-  }
-
-  public String getIndexUrl() {
-    return indexUrl;
-  }
-
-  public void setIndexUrl(String indexUrl) {
-    this.indexUrl = indexUrl;
-  }
-
-  public String getJumpUrl() {
-    return jumpUrl;
-  }
-
-  public void setJumpUrl(String jumpUrl) {
-    this.jumpUrl = jumpUrl;
   }
 
   public String getMenuIds() {

@@ -4,9 +4,6 @@
     <!-- 专属字段 -->
     <sql id="exclusiveColumns">
         <include refid="CommonColumns.commonColumns"/>,
-        a.DATA_TYPE as "dataType",
-        a.DATA_ID as "dataId",
-        a.DATA_COLUMN as "dataColumn",
         a.RESOURCE_NAME as "resourceName",
         a.NAME as "name",
         a.UPLOAD_RESULT as "uploadResult"
@@ -21,9 +18,6 @@
         BASE_STATUS,
         BASE_REMARKS,
         BASE_CREATE_IP,
-        DATA_TYPE,
-        DATA_ID,
-        DATA_COLUMN,
         RESOURCE_NAME,
         NAME,
         UPLOAD_RESULT
@@ -36,9 +30,6 @@
         #{baseStatus},
         #{baseRemarks},
         #{baseCreateIp},
-        #{dataType},
-        #{dataId},
-        #{dataColumn},
         #{resourceName},
         #{name},
         #{uploadResult}
@@ -51,9 +42,6 @@
         BASE_UPDATE_TM=now(),
         BASE_REMARKS=#{baseRemarks},
         BASE_UPDATE_IP=#{baseUpdateIp},
-        DATA_TYPE=#{dataType},
-        DATA_ID=#{dataId},
-        DATA_COLUMN=#{dataColumn},
         RESOURCE_NAME=#{resourceName},
         UPLOAD_RESULT=#{uploadResult}
         where BASE_ID=#{baseId}
@@ -96,7 +84,7 @@
 
             </if>
         </where>
-        <if test="entity.orderBy != null and entity.orderBy != ''">
+        <if test="entity != null and entity.orderBy != null and entity.orderBy != ''">
             order by ${entity.orderBy}
         </if>
     </select>
@@ -107,7 +95,7 @@
     </update>
     <!-- 更新日志结果 -->
     <update id="uLogResult">
-        update sys_upload_log set UPLOAD_RESULT=#{uploadResult} where BASE_ID=#{baseId}
+        update sys_upload_log set UPLOAD_RESULT=#{uploadResult} where RESOURCE_NAME=#{resourceName}
     </update>
     <!-- 批量插入 -->
     <insert id="iAbatchInsert">
@@ -122,9 +110,6 @@
         BASE_REMARKS,
         BASE_CREATE_IP,
         BASE_UPDATE_IP,
-        DATA_TYPE,
-        DATA_ID,
-        DATA_COLUMN,
         RESOURCE_NAME,
         NAME,
         UPLOAD_RESULT
@@ -138,9 +123,6 @@
             #{baseStatus},
             #{baseRemarks},
             #{baseCreateIp},
-            #{dataType},
-            #{dataId},
-            #{dataColumn},
             #{resourceName},
             #{name},
             #{uploadResult}

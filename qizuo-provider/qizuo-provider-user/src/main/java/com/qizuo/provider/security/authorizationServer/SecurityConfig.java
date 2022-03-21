@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // formLogin是基于页面，你需要自己实现一个登录页面，也就是示例中的/usercheck.jsp（名字你可以自己定），里面要有一个登录表单，表单的action和用户名
         // 密码字段名都是框架定死的，然后你需要再实现一个servlet来处理这个表单的action，实现登录，实际上走的是session/cookie认证
         .formLogin() // Spring Security支持两种认证方式：formLogin()和httpBasic()。
-        .loginPage(port_url+"user/qizuo/login")//自定义登录页面：登陆界面页面跳转URL/qizuo/login
+        .loginPage("/qizuo/login")//自定义登录页面：登陆界面页面跳转URL/qizuo/login
         .loginProcessingUrl("/qizuo/authorize")//自定义登录页面：这个地方必须要登录页面提交的请求路径保持一致，这个实际上是没有controller的，是会被拦截的读取的伪路径(注意如果出现404，肯定是其它的拦截拦截了这个伪路径，想办法去掉这个拦截器，比如token的，还有资源服务器验证的等)
         .and()
 //        .logout()

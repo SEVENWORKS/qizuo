@@ -8,5 +8,5 @@
     "retryTimes": 3,
     "sleepTime": 500
   },
-  "base_dir": "/data/spider/"
+  "base_dir": "/qizuo/spider/data/"
 }

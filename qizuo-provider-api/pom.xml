@@ -19,7 +19,6 @@
     <!-- 子项目 -->
     <modules>
         <module>qizuo-provider-api-user</module>
-        <module>qizuo-provider-api-user-admin</module>
         <module>qizuo-provider-api-file</module>
     </modules>
 

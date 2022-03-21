@@ -39,6 +39,8 @@ import java.util.List;
  * @PreAuthorize("#oauth2.hasScope('read')")
  * 这个注解可以用到类或者方法上都行，但是注解是不能重复的，并且方法会覆盖类上的配置，即如果配置两个，后面会覆盖前面的
  * 上述注解需要@EnableGlobalMethodSecurity(prePostEnabled = true)开启，这个要放到开启的类上面(如果是admin角色验证，可以不需要，因为resource上开启了，但是最好还是统一加上)
+ * 注意上传鉴权可以转变全局形式，即写到资源服务器配置中(resource httpsecurity)
+ * 注意@EnableGlobalMethodSecurity(prePostEnabled = true)放到认证服务controller会导致开启认证服务token失败等
  *
  *五种模式请求(本质都是获取token；下面请求的参数都要和数据库oauth_client_details配置的一致)
  * 1.客户端(client_credentials)
@@ -69,7 +71,11 @@ import java.util.List;
  * 基于Session的认证方式由Servlet规范定制，服务端要存储session信息需要占用内存资源，客户端需要支持 cookie；(session和cookie都是服务端创建的，一个用于后台，一个返回前台，让服务端和客户端产生联系的认证方式)
  * 基于token的方式则一般不需要服务端存储token，并且不限制客户端的存储方式。如今移动互联网时代 更多类型的客户端需要接入系统，系统多是采用前后端分离的架构进行实现，所以基于token的方式更适合
  *
+ * scope
+ * 不论哪种模式上传，只要参数传过来scope，就会和当前数据库中scope进行校验，不相同不会返回；如果不传则不会校验(TODO 暂时SCOPE校验没有用到，后续可以加一个拦截器，鉴权路径必须传scope)
  * TODO 是否要将验证服务器放到zuul中
+ *
+ * @AuthenticationPrincipal 注解可以快速的获取security相关信息，比如@AuthenticationPrincipal String username
  */
 @Configuration
 @EnableAuthorizationServer

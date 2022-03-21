@@ -28,10 +28,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.Size;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -58,6 +63,11 @@ import java.util.concurrent.TimeUnit;
 @RefreshScope //注解能帮助我们做局部的参数刷新
 // swagger
 @Api(value = "User-LoginController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//开启前置权限判断
+//开启参数校验：@Validated和@Valid两个用法相同，但是有些不太一样；
+//这个注解用在Controller上，只能对方法上的对象以外的校验开启；如果针对对象的校验，这个注解必须用在对象前面；
+//ValidationMessages.properties是参数校验不通过，返回message信息配置
+@Validated
 public class LoginController extends BaseController {
   // 管理员终极账号
   @Value("${qizuo}")
@@ -85,48 +95,38 @@ public class LoginController extends BaseController {
   @ValidateRequestAnnotation
   @SqlDisplay
   @NoNeedAccessAuthentication
-  public BackResult login(@RequestParam(value = "key") String key) {
+  @PreAuthorize("hasAuthority('ROLE_USER')")
+  //@Size就是@Validated开启验证后可以用来参数认证@RequestParam(value = "key")@Size(min = 5,max = 100) String key
+  public BackResult login(@AuthenticationPrincipal String username) {
     // 存入token
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);
     if (redisTemplate.opsForValue().get(token) != null) {
       return BackResultUtils.ok();
     } else {
       // 根据用户名获取key
-      UserPoJo userPoJo = userService.qPasswordByName(key);
-      if (StringUtils.equals(key, qizuo) || ObjectIsEmptyUtils.isNotEmpty(userPoJo)) {
-        UserDto userDto = new UserDto();
-        if (StringUtils.equals(key, qizuo)) {
-          // 超级管理员添加
-          userDto.setUserName(key);
-          userDto.setBaseId(key);
-          userDto.setRoleIds(GlobalConstant.Role.SUPER);
-          userDto.setStatus(GlobalConstant.STATUS_YES);
-        } else {
-          // 普通用户添加
-          userDto.setUserName(userPoJo.getUserName());
-          userDto.setBaseId(userPoJo.getBaseId());
-          userDto.setRoleIds(userPoJo.getRoleIds());
-          userDto.setStatus(userPoJo.getBaseStatus());
-          userDto.setIdCard(userPoJo.getIdCard());
-          userDto.setPhoto(userPoJo.getPhoto());
-          userDto.setRemarks(userPoJo.getBaseRemarks());
-        }
-        // 塞入redis
-        try {
-          redisTemplate
-              .opsForValue()
-              .set(
-                  token,
-                  JacksonUtil.toJson(userDto),
-                  GlobalConstant.SafeCode.TOKEN_TIME,
-                  TimeUnit.SECONDS);
-        } catch (IOException e) {
-          return BackResultUtils.error();
-        }
-        return BackResultUtils.ok();
-      } else {
+      UserPoJo userPoJo = userService.qPasswordByName(username);
+      UserDto userDto = new UserDto();
+      // 普通用户添加
+      userDto.setUserName(userPoJo.getUserName());
+      userDto.setBaseId(userPoJo.getBaseId());
+      userDto.setRoleIds(userPoJo.getRoleIds());
+      userDto.setStatus(userPoJo.getBaseStatus());
+      userDto.setIdCard(userPoJo.getIdCard());
+      userDto.setPhoto(userPoJo.getPhoto());
+      userDto.setRemarks(userPoJo.getBaseRemarks());
+      // 塞入redis
+      try {
+        redisTemplate
+            .opsForValue()
+            .set(
+                token,
+                JacksonUtil.toJson(userDto),
+                GlobalConstant.SafeCode.TOKEN_TIME,
+                TimeUnit.SECONDS);
+      } catch (IOException e) {
         return BackResultUtils.error();
       }
+      return BackResultUtils.ok();
     }
   }
 
@@ -140,6 +140,7 @@ public class LoginController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @SqlDisplay
+  @PreAuthorize("hasAuthority('ROLE_USER')")
   public BackResult logOut() {
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);
     //oauth2失效token(下面这个对jwttoken没用，也就是下面方法即使撤销返回成功，但是下次携带jwttoken还是可以访问，是通病；所以采取第二种，redis校验用户是否存在，即后面删除用户信息这段)

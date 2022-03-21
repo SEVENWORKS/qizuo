@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/** common user service. 这个好像采用密码登录才会用到，暂时系统用的是客户端的方式，不会用到这个 */
+/** common user service. 这个方法除了客户端模式之外，另外三种模式都会进入其中查询，查询成功后，返回给验证器验证 */
 @Configuration
 @Data
 public class SecurityUserDetailsSevice implements UserDetailsService {
@@ -57,7 +57,7 @@ public class SecurityUserDetailsSevice implements UserDetailsService {
   //权限获取
   private Collection<GrantedAuthority> getAuthorities(UserPoJo user){
     List<GrantedAuthority> authorities = new ArrayList<>();
-    if(user.getRolePoJos().size()>0){
+    if(null!=user.getRolePoJos()&&user.getRolePoJos().size()>0){
       user.getRolePoJos().forEach(key->{
         authorities.add(new SimpleGrantedAuthority(key.getName()));
       });

@@ -38,11 +38,6 @@ spring:
 #      enabled: false  #设置开启热部署
 #      additional-paths: qizuo-provider-spider/src/main/java #重启目录
 #      exclude: WEB-INF/**
-  #上传文件大小限制
-  servlet:
-    multipart:
-      max-request-size: 20MB #上传文件总的最大值
-      max-file-size: 10MB #单个文件的最大值
   #数据库配置
   datasource:
     # 数据库访问配置, 使用druid数据源

@@ -18,7 +18,7 @@ import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.util.Assert;
 
-/** feign request interceptor. */
+/** feign request interceptor.主要作用就是rpc请求的时候，token头携带过去 */
 @Slf4j
 @RefreshScope
 public class OAuth2FeignRequestInterceptor implements RequestInterceptor {

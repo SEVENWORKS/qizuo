@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /** @Author: fangl @Description: 菜单 @Date: 14:20 2018/10/29 */
@@ -15,6 +16,8 @@ import java.util.List;
 public class MenuPoJo extends BasePoJo {
   /** 名称 */
   @ApiModelProperty(value = "名称")
+  //对象的参数校验，如下方式，后面message取的是ValidationMessages.properties中数据
+  @Size(min = 1,max = 100,message = "{menu.name.size}")
   private String name;
   /** 跳转路径 */
   @ApiModelProperty(value = "跳转路径")

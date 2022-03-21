@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
 
-/** feign configuration core. */
+/** feign configuration core.核心，主要配置OAuth2FeignRequestInterceptor使用 */
 @Configuration
 @EnableConfigurationProperties(Oauth2ClientPropertiesY.class)
 public class OAuth2FeignAutoConfigurationY {

@@ -29,7 +29,7 @@ public class OauthLoginController  extends BaseController {
     @ApiOperation(httpMethod = "GET", value = "授权码登录界面")
     @NoNeedAccessAuthentication
     public String loginPage(Model model){
-        model.addAttribute("loginProcessUrl",port_url+"user/qizuo/authorize");///user/qizuo/authorize
+        model.addAttribute("loginProcessUrl","/user/qizuo/authorize");//
         return "login";
     }
 }

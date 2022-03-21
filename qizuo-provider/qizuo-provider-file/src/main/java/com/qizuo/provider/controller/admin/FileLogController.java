@@ -18,6 +18,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /** 上传文件查询. */
@@ -30,6 +33,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 // swagger
 @Api(value = "File-FileLogController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//开启前置权限判断
+//开启参数认证
+@Validated
 public class FileLogController extends BaseController {
   @Autowired private FileLogService fileLogService;
   /**
@@ -42,7 +48,8 @@ public class FileLogController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @SqlDisplay
-  public BackResult list(@RequestBody FileLogPoJo fileLogPoJo) {
+  @PreAuthorize("hasAuthority('ROLE_FILE')")
+  public BackResult list(@RequestBody(required = false) FileLogPoJo fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.qList(fileLogPoJo));
   }
 
@@ -56,6 +63,7 @@ public class FileLogController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @SqlDisplay
+  @PreAuthorize("hasAuthority('ROLE_FILE')")
   public BackResult page(@RequestBody PageDto<FileLogPoJo> fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.qPageQZ(fileLogPoJo));
   }
@@ -70,6 +78,7 @@ public class FileLogController extends BaseController {
   @LogAnnotation
   @ValidateRequestAnnotation
   @SqlDisplay
+  @PreAuthorize("hasAuthority('ROLE_FILE')")
   public BackResult query(@RequestBody FileLogPoJo fileLogPoJo) {
     return BackResultUtils.ok(fileLogService.query(fileLogPoJo));
   }

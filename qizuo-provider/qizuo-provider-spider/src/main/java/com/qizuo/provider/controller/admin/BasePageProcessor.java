@@ -9,12 +9,9 @@ import us.codecraft.webmagic.scheduler.BloomFilterDuplicateRemover;
 import us.codecraft.webmagic.scheduler.FileCacheQueueScheduler;
 
 /**
- * Created by brian on 16/11/24.
- *
  * <p>爬取知乎用户的关注者 step 1: 运行该类的 main 方法开始爬取
  */
 public class BasePageProcessor implements PageProcessor {
-
   private Site site = new BasicConfiguration().getSite();
 
   // process是定制爬虫逻辑的核心接口，在这里编写抽取逻辑

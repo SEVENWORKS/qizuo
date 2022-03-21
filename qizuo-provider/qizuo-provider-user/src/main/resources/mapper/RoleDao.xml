@@ -6,9 +6,7 @@
         <include refid="CommonColumns.commonColumns"/>,
         a.NAME as "name",
         a.MENU_IDS as "menuIds",
-        a.DATA_SCOPE_CDS as "dataScopeCds",
-        a.JUMP_URL as "jumpUrl",
-        a.INDEX_URL as "indexUrl"
+        a.DATA_SCOPE_CDS as "dataScopeCds"
     </sql>
     <!-- 查找单个 -->
     <select id="query" resultType="com.qizuo.provider.model.po.RolePoJo">
@@ -44,8 +42,57 @@
 
             </if>
         </where>
-        <if test="entity.orderBy != null and entity.orderBy != ''">
+        <if test="entity != null and entity.orderBy != null and entity.orderBy != ''">
             order by ${entity.orderBy}
         </if>
     </select>
+    <!-- ********************************************************************************************************************** -->
+    <!-- 插入 -->
+    <insert id="insert">
+        insert into sys_role
+        (
+            BASE_ID,
+            BASE_CREATE_USER_ID,
+            BASE_CREATE_TM,
+            BASE_STATUS,
+            BASE_REMARKS,
+            BASE_CREATE_IP,
+            NAME,
+            MENU_IDS,
+            DATA_SCOPE_CDS
+        )
+        values
+            (
+                #{baseId},
+                #{baseCreateUserId},
+                now(),
+                #{baseStatus},
+                #{baseRemarks},
+                #{baseCreateIp},
+                #{name},
+                #{menuIds},
+                #{dataScopeCds}
+            )
+    </insert>
+    <!-- 修改 -->
+    <update id="update">
+        update sys_role set
+                            BASE_UPDATE_USER_ID=#{baseUpdateUserId},
+                            BASE_UPDATE_TM=now(),
+                            BASE_REMARKS=#{baseRemarks},
+                            BASE_UPDATE_IP=#{baseUpdateIp},
+                            NAME=#{name},
+                            MENU_IDS=#{menuIds},
+                            DATA_SCOPE_CDS=#{dataScopeCds}
+        where BASE_ID=#{baseId}
+    </update>
+    <!-- 删除 -->
+    <delete id="delete">
+        delete from sys_role where BASE_ID=#{baseId}
+    </delete>
+    <!-- 更新状态 -->
+    <update id="uStatus">
+        update sys_role set BASE_STATUS=#{baseStatus} where BASE_ID=#{baseId}
+    </update>
+    <!-- ********************************************************************************************************************** -->
 </mapper>

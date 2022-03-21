@@ -19,6 +19,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,11 +36,13 @@ import java.util.concurrent.TimeUnit;
 /** 验证码. */
 @RequestMapping(
   value = "/validateCode/",
-  method = RequestMethod.POST,
+  method = {RequestMethod.POST,RequestMethod.GET},
   produces = {"application/json;charset=UTF-8"}
 )
 @RestController
 @Api(value = "User-ValidateCodeController", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//开启参数认证
+@Validated
 public class ValidateCodeController extends BaseController {
   // 验证码生产对象
   @Resource Producer captchaProducer;
@@ -101,6 +104,7 @@ public class ValidateCodeController extends BaseController {
     String code = (String) redisTemplate.opsForValue().get(token + "_imgCode");
     // 对比
     if (StringUtils.equals(imgCode, code)) {
+      redisTemplate.delete(token + "_imgCode");
       return BackResultUtils.ok();
     } else {
       return BackResultUtils.error();

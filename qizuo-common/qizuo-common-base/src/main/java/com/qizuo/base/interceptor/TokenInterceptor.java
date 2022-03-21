@@ -34,10 +34,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-/** spring拦截器，验证token */
+/** spring拦截器，验证token 和filter不同，springmvc拦截器没有执行顺序order设置，都是通过注册时候顺序或者拦截url进行配置的 */
 @Slf4j
 @RefreshScope
-@Order(1)
 public class TokenInterceptor implements HandlerInterceptor {
   @Value("${token_rules}")
   private String tokenRules;

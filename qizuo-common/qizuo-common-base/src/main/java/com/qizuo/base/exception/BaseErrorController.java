@@ -41,7 +41,7 @@ public class BaseErrorController implements ErrorController {
   public BackResult errorApiHander(HttpServletRequest request) {
     ServletWebRequest requestAttributes = new ServletWebRequest(request);
     Map<String, Object> attr = this.errorAttributes.getErrorAttributes(requestAttributes, false);
-    return BackResultUtils.error((String) attr.get("message"));
+    return BackResultUtils.error();
   }
 
   /** web页面错误处理 */
