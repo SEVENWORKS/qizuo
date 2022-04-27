@@ -61,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .disable()// 关闭默认打开的crsf protection，因为打开这个会对自制的一些token认证功能有影响
         .requestMatchers().antMatchers("/qizuo/**","/oauth/authorize").and()//这个地方表明当前filter只会有上述请求进入，其它的请求还是需要资源服务器ResourceServerConfigurerAdapter处理token认证
         .authorizeRequests() // 启用基于 HttpServletRequest 的访问限制，开始配置哪些URL需要被保护、哪些不需要被保护，为后面设置启用
-        .antMatchers("/favicon.icon","/qizuo/login") // 未登陆用户允许的请求 /**/*.css ,"/**/qizuo/**"
+        .antMatchers("/favicon.icon","/qizuo/login","/error") // 未登陆用户允许的请求 /**/*.css ,"/**/qizuo/**"
         .permitAll() // 未登陆用户允许的请求
         .anyRequest()
         .authenticated(); // 其他请求全部需要登陆

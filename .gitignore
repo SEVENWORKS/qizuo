@@ -1,7 +1,9 @@
 #配置git需要忽略的文件
-/.idea/
+.idea/
 *.iml
 *.iws
-/target/
-/dist/
-/node_modules/
+*.ipr
+target/
+dist/
+node_modules/
+.vscode/
