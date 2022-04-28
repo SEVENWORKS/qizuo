@@ -89,7 +89,8 @@ public class TokenInterceptor implements HandlerInterceptor {
     if (ObjectIsEmptyUtils.isEmpty(zuulHeader)
         && !uri.contains(GlobalConstant.Url$Path.TokenInterceptor_SECURITY_PATH3)) {
       log.error("请求错误，不是路由的请求");
-      return false;
+      //error请求直接进入error controller
+      return uri.contains(GlobalConstant.Url$Path.TokenInterceptor_AUTH_PATH);
     }
 
     // 获取请求uri

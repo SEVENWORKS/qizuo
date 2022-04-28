@@ -61,7 +61,7 @@ import java.util.List;
  * http://127.0.0.1:9300/port/user/oauth/token?grant_type=refresh_token&client_id=qizuo2&client_secret=qizuo2&refresh_token=ey...
  * 支持get和post请求；参数不要放到header中;refresh_token要用返回的refresh_token的参数，不是token本身(所以客户端模式不支持刷新)；刷新token的参数要和获取token参数保持一致
  * 5.简化(implicit)
- * 整体步骤和授权码一致，只不过在d这一部的时候开始发生变化
+ * 整体步骤和授权码一致，只不过在d这一部的时候开始发生变化(response_type=token)
  * d.直接返回token：https://www.baidu.com/#access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJxaXp1byIsInNjb3BlIjpbInJlYWQiXSwibG9naW5OYW1lIjoicWl6dW8iLCJleHAiOjE2NTAxMjc0NjgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfVVNFUkFETUlOIl0sImp0aSI6ImYyNjA1MzdiLTZlNTctNGIwOS1hYTU4LTVmMzQ2Y2YwZGIzZiIsImNsaWVudF9pZCI6InFpenVvMyIsInRpbWVzdGFtcCI6MTY0NzUzNTQ2ODk1N30.dRKPxm7pvGhCU3U1ir3cxBd8kKbgwMBueUa4YlybSEw&token_type=bearer&expires_in=2591999&scope=read&timestamp=1647535468957&loginName=qizuo&jti=f260537b-6e57-4b09-aa58-5f346cf0db3f
  * 注意：这个是没有refretoken的，也就是无法刷新
  *
@@ -76,6 +76,17 @@ import java.util.List;
  * TODO 是否要将验证服务器放到zuul中
  *
  * @AuthenticationPrincipal 注解可以快速的获取security相关信息，比如@AuthenticationPrincipal String username
+ *
+ * 单点登录：
+ * 原理：就是两个网站利用同一个地址登录页面，然后这个地址鉴权是根据cookie来校验的，也就是服务端的session进行校验，只要session中存有用户信息并且没有过期，网站间登录跳转就可以互通
+ * oauth2的单点登录：利用授权码或者简化模式，统一登录页面，就会有上面原理，就可以多个网站单点登录了
+ * 单点登录和@EnableOAuth2Sso注解有啥关系：关系不大。这个注解作用就是将所注解的服务变成oauth2入口，也就是访问注解所在服务和访问oauth2 server是一样的，也就是如果不加这个注解，直接用oauth2 server进行单点登录也没问题
+ *
+ * oauth2有三种鉴权token的方式：
+ * 1.直接调oauth2 server接口进行鉴权
+ * 2.获取tokenstore进行鉴权
+ * 3.实列化tokenstore进行鉴权
+ * 第二种和第三种类似，本项目用的第三种，直接实列化jwttokenstore进行鉴权；第二种是远程获取token key，调用oauth/token_key进行实列化
  */
 @Configuration
 @EnableAuthorizationServer

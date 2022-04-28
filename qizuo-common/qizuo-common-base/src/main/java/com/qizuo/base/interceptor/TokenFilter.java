@@ -35,8 +35,9 @@ public class TokenFilter implements Filter{
         String zuulHeader = request.getHeader(tokenRules);
         if (ObjectIsEmptyUtils.isEmpty(zuulHeader)&&!uri.contains(GlobalConstant.Url$Path.TokenInterceptor_AUTH_PATH)){
             log.error("请求错误，不是路由的请求");
-            //请求转发(转发request重定向response)
-            request.getRequestDispatcher("/error").forward(servletRequest,servletResponse);
+            //请求转发(转发request重定向response);这地方采用该抛出一场的方式进行请求结束，要不然转发的情况下还是会进入这里面,导致oauth2进行鉴权判断
+            throw new ServletException("zuul error");
+            //request.getRequestDispatcher("/error").forward(servletRequest,servletResponse);
         }else {
             filterChain.doFilter(servletRequest,servletResponse);
         }
