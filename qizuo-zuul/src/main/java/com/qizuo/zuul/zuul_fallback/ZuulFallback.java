@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.zuul.fallback;
+package com.qizuo.zuul.zuul_fallback;
 
 import com.netflix.hystrix.exception.HystrixTimeoutException;
 import lombok.extern.slf4j.Slf4j;

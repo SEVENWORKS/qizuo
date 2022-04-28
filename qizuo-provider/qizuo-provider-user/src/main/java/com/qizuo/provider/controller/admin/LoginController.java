@@ -77,9 +77,9 @@ public class LoginController extends BaseController {
   // userservice
   @Autowired private UserService userService;
 
-  @Autowired
-  @Qualifier("consumerTokenServices")
-  ConsumerTokenServices consumerTokenServices;
+//  @Autowired(原先直接做server可以有这个类，现在不是server用法后续研究)
+//  @Qualifier("consumerTokenServices")
+//  ConsumerTokenServices consumerTokenServices;
   /**
    * @author: fangl
    * @description: 用户登录
@@ -144,7 +144,7 @@ public class LoginController extends BaseController {
   public BackResult logOut() {
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);
     //oauth2失效token(下面这个对jwttoken没用，也就是下面方法即使撤销返回成功，但是下次携带jwttoken还是可以访问，是通病；所以采取第二种，redis校验用户是否存在，即后面删除用户信息这段)
-    consumerTokenServices.revokeToken(token);
+    //consumerTokenServices.revokeToken(token);
     // 删除用户信息
     if (redisTemplate.opsForValue().get(token) != null) {
       redisTemplate.delete(token);

@@ -24,8 +24,6 @@ import org.springframework.web.filter.CorsFilter;
 @EnableDiscoveryClient
 // zuul server启动
 @EnableZuulProxy
-// oAuth2认证开启，单点登录
-@EnableOAuth2Sso
 // 熔断启动(对@EnableCircuitBreaker注解的封装),开启之后就可以在requestMapping方法上加上如下熔断降级，注意这个和yaml中execution.isolation.thread.timeoutInMilliseconds配置value
 //@HystrixCommand(
 //  commandProperties ={

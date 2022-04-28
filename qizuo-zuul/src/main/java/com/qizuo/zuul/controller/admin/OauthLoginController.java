@@ -1,4 +1,4 @@
-package com.qizuo.provider.controller.admin;
+package com.qizuo.zuul.controller.admin;
 
 import com.qizuo.base.annotation.NoNeedAccessAuthentication;
 import com.qizuo.base.model.service.BaseController;

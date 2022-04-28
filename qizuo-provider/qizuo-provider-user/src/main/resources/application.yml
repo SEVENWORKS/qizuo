@@ -94,11 +94,6 @@ spring:
       filter:
         stat:
           log-slow-sql: true
-  #thymeleaf模板配置(这个配置后才可以return string到某个页面；除了这个还有其它，尤其是springmvc自带的，这个也是需要配置的)
-  thymeleaf:
-    prefix: classpath:/static/
-    suffix: .html
-    cache: false
 
 #springboot配置
 spring.boot:

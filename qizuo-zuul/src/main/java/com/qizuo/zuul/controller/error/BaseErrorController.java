@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.zuul.fallback;
+package com.qizuo.zuul.controller.error;
 
 import com.qizuo.base.model.result.BackResult;
 import com.qizuo.base.utils.BackResultUtils;

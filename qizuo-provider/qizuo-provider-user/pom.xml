@@ -19,11 +19,6 @@
   </properties>
 
   <dependencies>
-    <!-- 页面模板 -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
     <!-- rpc调用 -->
     <dependency>
       <groupId>com.qizuo.provider.api.user</groupId>

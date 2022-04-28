@@ -2,10 +2,10 @@
  * Copyright (c) 2020.
  * author：qizuo
  */
-package com.qizuo.provider.security.authorizationServer;
+package com.qizuo.zuul.authorizationServer;
 
-import com.qizuo.provider.security.authorizationServer.service.RestClientDetailsService;
-import com.qizuo.provider.security.authorizationServer.service.SecurityUserDetailsSevice;
+import com.qizuo.zuul.authorizationServer.service.RestClientDetailsService;
+import com.qizuo.zuul.authorizationServer.service.SecurityUserDetailsSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

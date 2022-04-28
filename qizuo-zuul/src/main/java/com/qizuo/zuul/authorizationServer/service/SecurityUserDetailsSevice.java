@@ -3,13 +3,10 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.authorizationServer.service;
+package com.qizuo.zuul.authorizationServer.service;
 
 import com.qizuo.base.annotation.SqlDisplay;
-import com.qizuo.base.model.auth.UserDto;
-import com.qizuo.base.utils.UserUtil;
 import com.qizuo.provider.model.po.UserPoJo;
-import com.qizuo.provider.service.UserService;
 import com.qizuo.security.model.SecurityUser;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +26,8 @@ import java.util.List;
 @Configuration
 @Data
 public class SecurityUserDetailsSevice implements UserDetailsService {
-  @Autowired
-  UserService userService;
+//  @Autowired
+//  UserFeignApi userService;
   // 返回user对象
   @SqlDisplay
   @Override
@@ -38,7 +35,7 @@ public class SecurityUserDetailsSevice implements UserDetailsService {
     //根据名称查询用户信息
     UserPoJo userPoJo=new UserPoJo();
     userPoJo.setUserName(username);
-    UserPoJo user=userService.qUserAllMsg(userPoJo);
+    UserPoJo user=null;//userService.qUserAllMsg(userPoJo)
     if (user == null) {
       throw new BadCredentialsException("用户名不存在或者密码错误");
     }

@@ -3,9 +3,8 @@
  * author：qizuo
  */
 
-package com.qizuo.provider.security.authorizationServer;
+package com.qizuo.zuul.authorizationServer;
 
-import com.qizuo.provider.security.authorizationServer.doResult.AuthenLogoutSuccessHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;

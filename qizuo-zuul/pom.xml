@@ -21,6 +21,34 @@
 
     <!-- 依赖引入 -->
     <dependencies>
+        <!-- rpc调用 -->
+        <dependency>
+            <groupId>com.qizuo.provider.api.user</groupId>
+            <artifactId>qizuo-provider-api-user</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- mysql连接 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!--<scope>runtime</scope>-->
+        </dependency>
+        <!-- 集成druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- idea中实现热部署1 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- 页面模板 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!-- 路由zuul server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -33,8 +61,8 @@
         </dependency>
         <!-- *****************common项目开始***************** -->
         <dependency>
-            <groupId>com.qizuo.common.base</groupId>
-            <artifactId>qizuo-common-base</artifactId>
+            <groupId>com.qizuo.common.security</groupId>
+            <artifactId>qizuo-common-security</artifactId>
             <version>1.0</version>
         </dependency>
         <!-- *****************common结束***************** -->

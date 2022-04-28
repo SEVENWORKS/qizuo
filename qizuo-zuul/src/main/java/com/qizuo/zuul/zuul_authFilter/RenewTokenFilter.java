@@ -3,7 +3,7 @@
  * author：qizuo
  */
 
-package com.qizuo.zuul.authFilter;
+package com.qizuo.zuul.zuul_authFilter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
