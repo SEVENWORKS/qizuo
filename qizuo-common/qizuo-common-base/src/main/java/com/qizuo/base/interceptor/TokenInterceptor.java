@@ -118,8 +118,9 @@ public class TokenInterceptor implements HandlerInterceptor {
     // 存入token
     ThreadLocalMap.put(GlobalConstant.SafeCode.TOKEN, token);
 
-    // 如果包含不需要验证的注解，即不需要User信息
-    if (isHaveAccess(handler)) {
+    // 如果包含不需要验证的注解，即不需要User信息;包含不需要token头的不需要
+    String zuulRpc = request.getHeader(tokenRules+"_notoken");
+    if (isHaveAccess(handler)||StringUtils.isNotEmpty(zuulRpc)) {
       log.info("<== preHandle - 不需要认证注解不走认证.  token={}");
       return true;
     }

@@ -1,9 +1,10 @@
+#管理员账号密码，暂时没用
 qizuo: woaiwojia
-#token验证规则
+#token规则，主要请求头验证
 token_rules: qizuo
 #上传文件地址
 file_upload_path: "qizuo"
-#是否开启swagger
+#是否开启swagger，主要是security是否放行swagger
 swagger: true
 #入口
 port_url: "http://localhost:9300/port/"

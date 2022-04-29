@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +35,8 @@ import org.springframework.web.filter.CorsFilter;
 @EnableHystrix
 // swagger和zuul结合开启
 @EnableSwaggerButler
+//feign调用必须开启(当调用的包目录和feign不一致的时候，必须配置对应包扫描)
+@EnableFeignClients(basePackages = "com.qizuo.provider.service")
 public class QiZuoZuulApplication extends SpringBootServletInitializer {
 
   public static void main(String[] args) {

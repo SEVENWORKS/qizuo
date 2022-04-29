@@ -16,9 +16,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/** rpc调用接口. */
+/** rpc调用接口.注意也要加上@requestbody，就和普通controller一样 */
 @RestController
 @Api(value = "API-MenuFeignClient", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MenuFeignClient extends BaseController implements MenuFeignApi {
@@ -26,25 +27,25 @@ public class MenuFeignClient extends BaseController implements MenuFeignApi {
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询菜单列表")
-  public BackResult list(MenuPoJo menuPoJo) {
+  public BackResult list(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qList(menuPoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询菜单分页列表")
-  public BackResult page(PageDto<MenuPoJo> pagePoJo) {
+  public BackResult page(@RequestBody PageDto<MenuPoJo> pagePoJo) {
     return BackResultUtils.ok(menuService.qPageQZ(pagePoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询菜单树状")
-  public BackResult qEachList(MenuPoJo menuPoJo) {
+  public BackResult qEachList(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.qEachList(menuPoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询菜单单个")
-  public BackResult query(MenuPoJo menuPoJo) {
+  public BackResult query(@RequestBody MenuPoJo menuPoJo) {
     return BackResultUtils.ok(menuService.query(menuPoJo));
   }
 }

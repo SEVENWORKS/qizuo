@@ -33,6 +33,7 @@ public class Oauth2FeignErrorInterceptor implements ErrorDecoder {
 	 */
 	@Override
 	public Exception decode(final String methodKey, final Response response) {
+		//不是对应错误码走下面，注意鉴权不过的也都走这个
 		if (response.status() >= HttpStatus.BAD_REQUEST.value() && response.status() < HttpStatus.INTERNAL_SERVER_ERROR.value()) {
 			return new HystrixBadRequestException("request exception wrapper");
 		}
@@ -46,12 +47,12 @@ public class Oauth2FeignErrorInterceptor implements ErrorDecoder {
 				ResultCodeEnum anEnum = ResultCodeEnum.getEnum(code);
 				if (anEnum != null) {
 					if (anEnum == ResultCodeEnum.GL99990100) {
-						throw new IllegalArgumentException(message);
+						return new IllegalArgumentException(message);
 					} else {
-						throw new BusinessException(anEnum);
+						return new BusinessException(anEnum);
 					}
 				} else {
-					throw new BusinessException(ResultCodeEnum.GL99990500, message);
+					return new BusinessException(ResultCodeEnum.GL99990500, message);
 				}
 			}
 		} catch (IOException e) {

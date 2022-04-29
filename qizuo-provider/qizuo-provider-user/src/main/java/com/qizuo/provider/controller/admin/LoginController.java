@@ -97,6 +97,7 @@ public class LoginController extends BaseController {
   @NoNeedAccessAuthentication
   @PreAuthorize("hasAuthority('ROLE_USER')")
   //@Size就是@Validated开启验证后可以用来参数认证@RequestParam(value = "key")@Size(min = 5,max = 100) String key
+  //这个只有密码模式下的token才可以用到
   public BackResult login(@AuthenticationPrincipal String username) {
     // 存入token
     String token = (String) ThreadLocalMap.get(GlobalConstant.SafeCode.TOKEN);

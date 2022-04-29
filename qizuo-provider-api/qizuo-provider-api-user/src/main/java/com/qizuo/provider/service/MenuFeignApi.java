@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(
   value = "qizuo-provider-user",
   configuration = OAuth2FeignAutoConfigurationY.class,//这个主要是rpc调用配置
-  fallback = MenuApiHystrix.class
+  fallback = MenuApiHystrix.class,
+  path = "/user"
 )
 public interface MenuFeignApi {
   /**

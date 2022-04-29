@@ -16,6 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /** rpc调用接口. */
@@ -26,19 +27,19 @@ public class FileFeignClient extends BaseController implements FileApi {
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询文件列表")
-  public BackResult list(FilePoJo filePoJo) {
+  public BackResult list(@RequestBody FilePoJo filePoJo) {
     return BackResultUtils.ok(fileService.qList(filePoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询文件分页")
-  public BackResult page(PageDto<FilePoJo> poJos) {
+  public BackResult page(@RequestBody PageDto<FilePoJo> poJos) {
     return BackResultUtils.ok(fileService.qPageQZ(poJos));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询单个文件")
-  public BackResult query(FilePoJo filePoJo) {
+  public BackResult query(@RequestBody FilePoJo filePoJo) {
     return BackResultUtils.ok(fileService.query(filePoJo));
   }
 }

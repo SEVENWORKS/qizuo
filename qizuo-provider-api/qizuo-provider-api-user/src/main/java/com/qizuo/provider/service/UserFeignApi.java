@@ -14,11 +14,12 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-/** user feign api. */
+/** user feign api.注意带前缀的项目必须要加上path */
 @FeignClient(
   value = "qizuo-provider-user",
   configuration = OAuth2FeignAutoConfigurationY.class,
-  fallback = UserApiHystrix.class
+  fallback = UserApiHystrix.class,
+  path = "/user"
 )
 public interface UserFeignApi {
   /**
@@ -27,7 +28,7 @@ public interface UserFeignApi {
    * @param userPoJo
    * @return
    */
-  @PostMapping(value = "/user/user/list")
+  @PostMapping(value = "/user/list")
   BackResult list(@RequestBody UserPoJo userPoJo);
 
   /**
@@ -36,15 +37,24 @@ public interface UserFeignApi {
    * @param poJos
    * @return
    */
-  @PostMapping(value = "/user/user/page")
+  @PostMapping(value = "/user/page")
   BackResult page(@RequestBody PageDto<UserPoJo> poJos);
 
   /**
-   * 但跟
+   * 单个
    *
    * @param userPoJo
    * @return
    */
-  @PostMapping(value = "/user/user/query")
+  @PostMapping(value = "/user/query")
   BackResult query(@RequestBody UserPoJo userPoJo);
+
+  /**
+   * 根据名称查询用户信息
+   *
+   * @param userPoJo
+   * @return
+   */
+  @PostMapping(value = "/user/qUserAllMsg")
+  BackResult qUserAllMsg(@RequestBody UserPoJo userPoJo);
 }

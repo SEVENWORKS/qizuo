@@ -18,5 +18,6 @@ public class Oauth2ClientPropertiesY {
 	private String clientId;
 	private String clientSecret;
 	private String clientAuthenticationScheme;
+	private String grantType;
 }
 

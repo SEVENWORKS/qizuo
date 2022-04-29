@@ -18,6 +18,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /** rpc调用接口. */
@@ -28,13 +29,13 @@ public class MsgFeignClient extends BaseController implements MsgFeignApi {
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询消息列表")
-  public BackResult list(MsgPoJo msgPoJo) {
+  public BackResult list(@RequestBody MsgPoJo msgPoJo) {
     return BackResultUtils.ok(msgService.qList(msgPoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询单个消息")
-  public BackResult query(MsgPoJo msgPoJo) {
+  public BackResult query(@RequestBody MsgPoJo msgPoJo) {
     return BackResultUtils.ok(msgService.query(msgPoJo));
   }
 }

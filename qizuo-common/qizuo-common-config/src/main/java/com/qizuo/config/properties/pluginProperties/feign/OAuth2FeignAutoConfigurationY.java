@@ -35,8 +35,8 @@ public class OAuth2FeignAutoConfigurationY {
   }
 
   /**
-   * Resource details client credentials resource details. 这个认证bean主要是为了OAuth2RestTemplate构造
-   *
+   * Resource details client credentials resource details. 这个认证bean主要是为了OAuth2RestTemplate构造,获取security token(采用客户端模式)
+   * 用这个必须要在配置文件中进行配置
    * @return the client credentials resource details
    */
   @Bean("clientCredentialsResourceDetails")
@@ -46,7 +46,7 @@ public class OAuth2FeignAutoConfigurationY {
     details.setAccessTokenUri(oauth2ClientProperties.getAccessTokenUrl());
     details.setClientId(oauth2ClientProperties.getClientId());
     details.setClientSecret(oauth2ClientProperties.getClientSecret());
-    //
+    details.setGrantType(oauth2ClientProperties.getGrantType());
     //	details.setAuthenticationScheme(AuthenticationScheme.valueOf(oauth2ClientProperties.getClientAuthenticationScheme()));
     return details;
   }

@@ -16,6 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /** rpc调用接口. */
@@ -26,19 +27,25 @@ public class UserFeignClient extends BaseController implements UserFeignApi {
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询用户列表")
-  public BackResult list(UserPoJo userPoJo) {
+  public BackResult list(@RequestBody UserPoJo userPoJo) {
     return BackResultUtils.ok(userService.qList(userPoJo));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "获取用户分页列表")
-  public BackResult page(PageDto<UserPoJo> poJos) {
+  public BackResult page(@RequestBody PageDto<UserPoJo> poJos) {
     return BackResultUtils.ok(userService.qPageQZ(poJos));
   }
 
   @Override
   @ApiOperation(httpMethod = "POST", value = "查询单个用户")
-  public BackResult query(UserPoJo userPoJo) {
+  public BackResult query(@RequestBody UserPoJo userPoJo) {
     return BackResultUtils.ok(userService.query(userPoJo));
+  }
+
+  @Override
+  @ApiOperation(httpMethod = "POST", value = "根据名称查询单个用户")
+  public BackResult qUserAllMsg(@RequestBody UserPoJo userPoJo) {
+    return BackResultUtils.ok(userService.qUserAllMsg(userPoJo));
   }
 }

@@ -7,7 +7,9 @@ package com.qizuo.zuul.authorizationServer.service;
 
 import com.qizuo.base.annotation.SqlDisplay;
 import com.qizuo.provider.model.po.UserPoJo;
+import com.qizuo.provider.service.UserFeignApi;
 import com.qizuo.security.model.SecurityUser;
+import com.qizuo.util.parse.JacksonUtil;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -26,8 +29,7 @@ import java.util.List;
 @Configuration
 @Data
 public class SecurityUserDetailsSevice implements UserDetailsService {
-//  @Autowired
-//  UserFeignApi userService;
+  @Autowired private UserFeignApi userFeignApi;
   // 返回user对象
   @SqlDisplay
   @Override
@@ -35,11 +37,19 @@ public class SecurityUserDetailsSevice implements UserDetailsService {
     //根据名称查询用户信息
     UserPoJo userPoJo=new UserPoJo();
     userPoJo.setUserName(username);
-    UserPoJo user=null;//userService.qUserAllMsg(userPoJo)
+    Object back=userFeignApi.qUserAllMsg(userPoJo).getResult();
+    //返回的是Linkmap，需要进行转换
+    UserPoJo user;
+    try {
+      user = JacksonUtil.parseJson(JacksonUtil.toJson(back), UserPoJo.class);
+    } catch (IOException e) {
+      user= null;
+    }
     if (user == null) {
       throw new BadCredentialsException("用户名不存在或者密码错误");
     }
-    Collection<GrantedAuthority> grantedAuthorities=getAuthorities(user);//获取权限
+    //返回权限主体进行验证
+    Collection<GrantedAuthority> grantedAuthorities=getAuthorities(user);
     return new SecurityUser(
         user.getBaseId(),
         user.getUserName(),

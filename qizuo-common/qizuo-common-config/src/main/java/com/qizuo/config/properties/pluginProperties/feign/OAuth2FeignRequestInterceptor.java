@@ -15,8 +15,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.util.Assert;
+import org.springframework.util.ObjectUtils;
+
+import java.util.Arrays;
 
 /** feign request interceptor.主要作用就是rpc请求的时候，token头携带过去 */
 @Slf4j
@@ -24,8 +28,11 @@ import org.springframework.util.Assert;
 public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
   @Value("${token_rules}")
   private String tokenRules;
+  //默认为null写入如下，默认为空串写法:''
+  @Value("${qizuo.feign.noToken:}")
+  private String[] noToken;
 
-  private final OAuth2RestTemplate oAuth2RestTemplate;
+  private final OAuth2RestTemplate oAuth2RestTemplate;//获取token工具
 
   /**
    * Instantiates a new O auth 2 feign request interceptor.
@@ -46,7 +53,21 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
    */
   @Override
   public void apply(RequestTemplate template) {
-    // 获取上下文
+    // 包含不需要token的url请求都从这个地方，默认都是获取客户端模式token
+    if(!ObjectUtils.isEmpty(noToken)&&noToken.length>0&& Arrays.asList(noToken).contains(template.url())){
+      // zuul header
+      template.header(tokenRules, GlobalConstant.Global);
+      // client header
+      template.header(tokenRules+"_notoken", GlobalConstant.Global);
+      // token header
+      OAuth2AccessToken oAuth2AccessToken=oAuth2RestTemplate.getAccessToken();
+      template.header(HttpHeaders.AUTHORIZATION,oAuth2AccessToken.getTokenType()+" "+oAuth2AccessToken.getValue());
+      log.debug("Constructing Header {} for Token {}",
+              HttpHeaders.AUTHORIZATION,
+              oAuth2AccessToken.getValue());
+      return;
+    }
+    // 需要token的url都从这个地方，默认都是请求头中获取token
     SecurityContext securityContext = SecurityContextHolder.getContext();
     Authentication authentication = securityContext.getAuthentication();
     if (authentication != null
@@ -67,7 +88,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
               "%s%s",
               GlobalConstant.HttpConfig.AUTH_HEADER_SPLIT,
               oAuth2AuthenticationDetails
-                  .getTokenValue())); // 原来方案这里是有区别的oAuth2RestTemplate.getAccessToken().toString()
+                  .getTokenValue()));
     }
   }
 }

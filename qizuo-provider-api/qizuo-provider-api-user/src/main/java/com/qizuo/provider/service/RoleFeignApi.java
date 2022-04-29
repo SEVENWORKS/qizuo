@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(
   value = "qizuo-provider-user",
   configuration = OAuth2FeignAutoConfigurationY.class,
-  fallback = RoleApiHystrix.class
+  fallback = RoleApiHystrix.class,
+  path = "/user"
 )
 public interface RoleFeignApi {
 

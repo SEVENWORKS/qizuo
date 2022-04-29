@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(
   value = "qizuo-provider-file",
   configuration = OAuth2FeignAutoConfigurationY.class,
-  fallback = FileApiHystrix.class
+  fallback = FileApiHystrix.class,
+  path = "/file"
 )
 public interface FileApi {
 

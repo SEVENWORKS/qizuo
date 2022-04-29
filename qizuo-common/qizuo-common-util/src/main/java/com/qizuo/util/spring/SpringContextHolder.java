@@ -44,7 +44,7 @@ public class SpringContextHolder implements ApplicationContextAware {
 
 	/**
 	 * Gets bean.
-	 *
+	 * 这个方法主要用于无法获取注入依赖中bean的方法(但是必须提前注入bean到容器才能这样获取到)
 	 * @param <T>      the type parameter
 	 * @param beanName the bean name
 	 *
