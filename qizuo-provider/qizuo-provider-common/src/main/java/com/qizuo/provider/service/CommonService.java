@@ -6,7 +6,7 @@ import com.qizuo.provider.service.dao.CommonDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/** @Author: fangl @Description: 菜单 @Date: 12:13 2019/1/1 */
+/** @Author: fangl @Description: 常用 @Date: 12:13 2019/1/1 */
 @Service
 @Transactional(rollbackFor = Exception.class)
 // 表明此类上所有方法上的事务都是CGLib方式代理的
