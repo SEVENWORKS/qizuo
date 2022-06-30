@@ -98,18 +98,12 @@ module.exports = {
     // 配置别名，在项目中可缩减引用路径
     config.resolve.alias
       .set("vue$", "vue/dist/vue.esm.js")
-      .set("mock", resolve("mock"))
       .set("@static", resolve("public/static"))
       .set("@", resolve("src"))
-      .set("@apis", resolve("src/apis"))
-      .set("@assets", resolve("src/assets"))
-      .set("@router", resolve("src/commonRouter"))
-      .set("@store", resolve("src/commonStore"))
-      .set("@comp", resolve("src/components"))
-      .set("@directive", resolve("src/directive"))
-      .set("@filters", resolve("src/filters"))
-      .set("@pages", resolve("src/pages"))
-      .set("@utils", resolve("src/utils"));
+      .set("@admin", resolve("src/main/admin"))
+      .set("@common", resolve("src/main/common"))
+      .set("@adminP", resolve("src/pages/admin"))
+      .set("@commonP", resolve("src/pages/common"));
 
     //优化处理压缩图片和打包分析
     if (IS_PROD) {
