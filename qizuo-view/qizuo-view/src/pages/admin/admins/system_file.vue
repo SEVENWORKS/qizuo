@@ -47,7 +47,7 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getFile, getFiles, getFilesPage } from "@apis/file";
+import { getFile, getFiles, getFilesPage } from "@/apis/file";
 export default {
   data() {
     return {

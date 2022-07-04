@@ -1,6 +1,6 @@
-import router from "@router";
-import store from "@store";
-import { getToken } from "@/utils/frames/auth"; // get token from cookie
+import router from "./router";
+import store from "./store";
+import { token } from "@/apis/user"; // get token from cookie
 
 //config
 const whiteList = ["/login"]; // no redirect whitelist
@@ -11,7 +11,7 @@ router.beforeEach(async (to, from, next) => {
   document.title = to.meta.title || "QIZUO";
 
   // token处理
-  const hasToken = getToken();
+  const hasToken = token();
   //有token
   if (hasToken) {
     //存在token的情况下直接跳转到对应页面就行

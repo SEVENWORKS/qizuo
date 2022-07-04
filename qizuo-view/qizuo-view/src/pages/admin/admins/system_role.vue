@@ -46,8 +46,8 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getRole, getRoles, getMenus } from "@apis/admin";
-import { doRoles, delRoles } from "@apis/admin-user";
+import { getRole, getRoles, getMenus } from "@/apis/user";
+import { doRoles, delRoles } from "@/apis/user";
 export default {
   data() {
     return {

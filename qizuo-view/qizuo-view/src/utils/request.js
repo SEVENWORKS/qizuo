@@ -1,8 +1,7 @@
 import axios from "axios";
 import { MessageBox, Message } from "element-ui";
-import store from "@store";
-import { getToken } from "@/utils/frames/auth";
-import "@utils/base_global";
+import { token } from "@/apis/user";
+import "@/utils/config";
 
 // create an axios instance
 const service = axios.create({
@@ -14,8 +13,8 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     //对token进行处理
-    if (store.getters.token) {
-      config.headers["X-QIZUO"] = getToken();
+    if (window._vm.$store.getters.token) {
+      config.headers["X-QIZUO"] = token();
       //spring security的token必须要加上token的类别，通常是bearer
       config.headers["Authorization"] =
         window._vm.$store.state.user.tokenType + " " + getToken();
@@ -57,7 +56,7 @@ service.interceptors.response.use(
             type: "warning",
           }
         ).then(() => {
-          store.dispatch("user/resetToken").then(() => {
+          window._vm.$store.dispatch("user/resetToken").then(() => {
             location.reload();
           });
         });
@@ -96,7 +95,7 @@ service.interceptors.response.use(
           type: "warning",
         }
       ).then(() => {
-        store.dispatch("user/resetToken").then(() => {
+        window._vm.$store.dispatch("user/resetToken").then(() => {
           location.reload();
         });
       });

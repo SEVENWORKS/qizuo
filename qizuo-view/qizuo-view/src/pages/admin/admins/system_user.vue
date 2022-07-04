@@ -62,8 +62,8 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getUser, getUsers, getUsersPage, getRoles } from "@apis/admin";
-import { doUsers, delUsers } from "@apis/admin-user";
+import { getUser, getUsers, getUsersPage, getRoles } from "@/apis/user";
+import { doUsers, delUsers } from "@/apis/user";
 export default {
   data() {
     return {

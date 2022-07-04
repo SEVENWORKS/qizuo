@@ -1,8 +1,4 @@
 import Vue from "vue";
-import store from "@pages/frames/store";
-import { isString, isArray } from "@/utils/frames/validate";
-import settings from "@pages/frames/settings";
-
 // you can set in settings.js
 // errorLog:'production' | ['production', 'development']
 const { errorLog: needErrorLog } = settings;

@@ -49,8 +49,8 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getMenu, getMenus, getMenusEach, getMenusPage } from "@apis/admin";
-import { doMenus, delMenus } from "@apis/admin-user";
+import { getMenu, getMenus, getMenusEach, getMenusPage } from "@/apis/user";
+import { doMenus, delMenus } from "@/apis/user";
 export default {
   data() {
     return {

@@ -111,7 +111,7 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getMenus, doMenus, delMenus } from "@apis/wx";
+import { getMenus, doMenus, delMenus } from "@/apis/wx";
 export default {
   data() {
     return {

@@ -2,7 +2,7 @@
 //它由PostCSS提供
 module.exports = {
   ignoreFiles: ["public", "dist", "node_modules"], //忽略文件
-  extends: ["stylelint-config-standard", "stylelint-config-recommended"], //继承规则
+  extends: ["stylelint-config-standard"], //继承规则
   rules: {
     'at-rule-no-unknown':[true,{'ignoreAtRules':['mixin,include','extend']}],
     'selector-pseudo-element-no-unknown':[true,{'ignorePseudoElements':'v-deep'}],

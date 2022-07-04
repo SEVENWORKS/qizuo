@@ -33,7 +33,7 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getMsgs, doMsgs, delMsgs } from "@apis/wx";
+import { getMsgs, doMsgs, delMsgs } from "@/apis/wx";
 export default {
   data() {
     return {
