@@ -125,7 +125,7 @@ export default {
   height: 100%;
   top: 0;
   z-index: 888;
-  background: url("~@assets/img/body-theme/qizuo-backgroudimg.png");
+  background: url("~@/assets/img/body-theme/qizuo-backgroudimg.png");
 }
 
 header {

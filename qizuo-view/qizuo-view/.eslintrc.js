@@ -43,7 +43,6 @@ module.exports = {
     "prefer-const": 1, //首选const
     semi: 0, // 使用分号, 默认true
     singleQuote: 0, // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
-    tabWidth: 2, // tab缩进大小,默认为4
     "template-curly-spacing": "off", //要求或禁止模板字符串中的嵌入表达式周围空格的使用
   },
   parserOptions: {

@@ -1,3 +1,14 @@
+//直接导入
+import "@/assets/svg"
+import "@/utils/config";
+import "@/utils/error";
+import "@/components/index";
+import "@/directive"
+import './router_permission'
+
+import "@/assets/scss/index.scss";
+import 'element-ui/lib/theme-chalk/index.css';
+
 //初始化
 import Vue from "vue";
 import App from "./App.vue";
@@ -10,24 +21,14 @@ window._vm = new Vue({
 }).$mount("#app");
 
 //vue对象挂载
-import request from "@/utils/request";
-Vue.prototype.$request = request;
 import utils from "@/utils";
 Vue.prototype.$utils = utils;
-import Element from "element-ui";
-Vue.use(Element);
+import request from "@/utils/request";
+Vue.prototype.$request = request;
 import * as filters from "@/filters";
 Object.keys(filters).forEach((key) => {
   Vue.filter(key, filters[key]);
 });
+import Element from "element-ui";
+Vue.use(Element);
 Vue.config.productionTip = false;
-
-//直接导入
-import "@/utils/config";
-import "@/components/index";
-import "@/utils/error";
-import "@/assets/svg"
-import "@/directive"
-
-import "@/assets/scss/index.scss";
-import 'element-ui/lib/theme-chalk/index.css';

@@ -28,3 +28,11 @@ export function isArray(arg) {
   }
   return Array.isArray(arg);
 }
+
+/**
+ * @param {string} path
+ * @returns {Boolean}
+ */
+ export function isExternal(path) {
+  return /^(https?:|mailto:|tel:)/.test(path);
+}

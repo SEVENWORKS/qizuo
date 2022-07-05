@@ -1,13 +1,3 @@
-/** 弹出窗(重写，基于layer) */
-function alert (msg, func) {
-    //更新store消息
-    window._vm.$message(msg + "");
-    //函数执行
-    if (isFunction(func)) {
-        func();
-    }
-};
-
 /** 判断值是否能用 */
 function isNotBlank(value) {
     if (

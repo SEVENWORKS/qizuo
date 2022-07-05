@@ -1,7 +1,26 @@
-const modules = modulesFiles.keys().reduce((modules, modulePath) => {
-    // set './app.js' => 'app'
-    const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1");
-    const value = modulesFiles(modulePath);
-    Vue.component("moduleName",value.default);
-    return modules;
-  }, {});
+import Vue from "vue";
+
+import animate from "./animate";
+Vue.component("animate",animate);
+import backToTop from "./backToTop";
+Vue.component("backToTop",backToTop);
+import dialog from "./dialog";
+Vue.component("dialog",dialog);
+import error from "./error";
+Vue.component("error",error);
+import headerSearch from "./headerSearch";
+Vue.component("headerSearch",headerSearch);
+import layout from "./layout";
+Vue.component("layout",layout);
+import login from "./login";
+Vue.component("login",login);
+import pagination from "./pagination";
+Vue.component("pagination",pagination);
+import screenfull from "./screenfull";
+Vue.component("screenfull",screenfull);
+import svgIcon from "./svgIcon";
+Vue.component("svgIcon",svgIcon);
+import table from "./table";
+Vue.component("table",table);
+import textHoverEffect from "./textHoverEffect";
+Vue.component("textHoverEffect",textHoverEffect);

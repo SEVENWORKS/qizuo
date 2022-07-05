@@ -77,7 +77,6 @@ export default {
 
 .link--mallki span::before {
   content: attr(data-letters);
-  color: red;
   position: absolute;
   left: 0;
   width: 100%;

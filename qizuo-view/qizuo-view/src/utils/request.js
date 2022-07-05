@@ -1,11 +1,9 @@
 import axios from "axios";
 import { MessageBox, Message } from "element-ui";
-import { token } from "@/apis/user";
-import "@/utils/config";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: window.$global.base.url_prefix, // process.env.VUE_APP_BASE_API
+  baseURL: window.$global.url_prefix, // process.env.VUE_APP_BASE_API
   timeout: 10000, // request timeout
 });
 
@@ -13,11 +11,12 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     //对token进行处理
-    if (window._vm.$store.getters.token) {
-      config.headers["X-QIZUO"] = token();
+    const token = window._vm.$store.getters.token;
+    if (token) {
+      config.headers["X-QIZUO"] = token;
       //spring security的token必须要加上token的类别，通常是bearer
       config.headers["Authorization"] =
-        window._vm.$store.state.user.tokenType + " " + getToken();
+        window._vm.$store.state.user.tokenType + " " + token;
     }
     return config;
   },
@@ -103,5 +102,10 @@ service.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+//错误处理
+function errorDo(){
+
+}
 
 export default service;

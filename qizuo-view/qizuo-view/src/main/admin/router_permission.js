@@ -1,10 +1,9 @@
-import router from "./router";
-import store from "./store";
+import router from "./router.js";
+import store from "./store.js";
 import { token } from "@/apis/user"; // get token from cookie
 
 //config
 const whiteList = ["/login"]; // no redirect whitelist
-
 //路由守卫
 router.beforeEach(async (to, from, next) => {
   // set page title
