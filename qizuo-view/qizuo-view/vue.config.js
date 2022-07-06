@@ -89,7 +89,7 @@ module.exports = {
           new CompressionWebpackPlugin({
               filename: "[path].gz[query]",
               algorithm: "gzip",
-              test: productionGzipExtensions,
+              test: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i,
               threshold: 10240,
               minRatio: 0.8
           })
@@ -134,7 +134,7 @@ module.exports = {
       ]);
     }
 
-    // set svg-sprite-loader
+    // set svg-sprite-loader(配合svg组件使用)
     config.module
       .rule("svg")
       .exclude.add(resolve("src/assets/svg"))
@@ -163,6 +163,8 @@ module.exports = {
         // 详情: https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
         prependData: `
           $src: "${process.env.VUE_APP_BASE_API}";
+          @import "@/assets/scss/mixin.scss";
+          @import "@/assets/scss/variables.scss";
           `,
       },
     },

@@ -24,7 +24,7 @@ module.exports = {
     "no-use-before-define": 1, //禁止在变量定义之前使用它们
     "no-unused-expressions": 0, // 允许使用未使用过的表达式，以此来支持a && a()的代码形式
     "no-restricted-syntax": 1, //禁用特定的语法
-    "no-plusplus": 1, //禁止使用++，--
+    "no-plusplus": 0, //禁止使用++，--
     "no-underscore-dangle": 0, // 允许在标识符中使用下划线
     "no-param-reassign": 0, // 禁止对 function 的参数进行重新赋值
     "no-nested-ternary": 0, // 禁止嵌套三元表达式
