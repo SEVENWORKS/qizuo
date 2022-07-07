@@ -13,7 +13,7 @@
           All rights reserved
           <a
             style="color: #20a0ff;"
-            href="https://wallstreetcn.com"
+            href=""
             target="_blank"
             >wallstreetcn</a
           >
