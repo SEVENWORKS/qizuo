@@ -8,6 +8,23 @@ $tiffany: #4ab7bd;
 $yellow:#fec171;
 $panGreen: #30b08f;
 
+//index
+$index-common:9;
+$index-common2:8;
+$index-common3:7;
+$index-common4:6;
+$index-common5:5;
+$index-min:999;
+$index-min2:998;
+$index-min3:997;
+$index-min4:996;
+$index-min5:995;
+$index-max:9999;
+$index-max2:9998;
+$index-max3:9997;
+$index-max4:9996;
+$index-max5:9995;
+
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {

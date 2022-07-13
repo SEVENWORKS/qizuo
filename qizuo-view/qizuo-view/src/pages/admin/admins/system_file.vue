@@ -1,6 +1,6 @@
 <template>
   <div>
-    <qz-base-table
+    <qz-table
       @getData="getData"
       @getDatas="getDatas"
       @deleteData="deleteData"
@@ -9,11 +9,17 @@
     >
       <template v-slot:table>
         <el-table-column align="center" label="序号" width="80" type="index" />
-        <el-table-column align="center" label="上传数据类型" prop="dataType" />
-        <el-table-column align="center" label="关联数据id" prop="dataId" />
-        <el-table-column align="center" label="关联字段" prop="dataColumn" />
-        <el-table-column align="center" label="上传路径" prop="resourceName" />
-        <el-table-column align="center" label="上传名称" prop="name" />
+        <el-table-column align="center" label="编号" prop="baseId" />
+        <el-table-column align="center" label="上传资源名称" prop="resourceName" />
+        <el-table-column align="center" label="文件名称" prop="name" />
+        <el-table-column align="center" label="创建者" prop="baseCreateUserId" />
+        <el-table-column align="center" label="创建时间" prop="baseCreateTm" />
+        <el-table-column align="center" label="修改者" prop="baseUpdateUserId" />
+        <el-table-column align="center" label="修改时间" prop="baseUpdateTm" />
+        <el-table-column align="center" label="状态" prop="baseStatus" />
+        <el-table-column align="center" label="备注" prop="baseRemarks" />
+        <el-table-column align="center" label="创建ip" prop="baseCreateIp" />
+        <el-table-column align="center" label="更新ip" prop="baseUpdateIp" />
       </template>
       <template v-slot:form>
         <el-form
@@ -23,24 +29,42 @@
           label-position="left"
           label-width="70px"
         >
-          <el-form-item label="上传数据类型">
-            <el-input v-model="form.dataType"></el-input>
+          <el-form-item label="编号">
+            <el-input v-model="form.baseId"></el-input>
           </el-form-item>
-          <el-form-item label="关联数据id">
-            <el-input v-model="form.dataId"></el-input>
-          </el-form-item>
-          <el-form-item label="关联字段">
-            <el-input v-model="form.dataColumn"></el-input>
-          </el-form-item>
-          <el-form-item label="上传路径">
+          <el-form-item label="上传资源名称">
             <el-input v-model="form.resourceName"></el-input>
           </el-form-item>
-          <el-form-item label="上传名称">
+          <el-form-item label="文件名称">
             <el-input v-model="form.name"></el-input>
+          </el-form-item>
+          <el-form-item label="创建者">
+            <el-input v-model="form.baseCreateUserId"></el-input>
+          </el-form-item>
+          <el-form-item label="创建时间">
+            <el-input v-model="form.baseCreateTm"></el-input>
+          </el-form-item>
+          <el-form-item label="修改者">
+            <el-input v-model="form.baseUpdateUserId"></el-input>
+          </el-form-item>
+          <el-form-item label="修改时间">
+            <el-input v-model="form.baseUpdateTm"></el-input>
+          </el-form-item>
+          <el-form-item label="状态">
+            <el-input v-model="form.baseStatus"></el-input>
+          </el-form-item>
+          <el-form-item label="备注">
+            <el-input v-model="form.baseRemarks"></el-input>
+          </el-form-item>
+          <el-form-item label="创建ip">
+            <el-input v-model="form.baseCreateIp"></el-input>
+          </el-form-item>
+          <el-form-item label="更新ip">
+            <el-input v-model="form.baseUpdateIp"></el-input>
           </el-form-item>
         </el-form>
       </template>
-    </qz-base-table>
+    </qz-table>
 
     <!-- 上传 -->
   </div>
@@ -52,13 +76,19 @@ export default {
   data() {
     return {
       form: {
-        dataType: "",
-        dataId: "",
-        dataColumn: "",
+        baseId: "",
         resourceName: "",
         name: "",
+        baseCreateUserId: "",
+        baseCreateTm: "",
+        baseUpdateUserId: "",
+        baseUpdateTm: "",
+        baseStatus: "",
+        baseRemarks: "",
+        baseCreateIp: "",
+        baseUpdateIp: "",
       },
-      rules: [],
+      rules: {},
     };
   },
   methods: {
@@ -73,7 +103,6 @@ export default {
     getDatas(page) {
       getFilesPage(page).then((reponse) => {
         const { result } = reponse;
-        this.options = result.entitys;
         this.$refs.baseTable.data = result.entitys;
         this.$refs.baseTable.page = result;
       });

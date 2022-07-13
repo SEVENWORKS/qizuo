@@ -13,7 +13,7 @@
     </el-table>
 
     <!-- 分页 -->
-    <pagination
+    <qz-pagination
       v-show="page.totalCount > 0"
       :total="page.totalCount"
       :page.sync="page.pageNo"
@@ -23,9 +23,9 @@
     />
 
     <!-- 表单 -->
-    <qz-base-form ref="form" @addUpdateData="addUpdateData">
+    <qz-dialog-form ref="form" @addUpdateData="addUpdateData">
       <slot name="form"></slot>
-    </qz-base-form>
+    </qz-dialog-form>
 
     <!-- 按钮 -->
     <qz-dialog :show.sync="dialogShow">

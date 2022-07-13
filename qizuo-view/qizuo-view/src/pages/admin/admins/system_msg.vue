@@ -10,9 +10,12 @@
       <template v-slot:table>
         <el-table-column align="center" label="序号" width="80" type="index" />
         <el-table-column align="center" label="编号" prop="baseId" />
-        <el-table-column align="center" label="上传路径名称" prop="resourceName" />
-        <el-table-column align="center" label="文件名" prop="name" />
-        <el-table-column align="center" label="上传结果" prop="uploadResult" />
+        <el-table-column align="center" label="消息名称" prop="title" />
+        <el-table-column align="center" label="消息类型" prop="type" />
+        <el-table-column align="center" label="消息内容" prop="content" />
+        <el-table-column align="center" label="接收人id(一般对应人员id)" prop="sendUserId" />
+        <el-table-column align="center" label="接收人TYPE(一般对应权限表)" prop="sendType" />
+        <el-table-column align="center" label="是否发送" prop="isSend" />
         <el-table-column align="center" label="创建者" prop="baseCreateUserId" />
         <el-table-column align="center" label="创建时间" prop="baseCreateTm" />
         <el-table-column align="center" label="修改者" prop="baseUpdateUserId" />
@@ -33,14 +36,23 @@
           <el-form-item label="编号">
             <el-input v-model="form.baseId"></el-input>
           </el-form-item>
-          <el-form-item label="上传路径名称">
-            <el-input v-model="form.resourceName"></el-input>
+          <el-form-item label="消息名称">
+            <el-input v-model="form.title"></el-input>
           </el-form-item>
-          <el-form-item label="文件名">
-            <el-input v-model="form.name"></el-input>
+          <el-form-item label="消息类型">
+            <el-input v-model="form.type"></el-input>
           </el-form-item>
-          <el-form-item label="上传结果">
-            <el-input v-model="form.uploadResult"></el-input>
+          <el-form-item label="消息内容">
+            <el-input v-model="form.content"></el-input>
+          </el-form-item>
+          <el-form-item label="接收人id(一般对应人员id)">
+            <el-input v-model="form.sendType"></el-input>
+          </el-form-item>
+          <el-form-item label="接收人TYPE(一般对应权限表)">
+            <el-input v-model="form.sendUserId"></el-input>
+          </el-form-item>
+          <el-form-item label="是否发送">
+            <el-input v-model="form.isSend"></el-input>
           </el-form-item>
           <el-form-item label="创建者">
             <el-input v-model="form.baseCreateUserId"></el-input>
@@ -73,15 +85,19 @@
 </template>
 <!-- 执行js -->
 <script>
-import { getFileLog, getFileLogs, getFileLogsPage } from "@/apis/file";
+import { getUser, getUsers, getUsersPage, getRoles } from "@/apis/user";
+import { doUsers, delUsers } from "@/apis/user";
 export default {
   data() {
     return {
       form: {
         baseId: "",
-        resourceName: "",
-        name: "",
-        uploadResult: "",
+        title: "",
+        type: "",
+        content: "",
+        sendType:"",
+        sendUserId:"",
+        isSend:"",
         baseCreateUserId: "",
         baseCreateTm: "",
         baseUpdateUserId: "",
@@ -97,23 +113,31 @@ export default {
   methods: {
     //获取单个数据
     getData(data) {
-      getFileLog(data).then((response) => {
+      getUser(data).then((response) => {
         const { result } = response;
         this.form = result;
       });
     },
     //获取基本数据
     getDatas(page) {
-      getFileLogsPage(page).then((reponse) => {
+      getUsersPage(page).then((reponse) => {
         const { result } = reponse;
         this.$refs.baseTable.data = result.entitys;
         this.$refs.baseTable.page = result;
       });
     },
     //删除
-    deleteData(data) {},
+    deleteData(data) {
+      delUsers(data).then(() => {
+        window.location.reload();
+      });
+    },
     //新增修改
-    addUpdateData() {},
+    addUpdateData() {
+      doUsers(this.form).then(() => {
+        window.location.reload();
+      });
+    },
   },
 };
 </script>

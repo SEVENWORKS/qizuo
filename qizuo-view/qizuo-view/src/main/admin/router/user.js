@@ -22,6 +22,12 @@ export default [
                 name: 'system_menu',
                 component: () => import('@adminP/admins/system_menu'),
                 meta: {title: "菜单管理"}
+            },
+            {
+                path: 'system_msg',
+                name: 'system_msg',
+                component: () => import('@adminP/admins/system_msg'),
+                meta: {title: "消息管理"}
             }
         ],
     },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <qz-base-table
+    <qz-table
       @getData="getData"
       @getDatas="getDatas"
       @deleteData="deleteData"
@@ -9,8 +9,18 @@
     >
       <template v-slot:table>
         <el-table-column align="center" label="序号" width="80" type="index" />
-        <el-table-column align="center" label="角色" prop="name" />
-        <el-table-column align="center" label="菜单" prop="menus" />
+        <el-table-column align="center" label="编号" prop="baseId" />
+        <el-table-column align="center" label="权限名称" prop="name" />
+        <el-table-column align="center" label="资源ID集合" prop="menuIds" />
+        <el-table-column align="center" label="数据操作能力（增删查改）" prop="dataScopeCds" />
+        <el-table-column align="center" label="创建者" prop="baseCreateUserId" />
+        <el-table-column align="center" label="创建时间" prop="baseCreateTm" />
+        <el-table-column align="center" label="修改者" prop="baseUpdateUserId" />
+        <el-table-column align="center" label="修改时间" prop="baseUpdateTm" />
+        <el-table-column align="center" label="状态" prop="baseStatus" />
+        <el-table-column align="center" label="备注" prop="baseRemarks" />
+        <el-table-column align="center" label="创建ip" prop="baseCreateIp" />
+        <el-table-column align="center" label="更新ip" prop="baseUpdateIp" />
       </template>
       <template v-slot:form>
         <el-form
@@ -20,28 +30,45 @@
           label-position="left"
           label-width="70px"
         >
-          <el-form-item label="角色">
+          <el-form-item label="编号">
+            <el-input v-model="form.baseId"></el-input>
+          </el-form-item>
+          <el-form-item label="权限名称">
             <el-input v-model="form.name"></el-input>
           </el-form-item>
-          <el-form-item label="菜单">
-            <el-select
-              v-model="form.menus"
-              multiple
-              filterable
-              placeholder="请选择"
-            >
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              >
-              </el-option>
-            </el-select>
+          <el-form-item label="资源ID集合">
+            <el-input v-model="form.menuIds"></el-input>
+          </el-form-item>
+          <el-form-item label="数据操作能力（增删查改）">
+            <el-input v-model="form.dataScopeCds"></el-input>
+          </el-form-item>
+          <el-form-item label="创建者">
+            <el-input v-model="form.baseCreateUserId"></el-input>
+          </el-form-item>
+          <el-form-item label="创建时间">
+            <el-input v-model="form.baseCreateTm"></el-input>
+          </el-form-item>
+          <el-form-item label="修改者">
+            <el-input v-model="form.baseUpdateUserId"></el-input>
+          </el-form-item>
+          <el-form-item label="修改时间">
+            <el-input v-model="form.baseUpdateTm"></el-input>
+          </el-form-item>
+          <el-form-item label="状态">
+            <el-input v-model="form.baseStatus"></el-input>
+          </el-form-item>
+          <el-form-item label="备注">
+            <el-input v-model="form.baseRemarks"></el-input>
+          </el-form-item>
+          <el-form-item label="创建ip">
+            <el-input v-model="form.baseCreateIp"></el-input>
+          </el-form-item>
+          <el-form-item label="更新ip">
+            <el-input v-model="form.baseUpdateIp"></el-input>
           </el-form-item>
         </el-form>
       </template>
-    </qz-base-table>
+    </qz-table>
   </div>
 </template>
 <!-- 执行js -->
@@ -52,15 +79,21 @@ export default {
   data() {
     return {
       form: {
+        baseId: "",
         name: "",
-        menus: [],
+        menuIds: "",
+        dataScopeCds: "",
+        baseCreateUserId: "",
+        baseCreateTm: "",
+        baseUpdateUserId: "",
+        baseUpdateTm: "",
+        baseStatus: "",
+        baseRemarks: "",
+        baseCreateIp: "",
+        baseUpdateIp: "",
       },
-      rules: [],
-      options: [], //菜单选择
+      rules: {}
     };
-  },
-  created() {
-    this.getOptions();
   },
   methods: {
     //获取单个数据
@@ -74,7 +107,6 @@ export default {
     getDatas(page) {
       getRoles(page).then((reponse) => {
         const { result } = reponse;
-        this.options = result;
         this.$refs.baseTable.data = result;
       });
     },
@@ -89,14 +121,7 @@ export default {
       doRoles(this.form).then(() => {
         window.location.reload();
       });
-    },
-    //获取options
-    getOptions() {
-      getMenus().then((reponse) => {
-        const { result } = reponse;
-        this.options = result;
-      });
-    },
+    }
   },
 };
 </script>
