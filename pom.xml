@@ -53,7 +53,7 @@
         <httpclientutil.version>1.0</httpclientutil.version>
         <feign-form.version>3.0.3</feign-form.version>
         <spring.version>4.3.11.RELEASE</spring.version>
-        <fastjson.version>1.2.29</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <modelmapper.version>1.1.2</modelmapper.version>
         <weixin-java-mp.version>3.9.0</weixin-java-mp.version>
         <jaxb-api.version>2.3.0</jaxb-api.version>
