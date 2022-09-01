@@ -69,7 +69,7 @@
         <joda-time.version>2.9.6</joda-time.version>
         <hutool-all.version>3.0.7</hutool-all.version>
         <commons-lang3.version>3.5</commons-lang3.version>
-        <poi.version>3.8</poi.version>
+        <poi.version>4.1.1</poi.version>
         <jxl.version>2.6.12</jxl.version>
         <itext.version>2.1.7</itext.version>
         <flying-saucer-pdf.version>9.1.7</flying-saucer-pdf.version>
