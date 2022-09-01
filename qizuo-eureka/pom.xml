@@ -38,6 +38,32 @@
     <build>
         <finalName>${artifactId}</finalName>
         <plugins>
+            <!-- SpringBoot 项目借由 spring-boot-maven-plugin 插件，通过 Maven 将项目打包成可执行的 JAR（Fat Jar） 或者 WAR，由此插件生成的 Jar 包，由以下两部分组成：
+                  lib目录，用来存放项目所依赖的 Jar 包
+                  spring boot loader 相关的类 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!-- 生成Actuator使用的构建信息文件build-info.properties -->
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- 热部署方式2 -->
+                <!--        <dependencies>-->
+                <!--          &lt;!&ndash; 热部署 &ndash;&gt;-->
+                <!--          <dependency>-->
+                <!--            <groupId>org.springframework</groupId>-->
+                <!--            <artifactId>springloaded</artifactId>-->
+                <!--          </dependency>-->
+                <!--        </dependencies>-->
+            </plugin>
         </plugins>
     </build>
 
