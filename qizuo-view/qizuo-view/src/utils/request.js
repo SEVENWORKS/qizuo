@@ -1,5 +1,4 @@
 import axios from "axios";
-import { MessageBox, Message } from "element-ui";
 
 // create an axios instance
 const service = axios.create({
@@ -11,12 +10,18 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     //对token进行处理
-    const token = window._vm.$store.getters.token;
+    const token = window._vm.$store.getters.user.token;
     if (token) {
       config.headers["X-QIZUO"] = token;
       //spring security的token必须要加上token的类别，通常是bearer
       config.headers["Authorization"] =
         window._vm.$store.state.user.tokenType + " " + token;
+    }
+
+    //url特殊处理标识
+    if(config.url.includes(window.$global.responseNotDo)){
+      config.url=config.url.replace(window.$global.responseNotDo,"");
+      config[window.$global.responseNotDo]=true;
     }
     return config;
   },
@@ -29,83 +34,65 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   (response) => {
-    const res = response.data;
-    //请求头判断，是否需要重新请求token
-    const isNewtoken = response.headers["QIZUO-Renew-Header"];
-    //错误异常处理
-    if (response.status !== 200) {
-      Message({
-        message: res.message || "Error",
-        type: "error",
-        duration: 5 * 1000,
-      });
-      // token相关异常处理:50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (
-        response.status === 401 ||
-        response.status === 403 ||
-        response.status === 402
-      ) {
-        //重新登录弹框
-        MessageBox.confirm(
-          "You have been logged out, you can cancel to stay on this page, or log in again",
-          "Confirm logout",
-          {
-            confirmButtonText: "重新登录",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
-        ).then(() => {
-          window._vm.$store.dispatch("user/resetToken").then(() => {
-            location.reload();
-          });
-        });
-      } else {
-        //重新请求token
-        if (isNewtoken) {
-          window._vm.$store.dispatch("user/queryToken");
-        }
-      }
-      return Promise.reject(new Error(res.message || "Error"));
-    } else {
-      //重新请求token
-      if (isNewtoken) {
-        window._vm.$store.dispatch("user/queryToken");
-      }
       //正确返回
-      return res;
-    }
+      
+      //角色判断
+      roleDo(response);
+
+      //错误判断
+      const code=errorDo(response);
+      if(code==-1){
+        return {}
+      }
+      return response;
   },
   (error) => {
     //返回异常处理
-    Message({
-      message: error.message,
-      type: "error",
-      duration: 5 * 1000,
-    });
-    //token过期
-    if (error.response.status === 401) {
-      //重新登录弹框
-      MessageBox.confirm(
-        "You have been logged out, you can cancel to stay on this page, or log in again",
-        "Confirm logout",
-        {
-          confirmButtonText: "重新登录",
-          cancelButtonText: "取消",
-          type: "warning",
-        }
-      ).then(() => {
-        window._vm.$store.dispatch("user/resetToken").then(() => {
-          location.reload();
-        });
-      });
+
+    //角色判断
+    roleDo(error);
+
+    //错误判断
+    const code=errorDo(error);
+    if(code==-1){
+      return {}
     }
     return Promise.reject(error);
   }
 );
 
-//错误处理
-function errorDo(){
+//角色处理
+function roleDo(res){
+  const response=res?.response??res;
+  if(response&&(response.status==401||response.status==402||response.status==403||response.status==498||response.status==502)){
+    window._vm.$utils.alert("权限异常");
+    //登出
+    window._vm.$store.dispatch("user/logout");
+  }
+}
 
+//错误处理
+function errorDo(res){
+  let back=0;
+
+  const response=res?.response??res;
+
+  //非200状态判断
+  if(!response.config[window.$global.responseNotDo]&&response.status!=200){
+    back=-1
+    window._vm.$utils.alert("服务异常");
+    return back;
+  }
+
+  //非正确code判断
+  const resultCode=response?.data?.code;
+  if(!response.config[window.$global.responseNotDo]&&resultCode!=0){
+    back=-1
+    window._vm.$utils.alert(response.data.message);
+    return back;
+  }
+
+  return back;
 }
 
 export default service;

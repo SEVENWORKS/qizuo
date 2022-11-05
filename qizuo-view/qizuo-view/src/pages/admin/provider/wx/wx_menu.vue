@@ -224,7 +224,6 @@ export default {
         const subButtons = this.form.subButtons.split("-");
         const subButtonsArr = this.formCommit.buttons[parseInt(subButtons[0])]
           .subButtons[parseInt(subButtons[1])];
-        console.log(subButtons);
         if (!subButtonsArr) {
           this.formCommit.buttons[parseInt(subButtons[0])].subButtons[
             parseInt(subButtons[1])

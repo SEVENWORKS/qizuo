@@ -24,6 +24,11 @@ function isFunction(value) {
     }
 }
 
+/** 统一alert */
+function alert(value){
+    window._vm.$message(value)
+}
+
 export default {
     alert,
     isNotBlank,

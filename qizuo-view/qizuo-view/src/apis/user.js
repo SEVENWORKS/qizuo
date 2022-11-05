@@ -20,7 +20,7 @@ export function logout() {
 //token
 export function token(data) {
   return request({
-    url: "/user/oauth/token",
+    url: "/oauth/token",
     method: "post",
     data,
   });
@@ -131,7 +131,7 @@ export function getImgCheck(data) {
 //用户信息修改
 export function doUsers(data) {
   return request({
-    url: "/userAdmin/user/iuDo",
+    url: "/user/user/iuDo",
     method: "post",
     data,
   });
@@ -139,7 +139,7 @@ export function doUsers(data) {
 
 export function delUsers(data) {
   return request({
-    url: "/userAdmin/user/delete",
+    url: "/user/user/delete",
     method: "post",
     data,
   });
@@ -148,7 +148,7 @@ export function delUsers(data) {
 //角色信息修改
 export function doRoles(data) {
   return request({
-    url: "/userAdmin/role/iuDo",
+    url: "/user/role/iuDo",
     method: "post",
     data,
   });
@@ -156,7 +156,7 @@ export function doRoles(data) {
 
 export function delRoles(data) {
   return request({
-    url: "/userAdmin/role/delete",
+    url: "/user/role/delete",
     method: "post",
     data,
   });
@@ -165,7 +165,7 @@ export function delRoles(data) {
 //菜单信息修改
 export function doMenus(data) {
   return request({
-    url: "/userAdmin/menu/iuDo",
+    url: "/user/menu/iuDo",
     method: "post",
     data,
   });
@@ -173,7 +173,7 @@ export function doMenus(data) {
 
 export function delMenus(data) {
   return request({
-    url: "/userAdmin/menu/delete",
+    url: "/user/menu/delete",
     method: "post",
     data,
   });

@@ -14,9 +14,9 @@
         <el-table-column align="center" label="文件名" prop="name" />
         <el-table-column align="center" label="上传结果" prop="uploadResult" />
         <el-table-column align="center" label="创建者" prop="baseCreateUserId" />
-        <el-table-column align="center" label="创建时间" prop="baseCreateTm" />
+        <el-table-column align="center" label="创建时间" prop="baseCreateTime" />
         <el-table-column align="center" label="修改者" prop="baseUpdateUserId" />
-        <el-table-column align="center" label="修改时间" prop="baseUpdateTm" />
+        <el-table-column align="center" label="修改时间" prop="baseUpdateTime" />
         <el-table-column align="center" label="状态" prop="baseStatus" />
         <el-table-column align="center" label="备注" prop="baseRemarks" />
         <el-table-column align="center" label="创建ip" prop="baseCreateIp" />
@@ -46,13 +46,13 @@
             <el-input v-model="form.baseCreateUserId"></el-input>
           </el-form-item>
           <el-form-item label="创建时间">
-            <el-input v-model="form.baseCreateTm"></el-input>
+            <el-input v-model="form.baseCreateTime"></el-input>
           </el-form-item>
           <el-form-item label="修改者">
             <el-input v-model="form.baseUpdateUserId"></el-input>
           </el-form-item>
           <el-form-item label="修改时间">
-            <el-input v-model="form.baseUpdateTm"></el-input>
+            <el-input v-model="form.baseUpdateTime"></el-input>
           </el-form-item>
           <el-form-item label="状态">
             <el-input v-model="form.baseStatus"></el-input>
@@ -83,9 +83,9 @@ export default {
         name: "",
         uploadResult: "",
         baseCreateUserId: "",
-        baseCreateTm: "",
+        baseCreateTime: "",
         baseUpdateUserId: "",
-        baseUpdateTm: "",
+        baseUpdateTime: "",
         baseStatus: "",
         baseRemarks: "",
         baseCreateIp: "",
@@ -97,17 +97,19 @@ export default {
   methods: {
     //获取单个数据
     getData(data) {
-      getFileLog(data).then((response) => {
-        const { result } = response;
-        this.form = result;
+      getFileLog(data).then(({data}) => {
+        if(data){
+          this.form = data.result;
+        }
       });
     },
     //获取基本数据
     getDatas(page) {
-      getFileLogsPage(page).then((reponse) => {
-        const { result } = reponse;
-        this.$refs.baseTable.data = result.entitys;
-        this.$refs.baseTable.page = result;
+      getFileLogsPage(page).then(({data}) => {
+        if(data){
+          this.$refs.baseTable.data = data.result.entitys;
+          this.$refs.baseTable.page = data.result;
+        }
       });
     },
     //删除

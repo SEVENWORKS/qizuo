@@ -55,3 +55,13 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.el-menu {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  background-color: transparent;
+  z-index: $index-max;
+}
+</style>

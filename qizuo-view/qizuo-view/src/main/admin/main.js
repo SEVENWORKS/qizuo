@@ -4,7 +4,7 @@ import "@/utils/config";
 import "@/utils/error";
 import "@/components/index";
 import "@/directive"
-// import './router_permission'
+import './router_permission'
 
 import "@/assets/scss/index.scss";
 import 'element-ui/lib/theme-chalk/index.css';
